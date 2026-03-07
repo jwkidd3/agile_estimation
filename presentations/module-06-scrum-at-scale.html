@@ -185,7 +185,7 @@
         /* Metrics grid */
         .metrics-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 16px;
             margin: 20px 0;
         }
@@ -197,7 +197,7 @@
             border: 2px solid var(--border-color);
             padding: 18px;
             text-align: left;
-            font-size: 0.7em;
+            font-size: 0.78em;
         }
         .framework-card h4 {
             margin-top: 0;
@@ -568,7 +568,6 @@
                             <li>5-12 teams per Agile Release Train (ART)</li>
                             <li>PI Planning every 8-12 weeks</li>
                             <li>Prescriptive roles &amp; ceremonies</li>
-                            <li>Best for: large enterprises needing structure</li>
                         </ul>
                         <span class="badge badge-blue">50-125 people per ART</span>
                     </div>
@@ -577,9 +576,7 @@
                         <p><strong>Large-Scale Scrum</strong></p>
                         <ul>
                             <li>2-8 teams sharing one product backlog</li>
-                            <li>Minimal additional roles</li>
-                            <li>One Product Owner for all teams</li>
-                            <li>Best for: organizations valuing simplicity</li>
+                            <li>One Product Owner, minimal extra roles</li>
                         </ul>
                         <span class="badge badge-green">Up to ~60 people</span>
                     </div>
@@ -590,7 +587,6 @@
                             <li>3-9 teams building one product</li>
                             <li>Nexus Integration Team coordinates</li>
                             <li>Focus on reducing dependencies</li>
-                            <li>Best for: mid-size multi-team products</li>
                         </ul>
                         <span class="badge badge-orange">Up to ~70 people</span>
                     </div>
@@ -599,7 +595,7 @@
                     <p><strong>Key insight:</strong> The framework you choose directly impacts how estimation works at scale. SAFe normalizes estimation across teams; LeSS keeps team-level estimation intact; Nexus focuses on integration risk.</p>
                 </div>
                 <aside class="notes">
-                    Give a high-level overview of each framework without going too deep, since this is an estimation course, not a scaling frameworks course. The key point is that each framework makes different trade-offs that affect estimation. SAFe provides the most structure and explicitly addresses estimation through PI Planning, where teams collectively estimate and commit. LeSS takes a minimalist approach, keeping Scrum mostly unchanged and letting teams self-organize around a shared backlog. Nexus is somewhere in between, with a dedicated integration team that helps coordinate. Ask the class which frameworks they have encountered. Many organizations implement a hybrid or customized version. The important thing is understanding how each approach handles cross-team estimation and planning.
+                    Give a high-level overview of each framework without going too deep, since this is an estimation course, not a scaling frameworks course. The key point is that each framework makes different trade-offs that affect estimation. SAFe provides the most structure and explicitly addresses estimation through PI Planning, where teams collectively estimate and commit. SAFe is best for large enterprises needing structure. LeSS takes a minimalist approach, keeping Scrum mostly unchanged and letting teams self-organize around a shared backlog. LeSS is best for organizations valuing simplicity. Nexus is somewhere in between, with a dedicated integration team that helps coordinate. Nexus is best for mid-size multi-team products. Ask the class which frameworks they have encountered. Many organizations implement a hybrid or customized version. The important thing is understanding how each approach handles cross-team estimation and planning.
                 </aside>
             </section>
 
@@ -824,10 +820,9 @@
                         <div class="architecture-box">
                             <h4>&#x1F517; Dependency Types</h4>
                             <ul style="font-size: 0.75em;">
-                                <li class="fragment"><strong>Knowledge dependencies:</strong> "We need Team B's expertise to estimate this"</li>
-                                <li class="fragment"><strong>Task dependencies:</strong> "We cannot start until Team B finishes their API"</li>
-                                <li class="fragment"><strong>Resource dependencies:</strong> "We share a DBA with two other teams"</li>
-                                <li class="fragment"><strong>Requirement dependencies:</strong> "Our stories share acceptance criteria with Team B's stories"</li>
+                                <li class="fragment"><strong>Knowledge:</strong> "We need Team B's expertise to estimate this"</li>
+                                <li class="fragment"><strong>Task:</strong> "We cannot start until Team B finishes their API"</li>
+                                <li class="fragment"><strong>Resource:</strong> "We share a DBA with two other teams"</li>
                             </ul>
                         </div>
                         <div class="highlight-box danger fragment">
@@ -838,24 +833,22 @@
                         <div class="architecture-box fragment">
                             <h4>&#x1F3D7;&#xFE0F; Platform &amp; Shared Services Teams</h4>
                             <ul style="font-size: 0.75em;">
-                                <li><strong>Platform teams</strong> provide infrastructure, APIs, and tools that other teams consume</li>
-                                <li>Their backlog is driven by <em>internal customers</em> (other teams)</li>
-                                <li>Estimation challenge: platform work enables but does not directly deliver business features</li>
-                                <li><strong>Approach:</strong> Reserve capacity (e.g., 20%) for platform requests from feature teams each sprint</li>
+                                <li><strong>Platform teams</strong> provide infrastructure, APIs, and tools for other teams</li>
+                                <li>Backlog driven by <em>internal customers</em> (other teams)</li>
+                                <li>Reserve capacity (e.g., 20%) for platform requests each sprint</li>
                             </ul>
                         </div>
                         <div class="architecture-box fragment">
                             <h4>&#x1F4C5; Managing Across Backlogs</h4>
                             <ul style="font-size: 0.75em;">
                                 <li>Use a <strong>dependency board</strong> to visualize cross-team blockers</li>
-                                <li>Flag dependencies during sprint planning and refinement</li>
                                 <li>Assign <strong>buffer stories</strong> in case dependent work is delayed</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <aside class="notes">
-                    Dependencies are the silent killer of estimation accuracy at scale. When teams estimate in isolation, they rarely account for the overhead of coordinating with other teams. A story that seems like a 5-pointer when estimated by one team becomes an 8 once you factor in waiting for another team's API, attending cross-team design sessions, and integration testing. The 15-30% overhead figure is a common rule of thumb from scaling practitioners. Platform teams present a unique challenge. Their work does not directly deliver features, so it is hard to value-rank against feature work. The solution is usually to reserve a percentage of their capacity for supporting feature teams. The dependency board is a critical artifact at scale. SAFe uses a program board during PI Planning to visualize dependencies. LeSS achieves this through multi-team sprint planning. Whatever approach you use, making dependencies visible is the first step to managing them. Invisible dependencies are the ones that blow up your estimates.
+                    Dependencies are the silent killer of estimation accuracy at scale. When teams estimate in isolation, they rarely account for the overhead of coordinating with other teams. A story that seems like a 5-pointer when estimated by one team becomes an 8 once you factor in waiting for another team's API, attending cross-team design sessions, and integration testing. The 15-30% overhead figure is a common rule of thumb from scaling practitioners. Additional dependency type not shown on slide: Requirement dependencies, where stories share acceptance criteria with another team's stories. Platform teams present a unique challenge. Their work does not directly deliver features, so it is hard to value-rank against feature work. The estimation challenge is that platform work enables but does not directly deliver business features. The solution is usually to reserve a percentage of their capacity for supporting feature teams. The dependency board is a critical artifact at scale. SAFe uses a program board during PI Planning to visualize dependencies. LeSS achieves this through multi-team sprint planning. Also important: flag dependencies during sprint planning and refinement. Whatever approach you use, making dependencies visible is the first step to managing them. Invisible dependencies are the ones that blow up your estimates.
                 </aside>
             </section>
 
@@ -863,7 +856,7 @@
             <section>
                 <h2>&#x1F4CB; How Many Product Backlogs?</h2>
                 <h3>Integration Ceremonies: Keeping It All Together</h3>
-                <table>
+                <table style="font-size: 0.78em;">
                     <thead>
                         <tr>
                             <th>Ceremony</th>
@@ -876,32 +869,32 @@
                         <tr class="fragment">
                             <td><strong>&#x1F4CB; PI Planning</strong></td>
                             <td>Every 8-12 weeks</td>
-                            <td>Align all teams on objectives, dependencies, and capacity</td>
-                            <td>Teams estimate features, identify risks, and commit to PI objectives</td>
+                            <td>Align teams on objectives &amp; capacity</td>
+                            <td>Teams estimate features and commit to PI goals</td>
                         </tr>
                         <tr class="fragment">
                             <td><strong>&#x1F91D; Scrum of Scrums</strong></td>
                             <td>2-3x per week</td>
-                            <td>Surface cross-team impediments and dependency status</td>
-                            <td>Early warning when dependency assumptions in estimates are at risk</td>
+                            <td>Surface cross-team impediments</td>
+                            <td>Early warning on at-risk dependencies</td>
                         </tr>
                         <tr class="fragment">
-                            <td><strong>&#x1F50D; Overall Retrospective</strong></td>
-                            <td>End of each PI or release</td>
-                            <td>System-level improvement across all teams</td>
-                            <td>Calibrate estimation accuracy, refine dependency buffers</td>
+                            <td><strong>&#x1F50D; Overall Retro</strong></td>
+                            <td>End of PI/release</td>
+                            <td>System-level improvement</td>
+                            <td>Calibrate accuracy, refine buffers</td>
                         </tr>
                         <tr class="fragment">
                             <td><strong>&#x1F527; Cross-Team Refinement</strong></td>
                             <td>Weekly or as needed</td>
-                            <td>Joint refinement for stories with cross-team impact</td>
-                            <td>Shared understanding reduces estimation variance between teams</td>
+                            <td>Joint refinement of shared stories</td>
+                            <td>Reduces estimation variance across teams</td>
                         </tr>
                         <tr class="fragment">
                             <td><strong>&#x1F3AF; System Demo</strong></td>
                             <td>End of each sprint</td>
-                            <td>Demonstrate integrated increment across all teams</td>
-                            <td>Reveals integration gaps not captured in individual team estimates</td>
+                            <td>Demo integrated increment</td>
+                            <td>Reveals gaps missed in team estimates</td>
                         </tr>
                     </tbody>
                 </table>

@@ -647,7 +647,7 @@
             <section>
                 <h2>&#x1F504; Splitting Stories to Reduce Risk</h2>
                 <h3>The SPIDR Framework</h3>
-                <div class="process-flow">
+                <div class="process-flow" style="flex-wrap: wrap; font-size: 0.75em;">
                     <div class="process-step fragment">&#x1F50D;<br>Spike</div>
                     <div class="process-arrow fragment">&#x2192;</div>
                     <div class="process-step fragment">&#x1F4E6;<br>Paths</div>
@@ -715,7 +715,6 @@
                             <h4>&#x1F534; Estimation Issues</h4>
                             <ul>
                                 <li>Over-committing to velocity</li>
-                                <li>Ignoring technical debt overhead</li>
                                 <li>Poorly defined acceptance criteria</li>
                             </ul>
                         </div>
@@ -724,7 +723,6 @@
                             <ul>
                                 <li>Too many work-in-progress items</li>
                                 <li>Unplanned work / interruptions</li>
-                                <li>Dependency bottlenecks</li>
                             </ul>
                         </div>
                         <div class="architecture-box fragment">
@@ -732,13 +730,12 @@
                             <ul>
                                 <li>Key person absence</li>
                                 <li>Skill gap on specific technology</li>
-                                <li>Context switching overhead</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <aside class="notes">
-                    This is one of the most important slides in the module. When sprints are missed, the natural instinct is to blame individuals. The Five Whys technique redirects the team toward systemic causes. Walk through the example slowly and emphasize how each why peels back a layer. The root cause here is a process gap, not a performance issue. On the right side, the three categories help teams structure their retrospective discussions. Estimation issues, process issues, and team issues each require different remedies. Ask the class which category they see most often in their organizations.
+                    This is one of the most important slides in the module. When sprints are missed, the natural instinct is to blame individuals. The Five Whys technique redirects the team toward systemic causes. Walk through the example slowly and emphasize how each why peels back a layer. The root cause here is a process gap, not a performance issue. On the right side, the three categories help teams structure their retrospective discussions. Estimation issues, process issues, and team issues each require different remedies. Additional items to discuss verbally: Estimation -- ignoring technical debt overhead; Process -- dependency bottlenecks; Team -- context switching overhead. Ask the class which category they see most often in their organizations.
                 </aside>
             </section>
 
@@ -751,7 +748,7 @@
                         <div class="highlight-box">
                             <p><strong>Best predictor of next sprint's velocity = average of last 3-5 sprints</strong></p>
                         </div>
-                        <div class="chart-placeholder fragment">
+                        <div class="chart-placeholder fragment" style="font-size: 0.75em;">
                             <p class="text-muted" style="margin-top: 0;"><strong>Velocity Trend Example</strong></p>
                             <div class="velocity-chart">Sprint  1: ████████████████████       20 pts
 Sprint  2: ██████████████████████████  26 pts
@@ -769,19 +766,14 @@ Avg (3-6): 23 pts  |  Range: 20-26 pts</div>
                     <div>
                         <h3>Handling Unfinished Stories</h3>
                         <div class="architecture-box fragment">
-                            <h4>Option 1: Carry Over (Simple)</h4>
-                            <p>Move the entire story to the next sprint. Keep original estimate.</p>
-                            <p class="text-muted">Best when: little work was done on the story.</p>
-                        </div>
-                        <div class="architecture-box fragment">
-                            <h4>Option 2: Split and Carry (Preferred)</h4>
+                            <h4>Option 1: Split and Carry (Preferred)</h4>
                             <p>Create a new story for remaining work. Re-estimate only the remaining portion.</p>
                             <p class="text-muted">Best when: significant work completed. Credit the done work to the current sprint.</p>
                         </div>
                         <div class="architecture-box fragment">
-                            <h4>Option 3: Return to Backlog</h4>
-                            <p>Send it back for re-prioritization. May not be worth finishing.</p>
-                            <p class="text-muted">Best when: priorities have shifted or story was low-value.</p>
+                            <h4>Option 2: Carry Over or Return to Backlog</h4>
+                            <p>Move the entire story to the next sprint (if little work done), or send it back for re-prioritization if priorities have shifted.</p>
+                            <p class="text-muted">Keep original estimate for carry-over; re-evaluate value for backlog return.</p>
                         </div>
                     </div>
                 </div>
@@ -982,26 +974,26 @@ Avg (3-6): 23 pts  |  Range: 20-26 pts</div>
                 <div class="two-column-60-40">
                     <div>
                         <h3>Decision Framework</h3>
-                        <div class="quadrant-matrix fragment">
+                        <div class="quadrant-matrix fragment" style="font-size: 0.78em;">
                             <div class="quadrant q1">
                                 <h4>&#x1F525; Emergency</h4>
-                                <p>Production down, security breach, legal compliance</p>
+                                <p>Production down or security breach</p>
                                 <p><strong>Action:</strong> Add immediately, apply 2-for-1</p>
                             </div>
                             <div class="quadrant q2">
                                 <h4>&#x23F0; Urgent</h4>
-                                <p>Critical bug, key customer issue, revenue impact</p>
-                                <p><strong>Action:</strong> Add if PO approves trade, else next sprint</p>
+                                <p>Critical bug or key customer issue</p>
+                                <p><strong>Action:</strong> PO approves trade, else next sprint</p>
                             </div>
                             <div class="quadrant q3">
                                 <h4>&#x1F4CB; Important</h4>
-                                <p>Feature request, enhancement, strategic initiative</p>
-                                <p><strong>Action:</strong> Add to backlog, prioritize for next sprint</p>
+                                <p>Feature request or strategic initiative</p>
+                                <p><strong>Action:</strong> Add to backlog for next sprint</p>
                             </div>
                             <div class="quadrant q4">
                                 <h4>&#x1F4AD; Nice to Have</h4>
                                 <p>Polish, optimization, minor improvements</p>
-                                <p><strong>Action:</strong> Add to backlog, schedule when capacity allows</p>
+                                <p><strong>Action:</strong> Backlog, schedule when capacity allows</p>
                             </div>
                         </div>
                     </div>
@@ -1013,8 +1005,6 @@ Avg (3-6): 23 pts  |  Range: 20-26 pts</div>
                                 <li>Is this truly sprint-urgent? &#x1F914;</li>
                                 <li>What is the estimated effort?</li>
                                 <li>What will be removed to compensate?</li>
-                                <li>Does the team agree they can absorb it?</li>
-                                <li>Does it affect the sprint goal?</li>
                                 <li>Has the PO approved the trade-off?</li>
                             </ol>
                         </div>
@@ -1030,7 +1020,7 @@ Avg (3-6): 23 pts  |  Range: 20-26 pts</div>
                     </div>
                 </div>
                 <aside class="notes">
-                    The quadrant matrix gives teams a quick classification tool for incoming changes. Walk through each quadrant and emphasize that only the Emergency quadrant warrants immediate sprint disruption. Everything else either goes through the Product Owner's trade-off process or simply goes to the backlog. The checklist on the right provides a practical tool teams can use when evaluating mid-sprint changes. The red flags section addresses organizations that treat every request as urgent -- this is a cultural problem that needs to be surfaced and addressed. If everything is urgent, nothing is urgent. Track the number of mid-sprint additions as a metric and discuss it in retrospectives.
+                    The quadrant matrix gives teams a quick classification tool for incoming changes. Walk through each quadrant and emphasize that only the Emergency quadrant warrants immediate sprint disruption. Everything else either goes through the Product Owner's trade-off process or simply goes to the backlog. The checklist on the right provides a practical tool teams can use when evaluating mid-sprint changes. Additional checklist items to discuss verbally: "Does the team agree they can absorb it?" and "Does it affect the sprint goal?" The red flags section addresses organizations that treat every request as urgent -- this is a cultural problem that needs to be surfaced and addressed. If everything is urgent, nothing is urgent. Track the number of mid-sprint additions as a metric and discuss it in retrospectives.
                 </aside>
             </section>
 
@@ -1198,7 +1188,7 @@ Pts
                     </div>
                     <div>
                         <h3>Using Cycle Time for Estimation</h3>
-                        <div class="architecture-box fragment">
+                        <div class="architecture-box fragment" style="font-size: 0.8em;">
                             <h4>&#x1F4CA; Percentile-Based Forecasting</h4>
                             <p>Instead of estimating story points, use historical cycle time:</p>
                             <ul>
@@ -1207,7 +1197,7 @@ Pts
                                 <li><strong>95th percentile:</strong> 12 days <span class="badge badge-red">Almost certain</span></li>
                             </ul>
                         </div>
-                        <div class="architecture-box fragment">
+                        <div class="architecture-box fragment" style="font-size: 0.8em;">
                             <h4>&#x2705; Benefits Over Story Points</h4>
                             <ul>
                                 <li>Based on actual data, not estimates</li>
@@ -1216,13 +1206,10 @@ Pts
                                 <li>Easier for stakeholders to understand</li>
                             </ul>
                         </div>
-                        <div class="highlight-box warning fragment">
-                            <p><strong>Prerequisite:</strong> Requires consistent tracking of start/finish dates and at least 30+ data points for meaningful percentiles.</p>
-                        </div>
                     </div>
                 </div>
                 <aside class="notes">
-                    Cycle time and lead time are flow-based metrics that complement or even replace story point estimation for mature teams. The gap between lead time and cycle time is particularly revealing -- in most organizations, items spend far more time waiting in queues than being actively worked on. This means the biggest improvement opportunity is usually in reducing wait time, not in making developers work faster. The percentile-based forecasting approach is powerful: instead of asking the team to estimate a story, you look at historical data and say with confidence how long similarly-sized stories have taken. This requires good data hygiene but produces very reliable forecasts.
+                    Cycle time and lead time are flow-based metrics that complement or even replace story point estimation for mature teams. The gap between lead time and cycle time is particularly revealing -- in most organizations, items spend far more time waiting in queues than being actively worked on. This means the biggest improvement opportunity is usually in reducing wait time, not in making developers work faster. The percentile-based forecasting approach is powerful: instead of asking the team to estimate a story, you look at historical data and say with confidence how long similarly-sized stories have taken. This requires good data hygiene but produces very reliable forecasts. Prerequisite to mention: this approach requires consistent tracking of start/finish dates and at least 30+ data points for meaningful percentiles.
                 </aside>
             </section>
 
@@ -1422,30 +1409,26 @@ Pts                    Team member
                 <h2>&#x1F4B0; The ROI Matrix Visualization</h2>
                 <div class="two-column-60-40">
                     <div>
-                        <div class="quadrant-matrix fragment">
+                        <div class="quadrant-matrix fragment" style="font-size: 0.78em;">
                             <div class="quadrant q1">
                                 <h4>&#x1F31F; Quick Wins</h4>
                                 <p><strong>High Value / Low Effort</strong></p>
-                                <p>Do these first! Maximum ROI. These build momentum and stakeholder trust.</p>
-                                <p class="text-muted">Example: Search upgrade, Email notifications</p>
+                                <p>Do first for maximum ROI</p>
                             </div>
                             <div class="quadrant q2">
                                 <h4>&#x1F3D7;&#xFE0F; Major Projects</h4>
                                 <p><strong>High Value / High Effort</strong></p>
-                                <p>Worth doing but plan carefully. Break into smaller deliverables.</p>
-                                <p class="text-muted">Example: API v2</p>
+                                <p>Plan carefully, break into deliverables</p>
                             </div>
                             <div class="quadrant q3">
                                 <h4>&#x1F527; Fill-ins</h4>
                                 <p><strong>Low Value / Low Effort</strong></p>
-                                <p>Use as sprint filler when capacity allows. Good for stretch goals.</p>
-                                <p class="text-muted">Example: Minor UI polish</p>
+                                <p>Use as sprint filler or stretch goals</p>
                             </div>
                             <div class="quadrant q4">
                                 <h4>&#x1F6AB; Money Pit</h4>
                                 <p><strong>Low Value / High Effort</strong></p>
-                                <p>Avoid or defer indefinitely. Challenge whether these are truly needed.</p>
-                                <p class="text-muted">Example: Admin panel</p>
+                                <p>Avoid or defer indefinitely</p>
                             </div>
                         </div>
                         <p class="text-center text-muted fragment"><em>x-axis: Effort (left=low, right=high) &nbsp; | &nbsp; y-axis: Value (bottom=low, top=high)</em></p>
@@ -1461,18 +1444,10 @@ Pts                    Team member
                                 <li><span class="text-danger"><strong>Money Pits</strong></span> only if mandated</li>
                             </ol>
                         </div>
-                        <div class="highlight-box fragment">
-                            <h4 style="color: var(--accent-color); margin-top:0;">&#x1F4A1; Pro Tip</h4>
-                            <p>Run this exercise as a <strong>collaborative workshop</strong> with the Product Owner and stakeholders. Making ROI visible creates alignment and reduces priority debates.</p>
-                        </div>
-                        <div class="concept-card fragment">
-                            <h4>&#x1F504; Review Quarterly</h4>
-                            <p>ROI changes as market conditions shift. Re-evaluate the matrix every quarter or when strategic priorities change.</p>
-                        </div>
                     </div>
                 </div>
                 <aside class="notes">
-                    The ROI matrix is a visual tool that makes prioritization discussions concrete and productive. Walk through each quadrant and emphasize the naming: Quick Wins, Major Projects, Fill-ins, and Money Pits. The names themselves communicate the strategy. The recommended sequence on the right is a general guideline -- Quick Wins first because they deliver value fast and build credibility. Major Projects next because they deliver strategic value but need careful decomposition. Fill-ins are useful as sprint padding. Money Pits should be challenged. The collaborative workshop tip is important -- when stakeholders see the matrix and participate in building it, they are much more likely to accept the resulting priorities.
+                    The ROI matrix is a visual tool that makes prioritization discussions concrete and productive. Walk through each quadrant and emphasize the naming: Quick Wins, Major Projects, Fill-ins, and Money Pits. The names themselves communicate the strategy. The recommended sequence on the right is a general guideline -- Quick Wins first because they deliver value fast and build credibility. Major Projects next because they deliver strategic value but need careful decomposition. Fill-ins are useful as sprint padding. Money Pits should be challenged. Pro Tip: Run this exercise as a collaborative workshop with the Product Owner and stakeholders. Making ROI visible creates alignment and reduces priority debates. Also remind teams to review the matrix quarterly -- ROI changes as market conditions shift. Re-evaluate the matrix every quarter or when strategic priorities change.
                 </aside>
             </section>
 
@@ -1486,9 +1461,8 @@ Pts                    Team member
                             <h4>&#x1F517; Technical Dependencies</h4>
                             <p>Some high-ROI items cannot start until prerequisites are complete.</p>
                             <ul>
-                                <li>Map dependencies before sequencing</li>
-                                <li>Identify the critical path</li>
-                                <li>Schedule enablers early even if their standalone ROI is low</li>
+                                <li>Map dependencies and identify the critical path</li>
+                                <li>Schedule enablers early even if standalone ROI is low</li>
                             </ul>
                         </div>
                         <div class="concept-card fragment">
@@ -1497,13 +1471,12 @@ Pts                    Team member
                             <ul>
                                 <li>Unknown technology? Do it in Sprint 1-2</li>
                                 <li>Complex integration? Spike it early</li>
-                                <li>Regulatory requirement? Validate early</li>
                             </ul>
                         </div>
                     </div>
                     <div>
                         <h3>Weighted Scoring Model</h3>
-                        <table class="fragment">
+                        <table class="fragment" style="font-size: 0.75em;">
                             <thead>
                                 <tr>
                                     <th>Factor</th>
@@ -1551,7 +1524,7 @@ Pts                    Team member
                     </div>
                 </div>
                 <aside class="notes">
-                    This slide extends beyond pure ROI to address the reality that sequencing decisions involve multiple factors. Walk through the dependency and risk considerations on the left. The critical insight is that an enabler story with low standalone ROI might be the most important thing to do if it unblocks three high-ROI stories. The weighted scoring model on the right provides a more sophisticated approach. Walk through the example: Feature A has better ROI but Feature B scores higher overall because of its risk reduction and dependency unlocking value. The weights should be agreed upon by the team and PO and adjusted based on the project phase. Early in a project, risk reduction and dependency unlocking might be weighted higher; later, ROI and strategic alignment might dominate.
+                    This slide extends beyond pure ROI to address the reality that sequencing decisions involve multiple factors. Walk through the dependency and risk considerations on the left. The critical insight is that an enabler story with low standalone ROI might be the most important thing to do if it unblocks three high-ROI stories. Additional risk-first item to mention verbally: regulatory requirements should also be validated early. The weighted scoring model on the right provides a more sophisticated approach. Walk through the example: Feature A has better ROI but Feature B scores higher overall because of its risk reduction and dependency unlocking value. The weights should be agreed upon by the team and PO and adjusted based on the project phase. Early in a project, risk reduction and dependency unlocking might be weighted higher; later, ROI and strategic alignment might dominate.
                 </aside>
             </section>
 
@@ -1583,17 +1556,15 @@ Pts                    Team member
                     </div>
                     <div>
                         <h3>Strategic Alignment Check</h3>
-                        <div class="concept-card fragment">
+                        <div class="concept-card fragment" style="font-size: 0.8em;">
                             <h4>&#x1F4CB; Quarterly Review Questions</h4>
                             <ol>
                                 <li>Are our highest-ROI items aligned with company OKRs?</li>
-                                <li>Are we investing enough in risk reduction?</li>
                                 <li>Is our tech debt allocation sustainable?</li>
-                                <li>Are we building for this quarter or next year?</li>
                                 <li>What would we stop doing if forced to cut 20%?</li>
                             </ol>
                         </div>
-                        <div class="concept-card fragment">
+                        <div class="concept-card fragment" style="font-size: 0.8em;">
                             <h4>&#x1F504; Continuous Rebalancing</h4>
                             <table>
                                 <thead>
@@ -1625,7 +1596,7 @@ Pts                    Team member
                     </div>
                 </div>
                 <aside class="notes">
-                    This slide brings everything together at the portfolio level. ROI-based prioritization is powerful but incomplete. Smart teams balance their work across categories: new features, technical debt, bug fixes, and operational work. The allocation percentages shown are guidelines -- each team should calibrate based on their situation. The tech debt trap is one of the most common strategic mistakes in Agile teams: because tech debt reduction has no direct business value, it never wins in a pure ROI comparison. But the compounding effect of ignored tech debt is devastating -- it is like ignoring maintenance on a building. The quarterly review questions and continuous rebalancing table give teams practical tools for maintaining strategic alignment while still leveraging ROI for tactical prioritization.
+                    This slide brings everything together at the portfolio level. ROI-based prioritization is powerful but incomplete. Smart teams balance their work across categories: new features, technical debt, bug fixes, and operational work. The allocation percentages shown are guidelines -- each team should calibrate based on their situation. The tech debt trap is one of the most common strategic mistakes in Agile teams: because tech debt reduction has no direct business value, it never wins in a pure ROI comparison. But the compounding effect of ignored tech debt is devastating -- it is like ignoring maintenance on a building. The quarterly review questions and continuous rebalancing table give teams practical tools for maintaining strategic alignment while still leveraging ROI for tactical prioritization. Additional quarterly review questions to discuss verbally: "Are we investing enough in risk reduction?" and "Are we building for this quarter or next year?"
                 </aside>
             </section>
 

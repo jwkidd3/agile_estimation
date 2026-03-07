@@ -694,7 +694,7 @@
         </div>
         <div style="margin-top:0.4em; color:var(--danger-color); font-weight:700;">&#x274C; Waterfall with sprint-length phases!</div>
     </div>
-    <div class="two-column fragment">
+    <div class="two-column fragment" style="font-size:0.78em;">
         <div>
             <div class="card danger">
                 <h4>&#x1F6A9; Warning Signs</h4>
@@ -773,13 +773,11 @@
                 <h4>&#x2705; Definition of Ready (DoR)</h4>
                 <p style="font-size:0.82em;">A story meets the Definition of Ready when:</p>
                 <ul style="font-size:0.82em;">
-                    <li class="fragment">Story follows the <strong>user story template</strong></li>
                     <li class="fragment"><strong>Acceptance criteria</strong> are written and understood</li>
                     <li class="fragment">Story has been <strong>estimated</strong> by the team</li>
                     <li class="fragment">Story is <strong>small enough</strong> for one sprint</li>
                     <li class="fragment"><strong>Dependencies</strong> are identified and resolved</li>
                     <li class="fragment">The team can <strong>explain</strong> the story to a stakeholder</li>
-                    <li class="fragment">Required <strong>UX/design assets</strong> are available</li>
                 </ul>
             </div>
         </div>
@@ -972,7 +970,7 @@
     </aside>
 </section>
 
-<!-- What is a Spike -->
+<!-- What is a Spike (Slide A: Definition + Characteristics) -->
 <section>
     <h2>&#x1F9EA; What Is a Spike?</h2>
     <div class="two-column">
@@ -984,7 +982,9 @@
                     <strong>Origin:</strong> The term comes from Extreme Programming (XP). Just as a railroad spike is hammered in to test if the ground is solid, an Agile spike tests if an approach is viable.
                 </div>
             </div>
-            <div class="card fragment" style="margin-top:0.8em;">
+        </div>
+        <div>
+            <div class="card">
                 <h4>&#x23F1;&#xFE0F; Key Characteristics</h4>
                 <ul style="font-size:0.82em;">
                     <li><strong>Time-boxed:</strong> Fixed duration (typically 1-3 days)</li>
@@ -993,7 +993,20 @@
                     <li><strong>Knowledge is the deliverable</strong> &mdash; not production code</li>
                 </ul>
             </div>
+            <div class="highlight-box success fragment" style="margin-top:0.8em;">
+                <strong>&#x1F4A1; Key Insight:</strong> The output of a spike is <strong>knowledge</strong>, not production code. Any prototype code should be discarded and rewritten properly.
+            </div>
         </div>
+    </div>
+    <aside class="notes">
+        Spikes are one of the most valuable but also most misused tools in Agile. A spike is appropriate when the team genuinely cannot estimate because they lack critical information. The key constraint is the time-box. A spike should be 1-3 days maximum. If the question cannot be answered in that time, the question is too broad and needs to be decomposed. The output of a spike is knowledge, not production code. Any prototype code written during a spike should be discarded and rewritten properly.
+    </aside>
+</section>
+
+<!-- When to Use Spikes (Slide B: When / When NOT) -->
+<section>
+    <h2>&#x1F9EA; When to Use Spikes</h2>
+    <div class="two-column">
         <div>
             <div class="card success">
                 <h4>&#x2705; When to Use a Spike</h4>
@@ -1001,23 +1014,28 @@
                     <li class="fragment">Team <strong>cannot estimate</strong> a story &mdash; too many unknowns</li>
                     <li class="fragment">New <strong>technology or API</strong> that no one has used before</li>
                     <li class="fragment">Architectural decision with <strong>multiple viable options</strong></li>
-                    <li class="fragment"><strong>Performance</strong> feasibility &mdash; "Can we process 10K transactions/second?"</li>
+                    <li class="fragment"><strong>Performance</strong> feasibility &mdash; "Can we handle 10K txn/s?"</li>
                     <li class="fragment"><strong>Third-party integration</strong> complexity is unknown</li>
                 </ul>
             </div>
-            <div class="card danger fragment" style="margin-top:0.8em;">
+        </div>
+        <div>
+            <div class="card danger">
                 <h4>&#x274C; When NOT to Use a Spike</h4>
                 <ul style="font-size:0.82em;">
-                    <li>The team is just <strong>uncomfortable estimating</strong> &mdash; push through it</li>
-                    <li>The question can be answered by a <strong>15-minute conversation</strong></li>
-                    <li>As an excuse to <strong>avoid committing</strong> to an estimate</li>
-                    <li>When the story is simply <strong>too large</strong> &mdash; split it instead</li>
+                    <li class="fragment">The team is just <strong>uncomfortable estimating</strong> &mdash; push through it</li>
+                    <li class="fragment">The question can be answered by a <strong>15-minute conversation</strong></li>
+                    <li class="fragment">As an excuse to <strong>avoid committing</strong> to an estimate</li>
+                    <li class="fragment">When the story is simply <strong>too large</strong> &mdash; split it instead</li>
                 </ul>
             </div>
         </div>
     </div>
+    <div class="highlight-box warning fragment" style="margin-top:0.8em;">
+        <strong>&#x26A0;&#xFE0F; Rule of Thumb:</strong> If a team is running more than <strong>2 spikes per sprint</strong>, the backlog needs more refinement work upstream.
+    </div>
     <aside class="notes">
-        Spikes are one of the most valuable but also most misused tools in Agile. A spike is appropriate when the team genuinely cannot estimate because they lack critical information. The key constraint is the time-box. A spike should be 1-3 days maximum. If the question cannot be answered in that time, the question is too broad and needs to be decomposed. The output of a spike is knowledge, not production code. Any prototype code written during a spike should be discarded and rewritten properly.
+        Walk through the two lists carefully. On the left, the legitimate use cases: genuine unknowns that block estimation. On the right, the misuses: discomfort is not the same as inability. If the team can have a short conversation and resolve the uncertainty, a spike is overkill. If the story is simply large, the answer is decomposition, not a spike. The rule of thumb about 2 spikes per sprint is a useful guardrail.
     </aside>
 </section>
 
@@ -1029,7 +1047,7 @@
             <div class="card">
                 <h4>&#x1F9E0; What Is a "Get Smart" Story?</h4>
                 <p style="font-size:0.82em;">A spike variant focused on <strong>reducing estimation uncertainty</strong> for specific upcoming stories.</p>
-                <div class="architecture-box" style="font-family:'Segoe UI',sans-serif; font-size:0.75em; text-align:left;">
+                <div class="architecture-box" style="font-family:'Segoe UI',sans-serif; font-size:0.68em; text-align:left;">
                     <strong>Format:</strong><br>
                     <span style="color:var(--accent-color);">As a</span> development team,<br>
                     <span style="color:var(--accent-color);">We want to</span> investigate [specific question],<br>
@@ -1038,9 +1056,9 @@
             </div>
             <div class="card warning fragment" style="margin-top:0.5em;">
                 <h4>&#x1F4CB; Examples</h4>
-                <ul style="font-size:0.78em;">
-                    <li><strong>"Get Smart on Payment Gateway"</strong><br><span style="color:#718096;">Stripe vs Braintree: capabilities, latency, effort</span></li>
-                    <li><strong>"Get Smart on Real-Time Updates"</strong><br><span style="color:#718096;">WebSocket vs SSE: prototype and measure limits</span></li>
+                <ul style="font-size:0.75em;">
+                    <li><strong>"Get Smart on Payment Gateway"</strong> &mdash; <span style="color:#718096;">compare Stripe vs Braintree</span></li>
+                    <li><strong>"Get Smart on Real-Time Updates"</strong> &mdash; <span style="color:#718096;">prototype WebSocket vs SSE</span></li>
                 </ul>
             </div>
         </div>
@@ -1058,7 +1076,7 @@
             </div>
             <div class="highlight-box fragment" style="margin-top:0.5em;">
                 <strong>&#x1F4CA; Tracking Spikes:</strong>
-                <ul style="font-size:0.8em; margin-top:0.2em;">
+                <ul style="font-size:0.75em; margin-top:0.2em;">
                     <li>Estimated in <strong>hours</strong>, not story points</li>
                     <li>Do <strong>not count toward velocity</strong></li>
                     <li>&gt;2 spikes/sprint = backlog needs more refinement</li>
@@ -1077,12 +1095,12 @@
     <div class="lab-number">3</div>
     <h2>Lab 3: Story Decomposition and INVEST Workshop</h2>
     <p style="font-size:1.1em; margin:0.8em 0;">Hands-on practice applying the concepts from this module</p>
-    <ul style="font-size:0.9em; text-align:left; display:inline-block;">
-        <li class="fragment">&#x1F4E6; <strong>Part A:</strong> Take a provided epic and decompose it through themes, features, user stories, and tasks</li>
-        <li class="fragment">&#x1F4D6; <strong>Part B:</strong> Evaluate a set of pre-written stories against the INVEST criteria and improve them</li>
-        <li class="fragment">&#x2702;&#xFE0F; <strong>Part C:</strong> Practice splitting large stories using the vertical slice patterns</li>
-        <li class="fragment">&#x1F9EA; <strong>Part D:</strong> Identify stories that need spikes and write "Get Smart" stories for them</li>
-        <li class="fragment">&#x1F5D3;&#xFE0F; <strong>Part E:</strong> Build a mini release plan mapping your stories to 3 iterations</li>
+    <ul style="font-size:0.82em; text-align:left; display:inline-block;">
+        <li class="fragment">&#x1F4E6; <strong>Part A:</strong> Decompose an epic into themes, features, and stories</li>
+        <li class="fragment">&#x1F4D6; <strong>Part B:</strong> Evaluate stories against INVEST and improve them</li>
+        <li class="fragment">&#x2702;&#xFE0F; <strong>Part C:</strong> Split large stories using vertical slice patterns</li>
+        <li class="fragment">&#x1F9EA; <strong>Part D:</strong> Write "Get Smart" stories for uncertain items</li>
+        <li class="fragment">&#x1F5D3;&#xFE0F; <strong>Part E:</strong> Build a mini release plan across 3 iterations</li>
     </ul>
     <p class="fragment" style="margin-top:1em; font-size:0.95em; opacity:0.9;">
         <strong>Duration:</strong> 60-75 minutes &bull; <strong>Format:</strong> Teams of 3-4
@@ -1096,14 +1114,14 @@
 <section>
     <h2>&#x1F3AF; Key Takeaways</h2>
     <ul class="takeaway-list">
-        <li class="fragment"><strong>&#x1F4E6; Decompose relentlessly:</strong> Break epics into themes, features, stories, and tasks. Smaller items yield more accurate estimates and expose hidden complexity.</li>
-        <li class="fragment"><strong>&#x1F5D3;&#xFE0F; Release plans are living documents:</strong> Update them every 2-3 sprints as real velocity data replaces forecasts. Fix the date, flex the scope.</li>
-        <li class="fragment"><strong>&#x1F3F7;&#xFE0F; Themes connect work to strategy:</strong> Use themes to track investment allocation across business value streams and communicate priorities to stakeholders.</li>
-        <li class="fragment"><strong>&#x1F4D6; INVEST in every story:</strong> Independent, Negotiable, Valuable, Estimable, Small, and Testable. Stories that fail INVEST criteria will undermine estimation accuracy.</li>
-        <li class="fragment"><strong>&#x1F4A7; Avoid the Hidden Waterfall:</strong> Every sprint must deliver working software through vertical slices, not horizontal phase-based work.</li>
-        <li class="fragment"><strong>&#x1F4DA; Groom the iceberg:</strong> Keep the top of the backlog refined and sprint-ready. Use the Definition of Ready as your quality gate.</li>
-        <li class="fragment"><strong>&#x1F4CF; Choose scales wisely:</strong> Fibonacci for sprint/release planning precision, T-shirt sizing for roadmap-level speed.</li>
-        <li class="fragment"><strong>&#x1F9EA; Spike before you guess:</strong> When you cannot estimate, invest in a time-boxed spike. Knowledge is cheaper than wrong estimates.</li>
+        <li class="fragment"><strong>&#x1F4E6; Decompose relentlessly:</strong> Smaller items yield more accurate estimates and expose hidden complexity.</li>
+        <li class="fragment"><strong>&#x1F5D3;&#xFE0F; Release plans are living documents:</strong> Update every 2-3 sprints; fix the date, flex the scope.</li>
+        <li class="fragment"><strong>&#x1F3F7;&#xFE0F; Themes connect work to strategy:</strong> Track capacity allocation across business value streams.</li>
+        <li class="fragment"><strong>&#x1F4D6; INVEST in every story:</strong> Independent, Negotiable, Valuable, Estimable, Small, Testable.</li>
+        <li class="fragment"><strong>&#x1F4A7; Avoid the Hidden Waterfall:</strong> Deliver working software each sprint via vertical slices.</li>
+        <li class="fragment"><strong>&#x1F4DA; Groom the iceberg:</strong> Keep the backlog top refined; use the Definition of Ready.</li>
+        <li class="fragment"><strong>&#x1F4CF; Choose scales wisely:</strong> Fibonacci for precision, T-shirt sizing for speed.</li>
+        <li class="fragment"><strong>&#x1F9EA; Spike before you guess:</strong> Time-boxed research is cheaper than wrong estimates.</li>
     </ul>
     <aside class="notes">
         Review each takeaway and connect it back to the module content. Emphasize that these eight principles work together as a system. Decomposition feeds good stories, good stories enable accurate estimation, accurate estimation enables reliable release planning, and reliable release planning enables trust between the development team and the business. In the next module, we will build on this foundation by diving deep into relative sizing techniques.

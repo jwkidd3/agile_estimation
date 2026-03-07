@@ -807,27 +807,18 @@
                             </tbody>
                         </table>
                     </div>
-                    <div>
+                    <div style="font-size: 0.8em;">
                         <div class="card success fragment">
                             <h4>&#x1F6E0;&#xFE0F; Prevention</h4>
-                            <ul style="font-size: 0.85em;">
-                                <li>Strong Definition of Done</li>
-                                <li>Code reviews, TDD/ATTD, CI</li>
-                            </ul>
+                            <p style="margin: 0;">Strong DoD, code reviews, TDD, CI</p>
                         </div>
                         <div class="card fragment">
                             <h4>&#x1F4CA; Detection</h4>
-                            <ul style="font-size: 0.85em;">
-                                <li>Defect escape rate, regression rate</li>
-                                <li>Stories reopened</li>
-                            </ul>
+                            <p style="margin: 0;">Defect escape rate, stories reopened</p>
                         </div>
                         <div class="card warning fragment">
                             <h4>&#x1F504; Correction</h4>
-                            <ul style="font-size: 0.85em;">
-                                <li>Capacity for debt paydown</li>
-                                <li>Adjust forecasts for quality trends</li>
-                            </ul>
+                            <p style="margin: 0;">Debt paydown capacity, forecast adjustments</p>
                         </div>
                     </div>
                 </div>
@@ -891,14 +882,14 @@
                 <div class="two-columns">
                     <div class="architecture-box">
                         <h4>Vanity vs. Actionable</h4>
-                        <table>
+                        <table style="font-size: 0.75em;">
                             <thead>
                                 <tr><th>Vanity</th><th>Actionable Alternative</th></tr>
                             </thead>
                             <tbody>
-                                <tr class="fragment"><td>Total stories completed</td><td><strong>Story points + value delivered</strong></td></tr>
-                                <tr class="fragment"><td>Lines of code written</td><td><strong>Features shipped to users</strong></td></tr>
-                                <tr class="fragment"><td>Team utilization %</td><td><strong>Throughput</strong> (items/week)</td></tr>
+                                <tr class="fragment"><td>Total stories completed</td><td><strong>Points + value delivered</strong></td></tr>
+                                <tr class="fragment"><td>Lines of code written</td><td><strong>Features shipped</strong></td></tr>
+                                <tr class="fragment"><td>Team utilization %</td><td><strong>Throughput (items/wk)</strong></td></tr>
                                 <tr class="fragment"><td>Velocity always increasing</td><td><strong>Velocity stability</strong></td></tr>
                                 <tr class="fragment"><td>Bug count = 0</td><td><strong>Defect escape rate</strong></td></tr>
                             </tbody>
@@ -906,15 +897,15 @@
                     </div>
                     <div class="architecture-box">
                         <h4>&#x1F4C5; When to Measure What</h4>
-                        <table>
+                        <table style="font-size: 0.75em;">
                             <thead>
                                 <tr><th>Cadence</th><th>Metrics</th></tr>
                             </thead>
                             <tbody>
                                 <tr class="fragment"><td><strong>Daily</strong></td><td>WIP, blocked items, burndown</td></tr>
-                                <tr class="fragment"><td><strong>Per Sprint</strong></td><td>Velocity, goal success, defects, cycle time</td></tr>
-                                <tr class="fragment"><td><strong>Per Release</strong></td><td>Burnup, scope change %, forecast accuracy</td></tr>
-                                <tr class="fragment"><td><strong>Quarterly</strong></td><td>Velocity trends, estimation accuracy</td></tr>
+                                <tr class="fragment"><td><strong>Per Sprint</strong></td><td>Velocity, defects, cycle time</td></tr>
+                                <tr class="fragment"><td><strong>Per Release</strong></td><td>Burnup, scope change %</td></tr>
+                                <tr class="fragment"><td><strong>Quarterly</strong></td><td>Velocity trends, accuracy</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -985,24 +976,12 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="architecture-box">
+                    <div class="architecture-box" style="font-size: 0.78em;">
                         <h4>&#x1F4B0; ROI: 12-Sprint Comparison</h4>
-                        <div class="two-columns" style="gap: 10px;">
-                            <div class="card danger">
-                                <h4 style="font-size: 0.85em;">Without Refactoring</h4>
-                                <ul style="font-size: 0.75em;">
-                                    <li>Velocity: 26 &rarr; 22 &rarr; 18</li>
-                                    <li>Total: <strong>264 pts</strong></li>
-                                </ul>
-                            </div>
-                            <div class="card success">
-                                <h4 style="font-size: 0.85em;">With 15% Refactoring</h4>
-                                <ul style="font-size: 0.75em;">
-                                    <li>Velocity: 22 &rarr; 23 &rarr; 24</li>
-                                    <li>Total: <strong>276 pts</strong></li>
-                                </ul>
-                            </div>
-                        </div>
+                        <ul style="margin: 8px 0;">
+                            <li><span style="color: var(--danger-color); font-weight: bold;">Without Refactoring:</span> Velocity 26 &rarr; 22 &rarr; 18 = <strong>264 pts</strong></li>
+                            <li><span style="color: var(--success-color); font-weight: bold;">With 15% Refactoring:</span> Velocity 22 &rarr; 23 &rarr; 24 = <strong>276 pts</strong></li>
+                        </ul>
                     </div>
                 </div>
                 <div class="highlight-box fragment">
@@ -1067,14 +1046,14 @@
                 <h2>&#x1F9EA; TDD/ATTD Impact on Forecasting</h2>
                 <div class="architecture-box">
                     <h4>&#x1F4CA; Measured Impact Over Time</h4>
-                    <table>
+                    <table style="font-size: 0.75em;">
                         <thead>
-                            <tr><th>Metric</th><th>Without TDD/ATTD</th><th>With TDD/ATTD (6+ mo)</th><th>Forecasting Impact</th></tr>
+                            <tr><th>Metric</th><th>Without</th><th>With (6+ mo)</th><th>Forecast Effect</th></tr>
                         </thead>
                         <tbody>
-                            <tr class="fragment"><td>Defect Escape Rate</td><td>15-25/release</td><td style="color: var(--success-color); font-weight: bold;">3-8/release</td><td>Less unplanned rework</td></tr>
-                            <tr class="fragment"><td>Stories Reopened</td><td>20-30%</td><td style="color: var(--success-color); font-weight: bold;">5-10%</td><td>Predictable throughput</td></tr>
-                            <tr class="fragment"><td>Velocity Variance</td><td>&plusmn;35-50%</td><td style="color: var(--success-color); font-weight: bold;">&plusmn;10-20%</td><td>Narrower forecast ranges</td></tr>
+                            <tr class="fragment"><td>Defect Escapes</td><td>15-25/rel</td><td style="color: var(--success-color); font-weight: bold;">3-8/rel</td><td>Less rework</td></tr>
+                            <tr class="fragment"><td>Stories Reopened</td><td>20-30%</td><td style="color: var(--success-color); font-weight: bold;">5-10%</td><td>Stable throughput</td></tr>
+                            <tr class="fragment"><td>Velocity Variance</td><td>&plusmn;35-50%</td><td style="color: var(--success-color); font-weight: bold;">&plusmn;10-20%</td><td>Narrower ranges</td></tr>
                             <tr class="fragment"><td>Avg. Cycle Time</td><td>5-8 days</td><td style="color: var(--success-color); font-weight: bold;">2-4 days</td><td>Faster delivery</td></tr>
                         </tbody>
                     </table>
@@ -1350,38 +1329,29 @@
             </section>
 
             <section>
-                <h2>&#x1F3C6; Top 10 Takeaways &amp; Your Toolkit</h2>
+                <h2>&#x1F3C6; Top 7 Takeaways &amp; Your Toolkit</h2>
                 <div class="two-columns">
                     <div>
-                        <div class="highlight-box" style="padding: 12px 18px; margin: 6px 0; font-size: 0.85em;">
+                        <div class="highlight-box" style="padding: 8px 14px; margin: 4px 0; font-size: 0.85em;">
                             <strong>1.</strong> Estimation is about <strong>shared understanding</strong>, not perfect prediction
                         </div>
-                        <div class="highlight-box" style="padding: 12px 18px; margin: 6px 0; font-size: 0.85em;">
+                        <div class="highlight-box" style="padding: 8px 14px; margin: 4px 0; font-size: 0.85em;">
                             <strong>2.</strong> Relative sizing outperforms absolute estimation
                         </div>
-                        <div class="highlight-box" style="padding: 12px 18px; margin: 6px 0; font-size: 0.85em;">
+                        <div class="highlight-box" style="padding: 8px 14px; margin: 4px 0; font-size: 0.85em;">
                             <strong>3.</strong> Velocity is a <strong>forecasting tool</strong>, not a performance metric
                         </div>
-                        <div class="highlight-box" style="padding: 12px 18px; margin: 6px 0; font-size: 0.85em;">
+                        <div class="highlight-box" style="padding: 8px 14px; margin: 4px 0; font-size: 0.85em;">
                             <strong>4.</strong> Communicate forecasts as <strong>ranges with confidence levels</strong>
                         </div>
-                        <div class="highlight-box" style="padding: 12px 18px; margin: 6px 0; font-size: 0.85em;">
+                        <div class="highlight-box" style="padding: 8px 14px; margin: 4px 0; font-size: 0.85em;">
                             <strong>5.</strong> Quality practices are <strong>forecast protection</strong>, not overhead
                         </div>
-                        <div class="highlight-box success" style="padding: 12px 18px; margin: 6px 0; font-size: 0.85em;">
-                            <strong>6.</strong> Smaller stories &rarr; <strong>more accurate estimates</strong>
+                        <div class="highlight-box success" style="padding: 8px 14px; margin: 4px 0; font-size: 0.85em;">
+                            <strong>6.</strong> Feature buffers &gt; time buffers
                         </div>
-                        <div class="highlight-box success" style="padding: 12px 18px; margin: 6px 0; font-size: 0.85em;">
-                            <strong>7.</strong> Feature buffers &gt; time buffers
-                        </div>
-                        <div class="highlight-box success" style="padding: 12px 18px; margin: 6px 0; font-size: 0.85em;">
-                            <strong>8.</strong> Replace estimates with <strong>actuals</strong> as available
-                        </div>
-                        <div class="highlight-box success" style="padding: 12px 18px; margin: 6px 0; font-size: 0.85em;">
-                            <strong>9.</strong> Measure to <strong>improve</strong>, not judge &mdash; Goodhart's Law
-                        </div>
-                        <div class="highlight-box success" style="padding: 12px 18px; margin: 6px 0; font-size: 0.85em;">
-                            <strong>10.</strong> Forecasting accuracy improves with <strong>every sprint</strong>
+                        <div class="highlight-box success" style="padding: 8px 14px; margin: 4px 0; font-size: 0.85em;">
+                            <strong>7.</strong> Measure to <strong>improve</strong>, not judge &mdash; Goodhart's Law
                         </div>
                     </div>
                     <div>
@@ -1394,16 +1364,23 @@
                                     <tr><td><strong>T-Shirt Sizing</strong></td><td>Quick epic/theme estimation</td></tr>
                                     <tr><td><strong>Velocity Tracking</strong></td><td>Sprint capacity measurement</td></tr>
                                     <tr><td><strong>Burnup Charts</strong></td><td>Release progress + scope visibility</td></tr>
-                                    <tr><td><strong>Feature Buffers</strong></td><td>Date protection with scope flex</td></tr>
                                     <tr><td><strong>Monte Carlo</strong></td><td>Probabilistic forecasting</td></tr>
-                                    <tr><td><strong>Throughput</strong></td><td>Mature teams, consistent sizing</td></tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
                 <aside class="notes">
-                    These ten takeaways distill the entire course into actionable principles. Read through each one and invite participants to share which resonated most with them. Ask: "Which of these will change how you work next week?" The toolkit table on the right maps techniques to use cases across the entire course — suggest participants save this as a quick reference guide. No single technique works for everything; the skill is knowing which tool to use in each context.
+                    These seven takeaways distill the entire course into actionable principles. Read through each one and invite participants to share which resonated most with them. Ask: "Which of these will change how you work next week?" The toolkit table on the right maps techniques to use cases across the entire course — suggest participants save this as a quick reference guide. No single technique works for everything; the skill is knowing which tool to use in each context.
+
+                    Additional takeaways to mention verbally:
+                    - Smaller stories lead to more accurate estimates
+                    - Replace estimates with actuals as data becomes available
+                    - Forecasting accuracy improves with every sprint
+
+                    Additional toolkit items to mention:
+                    - Feature Buffers: Date protection with scope flex
+                    - Throughput: Best for mature teams with consistent sizing
                 </aside>
             </section>
 

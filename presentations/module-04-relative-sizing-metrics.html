@@ -840,21 +840,19 @@
                     </div>
                 </div>
                 <div class="two-column fragment">
-                    <div class="highlight-box success">
+                    <div class="highlight-box success" style="font-size: 0.82em;">
                         <h4>Good Reference Story Traits</h4>
                         <ul>
                             <li>Recently completed by the current team</li>
-                            <li>Moderate size (middle of the scale)</li>
-                            <li>Well understood by all team members</li>
+                            <li>Moderate size, well understood by all members</li>
                             <li>Representative of typical work</li>
                         </ul>
                     </div>
-                    <div class="highlight-box warning">
+                    <div class="highlight-box warning" style="font-size: 0.82em;">
                         <h4>Common Mistakes</h4>
                         <ul>
                             <li>Using a story only one person worked on</li>
                             <li>Picking an outlier (too easy or too hard)</li>
-                            <li>Choosing a story from a different project context</li>
                             <li>Never updating the reference as the team evolves</li>
                         </ul>
                     </div>
@@ -916,21 +914,14 @@
                 <h3>Avoiding the Anchoring Trap</h3>
                 <div class="two-column">
                     <div>
-                        <div class="card danger">
+                        <div class="card danger" style="font-size: 0.82em;">
                             <h4>Sequential Estimation</h4>
                             <p>"I think it's a 5."</p>
-                            <p style="font-size: 0.8em; color: #718096;">Everyone hears the first estimate and unconsciously adjusts toward it.</p>
-                            <div class="highlight-box danger" style="margin-top: 10px;">
-                                <strong>Anchoring Bias:</strong> The first number spoken becomes a cognitive anchor. Subsequent estimates cluster around it, reducing the value of diverse perspectives.
-                            </div>
-                        </div>
-                        <div class="card warning fragment">
-                            <h4>HiPPO Effect</h4>
-                            <p><strong>H</strong>ighest <strong>P</strong>aid <strong>P</strong>erson's <strong>O</strong>pinion dominates when estimates are shared sequentially. The tech lead says "3" and everyone agrees.</p>
+                            <p style="font-size: 0.8em; color: #718096;">Everyone hears the first estimate and unconsciously adjusts toward it. This <strong>anchoring bias</strong> causes subsequent estimates to cluster around the first number, reducing diverse perspectives. The <strong>HiPPO effect</strong> (Highest Paid Person's Opinion) amplifies this when a senior voice speaks first.</p>
                         </div>
                     </div>
                     <div>
-                        <div class="card success">
+                        <div class="card success" style="font-size: 0.82em;">
                             <h4>Simultaneous Reveal</h4>
                             <p>"3... 2... 1... Flip!"</p>
                             <p style="font-size: 0.8em; color: #718096;">Every perspective is captured independently before group discussion begins.</p>
@@ -939,7 +930,6 @@
                                 <ul>
                                     <li>Surfaces hidden knowledge and assumptions</li>
                                     <li>Equal voice for all team members</li>
-                                    <li>Identifies genuine disagreement vs. noise</li>
                                     <li>Drives the most valuable discussions</li>
                                 </ul>
                             </div>
@@ -986,29 +976,19 @@
                     </div>
                     <div>
                         <div class="card fragment">
-                            <h4>Tips for Effective Sessions</h4>
+                            <h4>Session Tips &amp; Re-Estimation</h4>
                             <ul>
-                                <li><strong>Time-box the whole session:</strong> 60-90 minutes maximum</li>
-                                <li><strong>Prepare stories in advance:</strong> PO writes clear acceptance criteria beforehand</li>
-                                <li><strong>Keep the reference stories visible:</strong> Post them on the wall or share screen</li>
-                                <li><strong>Celebrate divergence:</strong> Different estimates mean the discussion has value</li>
-                                <li><strong>Use "?" cards</strong> for "I have no idea" -- then discuss what is unknown</li>
-                                <li><strong>Use the infinity card</strong> for "this is too big to estimate -- split it"</li>
-                            </ul>
-                        </div>
-                        <div class="card warning fragment">
-                            <h4>When to Re-Estimate</h4>
-                            <ul>
-                                <li>Scope has significantly changed</li>
-                                <li>Team composition has fundamentally shifted</li>
-                                <li>Technology or approach has changed</li>
-                                <li><strong>Not needed</strong> when velocity already accounts for small changes</li>
+                                <li><strong>Time-box sessions:</strong> 60-90 minutes max; prepare stories in advance</li>
+                                <li><strong>Keep references visible:</strong> Post baseline stories on the wall or screen</li>
+                                <li><strong>Celebrate divergence:</strong> Different estimates mean valuable discussion</li>
+                                <li><strong>Re-estimate only when</strong> scope, team composition, or technology fundamentally changes</li>
+                                <li><strong>Use special cards:</strong> "?" for unknowns, infinity for "must split"</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <aside class="notes">
-                    Managing divergence is where facilitation skill matters most. When you see a spread of 3 steps or more, something important is happening: the team members have genuinely different understandings of the story. This is gold -- it means Planning Poker is surfacing hidden assumptions before they become problems during development. The 2-minute rule prevents analysis paralysis. If after two rounds the team is still split, take the higher number. This builds in a natural safety margin and, over time, velocity will self-correct anyway. Key tips: Prepare stories before the session -- poorly written stories generate long debates about scope rather than size. Keep reference stories visible so the team can say "is this bigger or smaller than the login story we rated a 5?" The question mark card is underused but valuable -- it flags genuine unknowns that might need a spike before the story can be properly estimated. The infinity card forces a conversation about splitting epics into estimable stories.
+                    Managing divergence is where facilitation skill matters most. When you see a spread of 3 steps or more, something important is happening: the team members have genuinely different understandings of the story. This is gold -- it means Planning Poker is surfacing hidden assumptions before they become problems during development. The 2-minute rule prevents analysis paralysis. If after two rounds the team is still split, take the higher number. This builds in a natural safety margin and, over time, velocity will self-correct anyway. Key tips: Prepare stories before the session -- poorly written stories generate long debates about scope rather than size. Keep reference stories visible so the team can say "is this bigger or smaller than the login story we rated a 5?" The question mark card is underused but valuable -- it flags genuine unknowns that might need a spike before the story can be properly estimated. The infinity card forces a conversation about splitting epics into estimable stories. Additional session tips: PO should write clear acceptance criteria beforehand. Record decisions and capture the "why" behind estimates. Rotate facilitator to prevent one person dominating. Re-estimation is not needed when velocity already accounts for small changes.
                 </aside>
             </section>
 
@@ -1127,7 +1107,6 @@
                             <ul>
                                 <li>Velocity steadily increasing without process changes</li>
                                 <li>Stories that used to be "3" are now routinely rated "5"</li>
-                                <li>Management celebrates velocity increases as productivity gains</li>
                                 <li>Team feels pressure to "increase velocity"</li>
                             </ul>
                         </div>
@@ -1138,9 +1117,7 @@
                             <ul>
                                 <li><strong>Maintain reference stories:</strong> Regularly check new estimates against baseline examples</li>
                                 <li><strong>Never use velocity as a performance metric:</strong> It is a planning tool, not a scorecard</li>
-                                <li><strong>Focus on value delivered:</strong> Track outcomes, not output</li>
                                 <li><strong>Periodic recalibration:</strong> Every quarter, re-estimate a few old stories as a sanity check</li>
-                                <li><strong>Protect the team:</strong> Shield estimation from external pressure</li>
                             </ul>
                         </div>
                         <div class="card fragment">
@@ -1148,14 +1125,13 @@
                             <ul>
                                 <li>Entirely new domain with zero reference points</li>
                                 <li>Highly regulated environments requiring exact hour tracking</li>
-                                <li>One-person "teams" (no diversity of perspective)</li>
                                 <li>Stories with extreme uncertainty (use spikes instead)</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <aside class="notes">
-                    Point inflation is the silent killer of estimation reliability. It usually happens when velocity becomes a target rather than a diagnostic. Goodhart's Law applies perfectly here: "When a measure becomes a target, it ceases to be a good measure." Walk through the warning signs and ask participants if they have seen these patterns. The prevention strategies center on one principle: velocity is a planning tool for the team, not a performance metric for management. If the team feels pressure to increase velocity, they will game the system -- and you cannot blame them. The better metric is value delivered per sprint, which we will cover later in this module. Also discuss the legitimate cases where relative sizing does not work well. Pure research spikes, heavily regulated environments that require hour-level audit trails, and situations with zero baseline knowledge may need different approaches. The key is knowing when to use which tool.
+                    Point inflation is the silent killer of estimation reliability. It usually happens when velocity becomes a target rather than a diagnostic. Goodhart's Law applies perfectly here: "When a measure becomes a target, it ceases to be a good measure." Walk through the warning signs and ask participants if they have seen these patterns. Additional warning sign: management celebrating velocity increases as productivity gains. The prevention strategies center on one principle: velocity is a planning tool for the team, not a performance metric for management. Additional prevention strategies to mention verbally: focus on value delivered (track outcomes, not output) and protect the team by shielding estimation from external pressure. If the team feels pressure to increase velocity, they will game the system -- and you cannot blame them. The better metric is value delivered per sprint, which we will cover later in this module. Also discuss the legitimate cases where relative sizing does not work well. Pure research spikes, heavily regulated environments that require hour-level audit trails, one-person "teams" with no diversity of perspective, and situations with zero baseline knowledge may need different approaches. The key is knowing when to use which tool.
                 </aside>
             </section>
 
@@ -1413,10 +1389,8 @@
                             <h4>Team Waterfall Lite</h4>
                             <p><span class="badge red">Hour-Based Estimation</span></p>
                             <ul>
-                                <li class="fragment">Spent <strong>3 days</strong> creating detailed hour estimates for a 6-month project</li>
-                                <li class="fragment">Project plan showed <strong>4,200 hours</strong> of work across the team</li>
-                                <li class="fragment">At month 3, discovered a critical integration was <strong>underestimated by 400%</strong></li>
-                                <li class="fragment">Re-estimation took <strong>another 2 days</strong></li>
+                                <li class="fragment">Spent <strong>3 days</strong> creating detailed hour estimates (4,200 hours planned)</li>
+                                <li class="fragment">At month 3, critical integration <strong>underestimated by 400%</strong></li>
                                 <li class="fragment">Delivered <strong>8 weeks late</strong> despite "precise" planning</li>
                                 <li class="fragment">Team morale: <strong>Low</strong> -- felt set up to fail</li>
                             </ul>
@@ -1427,11 +1401,9 @@
                             <h4>Team Agile Flow</h4>
                             <p><span class="badge green">Relative Estimation + Velocity</span></p>
                             <ul>
-                                <li class="fragment">Spent <strong>2 hours</strong> in Planning Poker to size the initial backlog</li>
-                                <li class="fragment">Backlog sized at <strong>340 story points</strong></li>
-                                <li class="fragment">After 3 sprints, velocity stabilized at <strong>34 points/sprint</strong></li>
-                                <li class="fragment">Forecast: <strong>10 sprints (20 weeks)</strong> with +/- 2 sprint range</li>
-                                <li class="fragment">Delivered in <strong>11 sprints</strong> -- within the forecasted range</li>
+                                <li class="fragment">Spent <strong>2 hours</strong> in Planning Poker to size 340-point backlog</li>
+                                <li class="fragment">Velocity stabilized at <strong>34 points/sprint</strong> after 3 sprints</li>
+                                <li class="fragment">Delivered in <strong>11 sprints</strong> -- within the forecasted 10 +/- 2 range</li>
                                 <li class="fragment">Team morale: <strong>High</strong> -- forecasts were honest and achievable</li>
                             </ul>
                         </div>
@@ -1441,7 +1413,7 @@
                     <strong>Key Difference:</strong> Team Agile Flow did not estimate more accurately -- they estimated more <em>honestly</em>. Their range-based forecast set appropriate expectations, and velocity self-corrected as they learned more about the work.
                 </div>
                 <aside class="notes">
-                    This case study makes the contrast visceral. Walk through both scenarios side by side. Team Waterfall Lite followed the traditional approach: decompose everything into tasks, estimate hours, build a Gantt chart. It looked thorough and professional. But when reality diverged from the plan -- as it always does in software -- the entire plan was invalidated and re-estimation was expensive. Team Agile Flow invested minimal time in estimation upfront, let velocity emerge from actual delivery, and provided a range-based forecast that proved accurate. The key insight is not that Agile teams are better at estimating -- it is that they structure their estimation approach to account for uncertainty rather than pretending it does not exist. The morale difference is significant too: teams that consistently miss "commitments" lose motivation, while teams that regularly meet range-based forecasts build confidence and trust. Ask participants which scenario sounds more familiar from their own experience.
+                    This case study makes the contrast visceral. Walk through both scenarios side by side. Team Waterfall Lite followed the traditional approach: decompose everything into tasks, estimate hours, build a Gantt chart. It looked thorough and professional. The project plan showed 4,200 hours of work across the team. But when reality diverged from the plan -- as it always does in software -- the entire plan was invalidated and re-estimation took another 2 days. Team Agile Flow invested minimal time in estimation upfront, sized the backlog at 340 story points, let velocity emerge from actual delivery, and provided a range-based forecast of 10 sprints (20 weeks) with +/- 2 sprint range that proved accurate. The key insight is not that Agile teams are better at estimating -- it is that they structure their estimation approach to account for uncertainty rather than pretending it does not exist. The morale difference is significant too: teams that consistently miss "commitments" lose motivation, while teams that regularly meet range-based forecasts build confidence and trust. Ask participants which scenario sounds more familiar from their own experience.
                 </aside>
             </section>
 
@@ -1740,12 +1712,7 @@
                             <h4>Weighted Shortest Job First (WSJF)</h4>
                             <div class="highlight-box">
                                 <p><strong>WSJF = Cost of Delay / Job Duration</strong></p>
-                                <p class="small-text">Prioritize the item with the highest WSJF score -- it delivers the most value in the least time.</p>
-                            </div>
-                            <div class="architecture-box fragment">
-                                <h4>WSJF Components (SAFe Model)</h4>
-                                <p><strong>Cost of Delay</strong> = User/Business Value + Time Criticality + Risk Reduction / Opportunity Enablement</p>
-                                <p><strong>Job Duration</strong> = Relative size in story points</p>
+                                <p class="small-text">From SAFe: Cost of Delay combines User/Business Value, Time Criticality, and Risk Reduction. Job Duration is relative size in story points. Prioritize the highest WSJF score.</p>
                             </div>
                             <table class="fragment">
                                 <thead>
@@ -1782,9 +1749,6 @@
                     <div>
                         <div class="card success fragment">
                             <h4>Value Delivered Per Sprint</h4>
-                            <div class="highlight-box success">
-                                <p>Track not just <em>how much</em> the team delivers, but <em>how much value</em> they deliver.</p>
-                            </div>
                             <ul>
                                 <li><strong>Business Value Velocity:</strong> Sum of business value points completed per sprint</li>
                                 <li><strong>Value Efficiency:</strong> Business value delivered / Story points spent</li>
@@ -1793,16 +1757,11 @@
                         </div>
                         <div class="highlight-box fragment">
                             <h4>The Ultimate Goal</h4>
-                            <p>A mature Agile team optimizes for <strong>value throughput</strong>, not point throughput. A sprint delivering 20 high-value points is better than a sprint delivering 40 low-value points.</p>
-                        </div>
-                        <div class="architecture-box fragment">
-                            <h4>Connecting Metrics to Module 4 Themes</h4>
-                            <div class="flow-diagram">
+                            <p>A mature Agile team optimizes for <strong>value throughput</strong>, not point throughput. A sprint delivering 20 high-value points beats 40 low-value points.</p>
+                            <div class="flow-diagram" style="margin-top: 10px; margin-bottom: 0;">
                                 <div class="flow-box">Story Points</div>
                                 <div class="flow-arrow">--></div>
                                 <div class="flow-box">Velocity</div>
-                                <div class="flow-arrow">--></div>
-                                <div class="flow-box">Forecasts</div>
                                 <div class="flow-arrow">--></div>
                                 <div class="flow-box">Business Decisions</div>
                             </div>
@@ -1818,7 +1777,7 @@
                 <h2>&#x1F4B0; Putting It All Together</h2>
                 <h3>The Complete Metrics Dashboard</h3>
                 <div class="architecture-box">
-                    <table>
+                    <table style="font-size: 0.75em;">
                         <thead>
                             <tr>
                                 <th>Category</th>
@@ -1831,38 +1790,38 @@
                             <tr class="fragment">
                                 <td><strong>Estimation</strong></td>
                                 <td>Story points, reference stories</td>
-                                <td>Development team</td>
-                                <td>Per story (Planning Poker)</td>
+                                <td>Dev Team</td>
+                                <td>Per story</td>
                             </tr>
                             <tr class="fragment">
                                 <td><strong>Throughput</strong></td>
                                 <td>Velocity, completion rate</td>
-                                <td>Team + Scrum Master</td>
+                                <td>Team, SM</td>
                                 <td>Per sprint</td>
                             </tr>
                             <tr class="fragment">
                                 <td><strong>Progress</strong></td>
                                 <td>Burn-down, burn-up, CFD</td>
-                                <td>Team + stakeholders</td>
-                                <td>Daily / per sprint</td>
+                                <td>Team, Stakeholders</td>
+                                <td>Daily / sprint</td>
                             </tr>
                             <tr class="fragment">
                                 <td><strong>Forecasting</strong></td>
                                 <td>Velocity-based projections</td>
-                                <td>Product Owner + management</td>
-                                <td>Per sprint / per release</td>
+                                <td>PO, Mgmt</td>
+                                <td>Sprint / release</td>
                             </tr>
                             <tr class="fragment">
                                 <td><strong>Financial</strong></td>
                                 <td>Cost per point, feature cost</td>
-                                <td>Management + PMO</td>
-                                <td>Per release / quarterly</td>
+                                <td>Mgmt, PMO</td>
+                                <td>Release / quarterly</td>
                             </tr>
                             <tr class="fragment">
                                 <td><strong>Value</strong></td>
                                 <td>Business value, WSJF, CoD</td>
-                                <td>Product Owner + stakeholders</td>
-                                <td>Per feature / per release</td>
+                                <td>PO, Stakeholders</td>
+                                <td>Feature / release</td>
                             </tr>
                         </tbody>
                     </table>
@@ -1886,21 +1845,19 @@
                     <div>
                         <h4 style="color: #bee3f8 !important;">Part 1: Planning Poker Simulation</h4>
                         <ul>
-                            <li>Form teams of 4-6 participants</li>
-                            <li>Establish a reference story baseline together</li>
+                            <li>Form teams and establish a reference baseline</li>
                             <li>Run Planning Poker on 8-10 user stories</li>
-                            <li>Practice handling outlier estimates and driving consensus</li>
-                            <li>Record your team's estimates for all stories</li>
+                            <li>Practice handling outliers and consensus</li>
+                            <li>Record estimates for all stories</li>
                         </ul>
                     </div>
                     <div>
                         <h4 style="color: #bee3f8 !important;">Part 2: Velocity &amp; Forecasting</h4>
                         <ul>
-                            <li>Given 6 sprints of historical velocity data, calculate average velocity and range</li>
-                            <li>Use your velocity to forecast a release date for a 200-point backlog</li>
-                            <li>Generate optimistic, likely, and pessimistic scenarios</li>
+                            <li>Calculate average velocity from 6 sprints</li>
+                            <li>Forecast a release with optimistic/pessimistic ranges</li>
                             <li>Calculate cost-per-point and feature costs</li>
-                            <li>Apply WSJF to prioritize a set of features</li>
+                            <li>Apply WSJF to prioritize features</li>
                         </ul>
                     </div>
                 </div>
