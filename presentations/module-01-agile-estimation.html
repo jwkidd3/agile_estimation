@@ -1,0 +1,960 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1: Agile Estimation — Agile Project Estimation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css">
+    <style>
+        :root {
+            --heading-color: #1a365d;
+            --accent-color: #2b6cb0;
+            --success-color: #2f855a;
+            --warning-color: #c05621;
+            --danger-color: #c53030;
+            --text-color: #2d3748;
+            --light-bg: #f7fafc;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+        }
+
+        .reveal {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+        }
+
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+            color: var(--heading-color);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .reveal h1 { font-size: 2.2em; }
+        .reveal h2 { font-size: 1.6em; margin-bottom: 0.6em; }
+        .reveal h3 { font-size: 1.3em; color: var(--accent-color); }
+
+        /* Title Slide */
+        .title-slide h1 {
+            color: #ffffff;
+            font-size: 2.6em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 0.2em;
+        }
+        .title-slide h2 {
+            color: #bee3f8;
+            font-size: 1.4em;
+            font-weight: 400;
+        }
+        .title-slide h3 {
+            color: #90cdf4;
+            font-size: 1.0em;
+            font-weight: 300;
+        }
+        .title-slide .course-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 8px 24px;
+            border-radius: 30px;
+            color: #ffffff;
+            font-size: 0.8em;
+            margin-top: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%);
+            border-left: 5px solid var(--accent-color);
+            padding: 20px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 20px 0;
+            font-size: 0.92em;
+        }
+        .highlight-box.success {
+            background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+            border-left-color: var(--success-color);
+        }
+        .highlight-box.warning {
+            background: linear-gradient(135deg, #fffaf0 0%, #feebc8 100%);
+            border-left-color: var(--warning-color);
+        }
+        .highlight-box.danger {
+            background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+            border-left-color: var(--danger-color);
+        }
+
+        /* Two Column Layout */
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+            margin-top: 20px;
+        }
+        .two-columns .column {
+            text-align: left;
+        }
+
+        /* Three Column Layout */
+        .three-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            align-items: start;
+            margin-top: 20px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+        .card h4 {
+            margin-top: 0;
+            color: var(--accent-color);
+            font-size: 1.0em;
+        }
+        .card p, .card li {
+            font-size: 0.82em;
+            line-height: 1.5;
+        }
+
+        /* Lists */
+        .reveal ul, .reveal ol {
+            margin-left: 0;
+        }
+        .reveal li {
+            font-size: 0.88em;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+        .reveal ul ul li {
+            font-size: 0.95em;
+            color: #4a5568;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background: var(--card-bg);
+            border: 2px solid var(--accent-color);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin: 16px 0;
+            text-align: left;
+        }
+        .concept-box h4 {
+            color: var(--accent-color);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        /* Emoji Header */
+        .emoji-header {
+            font-size: 1.1em;
+        }
+        .emoji-header .emoji {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+
+        /* Key Point */
+        .key-point {
+            font-size: 1.15em;
+            color: var(--accent-color);
+            font-weight: 600;
+            font-style: italic;
+            text-align: center;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        /* Quote Style */
+        .reveal blockquote {
+            background: var(--light-bg);
+            border-left: 5px solid var(--accent-color);
+            padding: 20px 28px;
+            margin: 20px auto;
+            width: 85%;
+            font-style: italic;
+            border-radius: 0 8px 8px 0;
+            color: #4a5568;
+        }
+        .reveal blockquote cite {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.85em;
+            color: var(--accent-color);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        /* Lab Callout */
+        .lab-callout h2, .lab-callout h3, .lab-callout p, .lab-callout li {
+            color: #ffffff !important;
+        }
+        .lab-callout .lab-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            border: 2px solid rgba(255,255,255,0.5);
+            padding: 10px 30px;
+            border-radius: 30px;
+            color: #ffffff;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .lab-callout .lab-description {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 20px auto;
+            max-width: 80%;
+            backdrop-filter: blur(4px);
+        }
+        .lab-callout ul {
+            text-align: left;
+            display: inline-block;
+        }
+
+        /* Section Divider */
+        .section-divider h2 {
+            color: #ffffff;
+            font-size: 2.0em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .section-divider h3 {
+            color: #bee3f8;
+            font-weight: 400;
+        }
+
+        /* Takeaway List */
+        .takeaway-list li {
+            font-size: 0.9em;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .takeaway-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Questions Slide */
+        .questions-slide h2 {
+            color: #ffffff;
+            font-size: 2.4em;
+        }
+        .questions-slide p {
+            color: #bee3f8;
+            font-size: 1.1em;
+        }
+
+        /* Comparison Table */
+        .reveal table {
+            margin: 20px auto;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            font-size: 0.82em;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .reveal table th {
+            background: var(--heading-color);
+            color: #ffffff;
+            padding: 14px 20px;
+            font-weight: 600;
+        }
+        .reveal table td {
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .reveal table tr:nth-child(even) td {
+            background: var(--light-bg);
+        }
+
+        /* Diagram/Visual Container */
+        .visual-container {
+            background: var(--light-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 16px auto;
+            text-align: center;
+        }
+
+        /* Cone diagram */
+        .cone-levels {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            margin: 20px auto;
+        }
+        .cone-level {
+            padding: 10px;
+            border-radius: 8px;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.82em;
+            text-align: center;
+        }
+
+        /* Progress indicator */
+        .module-progress {
+            position: fixed;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(26, 54, 93, 0.85);
+            color: #ffffff;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.55em;
+            z-index: 100;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Bias card */
+        .bias-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 16px 20px;
+            border-left: 4px solid var(--warning-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+            margin-bottom: 12px;
+            text-align: left;
+        }
+        .bias-card h4 {
+            color: var(--warning-color);
+            margin: 0 0 6px 0;
+            font-size: 0.9em;
+        }
+        .bias-card p {
+            margin: 0;
+            font-size: 0.78em;
+            color: #4a5568;
+        }
+
+        /* Slide number styling */
+        .reveal .slide-number {
+            background: var(--heading-color);
+            color: #ffffff;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.7em;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- ============================================================
+                 SLIDE 1: TITLE SLIDE
+                 ============================================================ -->
+            <section data-background="linear-gradient(135deg, #2b6cb0 0%, #1a365d 100%)" class="title-slide">
+                <h1>📐 Agile Estimation</h1>
+                <h2>Module 1</h2>
+                <h3>Foundations of Estimating in an Agile World</h3>
+                <div class="course-badge">Agile Project Estimation — 2-Day Course</div>
+                <aside class="notes">
+                    Welcome to Module 1 of the Agile Project Estimation course. This module sets the foundation for everything we'll cover over the next two days. We'll explore why Agile estimation is fundamentally different from traditional estimation methods, how the Agile framework provides the discipline needed for effective estimation, and why the human element remains crucial even in a data-driven world. The goal is to shift your mental model from "estimation as a one-time activity" to "estimation as a continuous, team-driven practice."
+                </aside>
+            </section>
+
+            <!-- ============================================================
+                 SLIDE 2: MODULE OBJECTIVES
+                 ============================================================ -->
+            <section>
+                <h2><span class="emoji">🎯</span> Module Objectives</h2>
+                <div class="highlight-box">
+                    <p><strong>By the end of this module, you will be able to:</strong></p>
+                </div>
+                <ul>
+                    <li class="fragment fade-up"><strong>Explain</strong> why Agile requires <em>more</em> discipline than traditional approaches, not less</li>
+                    <li class="fragment fade-up"><strong>Describe</strong> how the "Agile Microscope" progressively refines estimates through levels of planning</li>
+                    <li class="fragment fade-up"><strong>Apply</strong> the Cone of Uncertainty to set realistic expectations with stakeholders</li>
+                    <li class="fragment fade-up"><strong>Recognize</strong> cognitive biases that distort estimation accuracy</li>
+                    <li class="fragment fade-up"><strong>Articulate</strong> why team-based judgment combined with empirical data produces the best estimates</li>
+                </ul>
+                <aside class="notes">
+                    Walk through each objective. Emphasize that these are foundational concepts that will recur throughout the entire course. Module 1 is about building the right mental model before we dive into specific techniques like story points, planning poker, and velocity tracking in later modules. Ask participants what their current estimation challenges are — this helps you tailor examples throughout the day.
+                </aside>
+            </section>
+
+            <!-- ============================================================
+                 SECTION: AGILE MEANS DISCIPLINE
+                 ============================================================ -->
+            <section data-background="linear-gradient(135deg, #2b6cb0 0%, #1a365d 100%)" class="section-divider">
+                <h2>🏗️ Agile Means Discipline</h2>
+                <h3>Structure enables agility — not the other way around</h3>
+                <aside class="notes">
+                    This is the first major theme. One of the most pervasive myths about Agile is that it means "no plan" or "we just wing it." In reality, Agile demands far more discipline than waterfall because you are planning, estimating, and reflecting continuously rather than once at the start of a project. This section directly addresses that misconception.
+                </aside>
+            </section>
+
+            <!-- SLIDE: The Discipline Myth -->
+            <section>
+                <h2><span class="emoji">🏗️</span> The Discipline Myth</h2>
+                <div class="two-columns">
+                    <div class="column">
+                        <div class="card">
+                            <h4>❌ What People Think Agile Is</h4>
+                            <ul>
+                                <li class="fragment fade-up">No planning required</li>
+                                <li class="fragment fade-up">Estimates are optional</li>
+                                <li class="fragment fade-up">"We'll figure it out as we go"</li>
+                                <li class="fragment fade-up">Documentation is unnecessary</li>
+                                <li class="fragment fade-up">Chaos with sticky notes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <h4>✅ What Agile Actually Requires</h4>
+                            <ul>
+                                <li class="fragment fade-up"><strong>Continuous</strong> planning at multiple levels</li>
+                                <li class="fragment fade-up"><strong>Regular</strong> estimation and re-estimation</li>
+                                <li class="fragment fade-up"><strong>Disciplined</strong> iteration and inspection</li>
+                                <li class="fragment fade-up"><strong>Just enough</strong> documentation, just in time</li>
+                                <li class="fragment fade-up"><strong>Structured</strong> ceremonies with clear purposes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="fragment fade-up">
+                    <div class="key-point">"Agile without discipline is just chaos with a trendy name."</div>
+                </div>
+                <aside class="notes">
+                    Start by polling the room: "How many of you have heard a manager say 'We're Agile, so we don't need a plan'?" This is arguably the most damaging misconception in modern software development. Agile does not eliminate planning — it distributes planning across the entire lifecycle. In traditional waterfall, you plan once (often poorly) and then execute. In Agile, you plan continuously, which means you need MORE discipline to maintain the cadence of planning, estimating, delivering, and reflecting. The Agile Manifesto says "responding to change over following a plan" — but it also says there is value in items on the right. Planning has value. Agile just changes when and how often you do it.
+                </aside>
+            </section>
+
+            <!-- SLIDE: Ceremonies & Artifacts -->
+            <section>
+                <h2><span class="emoji">🏗️</span> Ceremonies That Create Estimation Discipline</h2>
+                <p style="font-size: 0.88em; color: #4a5568; margin-bottom: 16px;">Each Scrum ceremony plays a specific role in building estimation capability:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ceremony</th>
+                            <th>Estimation Role</th>
+                            <th>Frequency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="fragment fade-up">
+                            <td><strong>Backlog Refinement</strong></td>
+                            <td>Size and estimate upcoming work; break down epics into stories</td>
+                            <td>1–2x per sprint</td>
+                        </tr>
+                        <tr class="fragment fade-up">
+                            <td><strong>Sprint Planning</strong></td>
+                            <td>Commit to sprint scope based on capacity and velocity</td>
+                            <td>Every sprint</td>
+                        </tr>
+                        <tr class="fragment fade-up">
+                            <td><strong>Daily Stand-up</strong></td>
+                            <td>Surface impediments; re-assess remaining work daily</td>
+                            <td>Daily</td>
+                        </tr>
+                        <tr class="fragment fade-up">
+                            <td><strong>Sprint Review</strong></td>
+                            <td>Validate estimates against delivered value; gather feedback</td>
+                            <td>Every sprint</td>
+                        </tr>
+                        <tr class="fragment fade-up">
+                            <td><strong>Sprint Retrospective</strong></td>
+                            <td>Improve estimation process; calibrate team understanding</td>
+                            <td>Every sprint</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <aside class="notes">
+                    Walk through each ceremony and its role in building better estimates over time. The key insight is that estimation is not a separate activity — it is woven into the fabric of every ceremony. Backlog refinement is where the heavy lifting of estimation happens: the team discusses stories, asks clarifying questions, identifies unknowns, and sizes work. Sprint planning then uses those estimates to determine capacity. The daily stand-up provides real-time feedback on whether the current sprint's estimates were accurate. The review and retrospective close the feedback loop. Emphasize that without this discipline — without consistently performing these ceremonies — your estimates will never improve. Teams that skip refinement or retrospectives are flying blind.
+                </aside>
+            </section>
+
+            <!-- SLIDE: Sprint Cadence as Framework -->
+            <section>
+                <h2><span class="emoji">🏗️</span> Sprint Cadence as an Estimation Framework</h2>
+                <div class="highlight-box">
+                    <strong>The fixed timebox is your most powerful estimation tool.</strong> A consistent sprint cadence creates a reliable feedback loop that calibrates your team's estimates over time.
+                </div>
+                <div class="two-columns">
+                    <div class="column">
+                        <div class="concept-box">
+                            <h4>🔄 The Calibration Loop</h4>
+                            <ol>
+                                <li class="fragment fade-up"><strong>Estimate</strong> — Size stories before the sprint</li>
+                                <li class="fragment fade-up"><strong>Commit</strong> — Select work based on velocity</li>
+                                <li class="fragment fade-up"><strong>Execute</strong> — Deliver within the timebox</li>
+                                <li class="fragment fade-up"><strong>Measure</strong> — Track actual vs. estimated</li>
+                                <li class="fragment fade-up"><strong>Adjust</strong> — Refine future estimates</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="concept-box">
+                            <h4>📈 Why Cadence Matters</h4>
+                            <ul>
+                                <li class="fragment fade-up"><strong>Predictability</strong> — Regular rhythm builds reliable velocity data</li>
+                                <li class="fragment fade-up"><strong>Fast feedback</strong> — 2-week loops surface estimation errors quickly</li>
+                                <li class="fragment fade-up"><strong>Normalization</strong> — Team develops shared understanding of "size"</li>
+                                <li class="fragment fade-up"><strong>Accountability</strong> — Short cycles keep estimates honest</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    The sprint timebox is the unsung hero of Agile estimation. By committing to a fixed, repeating timebox, teams create a natural experiment every sprint: "We estimated X points of work. Did we complete X points of work?" Over time, this feedback loop is extraordinarily powerful. Teams that maintain a consistent cadence (e.g., always 2-week sprints) build up velocity data that makes forecasting increasingly accurate. Emphasize that changing sprint length frequently destroys this calibration — it's like trying to measure distance with a ruler that keeps changing length. A mature Agile team with 10+ sprints of consistent velocity data can forecast with surprising accuracy. This is the payoff of discipline.
+                </aside>
+            </section>
+
+            <!-- SLIDE: Disciplined Iteration Improves Estimation -->
+            <section>
+                <h2><span class="emoji">🏗️</span> How Discipline Improves Estimation Over Time</h2>
+                <div class="visual-container">
+                    <div class="cone-levels">
+                        <div class="cone-level fragment fade-up" style="width: 90%; background: var(--danger-color);">Sprint 1–3: High variance, unreliable velocity (±60%)</div>
+                        <div class="cone-level fragment fade-up" style="width: 75%; background: var(--warning-color);">Sprint 4–6: Team calibrating, patterns emerging (±35%)</div>
+                        <div class="cone-level fragment fade-up" style="width: 60%; background: var(--accent-color);">Sprint 7–10: Reliable velocity range established (±20%)</div>
+                        <div class="cone-level fragment fade-up" style="width: 45%; background: var(--success-color);">Sprint 10+: Mature estimation, predictable delivery (±10%)</div>
+                    </div>
+                </div>
+                <div class="fragment fade-up">
+                    <div class="highlight-box success">
+                        <strong>The key insight:</strong> Estimation accuracy is not a talent — it is a <em>skill</em> that improves through disciplined repetition. Each sprint is a learning opportunity. Teams that skip ceremonies or abandon the cadence lose this compounding benefit.
+                    </div>
+                </div>
+                <aside class="notes">
+                    This visual shows the maturation curve of estimation accuracy. New teams (or newly formed teams) will be wildly inaccurate in their first few sprints — and that is completely expected and acceptable. The critical thing is to maintain the discipline of estimating, tracking, and reflecting every sprint. By sprint 7-10, most teams have established a reliable velocity range. By sprint 10+, mature teams can forecast with remarkable accuracy. Share a real example if possible: "I worked with a team that went from completing anywhere between 15 and 45 points per sprint in their first quarter to consistently delivering 28-34 points per sprint after six months." The variance shrinks because the team learns what a "3-point story" actually means for THEM. This shared understanding is calibrated through disciplined repetition.
+                </aside>
+            </section>
+
+            <!-- ============================================================
+                 SECTION: THE AGILE MICROSCOPE
+                 ============================================================ -->
+            <section data-background="linear-gradient(135deg, #2b6cb0 0%, #1a365d 100%)" class="section-divider">
+                <h2>🔬 The Agile Microscope</h2>
+                <h3>Progressive elaboration — zoom in as delivery approaches</h3>
+                <aside class="notes">
+                    Now we shift to the second major theme. The "Agile Microscope" is a powerful metaphor for how Agile handles the inherent uncertainty in software estimation. Instead of trying to achieve high precision up front (which is both impossible and wasteful), Agile acknowledges that we should invest estimation effort proportional to how close we are to actually doing the work. This section covers progressive elaboration, the Cone of Uncertainty, and the multiple levels of planning in Agile.
+                </aside>
+            </section>
+
+            <!-- SLIDE: Progressive Elaboration -->
+            <section>
+                <h2><span class="emoji">🔬</span> Progressive Elaboration</h2>
+                <blockquote>
+                    "We cannot plan what we do not yet understand. As understanding grows, so does the precision of our plans."
+                    <cite>— Core principle of Agile planning</cite>
+                </blockquote>
+                <div class="two-columns">
+                    <div class="column">
+                        <div class="card">
+                            <h4>🏗️ Traditional Approach</h4>
+                            <ul>
+                                <li class="fragment fade-up">Attempt detailed estimates for <strong>everything</strong> up front</li>
+                                <li class="fragment fade-up">High effort, low accuracy for distant work</li>
+                                <li class="fragment fade-up">Estimates become "commitments" immediately</li>
+                                <li class="fragment fade-up">Change is treated as a failure</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <h4>🔬 Agile Approach</h4>
+                            <ul>
+                                <li class="fragment fade-up">Rough estimates for distant work, <strong>detailed</strong> for near work</li>
+                                <li class="fragment fade-up">Effort invested proportional to certainty</li>
+                                <li class="fragment fade-up">Estimates refine as knowledge increases</li>
+                                <li class="fragment fade-up">Change is expected and embraced</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="fragment fade-up">
+                    <div class="key-point">Invest estimation effort where it will yield the highest accuracy.</div>
+                </div>
+                <aside class="notes">
+                    Progressive elaboration is the practice of incrementally increasing the detail and accuracy of estimates as more information becomes available. This is not laziness — it is strategic resource allocation. Spending three days creating a detailed estimate for a feature you won't build for six months is waste. By the time you build it, requirements will have changed, technology will have shifted, and team composition may be different. Instead, Agile says: give that distant feature a rough T-shirt size (S/M/L/XL) and invest your detailed estimation effort in the work you'll do in the next 1-2 sprints. As a feature moves closer to implementation, it goes through layers of refinement: from epic to story to task, with increasingly precise estimates at each level. This is the microscope metaphor — we zoom in progressively.
+                </aside>
+            </section>
+
+            <!-- SLIDE: Cone of Uncertainty -->
+            <section>
+                <h2><span class="emoji">🔬</span> The Cone of Uncertainty</h2>
+                <p style="font-size: 0.88em; color: #4a5568;">Estimates naturally improve as the project progresses and unknowns are resolved:</p>
+                <div class="visual-container">
+                    <div class="cone-levels">
+                        <div class="cone-level fragment fade-up" style="width: 95%; background: var(--danger-color);">
+                            Initial Concept — Estimates range: <strong>0.25x to 4x</strong> actual
+                        </div>
+                        <div class="cone-level fragment fade-up" style="width: 78%; background: var(--warning-color);">
+                            Approved Product Definition — Range: <strong>0.5x to 2x</strong> actual
+                        </div>
+                        <div class="cone-level fragment fade-up" style="width: 60%; background: #d69e2e;">
+                            Requirements Complete — Range: <strong>0.67x to 1.5x</strong> actual
+                        </div>
+                        <div class="cone-level fragment fade-up" style="width: 42%; background: var(--accent-color);">
+                            UI Design Complete — Range: <strong>0.8x to 1.25x</strong> actual
+                        </div>
+                        <div class="cone-level fragment fade-up" style="width: 28%; background: var(--success-color);">
+                            Detailed Design Complete — Range: <strong>0.9x to 1.1x</strong> actual
+                        </div>
+                    </div>
+                </div>
+                <div class="fragment fade-up">
+                    <div class="highlight-box warning">
+                        <strong>Practical implication:</strong> An initial estimate of "6 months" really means "somewhere between 1.5 and 24 months." Communicating this uncertainty honestly is a core Agile discipline.
+                    </div>
+                </div>
+                <aside class="notes">
+                    The Cone of Uncertainty was originally described by Barry Boehm and later popularized by Steve McConnell in his book "Software Estimation: Demystifying the Black Art." The key data point is this: at the initial concept stage, estimates can vary by a factor of 4x in either direction. That means if you estimate 6 months at the beginning of a project, the actual result could be anywhere from 1.5 months to 24 months. This is not a failure of the estimator — it is the mathematical reality of estimating uncertain work. As the project progresses and decisions are made (architecture chosen, requirements clarified, UI designed), the cone narrows. Agile works WITH this reality instead of against it by using short iterations and progressive elaboration. Each sprint reduces uncertainty for the near-term work. The practical takeaway for stakeholders: early estimates should always be presented as ranges, not point values. And those ranges will narrow over time as the team learns more.
+                </aside>
+            </section>
+
+            <!-- SLIDE: Levels of Planning -->
+            <section>
+                <h2><span class="emoji">🔬</span> Five Levels of Agile Planning</h2>
+                <p style="font-size: 0.85em; color: #4a5568; margin-bottom: 12px;">Each level uses a different estimation granularity — this IS the microscope:</p>
+                <div class="visual-container" style="padding: 16px;">
+                    <table style="width: 100%; box-shadow: none;">
+                        <thead>
+                            <tr>
+                                <th>Level</th>
+                                <th>Time Horizon</th>
+                                <th>Estimation Unit</th>
+                                <th>Accuracy</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="fragment fade-up">
+                                <td><strong>🌍 Vision</strong></td>
+                                <td>1–3 years</td>
+                                <td>T-shirt sizes / Budget ranges</td>
+                                <td>±50–100%</td>
+                            </tr>
+                            <tr class="fragment fade-up">
+                                <td><strong>🗺️ Roadmap</strong></td>
+                                <td>6–12 months</td>
+                                <td>Epic-level estimates / Quarters</td>
+                                <td>±30–50%</td>
+                            </tr>
+                            <tr class="fragment fade-up">
+                                <td><strong>📦 Release</strong></td>
+                                <td>2–4 months</td>
+                                <td>Story points / Feature groups</td>
+                                <td>±15–30%</td>
+                            </tr>
+                            <tr class="fragment fade-up">
+                                <td><strong>🔄 Iteration</strong></td>
+                                <td>1–4 weeks</td>
+                                <td>Story points / Ideal hours</td>
+                                <td>±10–15%</td>
+                            </tr>
+                            <tr class="fragment fade-up">
+                                <td><strong>📋 Daily</strong></td>
+                                <td>1 day</td>
+                                <td>Hours remaining / Tasks</td>
+                                <td>±5–10%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="fragment fade-up">
+                    <div class="highlight-box">
+                        <strong>The Microscope Principle:</strong> As you move from Vision to Daily, the "magnification" increases — you see fewer items but with much greater clarity and precision.
+                    </div>
+                </div>
+                <aside class="notes">
+                    This table is the heart of the Agile Microscope concept. At the Vision level, you are looking at the entire landscape — everything is blurry, but you can see the general shape. At the Daily level, you are looking at a single cell with perfect clarity. Each level has an appropriate estimation technique and appropriate accuracy expectations. A common mistake is trying to apply Daily-level precision to Vision-level planning (e.g., "Give me a detailed hour-by-hour estimate for the next 18 months"). This is not only impossible — it is harmful, because it creates false precision that stakeholders treat as commitments. Equally, it's a mistake to use Vision-level vagueness for iteration planning (e.g., "This sprint we'll work on stuff"). The discipline of Agile estimation means knowing which level you are operating at and using the appropriate tools and precision for that level.
+                </aside>
+            </section>
+
+            <!-- SLIDE: Zooming In -->
+            <section>
+                <h2><span class="emoji">🔬</span> How the Microscope Zooms In</h2>
+                <p style="font-size: 0.85em; color: #4a5568;">A single feature flows through increasing levels of estimation detail:</p>
+                <div class="three-columns">
+                    <div class="card fragment fade-up">
+                        <h4>Months Out</h4>
+                        <p><strong>Epic:</strong> "User Authentication"</p>
+                        <p><strong>Estimate:</strong> Large (T-shirt)</p>
+                        <p><strong>Detail:</strong> One-line description on the roadmap. We know we need it, but the scope is undefined.</p>
+                    </div>
+                    <div class="card fragment fade-up">
+                        <h4>Weeks Out</h4>
+                        <p><strong>Stories:</strong> "Login form," "OAuth integration," "Password reset"</p>
+                        <p><strong>Estimate:</strong> 5, 8, 3 story points</p>
+                        <p><strong>Detail:</strong> Acceptance criteria written, dependencies identified, architecture discussed.</p>
+                    </div>
+                    <div class="card fragment fade-up">
+                        <h4>Days Out</h4>
+                        <p><strong>Tasks:</strong> "Create login API endpoint," "Build form UI," "Write unit tests"</p>
+                        <p><strong>Estimate:</strong> 4h, 6h, 3h</p>
+                        <p><strong>Detail:</strong> Implementation approach decided, edge cases identified, code patterns selected.</p>
+                    </div>
+                </div>
+                <div class="fragment fade-up">
+                    <div class="highlight-box success">
+                        <strong>Each zoom level adds detail without invalidating the previous estimate.</strong> The epic is still "Large" — we just now know more precisely what "Large" means for this feature.
+                    </div>
+                </div>
+                <aside class="notes">
+                    Walk through this concrete example to make the microscope metaphor tangible. When "User Authentication" first appeared on the roadmap, it was a single line item. The Product Owner said "We need authentication" and the team said "That's Large." That's the appropriate level of detail for something months away. As the feature approaches, the team breaks it into stories during refinement. Now they can see the individual components: login, OAuth, password reset, session management. Each gets a story-point estimate. This is more precise, but note that the sum of story points roughly corresponds to "Large" — the earlier estimate was directionally correct. Finally, during sprint planning, the stories selected for the current sprint are broken into tasks with hour estimates. At each level, more information has become available, and the estimates reflect that increased knowledge. This is progressive elaboration in action.
+                </aside>
+            </section>
+
+            <!-- ============================================================
+                 SECTION: PEOPLE VS FORMULAS
+                 ============================================================ -->
+            <section data-background="linear-gradient(135deg, #2b6cb0 0%, #1a365d 100%)" class="section-divider">
+                <h2>👥 People vs Formulas</h2>
+                <h3>Human judgment meets empirical data</h3>
+                <aside class="notes">
+                    The third major theme addresses a tension in estimation: should we trust human judgment or mathematical formulas? The answer, as we'll see, is both — but with important caveats. This section covers why human judgment is essential, how the "wisdom of crowds" principle applies to team estimation, the cognitive biases that can derail estimates, and how to combine human insight with empirical data for the best results.
+                </aside>
+            </section>
+
+            <!-- SLIDE: Why Human Judgment Matters -->
+            <section>
+                <h2><span class="emoji">👥</span> Why Human Judgment Matters</h2>
+                <div class="two-columns">
+                    <div class="column">
+                        <div class="highlight-box">
+                            <strong>What formulas can tell you:</strong>
+                            <ul>
+                                <li class="fragment fade-up">Historical velocity averages</li>
+                                <li class="fragment fade-up">Statistical trends and distributions</li>
+                                <li class="fragment fade-up">Mathematical extrapolations</li>
+                                <li class="fragment fade-up">Correlation between size and effort</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="highlight-box success">
+                            <strong>What only humans can assess:</strong>
+                            <ul>
+                                <li class="fragment fade-up">Whether the team has done similar work before</li>
+                                <li class="fragment fade-up">Hidden complexity in integrations</li>
+                                <li class="fragment fade-up">Team morale and interpersonal dynamics</li>
+                                <li class="fragment fade-up">Organizational risks and dependencies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="fragment fade-up">
+                    <blockquote>
+                        "Software estimation is an art that requires human judgment informed by data — not a science that can be reduced to a formula."
+                        <cite>— Steve McConnell, Software Estimation</cite>
+                    </blockquote>
+                </div>
+                <aside class="notes">
+                    Some organizations fall into the trap of thinking that if they just find the right formula, they can eliminate the need for human judgment in estimation. Function points, COCOMO, parametric models — these have their place, but they all ultimately depend on inputs that require human judgment. A formula can tell you that based on historical data, a team with velocity of 30 will complete 120 points in 4 sprints. But it cannot tell you that the team's senior developer just gave notice, that the API they are integrating with is poorly documented, or that the requirements are politically contentious and likely to change. Context is everything in estimation, and context is what humans provide. The best estimators combine quantitative data (velocity, cycle time, historical accuracy) with qualitative judgment (complexity, risk, novelty) to produce estimates that are both grounded and realistic.
+                </aside>
+            </section>
+
+            <!-- SLIDE: Wisdom of Crowds -->
+            <section>
+                <h2><span class="emoji">👥</span> The Wisdom of Crowds</h2>
+                <div class="concept-box">
+                    <h4>🎪 The Jelly Bean Experiment</h4>
+                    <p style="font-size: 0.85em;">When a large group estimates the number of jelly beans in a jar, the <strong>average of all guesses</strong> is almost always closer to the actual number than any individual guess — including expert guesses.</p>
+                </div>
+                <div class="two-columns fragment fade-up">
+                    <div class="column">
+                        <div class="card">
+                            <h4>Why Team Estimation Works</h4>
+                            <ul>
+                                <li><strong>Diverse perspectives</strong> — each member sees different risks and complexities</li>
+                                <li><strong>Error cancellation</strong> — individual biases cancel each other out</li>
+                                <li><strong>Knowledge pooling</strong> — no single person knows everything about the system</li>
+                                <li><strong>Shared ownership</strong> — team commits to estimates they created together</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <h4>Conditions for Success</h4>
+                            <ul>
+                                <li><strong>Independence</strong> — each person estimates before discussion</li>
+                                <li><strong>Diversity</strong> — include different roles and experience levels</li>
+                                <li><strong>Decentralization</strong> — no one "expert" dominates</li>
+                                <li><strong>Aggregation</strong> — a mechanism to combine individual estimates (e.g., Planning Poker)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    James Surowiecki's "The Wisdom of Crowds" provides the theoretical foundation for why team estimation in Agile works so well. The jelly bean experiment is a great classroom illustration — if you have time, you can actually do this live with participants. The four conditions are critical. Independence is why Planning Poker works: everyone reveals their estimate simultaneously, preventing anchoring. If a senior developer says "I think it's a 3" before others estimate, the entire team's estimates will cluster around 3 regardless of what they actually think. Diversity means including QA, design, and operations perspectives — not just developer estimates. Decentralization means no one person's opinion carries more weight by default. Aggregation is the mechanism — whether it's Planning Poker, dot voting, or affinity estimation. When these conditions are met, team estimates consistently outperform individual expert estimates. This is not opinion — it is empirically validated across domains from forecasting to estimation.
+                </aside>
+            </section>
+
+            <!-- SLIDE: Cognitive Biases -->
+            <section>
+                <h2><span class="emoji">👥</span> Cognitive Biases in Estimation</h2>
+                <p style="font-size: 0.85em; color: #4a5568; margin-bottom: 12px;">Understanding these biases is the first step to mitigating them:</p>
+                <div class="two-columns">
+                    <div class="column">
+                        <div class="bias-card fragment fade-up">
+                            <h4>⚓ Anchoring Bias</h4>
+                            <p>The first number mentioned disproportionately influences all subsequent estimates. If someone says "two weeks," the discussion gravitates toward that figure regardless of actual complexity.</p>
+                        </div>
+                        <div class="bias-card fragment fade-up">
+                            <h4>🌞 Optimism Bias</h4>
+                            <p>People systematically underestimate effort and duration. We imagine the "happy path" and forget about testing, integration, deployment, documentation, and edge cases.</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="bias-card fragment fade-up">
+                            <h4>📅 Planning Fallacy</h4>
+                            <p>We consistently underestimate future tasks even when we know similar past tasks took longer. Our reference point is our best-case scenario, not our actual track record.</p>
+                        </div>
+                        <div class="bias-card fragment fade-up">
+                            <h4>🎯 Dunning-Kruger Effect</h4>
+                            <p>Less experienced estimators often express high confidence in inaccurate estimates, while experienced estimators better recognize uncertainty and express appropriate caution.</p>
+                        </div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    Cognitive biases are the silent killers of estimation accuracy. Anchoring is why we use simultaneous reveal in Planning Poker — if anyone states a number before others, the entire exercise is compromised. A study by Tversky and Kahneman showed that even random numbers (like spinning a roulette wheel) can anchor subsequent estimates. Optimism bias is pervasive in software development. Ask the class: "How many times have you said 'That should be easy' and then spent three days on it?" We systematically forget about the unsexy parts of development: error handling, edge cases, testing, code review, documentation, deployment, monitoring. The Planning Fallacy was also identified by Kahneman — it's the tendency to use the "inside view" (our best-case mental simulation of this specific task) rather than the "outside view" (how long similar tasks actually took). Agile combats this by using historical velocity as the "outside view." The Dunning-Kruger effect reminds us to weight estimates appropriately — not all confidence is equally justified.
+                </aside>
+            </section>
+
+            <!-- SLIDE: Combining Judgment with Data -->
+            <section>
+                <h2><span class="emoji">👥</span> Combining Judgment with Empirical Data</h2>
+                <div class="highlight-box">
+                    <strong>The sweet spot:</strong> Use human judgment for <em>sizing</em> and empirical data for <em>forecasting</em>.
+                </div>
+                <div class="two-columns">
+                    <div class="column">
+                        <div class="concept-box fragment fade-up">
+                            <h4>🧠 Human Judgment For</h4>
+                            <ul>
+                                <li><strong>Relative sizing</strong> — "Is Story A bigger or smaller than Story B?"</li>
+                                <li><strong>Complexity assessment</strong> — identifying unknowns and risks</li>
+                                <li><strong>Decomposition</strong> — breaking work into estimable pieces</li>
+                                <li><strong>Contextual factors</strong> — team changes, technical debt, dependencies</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="concept-box fragment fade-up">
+                            <h4>📊 Empirical Data For</h4>
+                            <ul>
+                                <li><strong>Velocity tracking</strong> — "We complete ~30 points per sprint"</li>
+                                <li><strong>Release forecasting</strong> — "80 remaining points / 30 per sprint = ~3 sprints"</li>
+                                <li><strong>Accuracy calibration</strong> — "Our estimates are typically 20% low"</li>
+                                <li><strong>Trend analysis</strong> — "Velocity is decreasing — investigate why"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="fragment fade-up">
+                    <div class="key-point">Human judgment sets the inputs. Empirical data validates the outputs. Together they are more powerful than either alone.</div>
+                </div>
+                <aside class="notes">
+                    This is the synthesis of the People vs Formulas debate. It's not an either/or — it's a both/and. Humans are remarkably good at relative comparison ("This story feels about twice as complex as that one") but notoriously bad at absolute estimation ("This will take exactly 14 hours"). So we leverage what humans do well (relative sizing, risk identification, contextual assessment) and let the data handle what it does well (converting relative sizes to calendar time via velocity, identifying systematic biases in our estimates, and forecasting completion dates). In practice, this means: the team estimates stories in relative story points using Planning Poker (human judgment), and then the Product Owner and Scrum Master use historical velocity data (empirical) to forecast when features will be delivered. The team does not need to think in hours or dates — they think in relative complexity. The math handles the conversion. This is a fundamental shift that we'll explore more deeply when we cover story points and velocity in later modules.
+                </aside>
+            </section>
+
+            <!-- ============================================================
+                 SLIDE: LAB CALLOUT
+                 ============================================================ -->
+            <section data-background-color="#1a365d" class="lab-callout">
+                <div class="lab-badge">🔬 Hands-On Exercise</div>
+                <h2>Lab 1: Estimation Discipline Assessment</h2>
+                <div class="lab-description">
+                    <p>In this exercise, you will assess your team's current estimation maturity and identify areas for improvement across the three pillars covered in this module.</p>
+                    <ul>
+                        <li class="fragment fade-up"><strong>Part A:</strong> Evaluate which Scrum ceremonies your team currently practices and rate how effectively each supports estimation</li>
+                        <li class="fragment fade-up"><strong>Part B:</strong> Map a real project feature through the five levels of Agile planning, identifying where estimates break down</li>
+                        <li class="fragment fade-up"><strong>Part C:</strong> Conduct a bias identification exercise — review past estimation misses and classify the cognitive bias responsible</li>
+                        <li class="fragment fade-up"><strong>Part D:</strong> Create an estimation improvement action plan with specific, measurable commitments</li>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    This lab should take approximately 45-60 minutes. Divide participants into small groups of 3-5 people, ideally mixing different organizations and experience levels. Part A is a self-assessment — provide the checklist from the lab guide and have teams rate each ceremony on a 1-5 scale for estimation effectiveness. Part B is a mapping exercise — have each group pick a real feature from their actual backlog and trace it through Vision, Roadmap, Release, Iteration, and Daily planning levels. Where do they lose fidelity? Where are they skipping levels? Part C is a retrospective exercise — have teams look at their last 3-5 sprints and identify stories that were significantly over- or under-estimated, then classify which cognitive bias was at play. Part D turns insights into actions — each team should leave with 2-3 specific improvement actions they can implement in their next sprint. Circulate among groups and provide coaching. Reconvene for a 10-minute debrief where each group shares their top insight.
+                </aside>
+            </section>
+
+            <!-- ============================================================
+                 SLIDE: KEY TAKEAWAYS
+                 ============================================================ -->
+            <section>
+                <h2><span class="emoji">📌</span> Key Takeaways</h2>
+                <div class="highlight-box" style="margin-bottom: 20px;">
+                    <strong>Module 1 — Agile Estimation Foundations</strong>
+                </div>
+                <ul class="takeaway-list">
+                    <li class="fragment fade-up"><strong>Agile demands more discipline, not less</strong> — the cadence of ceremonies and continuous planning is what makes estimation possible and progressively accurate</li>
+                    <li class="fragment fade-up"><strong>The Cone of Uncertainty is your friend, not your enemy</strong> — communicate estimate ranges honestly and let precision increase naturally over time</li>
+                    <li class="fragment fade-up"><strong>Match estimation precision to planning level</strong> — use T-shirt sizes for the roadmap, story points for iterations, and hours only for immediate tasks</li>
+                    <li class="fragment fade-up"><strong>Team estimation outperforms individual estimation</strong> — leverage the wisdom of crowds through techniques like Planning Poker with simultaneous reveal</li>
+                    <li class="fragment fade-up"><strong>Know your biases</strong> — anchoring, optimism, and the planning fallacy are always present; use process safeguards to mitigate them</li>
+                    <li class="fragment fade-up"><strong>Combine human judgment with empirical data</strong> — let people size the work, let the data forecast the timeline</li>
+                </ul>
+                <aside class="notes">
+                    Review each takeaway and connect it back to the content. Ask participants which takeaway resonates most with their current situation. Emphasize that these foundational principles will be applied concretely in every subsequent module. Module 2 will cover "Why Plans Fail" — which builds directly on the Cone of Uncertainty and cognitive biases discussed here. The estimation techniques we'll learn in Modules 3-5 (relative sizing, story points, velocity, Planning Poker) are all built on the foundation of discipline, progressive elaboration, and team-based judgment that we've covered today. Encourage participants to review their Lab 1 action plans and bring them to tomorrow's session.
+                </aside>
+            </section>
+
+            <!-- ============================================================
+                 SLIDE: QUESTIONS
+                 ============================================================ -->
+            <section data-background="linear-gradient(135deg, #2b6cb0 0%, #1a365d 100%)" class="questions-slide">
+                <h2>❓ Questions & Discussion</h2>
+                <p>What resonated most? What challenges do you see applying these concepts?</p>
+                <div style="margin-top: 40px;">
+                    <div class="course-badge" style="font-size: 0.75em;">
+                        Up Next: Module 2 — Why Plans Fail
+                    </div>
+                </div>
+                <aside class="notes">
+                    Open the floor for questions. Good discussion prompts if the group is quiet: "Which cognitive bias do you think most affects your team's estimates?" or "At which planning level does your organization struggle most with estimation?" or "Has anyone experienced the 'Agile means no planning' misconception? How did you address it?" If time permits, you can do a quick round-robin where each participant shares one thing they plan to do differently based on this module. This builds commitment and creates accountability for applying the concepts. Transition to Module 2 by previewing: "Now that we understand the foundations of Agile estimation, we'll look at why traditional plans fail and what makes an Agile plan different."
+                </aside>
+            </section>
+
+        </div>
+    </div>
+
+    <div class="module-progress">Module 1: Agile Estimation — Agile Project Estimation</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: 'c/t',
+            showSlideNumber: 'all',
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            center: false,
+            width: 1100,
+            height: 900,
+            margin: 0.04,
+            minScale: 0.5,
+            maxScale: 1.5,
+            plugins: [
+                RevealHighlight,
+                RevealNotes,
+                RevealMarkdown
+            ]
+        });
+    </script>
+</body>
+</html>

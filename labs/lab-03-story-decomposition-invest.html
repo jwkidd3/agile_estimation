@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3: Story Decomposition &amp; INVEST Workshop - Agile Project Estimation</title>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --accent: #2b6cb0;
+            --success: #2f855a;
+            --warning: #c05621;
+            --bg: #f7fafc;
+            --card-bg: #ffffff;
+            --text: #2d3748;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .lab-header {
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        .lab-header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .lab-header .meta { opacity: 0.9; font-size: 0.95rem; }
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--accent);
+        }
+        .card h2 { color: var(--primary); font-size: 1.3rem; margin-bottom: 0.75rem; }
+        .card h3 { color: var(--accent); font-size: 1.1rem; margin: 1rem 0 0.5rem; }
+        .objective-card { border-left-color: var(--success); }
+        .warning-card { border-left-color: var(--warning); }
+        ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+        li { margin-bottom: 0.4rem; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th { background: var(--primary); color: white; padding: 0.6rem; text-align: left; }
+        td { padding: 0.6rem; border: 1px solid #e2e8f0; }
+        tr:nth-child(even) { background: #f7fafc; }
+        .workspace {
+            background: #edf2f7;
+            border: 2px dashed #cbd5e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            min-height: 120px;
+        }
+        .workspace p { color: #718096; font-style: italic; }
+        .timer { display: inline-block; background: var(--warning); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 600; font-size: 0.85rem; }
+        .step-number {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 28px; height: 28px; background: var(--accent); color: white;
+            border-radius: 50%; font-weight: 700; font-size: 0.85rem; margin-right: 0.5rem;
+        }
+        .invest-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        .invest-item {
+            background: #ebf8ff;
+            border: 1px solid #bee3f8;
+            border-radius: 8px;
+            padding: 0.75rem;
+            text-align: center;
+        }
+        .invest-item strong { display: block; font-size: 1.2rem; color: var(--accent); }
+    </style>
+</head>
+<body>
+    <div class="lab-header">
+        <h1>📦 Lab 3: Story Decomposition &amp; INVEST Workshop</h1>
+        <div class="meta">
+            Module 3 — Agile Project Estimation | Duration: 60 minutes | Style: Workshop
+        </div>
+    </div>
+
+    <div class="card objective-card">
+        <h2>🎯 Lab Objectives</h2>
+        <ul>
+            <li>Practice decomposing epics into themes, features, and user stories</li>
+            <li>Apply the INVEST criteria to evaluate and improve user stories</li>
+            <li>Build a sample product backlog with proper story hierarchy</li>
+            <li>Identify and create spikes for areas of uncertainty</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">1</span> Epic Decomposition</h2>
+        <p><span class="timer">20 minutes</span></p>
+        <p>You are the Scrum team for a new <strong>Employee Onboarding System</strong>. Break down the following epic into themes, features, and user stories.</p>
+
+        <h3>Epic: "New Employee Onboarding"</h3>
+        <p>As a company, we need to digitize and streamline the employee onboarding process so that new hires can complete all required activities efficiently and managers can track onboarding progress.</p>
+
+        <h3>Step 1: Identify Themes</h3>
+        <p>Group related functionality into 3-5 themes:</p>
+        <div class="workspace">
+            <p>List your themes (e.g., "Document Management", "Training & Orientation", etc.):</p>
+        </div>
+
+        <h3>Step 2: Break Themes into Features</h3>
+        <p>For each theme, identify 2-4 features:</p>
+        <table>
+            <tr>
+                <th>Theme</th>
+                <th>Feature 1</th>
+                <th>Feature 2</th>
+                <th>Feature 3</th>
+            </tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+        </table>
+
+        <h3>Step 3: Write User Stories</h3>
+        <p>Select <strong>one theme</strong> and write 5-8 user stories using the template:<br>
+        <em>"As a [role], I want [feature], so that [benefit]"</em></p>
+        <div class="workspace">
+            <p>Write your user stories here:</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">2</span> INVEST Evaluation</h2>
+        <p><span class="timer">15 minutes</span></p>
+        <p>Evaluate the following pre-written stories against the INVEST criteria. Rate each criterion as Pass (P) or Fail (F).</p>
+
+        <div class="invest-grid">
+            <div class="invest-item"><strong>I</strong>Independent</div>
+            <div class="invest-item"><strong>N</strong>Negotiable</div>
+            <div class="invest-item"><strong>V</strong>Valuable</div>
+            <div class="invest-item"><strong>E</strong>Estimable</div>
+            <div class="invest-item"><strong>S</strong>Small</div>
+            <div class="invest-item"><strong>T</strong>Testable</div>
+        </div>
+
+        <table>
+            <tr>
+                <th>Story</th>
+                <th>I</th>
+                <th>N</th>
+                <th>V</th>
+                <th>E</th>
+                <th>S</th>
+                <th>T</th>
+                <th>Fix Needed?</th>
+            </tr>
+            <tr>
+                <td>"Build the database schema for the onboarding system"</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td>"As a new hire, I want to upload my tax forms so that HR can process my payroll setup"</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td>"As a user, I want the system to work well"</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td>"As a manager, I want to view, edit, approve, export, archive, and audit all onboarding tasks for my team with full reporting and notifications"</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td>"As an IT admin, I want to provision a laptop for new hires so that they have equipment ready on day one"</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td>"The onboarding system must integrate with SAP, Workday, and Salesforce simultaneously before any other features can be built"</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+        </table>
+
+        <h3>Rewrite the Failing Stories</h3>
+        <div class="workspace">
+            <p>For each story that failed one or more INVEST criteria, rewrite it to pass:</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">3</span> Spike Identification</h2>
+        <p><span class="timer">10 minutes</span></p>
+        <p>Review the backlog you've created and identify areas where a <strong>spike</strong> or <strong>"Get Smart" story</strong> is needed.</p>
+
+        <h3>Indicators That a Spike Is Needed:</h3>
+        <ul>
+            <li>The team cannot estimate a story (too much uncertainty)</li>
+            <li>A technology choice has not been made</li>
+            <li>Integration with an external system is unfamiliar</li>
+            <li>Performance or scalability concerns need investigation</li>
+        </ul>
+
+        <table>
+            <tr>
+                <th>Spike Title</th>
+                <th>Question to Answer</th>
+                <th>Time Box</th>
+                <th>Output / Deliverable</th>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">4</span> Backlog Assembly</h2>
+        <p><span class="timer">15 minutes</span></p>
+        <p>Assemble your stories, spikes, and themes into an ordered product backlog. Prioritize by business value.</p>
+
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Type</th>
+                <th>Story / Spike Title</th>
+                <th>Theme</th>
+                <th>Priority (H/M/L)</th>
+            </tr>
+            <tr><td>1</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>2</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>3</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>4</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>5</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>6</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>7</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>8</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>9</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>10</td><td></td><td></td><td></td><td></td></tr>
+        </table>
+    </div>
+
+    <div class="card warning-card">
+        <h2>💡 Discussion Points</h2>
+        <ul>
+            <li>What was the hardest part of decomposing the epic?</li>
+            <li>Which INVEST criterion do you find most commonly violated in real projects?</li>
+            <li>How do spikes reduce estimation risk?</li>
+            <li>How would you handle the "hidden waterfall" if stories were assigned by function (all design first, then all development)?</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 6: Scaling Estimation Simulation - Agile Project Estimation</title>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --accent: #2b6cb0;
+            --success: #2f855a;
+            --warning: #c05621;
+            --bg: #f7fafc;
+            --card-bg: #ffffff;
+            --text: #2d3748;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .lab-header {
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        .lab-header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .lab-header .meta { opacity: 0.9; font-size: 0.95rem; }
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--accent);
+        }
+        .card h2 { color: var(--primary); font-size: 1.3rem; margin-bottom: 0.75rem; }
+        .card h3 { color: var(--accent); font-size: 1.1rem; margin: 1rem 0 0.5rem; }
+        .objective-card { border-left-color: var(--success); }
+        .warning-card { border-left-color: var(--warning); }
+        ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+        li { margin-bottom: 0.4rem; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th { background: var(--primary); color: white; padding: 0.6rem; text-align: left; }
+        td { padding: 0.6rem; border: 1px solid #e2e8f0; }
+        tr:nth-child(even) { background: #f7fafc; }
+        .workspace {
+            background: #edf2f7;
+            border: 2px dashed #cbd5e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            min-height: 120px;
+        }
+        .workspace p { color: #718096; font-style: italic; }
+        .timer { display: inline-block; background: var(--warning); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 600; font-size: 0.85rem; }
+        .step-number {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 28px; height: 28px; background: var(--accent); color: white;
+            border-radius: 50%; font-weight: 700; font-size: 0.85rem; margin-right: 0.5rem;
+        }
+        .team-box {
+            background: #ebf8ff;
+            border: 2px solid #bee3f8;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.5rem 0;
+        }
+        .team-box h4 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="lab-header">
+        <h1>🏢 Lab 6: Scaling Estimation Simulation</h1>
+        <div class="meta">
+            Module 6 — Agile Project Estimation | Duration: 50 minutes | Style: Workshop
+        </div>
+    </div>
+
+    <div class="card objective-card">
+        <h2>🎯 Lab Objectives</h2>
+        <ul>
+            <li>Simulate multi-team estimation and coordination challenges</li>
+            <li>Experience cross-team dependency management firsthand</li>
+            <li>Practice aggregating metrics across teams</li>
+            <li>Evaluate different backlog organization strategies</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">1</span> Team Formation &amp; Setup</h2>
+        <p><span class="timer">5 minutes</span></p>
+        <p>Split the class into 3 teams. Each team represents a Scrum team working on the same product: a <strong>Healthcare Patient Portal</strong>.</p>
+
+        <div class="team-grid">
+            <div class="team-box">
+                <h4>👥 Team Alpha — Frontend Experience</h4>
+                <p>Responsible for: Patient-facing UI, mobile responsiveness, accessibility</p>
+                <p><strong>Average velocity:</strong> 26 pts/sprint</p>
+            </div>
+            <div class="team-box">
+                <h4>👥 Team Beta — Backend Services</h4>
+                <p>Responsible for: APIs, data processing, integrations with hospital systems</p>
+                <p><strong>Average velocity:</strong> 30 pts/sprint</p>
+            </div>
+            <div class="team-box">
+                <h4>👥 Team Gamma — Platform &amp; Infrastructure</h4>
+                <p>Responsible for: Security, compliance, deployment, monitoring</p>
+                <p><strong>Average velocity:</strong> 22 pts/sprint</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">2</span> Cross-Team Estimation Challenge</h2>
+        <p><span class="timer">20 minutes</span></p>
+        <p>Each team independently estimates the stories assigned to them. Then identify cross-team dependencies.</p>
+
+        <h3>Product Backlog (Shared)</h3>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Feature</th>
+                <th>Primary Team</th>
+                <th>Dependencies</th>
+                <th>Team Estimate</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Patient appointment scheduling UI</td>
+                <td>Alpha</td>
+                <td>Needs Beta API</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Appointment booking API</td>
+                <td>Beta</td>
+                <td>Needs Gamma auth</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>HIPAA-compliant authentication</td>
+                <td>Gamma</td>
+                <td>None</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Medical records viewer</td>
+                <td>Alpha</td>
+                <td>Needs Beta API</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>HL7 FHIR integration for medical records</td>
+                <td>Beta</td>
+                <td>Needs Gamma infra</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Secure data pipeline setup</td>
+                <td>Gamma</td>
+                <td>None</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Patient messaging interface</td>
+                <td>Alpha</td>
+                <td>Needs Beta API</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Messaging and notification service</td>
+                <td>Beta</td>
+                <td>None</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Audit logging and compliance reporting</td>
+                <td>Gamma</td>
+                <td>Needs Beta data</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Prescription refill request form</td>
+                <td>Alpha</td>
+                <td>Needs Beta API, Gamma auth</td>
+                <td></td>
+            </tr>
+        </table>
+
+        <h3>Dependency Map</h3>
+        <div class="workspace">
+            <p>Draw the dependency relationships between features. Which features must be completed first? Which can run in parallel?</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">3</span> Aggregate Forecasting</h2>
+        <p><span class="timer">15 minutes</span></p>
+        <p>Using the team estimates and dependencies, build a release forecast.</p>
+
+        <h3>Sprint Planning Across Teams</h3>
+        <table>
+            <tr>
+                <th>Sprint</th>
+                <th>Team Alpha (26 pts capacity)</th>
+                <th>Team Beta (30 pts capacity)</th>
+                <th>Team Gamma (22 pts capacity)</th>
+            </tr>
+            <tr>
+                <td><strong>Sprint 1</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Sprint 2</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Sprint 3</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Sprint 4</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <h3>Key Questions</h3>
+        <div class="workspace">
+            <p>1. Which team is the bottleneck? How does this affect the overall release timeline?</p>
+        </div>
+        <div class="workspace">
+            <p>2. How many total sprints are needed? Is this determined by total points or by dependencies?</p>
+        </div>
+        <div class="workspace">
+            <p>3. If you could add capacity to one team, which team would give the best ROI? Why?</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">4</span> Backlog Strategy Debate</h2>
+        <p><span class="timer">10 minutes</span></p>
+        <p>Discuss as a full group: how should the product backlog be organized?</p>
+
+        <table>
+            <tr>
+                <th>Strategy</th>
+                <th>Pros</th>
+                <th>Cons</th>
+                <th>Best When...</th>
+            </tr>
+            <tr>
+                <td><strong>Single shared backlog</strong><br>(LeSS-style)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>One backlog per team</strong><br>(Independent backlogs)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Program backlog + team backlogs</strong><br>(SAFe-style)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <div class="workspace">
+            <p>Which strategy would you recommend for the Healthcare Patient Portal? Justify your choice:</p>
+        </div>
+    </div>
+
+    <div class="card warning-card">
+        <h2>💡 Discussion Points</h2>
+        <ul>
+            <li>How did cross-team dependencies change your sprint plans compared to single-team planning?</li>
+            <li>Can you compare story points across teams? Should Team Beta's "8" equal Team Alpha's "8"?</li>
+            <li>What coordination ceremonies would you add for this multi-team setup?</li>
+            <li>How would feature teams (cross-functional, full-stack) reduce dependency problems?</li>
+        </ul>
+    </div>
+</body>
+</html>

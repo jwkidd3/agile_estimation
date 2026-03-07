@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 7: Release Forecasting Workshop - Agile Project Estimation</title>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --accent: #2b6cb0;
+            --success: #2f855a;
+            --warning: #c05621;
+            --bg: #f7fafc;
+            --card-bg: #ffffff;
+            --text: #2d3748;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .lab-header {
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        .lab-header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .lab-header .meta { opacity: 0.9; font-size: 0.95rem; }
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--accent);
+        }
+        .card h2 { color: var(--primary); font-size: 1.3rem; margin-bottom: 0.75rem; }
+        .card h3 { color: var(--accent); font-size: 1.1rem; margin: 1rem 0 0.5rem; }
+        .objective-card { border-left-color: var(--success); }
+        .warning-card { border-left-color: var(--warning); }
+        ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+        li { margin-bottom: 0.4rem; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th { background: var(--primary); color: white; padding: 0.6rem; text-align: left; }
+        td { padding: 0.6rem; border: 1px solid #e2e8f0; }
+        tr:nth-child(even) { background: #f7fafc; }
+        .workspace {
+            background: #edf2f7;
+            border: 2px dashed #cbd5e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            min-height: 120px;
+        }
+        .workspace p { color: #718096; font-style: italic; }
+        .timer { display: inline-block; background: var(--warning); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 600; font-size: 0.85rem; }
+        .step-number {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 28px; height: 28px; background: var(--accent); color: white;
+            border-radius: 50%; font-weight: 700; font-size: 0.85rem; margin-right: 0.5rem;
+        }
+        .scenario-box {
+            background: #ebf8ff;
+            border: 1px solid #bee3f8;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+        }
+        .burndown {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: monospace;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        .metric-box {
+            background: #ebf8ff;
+            border-radius: 8px;
+            padding: 0.75rem;
+            text-align: center;
+        }
+        .metric-box .value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .metric-box .label {
+            font-size: 0.8rem;
+            color: #718096;
+        }
+    </style>
+</head>
+<body>
+    <div class="lab-header">
+        <h1>🔮 Lab 7: Release Forecasting Workshop</h1>
+        <div class="meta">
+            Module 7 — Agile Project Estimation | Duration: 60 minutes | Style: Capstone Workshop
+        </div>
+    </div>
+
+    <div class="card objective-card">
+        <h2>🎯 Lab Objectives</h2>
+        <ul>
+            <li>Build a release forecast from scratch using multiple techniques</li>
+            <li>Practice both estimate-based and fact-based forecasting</li>
+            <li>Determine appropriate buffer strategies for different risk profiles</li>
+            <li>Create a stakeholder-ready forecast communication</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">1</span> Scenario: Forecasting Without History</h2>
+        <p><span class="timer">15 minutes</span></p>
+
+        <div class="scenario-box">
+            <h3>New Product Launch: "SmartInvoice"</h3>
+            <p>Your company is launching a new AI-powered invoicing product. A brand new team of 6 developers has been assembled. No historical velocity data exists. The Product Owner has identified 15 epics totaling an estimated 350 story points (rough estimate from a product discovery workshop).</p>
+            <p><strong>The CEO wants to know:</strong> "Can we launch at the annual conference in 6 months?"</p>
+        </div>
+
+        <h3>Technique 1: Reference-Based Forecast</h3>
+        <p>A similar team in the organization that built "SmartPayroll" had these metrics:</p>
+        <div class="metric-grid">
+            <div class="metric-box">
+                <div class="value">24</div>
+                <div class="label">Avg velocity/sprint (pts)</div>
+            </div>
+            <div class="metric-box">
+                <div class="value">2 weeks</div>
+                <div class="label">Sprint length</div>
+            </div>
+            <div class="metric-box">
+                <div class="value">7</div>
+                <div class="label">Team members</div>
+            </div>
+            <div class="metric-box">
+                <div class="value">3 sprints</div>
+                <div class="label">To reach stable velocity</div>
+            </div>
+        </div>
+
+        <table>
+            <tr>
+                <th>Calculation</th>
+                <th>Your Answer</th>
+            </tr>
+            <tr>
+                <td>Adjusted reference velocity for 6-person team (scale proportionally)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Expected velocity during first 3 sprints (ramp-up = ~60% of stable)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Total sprints in 6 months (26 weeks ÷ 2)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Points delivered in ramp-up phase (3 sprints × ramp velocity)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Points delivered in stable phase (remaining sprints × stable velocity)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Total forecasted points in 6 months</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Can we launch? (350 pts needed vs. total forecasted)</td>
+                <td></td>
+            </tr>
+        </table>
+
+        <h3>Technique 2: Thin-Slice Recommendation</h3>
+        <div class="workspace">
+            <p>Instead of committing to a date now, write a recommendation to the CEO for a "thin-slice" approach. What would you propose for the first 2 sprints, and when would you provide a confident forecast?</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">2</span> Scenario: Forecasting With Historical Data</h2>
+        <p><span class="timer">15 minutes</span></p>
+        <p>Now you have data. The SmartInvoice team has completed 8 sprints. Use the data to build a refined forecast.</p>
+
+        <h3>Sprint History</h3>
+        <table>
+            <tr>
+                <th>Sprint</th>
+                <th>Planned</th>
+                <th>Completed</th>
+                <th>Defects Found</th>
+                <th>Scope Added</th>
+            </tr>
+            <tr><td>1</td><td>20</td><td>12</td><td>3</td><td>0</td></tr>
+            <tr><td>2</td><td>18</td><td>16</td><td>4</td><td>5</td></tr>
+            <tr><td>3</td><td>20</td><td>19</td><td>2</td><td>8</td></tr>
+            <tr><td>4</td><td>22</td><td>22</td><td>1</td><td>3</td></tr>
+            <tr><td>5</td><td>24</td><td>23</td><td>2</td><td>10</td></tr>
+            <tr><td>6</td><td>24</td><td>25</td><td>1</td><td>5</td></tr>
+            <tr><td>7</td><td>26</td><td>24</td><td>3</td><td>12</td></tr>
+            <tr><td>8</td><td>26</td><td>26</td><td>2</td><td>0</td></tr>
+        </table>
+
+        <h3>Release Burnup Calculations</h3>
+        <table>
+            <tr>
+                <th>Metric</th>
+                <th>Your Calculation</th>
+            </tr>
+            <tr>
+                <td>Total points completed so far</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Original scope remaining (350 - completed)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Total scope added over 8 sprints</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Adjusted total scope (350 + added scope)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Adjusted remaining scope</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Average velocity (last 4 sprints)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Average scope growth per sprint</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Net progress per sprint (velocity - scope growth)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Sprints to completion (remaining ÷ net progress)</td>
+                <td></td>
+            </tr>
+        </table>
+
+        <div class="workspace">
+            <p>How does accounting for scope growth change the forecast compared to using raw velocity alone?</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">3</span> Buffer Decision Exercise</h2>
+        <p><span class="timer">10 minutes</span></p>
+        <p>Given the forecast from Exercise 2, decide on a buffer strategy.</p>
+
+        <table>
+            <tr>
+                <th>Buffer Type</th>
+                <th>Size</th>
+                <th>Your Recommendation</th>
+                <th>Justification</th>
+            </tr>
+            <tr>
+                <td><strong>No buffer</strong></td>
+                <td>0 sprints</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Small buffer</strong> (10%)</td>
+                <td>~1 sprint</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Medium buffer</strong> (20%)</td>
+                <td>~2 sprints</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Feature buffer</strong></td>
+                <td>Cut 15% of scope</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <h3>Risk Factors to Consider</h3>
+        <ul>
+            <li>The team lost a developer in Sprint 6 (replaced in Sprint 7)</li>
+            <li>A major integration with a 3rd-party payment processor is still unestimated</li>
+            <li>Holiday season will reduce velocity for 2 sprints</li>
+            <li>Scope growth rate has been averaging ~5 points/sprint</li>
+        </ul>
+
+        <div class="workspace">
+            <p>Which buffer strategy do you recommend and why? Consider both time and feature buffers.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">4</span> Quality Metrics Impact</h2>
+        <p><span class="timer">10 minutes</span></p>
+        <p>Analyze how quality practices affect forecast reliability.</p>
+
+        <table>
+            <tr>
+                <th>Quality Metric</th>
+                <th>Sprint 1-4 Avg</th>
+                <th>Sprint 5-8 Avg</th>
+                <th>Trend</th>
+                <th>Impact on Forecast</th>
+            </tr>
+            <tr>
+                <td>Defects found per sprint</td>
+                <td>2.5</td>
+                <td>2.0</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Code coverage %</td>
+                <td>45%</td>
+                <td>72%</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Stories passing acceptance on first attempt</td>
+                <td>60%</td>
+                <td>85%</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Refactoring stories per sprint</td>
+                <td>0</td>
+                <td>1-2</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Velocity trend</td>
+                <td>17.25</td>
+                <td>24.5</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <div class="workspace">
+            <p>How did the introduction of refactoring stories and higher code coverage affect velocity? Is the team spending capacity on quality, and is it paying off?</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">5</span> Stakeholder Forecast Presentation</h2>
+        <p><span class="timer">10 minutes</span></p>
+        <p>Prepare a 2-minute stakeholder update. Draft the key points you would present to the CEO.</p>
+
+        <div class="workspace">
+            <p><strong>Forecast Summary</strong> (fill in):<br><br>
+            "Based on [X sprints] of data, our team delivers approximately [Y] points per sprint. With [Z] points remaining and an average scope growth of [W] points per sprint, we forecast completion in [range] sprints. With a [buffer type] buffer, our recommended target date is [date]. The confidence level of this forecast is [high/medium/low] because [reasons]."</p>
+        </div>
+
+        <div class="workspace">
+            <p><strong>Key risks and mitigations</strong> you would highlight:</p>
+        </div>
+
+        <div class="workspace">
+            <p><strong>Alternative scenarios</strong> to present (scope cuts, date flexibility, team changes):</p>
+        </div>
+    </div>
+
+    <div class="card warning-card">
+        <h2>💡 Course Wrap-Up Discussion</h2>
+        <ul>
+            <li>What was the most valuable estimation technique you learned in this course?</li>
+            <li>What is the first thing you will change when you return to your team?</li>
+            <li>How will you handle it when asked "Can you just give me a date?"</li>
+            <li>What metrics will you start tracking (or stop tracking) based on what you've learned?</li>
+        </ul>
+    </div>
+</body>
+</html>

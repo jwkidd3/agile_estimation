@@ -1,0 +1,2005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 4: Relative Sizing Metrics | Agile Project Estimation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css">
+    <style>
+        :root {
+            --heading-color: #1a365d;
+            --accent-color: #2b6cb0;
+            --success-color: #2f855a;
+            --warning-color: #c05621;
+            --danger-color: #c53030;
+            --text-color: #2d3748;
+            --light-bg: #f7fafc;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .reveal {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+        }
+
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+            color: var(--heading-color);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .reveal h1 { font-size: 2.2em; }
+        .reveal h2 { font-size: 1.6em; margin-bottom: 0.6em; }
+        .reveal h3 { font-size: 1.3em; color: var(--accent-color); }
+
+        .reveal .slides section {
+            text-align: left;
+            padding: 20px 40px;
+        }
+
+        /* Title Slide */
+        .title-slide {
+            text-align: center !important;
+        }
+        .title-slide h1 {
+            color: #ffffff !important;
+            font-size: 2.4em !important;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 0.2em;
+        }
+        .title-slide h2 {
+            color: #e2e8f0 !important;
+            font-size: 1.4em !important;
+            font-weight: 400;
+            margin-bottom: 0.1em;
+        }
+        .title-slide h3 {
+            color: #bee3f8 !important;
+            font-size: 1.1em !important;
+            font-weight: 300;
+        }
+        .title-slide .module-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            border: 2px solid rgba(255,255,255,0.4);
+            border-radius: 30px;
+            padding: 8px 28px;
+            color: #ffffff;
+            font-size: 1.0em;
+            margin-bottom: 1em;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%);
+            border-left: 5px solid var(--accent-color);
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin: 20px 0;
+            box-shadow: var(--card-shadow);
+        }
+        .highlight-box.success {
+            background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+            border-left-color: var(--success-color);
+        }
+        .highlight-box.warning {
+            background: linear-gradient(135deg, #fffaf0 0%, #feebc8 100%);
+            border-left-color: var(--warning-color);
+        }
+        .highlight-box.danger {
+            background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+            border-left-color: var(--danger-color);
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+            margin-top: 15px;
+        }
+        .two-column.narrow-wide {
+            grid-template-columns: 2fr 3fr;
+        }
+        .two-column.wide-narrow {
+            grid-template-columns: 3fr 2fr;
+        }
+
+        /* Architecture / Concept Box */
+        .architecture-box {
+            background: var(--light-bg);
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: var(--card-shadow);
+        }
+        .architecture-box h4 {
+            color: var(--accent-color);
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.0em;
+        }
+
+        /* Cards */
+        .card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--card-shadow);
+            border-top: 4px solid var(--accent-color);
+            margin: 10px 0;
+        }
+        .card.success { border-top-color: var(--success-color); }
+        .card.warning { border-top-color: var(--warning-color); }
+        .card.danger { border-top-color: var(--danger-color); }
+        .card h4 {
+            margin-top: 0;
+            font-size: 0.95em;
+        }
+
+        /* Tables */
+        .reveal table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 15px 0;
+            font-size: 0.75em;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+        .reveal table thead th {
+            background: var(--heading-color);
+            color: #ffffff;
+            padding: 14px 18px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .reveal table tbody td {
+            padding: 12px 18px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .reveal table tbody tr:nth-child(even) {
+            background: #f7fafc;
+        }
+        .reveal table tbody tr:hover {
+            background: #ebf8ff;
+        }
+
+        /* Lists */
+        .reveal ul, .reveal ol {
+            font-size: 0.85em;
+            line-height: 1.6;
+            margin-left: 0;
+        }
+        .reveal ul li, .reveal ol li {
+            margin-bottom: 8px;
+        }
+
+        /* Process Steps */
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin: 20px 0;
+        }
+        .step {
+            flex: 1;
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            border-bottom: 4px solid var(--accent-color);
+            font-size: 0.7em;
+        }
+        .step .step-number {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            line-height: 32px;
+            background: var(--accent-color);
+            color: #ffffff;
+            border-radius: 50%;
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        .step h4 {
+            color: var(--heading-color);
+            margin: 6px 0;
+            font-size: 1.0em;
+        }
+
+        /* Fibonacci Scale Visual */
+        .fibonacci-scale {
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .fib-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+        .fib-bar {
+            width: 60px;
+            background: linear-gradient(180deg, var(--accent-color), var(--heading-color));
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 8px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.0em;
+            min-height: 30px;
+        }
+        .fib-label {
+            font-size: 0.65em;
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        /* Velocity Chart */
+        .velocity-chart {
+            display: flex;
+            align-items: flex-end;
+            gap: 14px;
+            padding: 15px 10px 10px;
+            background: var(--light-bg);
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            height: 220px;
+        }
+        .velocity-bar-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+        .velocity-bar {
+            width: 45px;
+            background: linear-gradient(180deg, var(--accent-color), #3182ce);
+            border-radius: 6px 6px 0 0;
+            transition: all 0.3s;
+        }
+        .velocity-bar.avg {
+            background: linear-gradient(180deg, var(--success-color), #48bb78);
+        }
+        .velocity-label {
+            font-size: 0.6em;
+            color: #718096;
+            text-align: center;
+        }
+        .velocity-value {
+            font-size: 0.65em;
+            font-weight: 700;
+            color: var(--heading-color);
+        }
+
+        /* Metric Card */
+        .metric-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            border-left: 5px solid var(--accent-color);
+        }
+        .metric-card .metric-value {
+            font-size: 2.0em;
+            font-weight: 800;
+            color: var(--accent-color);
+        }
+        .metric-card .metric-label {
+            font-size: 0.75em;
+            color: #718096;
+            margin-top: 4px;
+        }
+
+        /* Comparison Layout */
+        .vs-layout {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 15px;
+            align-items: center;
+            margin: 15px 0;
+        }
+        .vs-divider {
+            font-size: 1.8em;
+            font-weight: 800;
+            color: var(--warning-color);
+            text-align: center;
+        }
+
+        /* Lab Slide */
+        .lab-slide h2, .lab-slide h3, .lab-slide p, .lab-slide li {
+            color: #ffffff !important;
+        }
+        .lab-slide ul {
+            list-style: none;
+            padding: 0;
+        }
+        .lab-slide ul li::before {
+            content: ">";
+            color: #bee3f8;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+        .lab-slide .lab-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 2px solid rgba(255,255,255,0.35);
+            border-radius: 30px;
+            padding: 8px 28px;
+            color: #ffffff;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            backdrop-filter: blur(10px);
+        }
+        .lab-slide .lab-time {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 12px 20px;
+            margin-top: 15px;
+            font-size: 0.85em;
+            color: #e2e8f0;
+        }
+
+        /* Takeaway Box */
+        .takeaway-box {
+            background: linear-gradient(135deg, #ebf8ff 0%, #e9d8fd 100%);
+            border-radius: 12px;
+            padding: 20px 25px;
+            margin: 10px 0;
+            box-shadow: var(--card-shadow);
+        }
+
+        /* Icon Circle */
+        .icon-circle {
+            display: inline-flex;
+            width: 48px;
+            height: 48px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--accent-color);
+            color: #fff;
+            font-size: 1.3em;
+            margin-bottom: 8px;
+        }
+
+        /* Questions Slide */
+        .questions-slide {
+            text-align: center !important;
+        }
+        .questions-slide h2 {
+            font-size: 2.2em !important;
+        }
+
+        /* Poker Card Visual */
+        .poker-cards {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin: 15px 0;
+        }
+        .poker-card {
+            width: 65px;
+            height: 90px;
+            background: #fff;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: 800;
+            color: var(--accent-color);
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s;
+        }
+        .poker-card.flipped {
+            background: var(--heading-color);
+            color: #fff;
+        }
+        .poker-card.highlight {
+            border-color: var(--warning-color);
+            box-shadow: 0 0 12px rgba(192, 86, 33, 0.3);
+        }
+
+        /* Small Text */
+        .small-text {
+            font-size: 0.7em;
+            color: #718096;
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            padding: 3px 12px;
+            border-radius: 15px;
+            font-size: 0.7em;
+            font-weight: 600;
+            color: #fff;
+        }
+        .badge.blue { background: var(--accent-color); }
+        .badge.green { background: var(--success-color); }
+        .badge.orange { background: var(--warning-color); }
+        .badge.red { background: var(--danger-color); }
+
+        /* Chart Legend */
+        .chart-legend {
+            display: flex;
+            gap: 20px;
+            font-size: 0.7em;
+            margin-top: 8px;
+            justify-content: center;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+        }
+
+        /* Flow Diagram */
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+        .flow-box {
+            background: #fff;
+            border: 2px solid var(--accent-color);
+            border-radius: 8px;
+            padding: 10px 16px;
+            font-size: 0.75em;
+            font-weight: 600;
+            color: var(--heading-color);
+            text-align: center;
+        }
+        .flow-arrow {
+            font-size: 1.2em;
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- ============================================================ -->
+            <!-- SLIDE 1: TITLE SLIDE -->
+            <!-- ============================================================ -->
+            <section class="title-slide" data-background="linear-gradient(135deg, #2b6cb0 0%, #1a365d 100%)">
+                <div class="module-badge">Module 4 of 8</div>
+                <h1>Relative Sizing Metrics</h1>
+                <h2>Agile Project Estimation</h2>
+                <h3>From Absolute Guesses to Relative Intelligence</h3>
+                <aside class="notes">
+                    Welcome to Module 4 on Relative Sizing Metrics. This is one of the most transformative topics in the course. We are moving away from the traditional approach of estimating in hours and days, and instead adopting relative comparison techniques that leverage how our brains actually work. By the end of this module, participants will understand story points, Planning Poker, velocity tracking, and key business metrics that drive Agile delivery. This module directly builds on the story decomposition work from Module 3.
+                </aside>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- SLIDE 2: MODULE OBJECTIVES -->
+            <!-- ============================================================ -->
+            <section>
+                <h2>Module Objectives</h2>
+                <div class="two-column">
+                    <div>
+                        <div class="card">
+                            <h4>By the end of this module, you will be able to:</h4>
+                            <ul>
+                                <li class="fragment" data-fragment-index="1">Explain <strong>why relative sizing</strong> outperforms absolute estimation</li>
+                                <li class="fragment" data-fragment-index="2">Define and apply <strong>story points</strong>, ideal days, and the modified Fibonacci scale</li>
+                                <li class="fragment" data-fragment-index="3">Facilitate a <strong>Planning Poker</strong> session effectively</li>
+                                <li class="fragment" data-fragment-index="4">Calculate and interpret <strong>team velocity</strong> for forecasting</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card success">
+                            <h4>And also:</h4>
+                            <ul>
+                                <li class="fragment" data-fragment-index="5">Recognize <strong>constraints and pitfalls</strong> of relative sizing</li>
+                                <li class="fragment" data-fragment-index="6">Identify the <strong>consequences</strong> of not using relative measurement</li>
+                                <li class="fragment" data-fragment-index="7">Read and interpret key <strong>business metrics</strong> and charts</li>
+                                <li class="fragment" data-fragment-index="8">Connect <strong>business value metrics</strong> to delivery prioritization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    Walk through each objective and connect them to the overall course arc. Emphasize that this module is both conceptual and practical -- we will learn the theory and then apply it hands-on in the lab. These skills are used in virtually every Agile team regardless of framework. The objectives map directly to the course outline's Relative Sizing Metrics section.
+                </aside>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- SECTION: UNDERSTANDING RELATIVE SIZING TECHNIQUES -->
+            <!-- ============================================================ -->
+            <section>
+                <h2>&#x1F4CF; Understanding Relative Sizing Techniques</h2>
+                <h3>Absolute vs. Relative Estimation</h3>
+                <div class="vs-layout">
+                    <div class="card danger">
+                        <h4>Absolute Estimation</h4>
+                        <ul>
+                            <li>"This will take <strong>16 hours</strong>"</li>
+                            <li>Requires detailed task breakdown</li>
+                            <li>Precision implies false confidence</li>
+                            <li>Varies wildly by individual</li>
+                            <li>Anchored to clock time</li>
+                        </ul>
+                    </div>
+                    <div class="vs-divider">VS</div>
+                    <div class="card success">
+                        <h4>Relative Estimation</h4>
+                        <ul>
+                            <li>"This is <strong>about twice as big</strong> as that story"</li>
+                            <li>Leverages comparison, not analysis</li>
+                            <li>Acknowledges inherent uncertainty</li>
+                            <li>Team converges on consensus</li>
+                            <li>Anchored to known reference work</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="highlight-box fragment">
+                    <strong>Key Insight:</strong> Relative estimation asks "how big is this compared to what we already know?" rather than "how long will this take in hours?"
+                </div>
+                <aside class="notes">
+                    Start with a quick poll: "How many of you have been asked for an exact hour estimate and then been held to it?" This resonates with almost everyone. Explain that absolute estimation is deeply ingrained in traditional project management but is fundamentally flawed for knowledge work where uncertainty is high. Relative estimation flips the question -- instead of asking how long, we ask how big compared to something we already understand. This is not about being imprecise; it is about being honestly uncertain while still providing useful planning data.
+                </aside>
+            </section>
+
+            <section>
+                <h2>&#x1F4CF; The Dog Sizing Analogy</h2>
+                <h3>Why Comparison Works Better Than Measurement</h3>
+                <div class="architecture-box">
+                    <h4>The Experiment</h4>
+                    <p>Imagine you are asked to estimate the weight of five different dog breeds you have never weighed before:</p>
+                </div>
+                <div class="two-column" style="margin-top: 15px;">
+                    <div>
+                        <div class="card danger">
+                            <h4>Absolute Approach</h4>
+                            <p>"How much does each dog weigh in kilograms?"</p>
+                            <ul>
+                                <li>Chihuahua: 2 kg? 3 kg?</li>
+                                <li>Beagle: 10 kg? 15 kg?</li>
+                                <li>Labrador: 25 kg? 35 kg?</li>
+                                <li>German Shepherd: 30 kg? 40 kg?</li>
+                                <li>Great Dane: 50 kg? 70 kg?</li>
+                            </ul>
+                            <p class="small-text">Wide variance, low confidence</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card success">
+                            <h4>Relative Approach</h4>
+                            <p>"Rank them from smallest to largest and assign relative sizes"</p>
+                            <ul>
+                                <li>Chihuahua: <strong>1</strong> (our baseline)</li>
+                                <li>Beagle: <strong>5</strong></li>
+                                <li>Labrador: <strong>13</strong></li>
+                                <li>German Shepherd: <strong>13</strong></li>
+                                <li>Great Dane: <strong>21</strong></li>
+                            </ul>
+                            <p class="small-text">High agreement, useful ordering</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight-box success fragment">
+                    <strong>Result:</strong> People reach consensus much faster on relative size, and the ordering is almost always correct -- even when absolute guesses are wildly off.
+                </div>
+                <aside class="notes">
+                    This is a classic analogy from Mike Cohn. Walk through it conversationally. Ask participants to quickly guess the weight of a Labrador in kilograms, then compare answers -- they will vary enormously. Now ask them to rank the five dogs from smallest to largest -- nearly everyone will agree. The point is that our brains are wired for comparison, not absolute measurement. We can tell that a Labrador is bigger than a Beagle with high confidence, but estimating its exact weight requires specialized knowledge we do not have. Software stories work the same way.
+                </aside>
+            </section>
+
+            <section>
+                <h2>&#x1F4CF; Why Humans Excel at Relative Comparison</h2>
+                <div class="two-column">
+                    <div>
+                        <div class="highlight-box">
+                            <h4>Cognitive Science Backing</h4>
+                            <ul>
+                                <li class="fragment"><strong>Weber-Fechner Law:</strong> Our perception of stimuli is logarithmic, not linear -- we naturally think in ratios</li>
+                                <li class="fragment"><strong>Miller's Law:</strong> We can hold 7 +/- 2 items in working memory -- a small set of relative sizes fits perfectly</li>
+                                <li class="fragment"><strong>Anchoring Effect:</strong> A known reference story provides a stable anchor for comparison</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="architecture-box">
+                            <h4>Practical Evidence</h4>
+                            <ul>
+                                <li class="fragment">Teams using relative sizing reach consensus <strong>3-5x faster</strong> than hour-based estimation</li>
+                                <li class="fragment">Relative estimates have <strong>lower variance</strong> across team members</li>
+                                <li class="fragment">Velocity-based forecasts converge to <strong>+/- 10% accuracy</strong> within 3-5 sprints</li>
+                                <li class="fragment">Studies show relative estimation <strong>reduces planning time by 40-60%</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight-box warning fragment">
+                    <strong>Important:</strong> Relative sizing is not less rigorous than absolute estimation -- it is <em>differently</em> rigorous. It trades false precision for honest accuracy.
+                </div>
+                <aside class="notes">
+                    This slide provides the scientific grounding for why relative estimation works. The Weber-Fechner Law explains why Fibonacci numbers feel natural as an estimation scale -- they roughly follow a logarithmic progression. Miller's Law tells us that having 7 values in our scale (1, 2, 3, 5, 8, 13, 21) is ideal for human cognition. The anchoring effect, which is usually a bias to avoid, becomes a feature when we deliberately choose a well-understood reference story. Mention that these are not just theoretical -- multiple studies in software engineering have validated these benefits. The key message is that we are working WITH human cognition rather than against it.
+                </aside>
+            </section>
+
+            <section>
+                <h2>&#x1F4CF; Research-Backed Effectiveness</h2>
+                <h3>What the Data Shows</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Absolute (Hours)</th>
+                            <th>Relative (Story Points)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="fragment">
+                            <td>Estimation time per story</td>
+                            <td>15-30 minutes</td>
+                            <td>2-5 minutes</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td>Team agreement rate</td>
+                            <td>30-50%</td>
+                            <td>70-90%</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td>Forecast accuracy (after 5 sprints)</td>
+                            <td>+/- 50%</td>
+                            <td>+/- 15%</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td>Re-estimation frequency</td>
+                            <td>Every sprint</td>
+                            <td>Rarely needed</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td>Impact of team changes</td>
+                            <td>Invalidates estimates</td>
+                            <td>Velocity self-adjusts</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="highlight-box success fragment">
+                    <strong>Takeaway:</strong> The combination of faster estimation, higher agreement, and self-correcting forecasts makes relative sizing the preferred approach for Agile teams worldwide.
+                </div>
+                <aside class="notes">
+                    Walk through the table row by row. The estimation time difference is dramatic -- instead of debating whether something takes 12 or 16 hours, teams quickly agree it is "about an 8." The agreement rate is higher because comparison removes the personal bias of individual speed and experience. Forecast accuracy improves because velocity absorbs all the variables that make hour-based estimates unreliable -- interruptions, meetings, technical debt, learning curves. The self-adjusting nature of velocity is perhaps the most powerful advantage: when team composition changes, velocity naturally shifts to reflect the new team's capacity without re-estimating the entire backlog.
+                </aside>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- SECTION: DEVELOPING STORY POINTS, IDEAL DAYS -->
+            <!-- ============================================================ -->
+            <section>
+                <h2>&#x1F522; Developing Story Points</h2>
+                <h3>Effort + Complexity + Uncertainty</h3>
+                <div class="highlight-box">
+                    <strong>Definition:</strong> A story point is a <em>composite measure</em> that reflects the overall size of a user story, combining effort, complexity, and uncertainty into a single relative number.
+                </div>
+                <div class="process-steps fragment">
+                    <div class="step">
+                        <div class="step-number">E</div>
+                        <h4>Effort</h4>
+                        <p>How much work is involved? Volume of tasks and activities.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">C</div>
+                        <h4>Complexity</h4>
+                        <p>How intricate is the solution? Algorithms, integrations, edge cases.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">U</div>
+                        <h4>Uncertainty</h4>
+                        <p>How much is unknown? New technology, unclear requirements.</p>
+                    </div>
+                </div>
+                <div class="architecture-box fragment">
+                    <h4>Example</h4>
+                    <p>A story might be <strong>low effort</strong> (simple CRUD form) but <strong>high complexity</strong> (complex validation rules) and <strong>moderate uncertainty</strong> (new third-party API). The story point captures all three dimensions in one number.</p>
+                </div>
+                <aside class="notes">
+                    Story points are the currency of Agile estimation, and understanding what they represent is critical. Emphasize that story points are NOT just effort -- they intentionally blend three dimensions. A story could be straightforward but massive in volume (high effort, low complexity), or small but deeply uncertain (low effort, high uncertainty). The beauty of story points is that the team does not need to decompose which factor contributes what -- they compare the story holistically to their reference stories and assign a size. This is why converting story points to hours destroys their value: it strips away the complexity and uncertainty dimensions. Ask participants to think of examples from their own work that are high in one dimension but low in others.
+                </aside>
+            </section>
+
+            <section>
+                <h2>&#x1F522; Ideal Days vs. Elapsed Days</h2>
+                <div class="two-column">
+                    <div>
+                        <div class="card">
+                            <h4>Ideal Days</h4>
+                            <div class="highlight-box">
+                                <p>An <strong>ideal day</strong> is a day of uninterrupted, focused work -- no meetings, no emails, no context switching.</p>
+                            </div>
+                            <ul>
+                                <li class="fragment">Easier for some teams to grasp initially</li>
+                                <li class="fragment">Still relative: "2 ideal days" does not mean "done Tuesday"</li>
+                                <li class="fragment">Danger: stakeholders hear "days" and think calendar</li>
+                                <li class="fragment">Useful as a stepping stone to story points</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card success">
+                            <h4>Why Story Points Win</h4>
+                            <ul>
+                                <li class="fragment"><strong>No time confusion:</strong> "5 points" cannot be mistaken for "5 days"</li>
+                                <li class="fragment"><strong>Team-normalized:</strong> Points absorb individual speed differences</li>
+                                <li class="fragment"><strong>Encourages holistic thinking:</strong> Effort + complexity + uncertainty</li>
+                                <li class="fragment"><strong>Velocity-friendly:</strong> Forecasting is more natural</li>
+                                <li class="fragment"><strong>Less gameable:</strong> Harder to sandbag with abstract units</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight-box warning fragment">
+                    <strong>Rule of Thumb:</strong> If your team is new to Agile, ideal days can be a useful on-ramp. Transition to story points once the team is comfortable with relative estimation concepts.
+                </div>
+                <aside class="notes">
+                    Ideal days are a legitimate estimation unit, and some well-known Agile authors like Mike Cohn have written about their use. The key issue is communication: when you say "3 ideal days," non-technical stakeholders often hear "3 days" and expect delivery by Wednesday. Story points avoid this entirely because they have no inherent time meaning. Walk through a concrete example: if I say a story is "3 ideal days," a typical sprint might convert that to 5-6 elapsed days accounting for meetings, code reviews, and interruptions. But if I say "5 points," we just look at our velocity to know how many points we can fit in a sprint. The abstraction is actually a benefit, not a limitation. For teams transitioning from waterfall, ideal days can serve as a bridge to get comfortable with the concept of relative sizing before moving to story points.
+                </aside>
+            </section>
+
+            <section>
+                <h2>&#x1F522; The Modified Fibonacci Scale</h2>
+                <div class="fibonacci-scale">
+                    <div class="fib-item fragment">
+                        <div class="fib-bar" style="height: 30px;">1</div>
+                        <div class="fib-label">Trivial<br>change</div>
+                    </div>
+                    <div class="fib-item fragment">
+                        <div class="fib-bar" style="height: 50px;">2</div>
+                        <div class="fib-label">Small<br>task</div>
+                    </div>
+                    <div class="fib-item fragment">
+                        <div class="fib-bar" style="height: 70px;">3</div>
+                        <div class="fib-label">Moderate<br>story</div>
+                    </div>
+                    <div class="fib-item fragment">
+                        <div class="fib-bar" style="height: 100px;">5</div>
+                        <div class="fib-label">Standard<br>story</div>
+                    </div>
+                    <div class="fib-item fragment">
+                        <div class="fib-bar" style="height: 140px;">8</div>
+                        <div class="fib-label">Large<br>story</div>
+                    </div>
+                    <div class="fib-item fragment">
+                        <div class="fib-bar" style="height: 190px;">13</div>
+                        <div class="fib-label">Very large<br>consider split</div>
+                    </div>
+                    <div class="fib-item fragment">
+                        <div class="fib-bar" style="height: 250px;">21</div>
+                        <div class="fib-label">Epic-sized<br>must split</div>
+                    </div>
+                </div>
+                <div class="highlight-box fragment">
+                    <strong>Why Fibonacci?</strong> The increasing gaps between numbers reflect the increasing uncertainty in larger items. We can distinguish a 2 from a 3, but not a 14 from a 15 -- so the scale forces us to acknowledge that distinction is meaningless at larger sizes.
+                </div>
+                <div class="architecture-box fragment">
+                    <h4>Alternative Scales</h4>
+                    <p>Some teams use <strong>T-shirt sizes</strong> (XS, S, M, L, XL) for early roadmap sizing, or <strong>powers of 2</strong> (1, 2, 4, 8, 16). The Fibonacci sequence remains the most widely adopted scale in practice.</p>
+                </div>
+                <aside class="notes">
+                    The modified Fibonacci sequence is 1, 2, 3, 5, 8, 13, 21 -- sometimes extended to 34 and beyond, though anything above 21 should be split. Walk participants through why each gap matters. Between 1 and 2, we can meaningfully distinguish small differences. Between 8 and 13, we are saying "it's noticeably bigger" without pretending we know exactly how much bigger. The scale reflects the Weber-Fechner Law from the previous slide -- our perception of size differences is logarithmic. A common question is "why not just use 1-10?" The answer is that linear scales encourage false precision: teams will debate whether something is a 6 or a 7, which is a meaningless distinction. Fibonacci forces a meaningful choice: is it a 5 or an 8? That is a real difference. Mention T-shirt sizes as useful for early-stage roadmap estimation where you just need a rough sense of size.
+                </aside>
+            </section>
+
+            <section>
+                <h2>&#x1F522; Creating a Reference Story Baseline</h2>
+                <h3>The Foundation of Consistent Sizing</h3>
+                <div class="process-steps">
+                    <div class="step fragment">
+                        <div class="step-number">1</div>
+                        <h4>Select</h4>
+                        <p>Choose a well-understood story the whole team has completed</p>
+                    </div>
+                    <div class="step fragment">
+                        <div class="step-number">2</div>
+                        <h4>Assign</h4>
+                        <p>Give it a baseline value (typically 3 or 5 points)</p>
+                    </div>
+                    <div class="step fragment">
+                        <div class="step-number">3</div>
+                        <h4>Calibrate</h4>
+                        <p>Size 3-5 additional stories relative to the baseline</p>
+                    </div>
+                    <div class="step fragment">
+                        <div class="step-number">4</div>
+                        <h4>Document</h4>
+                        <p>Create a reference chart the team can revisit</p>
+                    </div>
+                </div>
+                <div class="two-column fragment">
+                    <div class="highlight-box success">
+                        <h4>Good Reference Story Traits</h4>
+                        <ul>
+                            <li>Recently completed by the current team</li>
+                            <li>Moderate size (middle of the scale)</li>
+                            <li>Well understood by all team members</li>
+                            <li>Representative of typical work</li>
+                        </ul>
+                    </div>
+                    <div class="highlight-box warning">
+                        <h4>Common Mistakes</h4>
+                        <ul>
+                            <li>Using a story only one person worked on</li>
+                            <li>Picking an outlier (too easy or too hard)</li>
+                            <li>Choosing a story from a different project context</li>
+                            <li>Never updating the reference as the team evolves</li>
+                        </ul>
+                    </div>
+                </div>
+                <aside class="notes">
+                    The reference story is the most important decision in setting up story point estimation. Without a shared baseline, team members will calibrate differently and points become meaningless. Walk through the four steps: First, the team selects a story everyone remembers and understands -- ideally something completed in the last few sprints. Second, assign it a value in the middle of the scale, typically 3 or 5. Avoid 1 because it leaves no room for smaller stories. Third, immediately calibrate by sizing 3-5 more stories relative to this baseline. "Is the login page story bigger or smaller than our reference? By how much?" Fourth, document these reference stories somewhere visible -- a wiki page, a wall chart, or a shared document. This reference set should be revisited every few months as the team's skills and context evolve. New team members should be walked through the reference stories as part of onboarding.
+                </aside>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- SECTION: SIZING WITH PLANNING POKER -->
+            <!-- ============================================================ -->
+            <section>
+                <h2>&#x1F0CF; Sizing with Planning Poker</h2>
+                <h3>The Ceremony Step by Step</h3>
+                <div class="process-steps">
+                    <div class="step fragment">
+                        <div class="step-number">1</div>
+                        <h4>Present</h4>
+                        <p>Product Owner describes the story and answers questions</p>
+                    </div>
+                    <div class="step fragment">
+                        <div class="step-number">2</div>
+                        <h4>Discuss</h4>
+                        <p>Team asks clarifying questions; brief open discussion</p>
+                    </div>
+                    <div class="step fragment">
+                        <div class="step-number">3</div>
+                        <h4>Estimate</h4>
+                        <p>Each member privately selects a card value</p>
+                    </div>
+                    <div class="step fragment">
+                        <div class="step-number">4</div>
+                        <h4>Reveal</h4>
+                        <p>All cards shown simultaneously -- no peeking!</p>
+                    </div>
+                    <div class="step fragment">
+                        <div class="step-number">5</div>
+                        <h4>Converge</h4>
+                        <p>Outliers explain reasoning; re-vote if needed</p>
+                    </div>
+                </div>
+                <div class="poker-cards fragment">
+                    <div class="poker-card">1</div>
+                    <div class="poker-card">3</div>
+                    <div class="poker-card highlight">5</div>
+                    <div class="poker-card highlight">5</div>
+                    <div class="poker-card">8</div>
+                    <div class="poker-card">5</div>
+                </div>
+                <p class="small-text fragment" style="text-align: center;">Example reveal: most team members converge on 5, one outlier at 8 explains their concern about an edge case.</p>
+                <aside class="notes">
+                    Planning Poker was popularized by James Grenning and later by Mike Cohn. Walk through each step deliberately. Step 1: The Product Owner reads the story aloud and provides context. Keep this brief -- 1-2 minutes. Step 2: The team asks clarifying questions, but this is NOT design time. Focus on understanding scope and acceptance criteria. Step 3: Each person privately selects their card. This is critical -- private selection prevents anchoring. Step 4: On the count of three, everyone reveals simultaneously. The visual impact of seeing cards is powerful. Step 5: If there is significant divergence (more than 2 Fibonacci numbers apart), the high and low estimators explain their reasoning. Often one side has information the other lacks. Then re-vote. Most stories converge in 1-2 rounds. Time-box discussion to 2-3 minutes per story.
+                </aside>
+            </section>
+
+            <section>
+                <h2>&#x1F0CF; Why Simultaneous Reveal Matters</h2>
+                <h3>Avoiding the Anchoring Trap</h3>
+                <div class="two-column">
+                    <div>
+                        <div class="card danger">
+                            <h4>Sequential Estimation</h4>
+                            <p>"I think it's a 5."</p>
+                            <p style="font-size: 0.8em; color: #718096;">Everyone hears the first estimate and unconsciously adjusts toward it.</p>
+                            <div class="highlight-box danger" style="margin-top: 10px;">
+                                <strong>Anchoring Bias:</strong> The first number spoken becomes a cognitive anchor. Subsequent estimates cluster around it, reducing the value of diverse perspectives.
+                            </div>
+                        </div>
+                        <div class="card warning fragment">
+                            <h4>HiPPO Effect</h4>
+                            <p><strong>H</strong>ighest <strong>P</strong>aid <strong>P</strong>erson's <strong>O</strong>pinion dominates when estimates are shared sequentially. The tech lead says "3" and everyone agrees.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card success">
+                            <h4>Simultaneous Reveal</h4>
+                            <p>"3... 2... 1... Flip!"</p>
+                            <p style="font-size: 0.8em; color: #718096;">Every perspective is captured independently before group discussion begins.</p>
+                            <div class="highlight-box success" style="margin-top: 10px;">
+                                <strong>Benefits:</strong>
+                                <ul>
+                                    <li>Surfaces hidden knowledge and assumptions</li>
+                                    <li>Equal voice for all team members</li>
+                                    <li>Identifies genuine disagreement vs. noise</li>
+                                    <li>Drives the most valuable discussions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    The simultaneous reveal is not just a fun ritual -- it is psychologically essential. Daniel Kahneman's research on anchoring shows that even random numbers can influence subsequent estimates. When a senior developer says "this is a 3" first, junior developers will unconsciously pull their estimate toward 3, even if they initially thought 8. The simultaneous reveal ensures that a junior developer who sees a risk nobody else noticed can surface that information. Some of the most valuable discussions in Planning Poker happen when there is a 3 and a 13 on the table -- someone knows something the others do not. Without simultaneous reveal, that knowledge might never surface. The HiPPO effect -- Highest Paid Person's Opinion -- is real and pervasive. Planning Poker is one of the few practices that structurally prevents it.
+                </aside>
+            </section>
+
+            <section>
+                <h2>&#x1F0CF; Handling Outliers and Discussion</h2>
+                <div class="two-column">
+                    <div>
+                        <div class="architecture-box">
+                            <h4>When Estimates Diverge</h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Spread</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1 step apart (e.g., 5 & 8)</td>
+                                        <td>Quick discussion, average or take higher</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2 steps apart (e.g., 3 & 8)</td>
+                                        <td>High and low explain; re-vote once</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3+ steps apart (e.g., 2 & 13)</td>
+                                        <td>Deep discussion -- different assumptions exist</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="highlight-box fragment">
+                            <strong>The 2-Minute Rule:</strong> Limit outlier discussion to 2 minutes. If the team cannot converge after two rounds of voting, take the higher estimate and move on. Extended debate has diminishing returns.
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card fragment">
+                            <h4>Tips for Effective Sessions</h4>
+                            <ul>
+                                <li><strong>Time-box the whole session:</strong> 60-90 minutes maximum</li>
+                                <li><strong>Prepare stories in advance:</strong> PO writes clear acceptance criteria beforehand</li>
+                                <li><strong>Keep the reference stories visible:</strong> Post them on the wall or share screen</li>
+                                <li><strong>Celebrate divergence:</strong> Different estimates mean the discussion has value</li>
+                                <li><strong>Use "?" cards</strong> for "I have no idea" -- then discuss what is unknown</li>
+                                <li><strong>Use the infinity card</strong> for "this is too big to estimate -- split it"</li>
+                            </ul>
+                        </div>
+                        <div class="card warning fragment">
+                            <h4>When to Re-Estimate</h4>
+                            <ul>
+                                <li>Scope has significantly changed</li>
+                                <li>Team composition has fundamentally shifted</li>
+                                <li>Technology or approach has changed</li>
+                                <li><strong>Not needed</strong> when velocity already accounts for small changes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    Managing divergence is where facilitation skill matters most. When you see a spread of 3 steps or more, something important is happening: the team members have genuinely different understandings of the story. This is gold -- it means Planning Poker is surfacing hidden assumptions before they become problems during development. The 2-minute rule prevents analysis paralysis. If after two rounds the team is still split, take the higher number. This builds in a natural safety margin and, over time, velocity will self-correct anyway. Key tips: Prepare stories before the session -- poorly written stories generate long debates about scope rather than size. Keep reference stories visible so the team can say "is this bigger or smaller than the login story we rated a 5?" The question mark card is underused but valuable -- it flags genuine unknowns that might need a spike before the story can be properly estimated. The infinity card forces a conversation about splitting epics into estimable stories.
+                </aside>
+            </section>
+
+            <section>
+                <h2>&#x1F0CF; Digital Planning Poker Tools</h2>
+                <div class="two-column">
+                    <div>
+                        <div class="card">
+                            <h4>Popular Tools</h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Tool</th>
+                                        <th>Best For</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Jira + Poker Plugin</strong></td>
+                                        <td>Teams already using Jira</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>PlanITpoker</strong></td>
+                                        <td>Free, lightweight, no signup</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Pointing Poker</strong></td>
+                                        <td>Simple and fast setup</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Azure DevOps</strong></td>
+                                        <td>Microsoft ecosystem teams</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Physical Cards</strong></td>
+                                        <td>Co-located teams (most engaging)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="highlight-box success">
+                            <h4>Remote Planning Poker Tips</h4>
+                            <ul>
+                                <li class="fragment"><strong>Cameras on:</strong> Non-verbal cues matter during discussion</li>
+                                <li class="fragment"><strong>Use a timer:</strong> Display a visible countdown for discussion rounds</li>
+                                <li class="fragment"><strong>Screen share the story:</strong> Everyone reads the same acceptance criteria</li>
+                                <li class="fragment"><strong>Rotate facilitator:</strong> Prevents one person from dominating</li>
+                                <li class="fragment"><strong>Record decisions:</strong> Capture the "why" behind estimates, not just the number</li>
+                            </ul>
+                        </div>
+                        <div class="highlight-box fragment">
+                            <strong>Async Alternative:</strong> For distributed teams across time zones, consider asynchronous estimation rounds using tools like Jira, then hold a brief synchronous call only for stories where estimates diverged significantly.
+                        </div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    With the rise of remote and hybrid teams, digital Planning Poker has become essential. Walk through the popular tools briefly -- most participants will already be using one of these. The key insight is that the tool is less important than the practice. Whether you use physical cards or a digital tool, the simultaneous reveal and structured discussion are what create value. For remote sessions, emphasize cameras on -- when someone explains why they chose 13, seeing their facial expressions helps the team understand their conviction level. The async alternative is worth mentioning for teams spread across many time zones. They can do an initial round asynchronously, then only come together synchronously for the stories where there is significant disagreement. This respects people's time while preserving the value of the discussion.
+                </aside>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- SECTION: CONSTRAINTS ON RELATIVE SIZING -->
+            <!-- ============================================================ -->
+            <section>
+                <h2>&#x26A0;&#xFE0F; Constraints on Relative Sizing</h2>
+                <h3>Understanding the Boundaries</h3>
+                <div class="two-column">
+                    <div>
+                        <div class="card danger">
+                            <h4>Story Points Are NOT Comparable Across Teams</h4>
+                            <ul>
+                                <li class="fragment">Team A's "5" is not the same as Team B's "5"</li>
+                                <li class="fragment">Each team calibrates to their own reference stories</li>
+                                <li class="fragment">Different skills, experience, and tech stacks</li>
+                                <li class="fragment">Comparing velocities across teams is <strong>meaningless and harmful</strong></li>
+                            </ul>
+                        </div>
+                        <div class="highlight-box danger fragment">
+                            <strong>Anti-Pattern:</strong> "Team Alpha delivers 60 points per sprint but Team Beta only does 35. Team Beta needs to improve!" -- This comparison is invalid and damages morale.
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card warning">
+                            <h4>Story Points Are NOT Hours</h4>
+                            <ul>
+                                <li class="fragment">Never convert points to hours</li>
+                                <li class="fragment">Never use points for individual performance tracking</li>
+                                <li class="fragment">"How many hours is a point?" is the wrong question</li>
+                                <li class="fragment">Points measure <strong>relative size</strong>, not duration</li>
+                            </ul>
+                        </div>
+                        <div class="architecture-box fragment">
+                            <h4>The Correct Translation</h4>
+                            <p>"Our velocity is 40 points per sprint. This feature is estimated at 25 points. Therefore it will take approximately <strong>0.6 sprints</strong> of the team's capacity."</p>
+                            <p class="small-text">Points --> velocity --> sprints --> calendar. Never skip steps.</p>
+                        </div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    This is one of the most commonly violated principles in Agile estimation, and it deserves strong emphasis. Story points are a team-internal measure -- they are calibrated to that specific team's skills, experience, and working context. When management compares velocity across teams, they incentivize point inflation and destroy the honesty that makes estimation valuable. The story points to hours conversion is equally destructive. The moment you say "a point equals 4 hours," you have lost every advantage of relative sizing. You have recreated hour-based estimation with extra steps. The correct chain is: points to velocity to sprints to calendar dates. Each step involves a legitimate conversion. Skipping steps introduces the same errors we were trying to avoid. Share a real-world example of an organization that compared team velocities and what happened -- typically point inflation, gaming, and loss of trust.
+                </aside>
+            </section>
+
+            <section>
+                <h2>&#x26A0;&#xFE0F; Point Inflation and Drift</h2>
+                <div class="two-column">
+                    <div>
+                        <div class="architecture-box">
+                            <h4>What Is Point Inflation?</h4>
+                            <p>Over time, teams may unconsciously (or consciously) assign <strong>higher point values</strong> to the same type of work, making velocity appear to increase without actual productivity gains.</p>
+                        </div>
+                        <div class="highlight-box warning fragment">
+                            <h4>Warning Signs</h4>
+                            <ul>
+                                <li>Velocity steadily increasing without process changes</li>
+                                <li>Stories that used to be "3" are now routinely rated "5"</li>
+                                <li>Management celebrates velocity increases as productivity gains</li>
+                                <li>Team feels pressure to "increase velocity"</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card success fragment">
+                            <h4>Prevention Strategies</h4>
+                            <ul>
+                                <li><strong>Maintain reference stories:</strong> Regularly check new estimates against baseline examples</li>
+                                <li><strong>Never use velocity as a performance metric:</strong> It is a planning tool, not a scorecard</li>
+                                <li><strong>Focus on value delivered:</strong> Track outcomes, not output</li>
+                                <li><strong>Periodic recalibration:</strong> Every quarter, re-estimate a few old stories as a sanity check</li>
+                                <li><strong>Protect the team:</strong> Shield estimation from external pressure</li>
+                            </ul>
+                        </div>
+                        <div class="card fragment">
+                            <h4>When Relative Sizing Breaks Down</h4>
+                            <ul>
+                                <li>Entirely new domain with zero reference points</li>
+                                <li>Highly regulated environments requiring exact hour tracking</li>
+                                <li>One-person "teams" (no diversity of perspective)</li>
+                                <li>Stories with extreme uncertainty (use spikes instead)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    Point inflation is the silent killer of estimation reliability. It usually happens when velocity becomes a target rather than a diagnostic. Goodhart's Law applies perfectly here: "When a measure becomes a target, it ceases to be a good measure." Walk through the warning signs and ask participants if they have seen these patterns. The prevention strategies center on one principle: velocity is a planning tool for the team, not a performance metric for management. If the team feels pressure to increase velocity, they will game the system -- and you cannot blame them. The better metric is value delivered per sprint, which we will cover later in this module. Also discuss the legitimate cases where relative sizing does not work well. Pure research spikes, heavily regulated environments that require hour-level audit trails, and situations with zero baseline knowledge may need different approaches. The key is knowing when to use which tool.
+                </aside>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- SECTION: CALCULATING TEAM VELOCITY -->
+            <!-- ============================================================ -->
+            <section>
+                <h2>&#x1F4C8; Calculating Team Velocity</h2>
+                <h3>Definition and Fundamentals</h3>
+                <div class="highlight-box">
+                    <strong>Velocity</strong> = The total number of story points the team completes (meets Definition of Done) in a single iteration/sprint.
+                </div>
+                <div class="two-column" style="margin-top: 15px;">
+                    <div>
+                        <div class="architecture-box">
+                            <h4>Velocity Tracking Example</h4>
+                            <div class="velocity-chart">
+                                <div class="velocity-bar-group">
+                                    <div class="velocity-value">28</div>
+                                    <div class="velocity-bar" style="height: 112px;"></div>
+                                    <div class="velocity-label">Sprint 1</div>
+                                </div>
+                                <div class="velocity-bar-group">
+                                    <div class="velocity-value">35</div>
+                                    <div class="velocity-bar" style="height: 140px;"></div>
+                                    <div class="velocity-label">Sprint 2</div>
+                                </div>
+                                <div class="velocity-bar-group">
+                                    <div class="velocity-value">31</div>
+                                    <div class="velocity-bar" style="height: 124px;"></div>
+                                    <div class="velocity-label">Sprint 3</div>
+                                </div>
+                                <div class="velocity-bar-group">
+                                    <div class="velocity-value">38</div>
+                                    <div class="velocity-bar" style="height: 152px;"></div>
+                                    <div class="velocity-label">Sprint 4</div>
+                                </div>
+                                <div class="velocity-bar-group">
+                                    <div class="velocity-value">33</div>
+                                    <div class="velocity-bar" style="height: 132px;"></div>
+                                    <div class="velocity-label">Sprint 5</div>
+                                </div>
+                                <div class="velocity-bar-group">
+                                    <div class="velocity-value">36</div>
+                                    <div class="velocity-bar" style="height: 144px;"></div>
+                                    <div class="velocity-label">Sprint 6</div>
+                                </div>
+                                <div class="velocity-bar-group">
+                                    <div class="velocity-value">34</div>
+                                    <div class="velocity-bar avg" style="height: 136px;"></div>
+                                    <div class="velocity-label">Avg</div>
+                                </div>
+                            </div>
+                            <div class="chart-legend">
+                                <div class="legend-item"><div class="legend-dot" style="background: var(--accent-color);"></div> Sprint velocity</div>
+                                <div class="legend-item"><div class="legend-dot" style="background: var(--success-color);"></div> Running average (34 pts)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card fragment">
+                            <h4>Key Rules</h4>
+                            <ul>
+                                <li><strong>Only count "Done" stories:</strong> Partially completed work = 0 points</li>
+                                <li><strong>Use average velocity for planning:</strong> Not the best sprint, not the worst</li>
+                                <li><strong>Use last 3-5 sprints:</strong> Recency matters more than history</li>
+                                <li><strong>Velocity is a range, not a point:</strong> "32-38 points" is more honest than "35 points"</li>
+                            </ul>
+                        </div>
+                        <div class="highlight-box success fragment">
+                            <strong>Calculation:</strong><br>
+                            Average velocity = (28 + 35 + 31 + 38 + 33 + 36) / 6 = <strong>33.5 ≈ 34 points/sprint</strong><br><br>
+                            Range: <strong>28 - 38 points/sprint</strong>
+                        </div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    Velocity is the engine that converts story points into actionable forecasts. Walk through the chart and emphasize that velocity is measured, not predicted. You do not set a target velocity -- you observe what the team actually delivers. Only completed stories count. If a team finishes 80% of a 13-point story, they get 0 points for that story this sprint. This incentivizes teams to right-size stories and complete them fully rather than spreading work across many partially-done items. The average should use the last 3-5 sprints to balance stability with responsiveness to change. If a team member joins or leaves, you may want to weight recent sprints more heavily. Always present velocity as a range -- saying "we do about 32-38 points per sprint" is more accurate and sets better expectations than a single number.
+                </aside>
+            </section>
+
+            <section>
+                <h2>&#x1F4C8; Using Velocity for Forecasting</h2>
+                <h3>Yesterday's Weather</h3>
+                <div class="highlight-box">
+                    <strong>"Yesterday's Weather"</strong> principle: The best predictor of how much work a team will complete next sprint is how much they completed in recent sprints.
+                </div>
+                <div class="two-column" style="margin-top: 15px;">
+                    <div>
+                        <div class="card">
+                            <h4>Release Forecasting Formula</h4>
+                            <div class="architecture-box">
+                                <p><strong>Remaining work:</strong> 180 story points</p>
+                                <p><strong>Average velocity:</strong> 34 points/sprint</p>
+                                <p><strong>Sprints needed:</strong> 180 / 34 = <strong>5.3 sprints</strong></p>
+                                <p><strong>Sprint length:</strong> 2 weeks</p>
+                                <p><strong>Estimated delivery:</strong> ~11 weeks (6 sprints)</p>
+                            </div>
+                        </div>
+                        <div class="highlight-box warning fragment">
+                            <strong>Range-Based Forecast:</strong><br>
+                            Optimistic: 180 / 38 = 4.7 sprints (~10 weeks)<br>
+                            Likely: 180 / 34 = 5.3 sprints (~11 weeks)<br>
+                            Pessimistic: 180 / 28 = 6.4 sprints (~13 weeks)
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card success fragment">
+                            <h4>Velocity Stabilization Pattern</h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Phase</th>
+                                        <th>Sprints</th>
+                                        <th>Typical Pattern</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="badge orange">Forming</span></td>
+                                        <td>1-2</td>
+                                        <td>High variance, team learning</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge blue">Norming</span></td>
+                                        <td>3-4</td>
+                                        <td>Variance decreasing, patterns emerging</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge green">Stabilized</span></td>
+                                        <td>5+</td>
+                                        <td>Predictable range, reliable forecasts</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="small-text fragment">Expect velocity to stabilize within <strong>3-5 sprints</strong>. Forecasts made before stabilization carry high uncertainty and should include wider ranges.</p>
+                        </div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    "Yesterday's Weather" is a deceptively simple but powerful concept. Rather than trying to predict capacity from first principles, we observe what the team actually delivers and project forward. The release forecasting formula is straightforward: divide remaining work by velocity to get sprints needed, then multiply by sprint length. Always present this as a range with optimistic, likely, and pessimistic scenarios using the team's velocity range. This gives stakeholders an honest picture. The stabilization pattern is important to communicate to management early. In the first couple of sprints, velocity will be all over the place as the team learns the domain, the codebase, and each other's working styles. Do not make commitments based on Sprint 1 velocity. By Sprint 3-5, you will have a reliable enough velocity to make meaningful forecasts. Teams that have been together longer and are working on a mature product will stabilize faster than new teams on greenfield projects.
+                </aside>
+            </section>
+
+            <section>
+                <h2>&#x1F4C8; Advanced Velocity Patterns</h2>
+                <div class="two-column">
+                    <div>
+                        <div class="card">
+                            <h4>Interpreting Velocity Trends</h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Pattern</th>
+                                        <th>Possible Causes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="fragment">
+                                        <td><strong>Steady increase</strong></td>
+                                        <td>Team improving OR point inflation -- investigate which</td>
+                                    </tr>
+                                    <tr class="fragment">
+                                        <td><strong>Sudden drop</strong></td>
+                                        <td>Team member left, major tech debt, scope misunderstanding</td>
+                                    </tr>
+                                    <tr class="fragment">
+                                        <td><strong>High variance</strong></td>
+                                        <td>Inconsistent story sizing, external interruptions, dependencies</td>
+                                    </tr>
+                                    <tr class="fragment">
+                                        <td><strong>Steady decline</strong></td>
+                                        <td>Accumulating tech debt, burnout, morale issues</td>
+                                    </tr>
+                                    <tr class="fragment">
+                                        <td><strong>Flat and stable</strong></td>
+                                        <td>Healthy team in a sustainable rhythm -- the goal!</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="highlight-box success fragment">
+                            <h4>Velocity as a Diagnostic Tool</h4>
+                            <p>Velocity is most valuable not as a target but as a <strong>health indicator</strong>. Changes in velocity signal changes in the team's environment that warrant investigation.</p>
+                        </div>
+                        <div class="architecture-box fragment">
+                            <h4>Capacity Adjustment</h4>
+                            <p>When team capacity changes (holidays, training, team members on leave), adjust expected velocity proportionally:</p>
+                            <p><strong>Adjusted velocity</strong> = Base velocity &times; (Available capacity / Normal capacity)</p>
+                            <p class="small-text">Example: If 1 of 5 developers is on holiday, expected velocity = 34 &times; (4/5) = ~27 points</p>
+                        </div>
+                        <div class="highlight-box fragment">
+                            <strong>Remember:</strong> Never use velocity to compare teams, evaluate individual performance, or set targets. It is a planning and diagnostic tool for the team itself.
+                        </div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    Velocity patterns tell a story about team health and environment. A steady increase might look good on a dashboard, but it could indicate point inflation rather than genuine improvement -- always check against reference stories. A sudden drop usually has a clear cause: someone left, the team hit an unexpected technical challenge, or there were significant external interruptions. High variance often indicates inconsistent story sizing or unpredictable external demands. A steady decline is a red flag for tech debt accumulation or team burnout -- this needs immediate attention. The ideal pattern is flat and stable with minor natural variation. The capacity adjustment formula is useful for sprint planning when the team is not at full strength. It is a simple proportional adjustment that sets realistic expectations. End this section by reinforcing that velocity is the team's tool. The moment it becomes a management metric, its diagnostic value is compromised because the team will optimize for the metric rather than for actual delivery.
+                </aside>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- SECTION: CONSEQUENCES OF NOT USING RELATIVE MEASUREMENT -->
+            <!-- ============================================================ -->
+            <section>
+                <h2>&#x274C; Consequences of Not Using Relative Measurement</h2>
+                <h3>Hour-Based Estimation Pitfalls</h3>
+                <div class="two-column">
+                    <div>
+                        <div class="card danger">
+                            <h4>The Precision Trap</h4>
+                            <ul>
+                                <li class="fragment"><strong>False confidence:</strong> "32 hours" sounds precise but is no more accurate than "about a week"</li>
+                                <li class="fragment"><strong>Individual variance:</strong> A senior developer's 8 hours is a junior's 24 hours</li>
+                                <li class="fragment"><strong>Missing factors:</strong> Hours ignore complexity, uncertainty, meetings, context-switching</li>
+                                <li class="fragment"><strong>Estimation overhead:</strong> Detailed hour breakdowns consume significant planning time</li>
+                            </ul>
+                        </div>
+                        <div class="highlight-box danger fragment">
+                            <strong>The Parkinson Problem:</strong> Work expands to fill the time allotted. When you estimate 16 hours, the work takes exactly 16 hours -- regardless of actual complexity.
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card warning">
+                            <h4>Sandbagging and Padding</h4>
+                            <ul>
+                                <li class="fragment">Developers add 30-50% "buffer" to protect themselves</li>
+                                <li class="fragment">Managers then cut 20% because "they always pad"</li>
+                                <li class="fragment">Result: a negotiation ritual that produces fiction</li>
+                                <li class="fragment">Neither party trusts the numbers</li>
+                            </ul>
+                        </div>
+                        <div class="card danger fragment">
+                            <h4>Commitment vs. Forecast</h4>
+                            <ul>
+                                <li><strong>Commitment:</strong> "We guarantee delivery by March 15" (almost always wrong)</li>
+                                <li><strong>Forecast:</strong> "Based on velocity, we expect delivery between March 10-25" (honest and useful)</li>
+                                <li>Hour-based estimates get treated as commitments; velocity-based forecasts remain forecasts</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    This section builds the case for relative estimation by examining what goes wrong without it. The precision trap is insidious: a spreadsheet full of hour estimates looks professional and thorough, but the precision is illusory. Ask participants if they have ever seen a project plan with tasks estimated to the half-hour that was still delivered months late. The individual variance problem is particularly important. If a task takes Alice 4 hours and Bob 12 hours, whose estimate is "right"? With story points, both would agree on the relative size. Sandbagging is a rational response to being held accountable for estimates -- developers learn to protect themselves. Managers learn to cut padding. The resulting negotiation dance wastes time and produces numbers nobody believes. The commitment vs. forecast distinction is crucial for organizational culture. Velocity-based forecasts naturally come with ranges, which sets the right expectation with stakeholders.
+                </aside>
+            </section>
+
+            <section>
+                <h2>&#x274C; Case Study: Two Teams, Two Approaches</h2>
+                <div class="two-column">
+                    <div>
+                        <div class="card danger">
+                            <h4>Team Waterfall Lite</h4>
+                            <p><span class="badge red">Hour-Based Estimation</span></p>
+                            <ul>
+                                <li class="fragment">Spent <strong>3 days</strong> creating detailed hour estimates for a 6-month project</li>
+                                <li class="fragment">Project plan showed <strong>4,200 hours</strong> of work across the team</li>
+                                <li class="fragment">At month 3, discovered a critical integration was <strong>underestimated by 400%</strong></li>
+                                <li class="fragment">Re-estimation took <strong>another 2 days</strong></li>
+                                <li class="fragment">Delivered <strong>8 weeks late</strong> despite "precise" planning</li>
+                                <li class="fragment">Team morale: <strong>Low</strong> -- felt set up to fail</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card success">
+                            <h4>Team Agile Flow</h4>
+                            <p><span class="badge green">Relative Estimation + Velocity</span></p>
+                            <ul>
+                                <li class="fragment">Spent <strong>2 hours</strong> in Planning Poker to size the initial backlog</li>
+                                <li class="fragment">Backlog sized at <strong>340 story points</strong></li>
+                                <li class="fragment">After 3 sprints, velocity stabilized at <strong>34 points/sprint</strong></li>
+                                <li class="fragment">Forecast: <strong>10 sprints (20 weeks)</strong> with +/- 2 sprint range</li>
+                                <li class="fragment">Delivered in <strong>11 sprints</strong> -- within the forecasted range</li>
+                                <li class="fragment">Team morale: <strong>High</strong> -- forecasts were honest and achievable</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight-box success fragment">
+                    <strong>Key Difference:</strong> Team Agile Flow did not estimate more accurately -- they estimated more <em>honestly</em>. Their range-based forecast set appropriate expectations, and velocity self-corrected as they learned more about the work.
+                </div>
+                <aside class="notes">
+                    This case study makes the contrast visceral. Walk through both scenarios side by side. Team Waterfall Lite followed the traditional approach: decompose everything into tasks, estimate hours, build a Gantt chart. It looked thorough and professional. But when reality diverged from the plan -- as it always does in software -- the entire plan was invalidated and re-estimation was expensive. Team Agile Flow invested minimal time in estimation upfront, let velocity emerge from actual delivery, and provided a range-based forecast that proved accurate. The key insight is not that Agile teams are better at estimating -- it is that they structure their estimation approach to account for uncertainty rather than pretending it does not exist. The morale difference is significant too: teams that consistently miss "commitments" lose motivation, while teams that regularly meet range-based forecasts build confidence and trust. Ask participants which scenario sounds more familiar from their own experience.
+                </aside>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- SECTION: ILLUSTRATING KEY BUSINESS METRICS -->
+            <!-- ============================================================ -->
+            <section>
+                <h2>&#x1F4CA; Illustrating Key Business Metrics</h2>
+                <h3>Burn-Down and Burn-Up Charts</h3>
+                <div class="two-column">
+                    <div>
+                        <div class="card">
+                            <h4>Sprint Burn-Down Chart</h4>
+                            <div class="architecture-box">
+                                <p style="font-size: 0.8em; text-align: center;"><strong>Remaining work (story points) vs. time (days)</strong></p>
+                                <div style="display: flex; align-items: flex-end; gap: 8px; height: 140px; padding: 10px; border-left: 2px solid #718096; border-bottom: 2px solid #718096;">
+                                    <div style="flex:1; background: linear-gradient(180deg, var(--accent-color), #3182ce); height: 130px; border-radius: 4px 4px 0 0; opacity: 0.9;"></div>
+                                    <div style="flex:1; background: linear-gradient(180deg, var(--accent-color), #3182ce); height: 112px; border-radius: 4px 4px 0 0; opacity: 0.85;"></div>
+                                    <div style="flex:1; background: linear-gradient(180deg, var(--accent-color), #3182ce); height: 95px; border-radius: 4px 4px 0 0; opacity: 0.8;"></div>
+                                    <div style="flex:1; background: linear-gradient(180deg, var(--accent-color), #3182ce); height: 88px; border-radius: 4px 4px 0 0; opacity: 0.75;"></div>
+                                    <div style="flex:1; background: linear-gradient(180deg, var(--accent-color), #3182ce); height: 60px; border-radius: 4px 4px 0 0; opacity: 0.7;"></div>
+                                    <div style="flex:1; background: linear-gradient(180deg, var(--accent-color), #3182ce); height: 45px; border-radius: 4px 4px 0 0; opacity: 0.65;"></div>
+                                    <div style="flex:1; background: linear-gradient(180deg, var(--accent-color), #3182ce); height: 28px; border-radius: 4px 4px 0 0; opacity: 0.6;"></div>
+                                    <div style="flex:1; background: linear-gradient(180deg, var(--accent-color), #3182ce); height: 15px; border-radius: 4px 4px 0 0; opacity: 0.55;"></div>
+                                    <div style="flex:1; background: linear-gradient(180deg, var(--success-color), #48bb78); height: 5px; border-radius: 4px 4px 0 0;"></div>
+                                    <div style="flex:1; background: linear-gradient(180deg, var(--success-color), #48bb78); height: 0px; border-radius: 4px 4px 0 0;"></div>
+                                </div>
+                                <p class="small-text" style="text-align: center;">Day 1 ....................................... Day 10</p>
+                            </div>
+                            <ul style="font-size: 0.75em;">
+                                <li>Shows remaining work trending toward zero</li>
+                                <li>Ideal line shows expected pace</li>
+                                <li>Deviations signal risk early</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card success">
+                            <h4>Release Burn-Up Chart</h4>
+                            <div class="architecture-box">
+                                <p style="font-size: 0.8em; text-align: center;"><strong>Work completed (cumulative) vs. sprints</strong></p>
+                                <div style="display: flex; align-items: flex-end; gap: 8px; height: 140px; padding: 10px; border-left: 2px solid #718096; border-bottom: 2px solid #718096;">
+                                    <div style="flex:1; background: linear-gradient(180deg, var(--success-color), #48bb78); height: 20px; border-radius: 4px 4px 0 0;"></div>
+                                    <div style="flex:1; background: linear-gradient(180deg, var(--success-color), #48bb78); height: 38px; border-radius: 4px 4px 0 0;"></div>
+                                    <div style="flex:1; background: linear-gradient(180deg, var(--success-color), #48bb78); height: 55px; border-radius: 4px 4px 0 0;"></div>
+                                    <div style="flex:1; background: linear-gradient(180deg, var(--success-color), #48bb78); height: 75px; border-radius: 4px 4px 0 0;"></div>
+                                    <div style="flex:1; background: linear-gradient(180deg, var(--success-color), #48bb78); height: 92px; border-radius: 4px 4px 0 0;"></div>
+                                    <div style="flex:1; background: linear-gradient(180deg, var(--success-color), #48bb78); height: 108px; border-radius: 4px 4px 0 0;"></div>
+                                    <div style="flex:1; background: linear-gradient(180deg, var(--accent-color), #3182ce); height: 120px; border-radius: 4px 4px 0 0; opacity: 0.5;"></div>
+                                    <div style="flex:1; background: linear-gradient(180deg, var(--accent-color), #3182ce); height: 130px; border-radius: 4px 4px 0 0; opacity: 0.4;"></div>
+                                </div>
+                                <p class="small-text" style="text-align: center;">Sprint 1 .................................. Sprint 8</p>
+                            </div>
+                            <ul style="font-size: 0.75em;">
+                                <li>Shows cumulative progress toward scope</li>
+                                <li>Scope line reveals scope creep visually</li>
+                                <li>Converging lines show projected completion</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight-box fragment">
+                    <strong>Burn-Up vs. Burn-Down:</strong> Burn-up charts are generally preferred for release tracking because they show both progress AND scope changes. If the scope line moves up, stakeholders can see exactly when and how much scope was added.
+                </div>
+                <aside class="notes">
+                    Burn-down and burn-up charts are the most common visual metrics in Agile. The sprint burn-down shows remaining work within a single sprint -- it helps the team self-manage by making daily progress (or lack thereof) visible. The ideal line provides a reference, and when actual progress falls significantly below the ideal line, the team knows they may not complete everything and can take action. The release burn-up chart is more powerful for stakeholder communication because it shows two things: how much work has been completed (the progress line) and how much total work exists (the scope line). When scope changes, the scope line moves up, making scope creep visible and quantifiable. This is far more honest than a burn-down that simply resets when scope changes. Recommend burn-up charts for release-level reporting and burn-down charts for sprint-level team management.
+                </aside>
+            </section>
+
+            <section>
+                <h2>&#x1F4CA; Cumulative Flow and Progress Metrics</h2>
+                <div class="two-column">
+                    <div>
+                        <div class="card">
+                            <h4>Cumulative Flow Diagram (CFD)</h4>
+                            <div class="architecture-box">
+                                <p style="font-size: 0.8em; text-align: center;"><strong>Stacked area chart of work items by status over time</strong></p>
+                                <div style="position: relative; height: 140px; border-left: 2px solid #718096; border-bottom: 2px solid #718096; overflow: hidden; border-radius: 0 8px 0 0;">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 40px; background: var(--success-color); opacity: 0.7;"></div>
+                                    <div style="position: absolute; bottom: 40px; left: 0; right: 0; height: 30px; background: var(--accent-color); opacity: 0.7;"></div>
+                                    <div style="position: absolute; bottom: 70px; left: 0; right: 0; height: 25px; background: var(--warning-color); opacity: 0.7;"></div>
+                                    <div style="position: absolute; bottom: 95px; left: 0; right: 0; height: 35px; background: #718096; opacity: 0.5;"></div>
+                                </div>
+                                <div class="chart-legend" style="flex-wrap: wrap;">
+                                    <div class="legend-item"><div class="legend-dot" style="background: #718096; opacity:0.5;"></div> Backlog</div>
+                                    <div class="legend-item"><div class="legend-dot" style="background: var(--warning-color); opacity:0.7;"></div> In Progress</div>
+                                    <div class="legend-item"><div class="legend-dot" style="background: var(--accent-color); opacity:0.7;"></div> Testing</div>
+                                    <div class="legend-item"><div class="legend-dot" style="background: var(--success-color); opacity:0.7;"></div> Done</div>
+                                </div>
+                            </div>
+                            <ul style="font-size: 0.75em;" class="fragment">
+                                <li><strong>Band width</strong> = number of items in that state</li>
+                                <li><strong>Horizontal distance</strong> = cycle time (lead time)</li>
+                                <li>Widening "In Progress" band = bottleneck</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card fragment">
+                            <h4>ROI and Cost-Per-Point Metrics</h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Metric</th>
+                                        <th>Formula</th>
+                                        <th>Use</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Cost per point</strong></td>
+                                        <td>Sprint cost / Velocity</td>
+                                        <td>Budgeting</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Feature cost</strong></td>
+                                        <td>Story points &times; Cost per point</td>
+                                        <td>ROI analysis</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Value per point</strong></td>
+                                        <td>Business value / Story points</td>
+                                        <td>Prioritization</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="highlight-box success" style="margin-top: 12px;">
+                                <h4>Example</h4>
+                                <p>Team cost: $80,000/sprint<br>
+                                Velocity: 34 points/sprint<br>
+                                <strong>Cost per point: ~$2,350</strong><br><br>
+                                A 21-point feature costs approximately <strong>$49,350</strong> to deliver.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    The Cumulative Flow Diagram is one of the most information-dense charts in Agile. It shows the entire workflow state over time. The key insight is reading the band widths: if the "In Progress" band is widening, work is entering faster than it is leaving -- you have a bottleneck. If the "Done" band is growing steadily, the team has a healthy flow. The horizontal distance between bands represents cycle time -- how long items spend in the system. Cost-per-point is a powerful metric for business conversations. It translates abstract story points into concrete dollars. When a stakeholder asks "how much will feature X cost?" you can give a data-backed answer: "It is sized at 21 points, and our cost per point is about $2,350, so approximately $49,000." This bridges the gap between technical estimation and business planning. Note that cost-per-point should stabilize as velocity stabilizes, and it should only be used for the team that generated it -- not compared across teams.
+                </aside>
+            </section>
+
+            <section>
+                <h2>&#x1F4CA; Sprint and Release Progress Tracking</h2>
+                <div class="two-column">
+                    <div>
+                        <div class="card">
+                            <h4>Sprint Dashboard Metrics</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px 0;">
+                                <div class="metric-card fragment">
+                                    <div class="metric-value">34</div>
+                                    <div class="metric-label">Points Committed</div>
+                                </div>
+                                <div class="metric-card fragment">
+                                    <div class="metric-value" style="color: var(--success-color);">29</div>
+                                    <div class="metric-label">Points Completed</div>
+                                </div>
+                                <div class="metric-card fragment">
+                                    <div class="metric-value" style="color: var(--warning-color);">85%</div>
+                                    <div class="metric-label">Completion Rate</div>
+                                </div>
+                                <div class="metric-card fragment">
+                                    <div class="metric-value" style="color: var(--heading-color);">5</div>
+                                    <div class="metric-label">Points Carried Over</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card success fragment">
+                            <h4>Release Progress Snapshot</h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Metric</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Total release scope</td>
+                                        <td><strong>340 points</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Completed to date</td>
+                                        <td><strong>204 points (60%)</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Remaining</td>
+                                        <td><strong>136 points</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sprints remaining (at avg velocity)</td>
+                                        <td><strong>4 sprints</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Confidence level</td>
+                                        <td><span class="badge green">On Track</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="highlight-box fragment">
+                            <strong>Traffic Light Reporting:</strong> Use velocity-based forecasts to generate honest Red/Amber/Green status -- not gut feelings. <span class="badge green">Green</span> = within range. <span class="badge orange">Amber</span> = at risk. <span class="badge red">Red</span> = forecast exceeds deadline.
+                        </div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    This slide shows what a practical sprint and release dashboard looks like using the metrics we have discussed. The sprint dashboard gives a snapshot of the current sprint: how much was committed, how much was completed, the completion rate, and carryover. An 85% completion rate is healthy -- consistently hitting 100% means the team is under-committing. The release progress snapshot uses velocity to project when the release will be done. The confidence level is derived from the velocity range: if the worst-case velocity still delivers by the deadline, it is green. If only average velocity delivers on time, it is amber. If even best-case velocity misses the deadline, it is red. This approach to traffic light reporting is far more honest than subjective status reports. It removes the "watermelon effect" -- reports that are green on the outside but red on the inside -- because the data cannot be fudged without changing the underlying estimates.
+                </aside>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- SECTION: CLARIFYING BUSINESS VALUE METRICS -->
+            <!-- ============================================================ -->
+            <section>
+                <h2>&#x1F4B0; Clarifying Business Value Metrics</h2>
+                <h3>Business Value Points and Cost of Delay</h3>
+                <div class="two-column">
+                    <div>
+                        <div class="card">
+                            <h4>Business Value Points</h4>
+                            <div class="highlight-box">
+                                <p>Just as story points measure <strong>relative size</strong> of work, business value points measure <strong>relative value</strong> of outcomes.</p>
+                            </div>
+                            <ul class="fragment">
+                                <li>Assigned by the Product Owner or stakeholders</li>
+                                <li>Use the same relative scale concept (Fibonacci or simple 1-10)</li>
+                                <li>Enable value-to-cost ratio calculations</li>
+                                <li>Help prioritize: do the highest-value-per-point stories first</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card warning">
+                            <h4>Cost of Delay (CoD)</h4>
+                            <div class="highlight-box warning">
+                                <p><strong>Cost of Delay</strong> quantifies the economic impact of not delivering a feature now. It answers: "What do we lose for every week/sprint this is not in production?"</p>
+                            </div>
+                            <ul class="fragment">
+                                <li><strong>Revenue impact:</strong> Lost sales, missed market window</li>
+                                <li><strong>Cost avoidance:</strong> Manual workarounds, inefficiency costs</li>
+                                <li><strong>Risk reduction:</strong> Compliance penalties, security exposure</li>
+                                <li><strong>Opportunity cost:</strong> Competitive advantage eroding over time</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="architecture-box fragment">
+                    <h4>Example: Prioritizing with Value and Cost</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Story Points</th>
+                                <th>Business Value</th>
+                                <th>Value/Point Ratio</th>
+                                <th>Priority</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Payment gateway upgrade</td>
+                                <td>13</td>
+                                <td>89</td>
+                                <td><strong>6.8</strong></td>
+                                <td><span class="badge green">1st</span></td>
+                            </tr>
+                            <tr>
+                                <td>Dashboard redesign</td>
+                                <td>21</td>
+                                <td>55</td>
+                                <td><strong>2.6</strong></td>
+                                <td><span class="badge orange">3rd</span></td>
+                            </tr>
+                            <tr>
+                                <td>Email notification system</td>
+                                <td>8</td>
+                                <td>34</td>
+                                <td><strong>4.3</strong></td>
+                                <td><span class="badge blue">2nd</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <aside class="notes">
+                    Business value metrics bridge the gap between engineering estimation and business decision-making. Business value points work exactly like story points but for the value dimension: stakeholders compare features to each other and assign relative value. This is much more useful than trying to calculate exact dollar values for every feature. Cost of Delay is a more sophisticated concept that asks "what happens every week we do NOT deliver this?" Some features have urgent CoD -- a compliance deadline, a seasonal market window. Others have gradual CoD -- competitive erosion over time. The value-to-point ratio table shows how these metrics drive prioritization. The payment gateway upgrade delivers the most value per point of effort, so it should be done first -- even though the dashboard redesign has the most total story points. This is a critical shift from "build the biggest thing" to "build the most valuable thing per unit of effort."
+                </aside>
+            </section>
+
+            <section>
+                <h2>&#x1F4B0; WSJF and Value Per Sprint</h2>
+                <h3>Advanced Prioritization Frameworks</h3>
+                <div class="two-column">
+                    <div>
+                        <div class="card">
+                            <h4>Weighted Shortest Job First (WSJF)</h4>
+                            <div class="highlight-box">
+                                <p><strong>WSJF = Cost of Delay / Job Duration</strong></p>
+                                <p class="small-text">Prioritize the item with the highest WSJF score -- it delivers the most value in the least time.</p>
+                            </div>
+                            <div class="architecture-box fragment">
+                                <h4>WSJF Components (SAFe Model)</h4>
+                                <p><strong>Cost of Delay</strong> = User/Business Value + Time Criticality + Risk Reduction / Opportunity Enablement</p>
+                                <p><strong>Job Duration</strong> = Relative size in story points</p>
+                            </div>
+                            <table class="fragment">
+                                <thead>
+                                    <tr>
+                                        <th>Feature</th>
+                                        <th>CoD</th>
+                                        <th>Size</th>
+                                        <th>WSJF</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Feature A</td>
+                                        <td>21</td>
+                                        <td>8</td>
+                                        <td><strong>2.6</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Feature B</td>
+                                        <td>13</td>
+                                        <td>3</td>
+                                        <td><strong>4.3</strong> <span class="badge green">Do First</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Feature C</td>
+                                        <td>34</td>
+                                        <td>21</td>
+                                        <td><strong>1.6</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card success fragment">
+                            <h4>Value Delivered Per Sprint</h4>
+                            <div class="highlight-box success">
+                                <p>Track not just <em>how much</em> the team delivers, but <em>how much value</em> they deliver.</p>
+                            </div>
+                            <ul>
+                                <li><strong>Business Value Velocity:</strong> Sum of business value points completed per sprint</li>
+                                <li><strong>Value Efficiency:</strong> Business value delivered / Story points spent</li>
+                                <li><strong>Value Trend:</strong> Is value per sprint increasing even if story points stay flat?</li>
+                            </ul>
+                        </div>
+                        <div class="highlight-box fragment">
+                            <h4>The Ultimate Goal</h4>
+                            <p>A mature Agile team optimizes for <strong>value throughput</strong>, not point throughput. A sprint delivering 20 high-value points is better than a sprint delivering 40 low-value points.</p>
+                        </div>
+                        <div class="architecture-box fragment">
+                            <h4>Connecting Metrics to Module 4 Themes</h4>
+                            <div class="flow-diagram">
+                                <div class="flow-box">Story Points</div>
+                                <div class="flow-arrow">--></div>
+                                <div class="flow-box">Velocity</div>
+                                <div class="flow-arrow">--></div>
+                                <div class="flow-box">Forecasts</div>
+                                <div class="flow-arrow">--></div>
+                                <div class="flow-box">Business Decisions</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    WSJF is a prioritization framework from SAFe (Scaled Agile Framework) that combines Cost of Delay with job size. The insight is powerful: Feature B in our example has a lower Cost of Delay than Feature A, but because it is so much smaller, it has a higher WSJF. You get more value faster by doing B first. This is counter-intuitive for many stakeholders who want to prioritize by total value alone. The value-per-sprint concept is the evolution of velocity tracking. Raw velocity tells you how much work the team completes. Value velocity tells you how much value they deliver. A team might maintain the same velocity but double their value delivery by working on higher-priority items -- that is the real optimization. The flow diagram at the bottom ties everything together: story points enable velocity measurement, velocity enables forecasting, and forecasts enable informed business decisions. This is the complete chain from estimation to business value, and it is the central message of Module 4.
+                </aside>
+            </section>
+
+            <section>
+                <h2>&#x1F4B0; Putting It All Together</h2>
+                <h3>The Complete Metrics Dashboard</h3>
+                <div class="architecture-box">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Metric</th>
+                                <th>Who Uses It</th>
+                                <th>Frequency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="fragment">
+                                <td><strong>Estimation</strong></td>
+                                <td>Story points, reference stories</td>
+                                <td>Development team</td>
+                                <td>Per story (Planning Poker)</td>
+                            </tr>
+                            <tr class="fragment">
+                                <td><strong>Throughput</strong></td>
+                                <td>Velocity, completion rate</td>
+                                <td>Team + Scrum Master</td>
+                                <td>Per sprint</td>
+                            </tr>
+                            <tr class="fragment">
+                                <td><strong>Progress</strong></td>
+                                <td>Burn-down, burn-up, CFD</td>
+                                <td>Team + stakeholders</td>
+                                <td>Daily / per sprint</td>
+                            </tr>
+                            <tr class="fragment">
+                                <td><strong>Forecasting</strong></td>
+                                <td>Velocity-based projections</td>
+                                <td>Product Owner + management</td>
+                                <td>Per sprint / per release</td>
+                            </tr>
+                            <tr class="fragment">
+                                <td><strong>Financial</strong></td>
+                                <td>Cost per point, feature cost</td>
+                                <td>Management + PMO</td>
+                                <td>Per release / quarterly</td>
+                            </tr>
+                            <tr class="fragment">
+                                <td><strong>Value</strong></td>
+                                <td>Business value, WSJF, CoD</td>
+                                <td>Product Owner + stakeholders</td>
+                                <td>Per feature / per release</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="highlight-box success fragment">
+                    <strong>Key Principle:</strong> Every metric should drive a decision. If a metric does not change behavior or inform a choice, stop tracking it. Metrics that exist only for reporting create overhead without value.
+                </div>
+                <aside class="notes">
+                    This summary table is a practical reference participants can take back to their teams. Walk through each row and emphasize who uses each metric and how often. The estimation metrics are internal to the development team -- used during Planning Poker. Throughput metrics are reviewed in sprint retrospectives and planning. Progress metrics are shared with stakeholders in sprint reviews. Forecasting metrics inform release planning and roadmap decisions. Financial metrics connect to budgeting and portfolio management. Value metrics drive prioritization decisions. The key principle at the bottom is critical: every metric must drive a decision. Too many teams track dozens of metrics that nobody acts on. This creates overhead, cynicism, and dashboard fatigue. Ask the team: "If this metric changed dramatically, what would we do differently?" If the answer is "nothing," stop tracking it. Keep the metrics suite lean and actionable.
+                </aside>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- LAB CALLOUT SLIDE -->
+            <!-- ============================================================ -->
+            <section class="lab-slide" data-background-color="#1a365d">
+                <div class="lab-badge">Hands-On Workshop</div>
+                <h2>Lab 4: Planning Poker &amp; Velocity Calculation Workshop</h2>
+                <h3 style="color: #bee3f8 !important; font-weight: 400;">Apply relative sizing techniques to real scenarios</h3>
+                <div class="two-column" style="margin-top: 20px;">
+                    <div>
+                        <h4 style="color: #bee3f8 !important;">Part 1: Planning Poker Simulation</h4>
+                        <ul>
+                            <li>Form teams of 4-6 participants</li>
+                            <li>Establish a reference story baseline together</li>
+                            <li>Run Planning Poker on 8-10 user stories</li>
+                            <li>Practice handling outlier estimates and driving consensus</li>
+                            <li>Record your team's estimates for all stories</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #bee3f8 !important;">Part 2: Velocity &amp; Forecasting</h4>
+                        <ul>
+                            <li>Given 6 sprints of historical velocity data, calculate average velocity and range</li>
+                            <li>Use your velocity to forecast a release date for a 200-point backlog</li>
+                            <li>Generate optimistic, likely, and pessimistic scenarios</li>
+                            <li>Calculate cost-per-point and feature costs</li>
+                            <li>Apply WSJF to prioritize a set of features</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lab-time">
+                    <strong>Duration:</strong> 60 minutes (30 min per part) &nbsp;|&nbsp; <strong>Format:</strong> Team-based workshop with instructor facilitation &nbsp;|&nbsp; <strong>Deliverable:</strong> Estimated backlog + release forecast
+                </div>
+                <aside class="notes">
+                    This lab is the heart of the module -- it is where concepts become skills. Split the class into teams of 4-6. Each team will designate a Product Owner who presents the stories and a facilitator who manages the Planning Poker process. Part 1 is experiential: teams will feel the difference between sequential and simultaneous estimation, and they will practice the discussion dynamics that make Planning Poker valuable. Circulate and observe -- common issues include: not discussing enough before estimating, anchoring on the first voice in discussion, and spending too long on individual stories. Part 2 is analytical: teams work with provided velocity data to make forecasts. The key learning moment is when they see how different velocity assumptions (optimistic vs pessimistic) produce meaningfully different delivery dates. The WSJF exercise often produces surprising results -- features that seemed obviously highest priority may score low when Cost of Delay and size are considered together. Allow 5-10 minutes at the end for teams to share their forecasts and discuss differences.
+                </aside>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- KEY TAKEAWAYS -->
+            <!-- ============================================================ -->
+            <section>
+                <h2>Key Takeaways</h2>
+                <div class="two-column">
+                    <div>
+                        <div class="takeaway-box fragment">
+                            <h4>&#x1F4CF; Relative Sizing</h4>
+                            <p>Humans are better at comparing than measuring. Relative estimation leverages this strength, producing faster consensus and more honest forecasts than hour-based approaches.</p>
+                        </div>
+                        <div class="takeaway-box fragment">
+                            <h4>&#x1F522; Story Points</h4>
+                            <p>Story points combine effort, complexity, and uncertainty into a single relative measure. Use the modified Fibonacci scale and calibrate with reference stories.</p>
+                        </div>
+                        <div class="takeaway-box fragment">
+                            <h4>&#x1F0CF; Planning Poker</h4>
+                            <p>Simultaneous reveal prevents anchoring bias. Divergent estimates surface hidden knowledge. Time-box discussions and celebrate disagreement.</p>
+                        </div>
+                        <div class="takeaway-box fragment">
+                            <h4>&#x26A0;&#xFE0F; Constraints</h4>
+                            <p>Story points are team-specific, not hours, and vulnerable to inflation. Never compare velocity across teams or use it as a performance metric.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="takeaway-box fragment">
+                            <h4>&#x1F4C8; Velocity</h4>
+                            <p>Velocity is the bridge from story points to calendar dates. Track it, use it for range-based forecasting, and expect stabilization in 3-5 sprints.</p>
+                        </div>
+                        <div class="takeaway-box fragment">
+                            <h4>&#x274C; Without Relative Sizing</h4>
+                            <p>Hour-based estimation leads to false precision, sandbagging, and commitment-vs-forecast confusion. Relative sizing is not easier -- it is more honest.</p>
+                        </div>
+                        <div class="takeaway-box fragment">
+                            <h4>&#x1F4CA; Business Metrics</h4>
+                            <p>Burn-up charts, CFDs, and cost-per-point translate estimation data into business intelligence. Every metric should drive a decision.</p>
+                        </div>
+                        <div class="takeaway-box fragment">
+                            <h4>&#x1F4B0; Business Value</h4>
+                            <p>WSJF and value-per-sprint metrics shift the focus from output to outcomes. Optimize for value throughput, not point throughput.</p>
+                        </div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    Review each takeaway briefly, connecting back to the module objectives. Ask participants which concept was most new or surprising to them. Common responses include: the research data on relative vs. absolute estimation accuracy, the anti-pattern of comparing velocity across teams, and the WSJF prioritization results. Emphasize that these techniques work together as a system: story points feed into velocity, velocity feeds into forecasting, and business value metrics feed into prioritization. Implementing only part of the system (e.g., story points without velocity tracking) loses much of the value. Encourage participants to start with Planning Poker and velocity tracking in their next sprint, then gradually add business value metrics as the team matures.
+                </aside>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- QUESTIONS SLIDE -->
+            <!-- ============================================================ -->
+            <section class="questions-slide" data-background="linear-gradient(135deg, #2b6cb0 0%, #1a365d 100%)">
+                <h2 style="color: #ffffff !important; font-size: 2.4em !important;">Questions?</h2>
+                <p style="color: #e2e8f0; font-size: 1.1em; margin-top: 1em;">Module 4: Relative Sizing Metrics</p>
+                <div style="margin-top: 40px;">
+                    <div style="display: inline-block; background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 20px 35px; backdrop-filter: blur(10px);">
+                        <p style="color: #bee3f8; font-size: 0.85em; margin: 0;">Coming up next:</p>
+                        <p style="color: #ffffff; font-size: 1.1em; font-weight: 600; margin: 8px 0 0 0;">Module 5: Prioritizing / Sequencing Using Relative ROI</p>
+                    </div>
+                </div>
+                <aside class="notes">
+                    Open the floor for questions. Common questions at this point include: "How do we introduce story points to a team that has always used hours?" (Answer: Start with the dog analogy, do a calibration session, and run Planning Poker for a sprint. Let the team experience it before committing.) "What if management insists on comparing team velocities?" (Answer: Educate on why it is invalid, propose alternative metrics like value delivered or customer satisfaction.) "How do we handle stories that span multiple sprints?" (Answer: They should not -- split them. If a story cannot be completed in a sprint, it is too big and needs decomposition, which we covered in Module 3.) Remind participants that the upcoming lab will give them hands-on practice with everything discussed. The next module on prioritizing using relative ROI builds directly on the business value metrics we introduced here.
+                </aside>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: 'c/t',
+            showSlideNumber: 'all',
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            center: false,
+            width: 1100,
+            height: 900,
+            margin: 0.04,
+            minScale: 0.5,
+            maxScale: 1.5,
+            plugins: [ RevealHighlight, RevealNotes, RevealMarkdown ]
+        });
+    </script>
+</body>
+</html>

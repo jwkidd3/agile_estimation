@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4: Planning Poker &amp; Velocity Calculation Workshop - Agile Project Estimation</title>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --accent: #2b6cb0;
+            --success: #2f855a;
+            --warning: #c05621;
+            --bg: #f7fafc;
+            --card-bg: #ffffff;
+            --text: #2d3748;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .lab-header {
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        .lab-header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .lab-header .meta { opacity: 0.9; font-size: 0.95rem; }
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--accent);
+        }
+        .card h2 { color: var(--primary); font-size: 1.3rem; margin-bottom: 0.75rem; }
+        .card h3 { color: var(--accent); font-size: 1.1rem; margin: 1rem 0 0.5rem; }
+        .objective-card { border-left-color: var(--success); }
+        .warning-card { border-left-color: var(--warning); }
+        ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+        li { margin-bottom: 0.4rem; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th { background: var(--primary); color: white; padding: 0.6rem; text-align: left; }
+        td { padding: 0.6rem; border: 1px solid #e2e8f0; }
+        tr:nth-child(even) { background: #f7fafc; }
+        .workspace {
+            background: #edf2f7;
+            border: 2px dashed #cbd5e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            min-height: 120px;
+        }
+        .workspace p { color: #718096; font-style: italic; }
+        .timer { display: inline-block; background: var(--warning); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 600; font-size: 0.85rem; }
+        .step-number {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 28px; height: 28px; background: var(--accent); color: white;
+            border-radius: 50%; font-weight: 700; font-size: 0.85rem; margin-right: 0.5rem;
+        }
+        .poker-cards {
+            display: flex;
+            gap: 0.5rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+        .poker-card {
+            width: 50px;
+            height: 70px;
+            background: white;
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .velocity-chart {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .bar-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        .bar-label {
+            width: 80px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .bar {
+            height: 28px;
+            background: linear-gradient(90deg, var(--accent), #4299e1);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 8px;
+            color: white;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="lab-header">
+        <h1>🃏 Lab 4: Planning Poker &amp; Velocity Calculation Workshop</h1>
+        <div class="meta">
+            Module 4 — Agile Project Estimation | Duration: 60 minutes | Style: Workshop
+        </div>
+    </div>
+
+    <div class="card objective-card">
+        <h2>🎯 Lab Objectives</h2>
+        <ul>
+            <li>Practice a full Planning Poker estimation session</li>
+            <li>Experience relative sizing firsthand with a team</li>
+            <li>Calculate team velocity from historical sprint data</li>
+            <li>Use velocity to forecast release dates</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">1</span> Reference Story Calibration</h2>
+        <p><span class="timer">10 minutes</span></p>
+        <p>Before playing Planning Poker, the team must agree on a <strong>reference story</strong>. This story serves as the baseline for all relative comparisons.</p>
+
+        <h3>Your Reference Story (Assign = 3 Story Points)</h3>
+        <p><em>"As a new hire, I want to fill out and submit a personal information form so that HR has my contact details on file."</em></p>
+        <p>This is a well-understood, medium-small story. It involves: a form UI, form validation, database storage, and a confirmation message.</p>
+
+        <h3>Fibonacci Scale Reference</h3>
+        <div class="poker-cards">
+            <div class="poker-card">1</div>
+            <div class="poker-card">2</div>
+            <div class="poker-card" style="border-color: var(--success); color: var(--success);">3</div>
+            <div class="poker-card">5</div>
+            <div class="poker-card">8</div>
+            <div class="poker-card">13</div>
+            <div class="poker-card">21</div>
+            <div class="poker-card" style="border-color: var(--warning); color: var(--warning);">?</div>
+        </div>
+        <p><strong>Rule of thumb:</strong> If a story is estimated at 13 or above, consider splitting it.</p>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">2</span> Planning Poker Session</h2>
+        <p><span class="timer">25 minutes</span></p>
+        <p>Estimate the following backlog items using Planning Poker. Follow the process:</p>
+        <ol>
+            <li>Product Owner reads the story aloud</li>
+            <li>Team asks clarifying questions</li>
+            <li>Everyone simultaneously reveals their estimate</li>
+            <li>High and low estimators explain their reasoning</li>
+            <li>Re-vote if needed, then record the consensus</li>
+        </ol>
+
+        <h3>Stories to Estimate</h3>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>User Story</th>
+                <th>Round 1 Votes</th>
+                <th>Discussion Notes</th>
+                <th>Final Estimate</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>"As a new hire, I want to view my onboarding checklist so that I know what tasks I need to complete"</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>"As a new hire, I want to electronically sign required compliance documents so that I don't need to print anything"</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>"As a manager, I want to see a dashboard showing onboarding progress for all my new hires so that I can identify anyone who is falling behind"</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>"As an IT admin, I want the system to automatically create user accounts in Active Directory when a new hire is approved so that access is ready on day one"</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>"As a new hire, I want to watch required training videos and track my completion so that HR knows I've finished mandatory training"</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>"As an HR admin, I want to generate a report of all onboarding activities completed in the past month with export to CSV"</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>"As a new hire, I want to set up direct deposit by entering my bank details securely so that I get paid on time"</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>"As a system admin, I want email notifications sent automatically at key onboarding milestones so that everyone stays informed"</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <p><strong>Total estimated story points:</strong> ________</p>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">3</span> Velocity Calculation &amp; Forecasting</h2>
+        <p><span class="timer">15 minutes</span></p>
+        <p>Given the following historical sprint data, calculate the team's velocity and forecast a release.</p>
+
+        <h3>Historical Sprint Data</h3>
+        <div class="velocity-chart">
+            <div class="bar-row">
+                <div class="bar-label">Sprint 1</div>
+                <div class="bar" style="width: 38%;">19 pts</div>
+            </div>
+            <div class="bar-row">
+                <div class="bar-label">Sprint 2</div>
+                <div class="bar" style="width: 50%;">25 pts</div>
+            </div>
+            <div class="bar-row">
+                <div class="bar-label">Sprint 3</div>
+                <div class="bar" style="width: 44%;">22 pts</div>
+            </div>
+            <div class="bar-row">
+                <div class="bar-label">Sprint 4</div>
+                <div class="bar" style="width: 56%;">28 pts</div>
+            </div>
+            <div class="bar-row">
+                <div class="bar-label">Sprint 5</div>
+                <div class="bar" style="width: 48%;">24 pts</div>
+            </div>
+            <div class="bar-row">
+                <div class="bar-label">Sprint 6</div>
+                <div class="bar" style="width: 52%;">26 pts</div>
+            </div>
+        </div>
+
+        <h3>Calculate</h3>
+        <table>
+            <tr>
+                <th>Metric</th>
+                <th>Your Calculation</th>
+            </tr>
+            <tr>
+                <td>Average velocity (all 6 sprints)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Average velocity (last 3 sprints)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Best sprint velocity</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Worst sprint velocity</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Velocity range (worst to best)</td>
+                <td></td>
+            </tr>
+        </table>
+
+        <h3>Forecasting Exercise</h3>
+        <p>The remaining backlog has <strong>120 story points</strong>. Sprints are 2 weeks long. Calculate:</p>
+        <table>
+            <tr>
+                <th>Forecast Scenario</th>
+                <th>Velocity Used</th>
+                <th>Sprints Needed</th>
+                <th>Calendar Weeks</th>
+            </tr>
+            <tr>
+                <td>Optimistic (best velocity)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Most Likely (avg last 3)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Pessimistic (worst velocity)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <div class="workspace">
+            <p>If a stakeholder asks "When will it be done?", how would you communicate this forecast range?</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">4</span> Reflection</h2>
+        <p><span class="timer">10 minutes</span></p>
+
+        <div class="workspace">
+            <p>What did you observe during the Planning Poker session? Were there big differences in initial estimates? What caused them?</p>
+        </div>
+
+        <div class="workspace">
+            <p>Why is "yesterday's weather" (using recent velocity) often more reliable than a 6-sprint average?</p>
+        </div>
+    </div>
+
+    <div class="card warning-card">
+        <h2>💡 Discussion Points</h2>
+        <ul>
+            <li>What happens when a team member consistently estimates much higher or lower than the group?</li>
+            <li>Should velocity be used as a performance metric? Why or why not?</li>
+            <li>How would you handle a story that the team cannot agree on (e.g., votes of 3, 5, and 21)?</li>
+            <li>What is the danger of committing to the "optimistic" forecast?</li>
+        </ul>
+    </div>
+</body>
+</html>

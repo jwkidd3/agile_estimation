@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 1: Estimation Discipline Assessment - Agile Project Estimation</title>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --accent: #2b6cb0;
+            --success: #2f855a;
+            --warning: #c05621;
+            --bg: #f7fafc;
+            --card-bg: #ffffff;
+            --text: #2d3748;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .lab-header {
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        .lab-header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .lab-header .meta { opacity: 0.9; font-size: 0.95rem; }
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--accent);
+        }
+        .card h2 { color: var(--primary); font-size: 1.3rem; margin-bottom: 0.75rem; }
+        .card h3 { color: var(--accent); font-size: 1.1rem; margin: 1rem 0 0.5rem; }
+        .objective-card { border-left-color: var(--success); }
+        .warning-card { border-left-color: var(--warning); }
+        ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+        li { margin-bottom: 0.4rem; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th { background: var(--primary); color: white; padding: 0.6rem; text-align: left; }
+        td { padding: 0.6rem; border: 1px solid #e2e8f0; }
+        tr:nth-child(even) { background: #f7fafc; }
+        .workspace {
+            background: #edf2f7;
+            border: 2px dashed #cbd5e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            min-height: 120px;
+        }
+        .workspace p { color: #718096; font-style: italic; }
+        .timer { display: inline-block; background: var(--warning); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 600; font-size: 0.85rem; }
+        .step-number {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 28px; height: 28px; background: var(--accent); color: white;
+            border-radius: 50%; font-weight: 700; font-size: 0.85rem; margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="lab-header">
+        <h1>📐 Lab 1: Estimation Discipline Assessment</h1>
+        <div class="meta">
+            Module 1 — Agile Project Estimation | Duration: 45 minutes | Style: Workshop
+        </div>
+    </div>
+
+    <div class="card objective-card">
+        <h2>🎯 Lab Objectives</h2>
+        <ul>
+            <li>Assess your current estimation practices against Agile discipline standards</li>
+            <li>Identify gaps between current approaches and Agile estimation principles</li>
+            <li>Experience the difference between people-driven and formula-driven estimation</li>
+            <li>Apply the "Agile Microscope" concept to a sample project scenario</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">1</span> Current State Assessment</h2>
+        <p><span class="timer">15 minutes</span></p>
+        <p>Working individually, rate your current team/organization on each of the following Agile estimation disciplines using a 1-5 scale (1 = Not Practiced, 5 = Fully Embedded).</p>
+
+        <table>
+            <tr>
+                <th>Estimation Discipline</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>Notes</th>
+            </tr>
+            <tr>
+                <td>Regular sprint planning with team estimation</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td>User stories are estimated before sprint commitment</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td>Estimates are created by the team, not assigned by management</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td>Velocity is tracked and used for forecasting</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td>Retrospectives include estimation accuracy review</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td>Backlog refinement sessions held regularly</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td>Release planning uses velocity-based forecasting</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td>Estimates are updated as new information emerges</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+        </table>
+
+        <div class="workspace">
+            <p>Write down your top 3 strengths and top 3 areas for improvement:</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">2</span> The Agile Microscope Exercise</h2>
+        <p><span class="timer">15 minutes</span></p>
+        <p>You have been asked to estimate a project to build a new customer portal. Apply the Agile Microscope at each level of planning.</p>
+
+        <h3>Scenario</h3>
+        <p>Your company wants to build a customer self-service portal with the following high-level features: account management, order tracking, support ticket submission, and a knowledge base.</p>
+
+        <h3>Your Task</h3>
+        <p>For each planning level, write what you would estimate and at what granularity:</p>
+
+        <table>
+            <tr>
+                <th>Planning Level</th>
+                <th>Time Horizon</th>
+                <th>What Would You Estimate?</th>
+                <th>Precision Level</th>
+            </tr>
+            <tr>
+                <td><strong>Vision / Portfolio</strong></td>
+                <td>1-2 years</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Roadmap</strong></td>
+                <td>6-12 months</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Release</strong></td>
+                <td>2-3 months</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Iteration / Sprint</strong></td>
+                <td>1-2 weeks</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Daily</strong></td>
+                <td>Today</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">3</span> People vs Formulas Experiment</h2>
+        <p><span class="timer">15 minutes</span></p>
+        <p>In groups of 3-4, perform the following estimation experiment:</p>
+
+        <h3>Round 1: Individual Silent Estimate</h3>
+        <p>Each person independently writes down how many hours they think it would take to complete these tasks for the customer portal. <strong>Do not share your estimates yet.</strong></p>
+        <ol>
+            <li>Build user login and authentication</li>
+            <li>Create order history display page</li>
+            <li>Implement support ticket submission form</li>
+            <li>Build knowledge base search functionality</li>
+            <li>Create admin dashboard for customer support team</li>
+        </ol>
+
+        <div class="workspace">
+            <p>Record your individual estimates here (hours):</p>
+        </div>
+
+        <h3>Round 2: Group Discussion Estimate</h3>
+        <p>Now share your estimates with the group. Discuss the differences. As a group, agree on a single estimate for each task.</p>
+
+        <div class="workspace">
+            <p>Record group consensus estimates and note the range of individual estimates:</p>
+        </div>
+
+        <h3>Round 3: Reflection</h3>
+        <ul>
+            <li>How wide was the range between individual estimates?</li>
+            <li>What assumptions were different between team members?</li>
+            <li>Did the group discussion surface risks or unknowns?</li>
+            <li>Is the group estimate more accurate than any individual estimate? Why?</li>
+        </ul>
+
+        <div class="workspace">
+            <p>Write your group's key insights from this exercise:</p>
+        </div>
+    </div>
+
+    <div class="card warning-card">
+        <h2>💡 Discussion Points</h2>
+        <ul>
+            <li>How does your assessment score map to estimation accuracy on your real projects?</li>
+            <li>What is the single biggest estimation discipline gap you identified?</li>
+            <li>How did the "people vs formulas" exercise demonstrate the wisdom of crowds?</li>
+            <li>At which planning level does your organization spend the most time? Is that appropriate?</li>
+        </ul>
+    </div>
+</body>
+</html>
