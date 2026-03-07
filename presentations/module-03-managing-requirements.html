@@ -251,33 +251,47 @@
     </aside>
 </section>
 
-<!-- Scope Hierarchy -->
+<!-- Scope Hierarchy + Concrete Example -->
 <section>
     <h2>&#x1F4E6; The Scope Hierarchy</h2>
-    <div class="architecture-box" style="font-family:'Segoe UI',sans-serif;">
-        <div><span style="font-size:1.4em; color:#553c9a; font-weight:800;">EPIC</span></div>
-        <div style="font-size:0.9em; color:#553c9a;">A large body of work &mdash; months of effort, spans multiple sprints</div>
-        <div class="arrow">&#x25BC;</div>
-        <div><span style="font-size:1.3em; color:#2b6cb0; font-weight:800;">THEME</span></div>
-        <div style="font-size:0.9em; color:#2b6cb0;">A collection of related stories grouped by business objective</div>
-        <div class="arrow">&#x25BC;</div>
-        <div><span style="font-size:1.2em; color:#2f855a; font-weight:800;">FEATURE</span></div>
-        <div style="font-size:0.9em; color:#2f855a;">A distinct piece of functionality that delivers user value</div>
-        <div class="arrow">&#x25BC;</div>
-        <div><span style="font-size:1.1em; color:#c05621; font-weight:800;">USER STORY</span></div>
-        <div style="font-size:0.9em; color:#c05621;">A single unit of work completable within one sprint</div>
-        <div class="arrow">&#x25BC;</div>
-        <div><span style="font-size:1.0em; color:#c53030; font-weight:800;">TASK</span></div>
-        <div style="font-size:0.9em; color:#c53030;">Technical implementation steps (hours of work)</div>
+    <div class="two-column">
+        <div>
+            <div class="architecture-box" style="font-family:'Segoe UI',sans-serif; font-size:0.9em;">
+                <div><span style="font-size:1.2em; color:#553c9a; font-weight:800;">EPIC</span></div>
+                <div style="font-size:0.85em; color:#553c9a;">Months of effort, spans multiple sprints</div>
+                <div class="arrow">&#x25BC;</div>
+                <div><span style="font-size:1.1em; color:#2b6cb0; font-weight:800;">THEME</span></div>
+                <div style="font-size:0.85em; color:#2b6cb0;">Related stories grouped by business objective</div>
+                <div class="arrow">&#x25BC;</div>
+                <div><span style="font-size:1.0em; color:#2f855a; font-weight:800;">FEATURE</span></div>
+                <div style="font-size:0.85em; color:#2f855a;">Distinct functionality delivering user value</div>
+                <div class="arrow">&#x25BC;</div>
+                <div><span style="font-size:0.95em; color:#c05621; font-weight:800;">USER STORY</span></div>
+                <div style="font-size:0.85em; color:#c05621;">Completable within one sprint</div>
+                <div class="arrow">&#x25BC;</div>
+                <div><span style="font-size:0.9em; color:#c53030; font-weight:800;">TASK</span></div>
+                <div style="font-size:0.85em; color:#c53030;">Technical steps (hours of work)</div>
+            </div>
+        </div>
+        <div>
+            <div class="architecture-box fragment" style="font-family:'Segoe UI',sans-serif; font-size:0.68em; text-align:left;">
+                <div style="font-weight:700; text-align:center; color:var(--heading-color); margin-bottom:0.4em;">Example: E-Commerce Checkout</div>
+                <div style="margin:0.2em 0;"><span style="background:#553c9a; color:#fff; padding:0.2em 0.5em; border-radius:4px; font-weight:700;">Epic:</span> E-Commerce Checkout</div>
+                <div style="margin:0.2em 0; padding-left:1em;"><span style="background:#2b6cb0; color:#fff; padding:0.15em 0.4em; border-radius:4px; font-weight:600;">Themes:</span> Payment Processing, Order Confirmation</div>
+                <div style="margin:0.2em 0; padding-left:2em;"><span style="background:#2f855a; color:#fff; padding:0.15em 0.4em; border-radius:4px; font-size:0.95em;">Features:</span> Credit Card, Digital Wallet, Email Receipt</div>
+                <div style="margin:0.2em 0; padding-left:3em;"><span style="background:#c05621; color:#fff; padding:0.15em 0.4em; border-radius:4px; font-size:0.9em;">Stories:</span> Enter card details, Validate card, Process payment, Handle decline</div>
+                <div style="margin:0.2em 0; padding-left:4em;"><span style="background:#c53030; color:#fff; padding:0.15em 0.4em; border-radius:4px; font-size:0.85em;">Tasks:</span> Build form UI, Integrate API, Write tests</div>
+            </div>
+        </div>
     </div>
     <aside class="notes">
-        Walk through the hierarchy from top to bottom. An EPIC is the largest container - think User Account Management or Payment Processing System. These can span an entire release or more. THEMES group related stories by a business concern - for example, Security Hardening might be a theme that cuts across several epics. FEATURES are distinct capabilities a user can interact with - like Password Reset within the User Account Management epic. USER STORIES are the primary unit of estimation in Agile - small enough to complete in a single sprint. TASKS are the technical to-do items within a story, typically estimated in hours. Emphasize that teams estimate at the story level, not the task level, for sprint planning purposes.
+        Walk through the hierarchy from top to bottom. An EPIC is the largest container - think User Account Management or Payment Processing System. THEMES group related stories by a business concern. FEATURES are distinct capabilities a user can interact with. USER STORIES are the primary unit of estimation - small enough for a single sprint. TASKS are the implementation steps, typically estimated in hours. Teams estimate at the story level, not the task level. The right-hand example shows a concrete decomposition of an E-Commerce Checkout epic through all five levels.
     </aside>
 </section>
 
-<!-- Why Decomposition Matters -->
+<!-- Why Decomposition Matters + Rules of Thumb (Consolidated) -->
 <section>
-    <h2>&#x1F4E6; Why Decomposition Matters for Estimation</h2>
+    <h2>&#x1F4E6; Why Decompose &mdash; and How Small?</h2>
     <div class="two-column">
         <div>
             <div class="card">
@@ -285,102 +299,48 @@
                 <ul>
                     <li class="fragment">Large items have <strong>4x variation</strong> in estimates</li>
                     <li class="fragment">Smaller items narrow the range to <strong>1.25x</strong></li>
-                    <li class="fragment">Decomposition is the primary tool for <strong>reducing estimation error</strong></li>
+                    <li class="fragment">Improves estimation accuracy by <strong>50-70%</strong></li>
+                    <li class="fragment">Exposes hidden complexity early</li>
                 </ul>
-            </div>
-            <div class="highlight-box fragment" style="margin-top:0.8em;">
-                <strong>Key Insight:</strong> You cannot accurately estimate what you do not understand. Decomposition forces understanding.
+                <div class="highlight-box fragment" style="margin-top:0.5em;">
+                    <strong>Key Insight:</strong> You cannot accurately estimate what you do not understand. Decomposition forces understanding.
+                </div>
             </div>
         </div>
         <div>
-            <div class="card success">
-                <h4>&#x2705; Benefits of Decomposition</h4>
-                <ul>
-                    <li class="fragment">Exposes hidden complexity early</li>
-                    <li class="fragment">Enables parallel work streams</li>
-                    <li class="fragment">Makes progress measurable</li>
-                    <li class="fragment">Improves estimation accuracy by 50-70%</li>
-                    <li class="fragment">Facilitates better sprint planning</li>
-                    <li class="fragment">Supports incremental delivery of value</li>
-                </ul>
+            <table class="fragment">
+                <thead>
+                    <tr><th>Level</th><th>Size</th><th>Est. Unit</th><th>Horizon</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="metric-badge" style="background:#553c9a;">Epic</span></td>
+                        <td>Weeks-months</td><td>T-shirt</td><td>Roadmap</td>
+                    </tr>
+                    <tr>
+                        <td><span class="metric-badge" style="background:#2b6cb0;">Feature</span></td>
+                        <td>Multi-sprint</td><td>Points (agg.)</td><td>Release</td>
+                    </tr>
+                    <tr>
+                        <td><span class="metric-badge" style="background:#c05621;">Story</span></td>
+                        <td>1-3 days</td><td>Story points</td><td>Sprint</td>
+                    </tr>
+                    <tr>
+                        <td><span class="metric-badge red">Task</span></td>
+                        <td>Hours</td><td>Hours</td><td>Standup</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="highlight-box warning fragment" style="margin-top:0.5em;">
+                <strong>&#x26A0;&#xFE0F; Rule:</strong> If a story cannot be completed within a single sprint, it must be decomposed further.
             </div>
         </div>
     </div>
     <aside class="notes">
-        This is a critical slide. The Cone of Uncertainty concept from Steve McConnell shows that early in a project, estimates can vary by a factor of 4x on either side. As we decompose and learn more, that cone narrows. Studies show that breaking a 100-point epic into ten 10-point stories typically reveals that the actual total is somewhere between 80 and 150 points - the act of decomposition itself uncovers hidden work. Ask the class: Have you ever estimated a big feature, started working on it, and realized it was much bigger than you thought? That is the Cone of Uncertainty in action, and decomposition is how we address it.
+        This slide combines two key ideas: WHY we decompose and HOW SMALL we should go. The Cone of Uncertainty from Steve McConnell shows estimates can vary by 4x for large items. Decomposition narrows that range and improves accuracy by 50 to 70 percent. The table on the right shows that each hierarchy level serves a different planning horizon and uses a different estimation granularity. The critical rule: if a story cannot be done in one sprint, it must be split further.
     </aside>
 </section>
 
-<!-- Rules of Thumb -->
-<section>
-    <h2>&#x1F4E6; Rules of Thumb for Story Size</h2>
-    <table>
-        <thead>
-            <tr><th>Level</th><th>Typical Size</th><th>Estimation Unit</th><th>Planning Horizon</th></tr>
-        </thead>
-        <tbody>
-            <tr class="fragment">
-                <td><span class="metric-badge" style="background:#553c9a;">Epic</span></td>
-                <td>Weeks to months</td><td>T-shirt / order of magnitude</td><td>Roadmap (quarters)</td>
-            </tr>
-            <tr class="fragment">
-                <td><span class="metric-badge" style="background:#2b6cb0;">Feature</span></td>
-                <td>Multiple sprints</td><td>Story points (aggregate)</td><td>Release plan</td>
-            </tr>
-            <tr class="fragment">
-                <td><span class="metric-badge" style="background:#c05621;">User Story</span></td>
-                <td>1-3 days of effort</td><td>Story points</td><td>Sprint plan</td>
-            </tr>
-            <tr class="fragment">
-                <td><span class="metric-badge red">Task</span></td>
-                <td>Hours</td><td>Hours (optional)</td><td>Daily standup</td>
-            </tr>
-        </tbody>
-    </table>
-    <div class="highlight-box warning fragment">
-        <strong>&#x26A0;&#xFE0F; Warning:</strong> If a user story cannot be completed within a single sprint, it is too large and must be decomposed further. A story that spans sprints defeats the purpose of iterative delivery.
-    </div>
-    <aside class="notes">
-        Walk through the table row by row. The key takeaway is that different levels of the hierarchy serve different planning horizons and use different estimation granularity. Epics are estimated very roughly for roadmap planning, perhaps with T-shirt sizes or a simple order of magnitude. Features are sized in aggregate story points for release planning. User stories are the sweet spot for estimation - they should ideally be completable in 1 to 3 days by a single developer or pair. Tasks are optional sub-items that help the team coordinate daily work. The warning at the bottom is critical: if a story is so large that it will not be done in one sprint, it must be split.
-    </aside>
-</section>
-
-<!-- Visual Decomposition Example -->
-<section>
-    <h2>&#x1F4E6; Scope Decomposition in Practice</h2>
-    <div class="architecture-box" style="font-family:'Segoe UI',sans-serif; font-size:0.72em;">
-        <div style="margin-bottom:0.5em;">
-            <span style="background:#553c9a; color:#fff; padding:0.3em 0.8em; border-radius:6px; font-weight:700;">EPIC: E-Commerce Checkout</span>
-        </div>
-        <div style="color:#a0aec0; font-size:1.3em;">&#x25BC;</div>
-        <div class="fragment" style="display:flex; justify-content:center; gap:0.8em; flex-wrap:wrap; margin:0.3em 0;">
-            <span style="background:#2b6cb0; color:#fff; padding:0.3em 0.6em; border-radius:6px; font-weight:600;">Theme: Payment Processing</span>
-            <span style="background:#2b6cb0; color:#fff; padding:0.3em 0.6em; border-radius:6px; font-weight:600;">Theme: Order Confirmation</span>
-        </div>
-        <div style="color:#a0aec0; font-size:1.3em;">&#x25BC;</div>
-        <div class="fragment" style="display:flex; justify-content:center; gap:0.5em; flex-wrap:wrap; margin:0.3em 0;">
-            <span style="background:#2f855a; color:#fff; padding:0.2em 0.5em; border-radius:5px; font-size:0.95em;">Feature: Credit Card</span>
-            <span style="background:#2f855a; color:#fff; padding:0.2em 0.5em; border-radius:5px; font-size:0.95em;">Feature: Digital Wallet</span>
-            <span style="background:#2f855a; color:#fff; padding:0.2em 0.5em; border-radius:5px; font-size:0.95em;">Feature: Email Receipt</span>
-        </div>
-        <div style="color:#a0aec0; font-size:1.3em;">&#x25BC;</div>
-        <div class="fragment" style="display:flex; justify-content:center; gap:0.4em; flex-wrap:wrap; margin:0.3em 0;">
-            <span style="background:#c05621; color:#fff; padding:0.2em 0.4em; border-radius:4px; font-size:0.9em;">Story: Enter card details</span>
-            <span style="background:#c05621; color:#fff; padding:0.2em 0.4em; border-radius:4px; font-size:0.9em;">Story: Validate card</span>
-            <span style="background:#c05621; color:#fff; padding:0.2em 0.4em; border-radius:4px; font-size:0.9em;">Story: Process payment</span>
-            <span style="background:#c05621; color:#fff; padding:0.2em 0.4em; border-radius:4px; font-size:0.9em;">Story: Handle decline</span>
-        </div>
-        <div style="color:#a0aec0; font-size:1.3em;">&#x25BC;</div>
-        <div class="fragment" style="display:flex; justify-content:center; gap:0.4em; flex-wrap:wrap; margin:0.3em 0;">
-            <span style="background:#c53030; color:#fff; padding:0.15em 0.4em; border-radius:4px; font-size:0.85em;">Task: Build form UI</span>
-            <span style="background:#c53030; color:#fff; padding:0.15em 0.4em; border-radius:4px; font-size:0.85em;">Task: Integrate API</span>
-            <span style="background:#c53030; color:#fff; padding:0.15em 0.4em; border-radius:4px; font-size:0.85em;">Task: Write tests</span>
-        </div>
-    </div>
-    <aside class="notes">
-        Walk through this concrete example step by step. Start with the Epic: E-Commerce Checkout. This is a large body of work that will span many sprints. It decomposes into Themes based on business objectives: Payment Processing and Order Confirmation. Each theme contains Features - distinct capabilities. The Payment Processing theme has Credit Card and Digital Wallet features. Features break down into User Stories - each one is a small, deliverable increment. Enter card details, Validate card, Process payment, and Handle decline are each separate stories. Finally, tasks are the implementation steps within a single story. Notice how the granularity increases at each level.
-    </aside>
-</section>
 
 <!-- ====== SECTION: DEVELOPING THE RELEASE PLAN ====== -->
 <section>
@@ -433,84 +393,48 @@
     </aside>
 </section>
 
-<!-- Release Planning Ceremony -->
+<!-- Release Planning Process (Consolidated: ceremony + adjustments) -->
 <section>
-    <h2>&#x1F5D3;&#xFE0F; The Release Planning Ceremony</h2>
+    <h2>&#x1F5D3;&#xFE0F; The Release Planning Process</h2>
     <div class="two-column">
         <div>
             <div class="card">
-                <h4>&#x1F91D; Participants</h4>
-                <ul>
-                    <li><strong>Product Owner</strong> &mdash; priorities and business value</li>
-                    <li><strong>Scrum Master</strong> &mdash; facilitation</li>
-                    <li><strong>Development Team</strong> &mdash; estimation and feasibility</li>
-                    <li><strong>Stakeholders</strong> &mdash; constraints and dependencies</li>
-                </ul>
-            </div>
-            <div class="card fragment" style="margin-top:0.8em;">
-                <h4>&#x23F1;&#xFE0F; Typical Duration</h4>
-                <ul>
-                    <li><strong>Half-day</strong> for a 3-month release</li>
-                    <li><strong>Full day</strong> for a 6-month release</li>
-                    <li>Revisited <strong>every 2-3 sprints</strong></li>
-                </ul>
-            </div>
-        </div>
-        <div>
-            <div class="card success">
                 <h4>&#x1F4DD; Ceremony Steps</h4>
-                <ol>
-                    <li class="fragment">Product Owner presents the <strong>release vision and goals</strong></li>
+                <ol style="font-size:0.82em;">
+                    <li class="fragment">PO presents the <strong>release vision and goals</strong></li>
                     <li class="fragment">Team reviews the <strong>prioritized backlog</strong></li>
-                    <li class="fragment">Team provides <strong>high-level estimates</strong> for unestimated items</li>
+                    <li class="fragment">Team provides <strong>high-level estimates</strong></li>
                     <li class="fragment">Calculate <strong>expected velocity</strong> (historical or forecasted)</li>
                     <li class="fragment">Map stories into iterations by <strong>priority order</strong></li>
                     <li class="fragment">Identify <strong>risks, dependencies, and unknowns</strong></li>
-                    <li class="fragment">Agree on <strong>release date</strong> or <strong>scope boundary</strong></li>
                 </ol>
+                <p style="font-size:0.78em; color:#718096; margin-top:0.4em;"><strong>Participants:</strong> PO + Scrum Master + Dev Team + Stakeholders<br><strong>Duration:</strong> Half-day (3-mo release) to full day (6-mo) &bull; Revisit every 2-3 sprints</p>
             </div>
         </div>
-    </div>
-    <aside class="notes">
-        Release planning is a collaborative ceremony. The Product Owner drives priorities, the team provides estimates and identifies technical risks, and stakeholders contribute constraints like regulatory deadlines or external partner dependencies. The ceremony typically takes half a day for a quarterly release. Emphasize step 4: expected velocity. For a new team, you may need to forecast velocity, which we will cover in the Forecasting module. For an established team, use the average of the last 3-5 sprints.
-    </aside>
-</section>
-
-<!-- Adjusting the Release Plan -->
-<section>
-    <h2>&#x1F5D3;&#xFE0F; Adjusting as Velocity Stabilizes</h2>
-    <div class="highlight-box">
-        <strong>Key Principle:</strong> The release plan is a <em>living document</em>. It should be updated every 2-3 sprints as actual velocity data replaces forecasted velocity.
-    </div>
-    <div class="two-column fragment">
         <div>
-            <div class="card warning">
-                <h4>&#x1F4C9; Velocity Lower Than Expected</h4>
-                <ul>
-                    <li>Re-prioritize: cut lower-value stories</li>
-                    <li>Negotiate scope with Product Owner</li>
-                    <li>Extend the release timeline (if date is flexible)</li>
-                    <li>Investigate impediments slowing the team</li>
+            <div class="highlight-box">
+                <strong>Key Principle:</strong> The release plan is a <em>living document</em>. Update every 2-3 sprints as actual velocity replaces forecasts.
+            </div>
+            <div class="card warning fragment" style="margin-top:0.6em;">
+                <h4>&#x1F4C9; Velocity Lower?</h4>
+                <ul style="font-size:0.8em;">
+                    <li>Cut lower-value stories / negotiate scope</li>
+                    <li>Extend timeline if date is flexible</li>
+                    <li>Investigate impediments</li>
                 </ul>
             </div>
-        </div>
-        <div>
-            <div class="card success">
-                <h4>&#x1F4C8; Velocity Higher Than Expected</h4>
-                <ul>
-                    <li>Pull in additional stories from the backlog</li>
-                    <li>Consider moving the release date earlier</li>
-                    <li>Invest in technical debt or quality improvements</li>
+            <div class="card success fragment" style="margin-top:0.5em;">
+                <h4>&#x1F4C8; Velocity Higher?</h4>
+                <ul style="font-size:0.8em;">
+                    <li>Pull in additional backlog stories</li>
+                    <li>Invest in tech debt / quality</li>
                     <li>Validate estimates are not being gamed</li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="highlight-box warning fragment">
-        <strong>&#x26A0;&#xFE0F; Anti-pattern:</strong> Never inflate velocity by lowering the Definition of Done. A "done" story that needs rework later is a hidden cost that will erode trust and predictability.
-    </div>
     <aside class="notes">
-        This slide addresses the dynamic nature of release planning. After 2-3 sprints, the team will have real velocity data. If velocity is lower than expected, the Product Owner must make scope decisions. This is healthy - it is the Agile inspect-and-adapt cycle applied to planning. If velocity is higher than expected, great, but be cautious. Confirm the team is not cutting corners. Also validate that the stories being completed are genuinely done per the Definition of Done, not just partially implemented.
+        Release planning is a collaborative ceremony involving PO, Scrum Master, dev team, and stakeholders. The PO drives priorities while the team provides estimates and identifies risks. After 2-3 sprints, real velocity data replaces forecasts. If velocity is lower than expected, the PO must make scope decisions - this is healthy inspect-and-adapt. If higher, confirm the team is not cutting corners on the Definition of Done. Never inflate velocity by lowering quality standards.
     </aside>
 </section>
 
@@ -526,85 +450,70 @@
     </aside>
 </section>
 
-<!-- Grouping Stories by Theme -->
+<!-- Themes: Definition + Capacity Allocation (Consolidated) -->
 <section>
-    <h2>&#x1F3F7;&#xFE0F; Grouping Stories by Business Theme</h2>
+    <h2>&#x1F3F7;&#xFE0F; Themes &mdash; Grouping Stories by Business Value</h2>
     <div class="two-column">
         <div>
             <div class="card">
                 <h4>What Is a Theme?</h4>
-                <p>A theme is a <strong>collection of related user stories</strong> that together support a specific business objective or value stream.</p>
-                <ul>
-                    <li class="fragment">Themes <strong>cut across epics</strong></li>
-                    <li class="fragment">They represent <strong>strategic business goals</strong></li>
-                    <li class="fragment">Stories can belong to <strong>multiple themes</strong></li>
-                    <li class="fragment">Themes help stakeholders <strong>understand investment allocation</strong></li>
-                </ul>
+                <p style="font-size:0.85em;">A <strong>collection of related stories</strong> supporting a specific business objective. Themes <strong>cut across epics</strong>, represent strategic goals, and help stakeholders understand investment allocation.</p>
+            </div>
+            <div class="architecture-box fragment" style="font-family:'Segoe UI',sans-serif; text-align:left; font-size:0.7em; margin-top:0.5em;">
+                <div style="background:#ebf8ff; padding:0.3em 0.5em; border-radius:4px; margin:0.2em 0;">
+                    <strong style="color:#2b6cb0;">&#x1F6E1;&#xFE0F; Security:</strong> 2FA, encryption, PCI compliance
+                </div>
+                <div style="background:#f0fff4; padding:0.3em 0.5em; border-radius:4px; margin:0.2em 0;">
+                    <strong style="color:#2f855a;">&#x1F4F1; Mobile:</strong> responsive design, touch gestures, offline
+                </div>
+                <div style="background:#fffaf0; padding:0.3em 0.5em; border-radius:4px; margin:0.2em 0;">
+                    <strong style="color:#c05621;">&#x26A1; Performance:</strong> caching, CDN, image optimization
+                </div>
+                <div style="background:#fff5f5; padding:0.3em 0.5em; border-radius:4px; margin:0.2em 0;">
+                    <strong style="color:#c53030;">&#x1F4CA; Analytics:</strong> event tracking, A/B testing, funnels
+                </div>
             </div>
         </div>
         <div>
-            <div class="architecture-box fragment" style="font-family:'Segoe UI',sans-serif; text-align:left; font-size:0.75em;">
-                <div style="margin-bottom:0.5em; font-weight:700; text-align:center; color:var(--heading-color);">Example Themes for an E-Commerce Platform</div>
-                <div style="background:#ebf8ff; padding:0.4em 0.6em; border-radius:4px; margin:0.3em 0;">
-                    <strong style="color:#2b6cb0;">&#x1F6E1;&#xFE0F; Security Hardening:</strong> 2FA, encryption, PCI compliance, session management
-                </div>
-                <div style="background:#f0fff4; padding:0.4em 0.6em; border-radius:4px; margin:0.3em 0;">
-                    <strong style="color:#2f855a;">&#x1F4F1; Mobile Experience:</strong> responsive design, touch gestures, offline mode, push notifications
-                </div>
-                <div style="background:#fffaf0; padding:0.4em 0.6em; border-radius:4px; margin:0.3em 0;">
-                    <strong style="color:#c05621;">&#x26A1; Performance:</strong> caching, CDN integration, image optimization, lazy loading
-                </div>
-                <div style="background:#fff5f5; padding:0.4em 0.6em; border-radius:4px; margin:0.3em 0;">
-                    <strong style="color:#c53030;">&#x1F4CA; Analytics:</strong> event tracking, A/B testing, conversion funnels, dashboards
-                </div>
+            <table class="fragment" style="font-size:0.68em;">
+                <thead>
+                    <tr><th>Theme</th><th>Priority</th><th>Points</th><th>Capacity</th><th>Quarter</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&#x1F6E1;&#xFE0F; Security</td>
+                        <td><span class="metric-badge red">Critical</span></td>
+                        <td>89</td><td>35%</td><td>Q1</td>
+                    </tr>
+                    <tr>
+                        <td>&#x1F4F1; Mobile</td>
+                        <td><span class="metric-badge orange">High</span></td>
+                        <td>64</td><td>25%</td><td>Q1-Q2</td>
+                    </tr>
+                    <tr>
+                        <td>&#x26A1; Performance</td>
+                        <td><span class="metric-badge">Medium</span></td>
+                        <td>51</td><td>20%</td><td>Q2</td>
+                    </tr>
+                    <tr>
+                        <td>&#x1F4CA; Analytics</td>
+                        <td><span class="metric-badge">Medium</span></td>
+                        <td>38</td><td>15%</td><td>Q2-Q3</td>
+                    </tr>
+                    <tr>
+                        <td>&#x1F527; Tech Debt</td>
+                        <td><span class="metric-badge green">Ongoing</span></td>
+                        <td>~13/spr</td><td>5%</td><td>Every</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="highlight-box success fragment" style="margin-top:0.5em;">
+                <strong>&#x1F4A1; Best Practice:</strong> Allocate <strong>10-20%</strong> of capacity to tech debt every sprint.
             </div>
         </div>
     </div>
     <aside class="notes">
-        Notice how themes differ from epics. An epic like Checkout is about a specific feature area. A theme like Security Hardening cuts across multiple epics - checkout security, account security, data protection, etc. Themes allow the business to answer questions like How much of our capacity are we investing in security vs new features vs performance? This is crucial for strategic portfolio management.
-    </aside>
-</section>
-
-<!-- Theme-Based Planning -->
-<section>
-    <h2>&#x1F3F7;&#xFE0F; Theme-Based Roadmap and Prioritization</h2>
-    <table>
-        <thead>
-            <tr><th>Theme</th><th>Business Priority</th><th>Story Points</th><th>% of Capacity</th><th>Target Quarter</th></tr>
-        </thead>
-        <tbody>
-            <tr class="fragment">
-                <td>&#x1F6E1;&#xFE0F; Security Hardening</td>
-                <td><span class="metric-badge red">Critical</span></td>
-                <td>89</td><td>35%</td><td>Q1</td>
-            </tr>
-            <tr class="fragment">
-                <td>&#x1F4F1; Mobile Experience</td>
-                <td><span class="metric-badge orange">High</span></td>
-                <td>64</td><td>25%</td><td>Q1-Q2</td>
-            </tr>
-            <tr class="fragment">
-                <td>&#x26A1; Performance</td>
-                <td><span class="metric-badge">Medium</span></td>
-                <td>51</td><td>20%</td><td>Q2</td>
-            </tr>
-            <tr class="fragment">
-                <td>&#x1F4CA; Analytics</td>
-                <td><span class="metric-badge">Medium</span></td>
-                <td>38</td><td>15%</td><td>Q2-Q3</td>
-            </tr>
-            <tr class="fragment">
-                <td>&#x1F527; Tech Debt</td>
-                <td><span class="metric-badge green">Ongoing</span></td>
-                <td>~13/sprint</td><td>5%</td><td>Every sprint</td>
-            </tr>
-        </tbody>
-    </table>
-    <div class="highlight-box success fragment">
-        <strong>&#x1F4A1; Best Practice:</strong> Allocate <strong>10-20% of team capacity</strong> to technical debt and platform improvements every sprint. This prevents debt from accumulating to the point where it cripples velocity.
-    </div>
-    <aside class="notes">
-        This table shows how themes help with strategic capacity allocation. The business has decided that Security is the top priority for this planning period, receiving 35% of team capacity. Mobile Experience is next at 25%, and so on. Notice the Tech Debt theme at the bottom - this is a continuous investment. Theme-based planning helps answer the executive question: What are we investing in and why?
+        Themes differ from epics. An epic like Checkout is about a specific feature area. A theme like Security Hardening cuts across multiple epics. Themes allow the business to answer: How much capacity are we investing in security vs new features vs performance? The table shows strategic capacity allocation. Notice the Tech Debt theme at the bottom - this is a continuous investment. Theme-based planning helps answer the executive question: What are we investing in and why?
     </aside>
 </section>
 
@@ -620,79 +529,60 @@
     </aside>
 </section>
 
-<!-- INVEST Grid -->
+<!-- INVEST Criteria with Inline Examples (Consolidated) -->
 <section>
     <h2>&#x1F4D6; The INVEST Criteria</h2>
-    <div class="invest-grid">
-        <div class="invest-card fragment">
-            <span class="letter">I</span>
-            <span class="word">Independent</span>
-            Stories should not depend on other stories for implementation
-        </div>
-        <div class="invest-card fragment">
-            <span class="letter">N</span>
-            <span class="word">Negotiable</span>
-            Details are open for discussion, not locked in a contract
-        </div>
-        <div class="invest-card fragment">
-            <span class="letter">V</span>
-            <span class="word">Valuable</span>
-            Each story delivers tangible value to a user or the business
-        </div>
-        <div class="invest-card fragment">
-            <span class="letter">E</span>
-            <span class="word">Estimable</span>
-            The team has enough information to provide a size estimate
-        </div>
-        <div class="invest-card fragment">
-            <span class="letter">S</span>
-            <span class="word">Small</span>
-            Completable within a single sprint &mdash; ideally 1-3 days
-        </div>
-        <div class="invest-card fragment">
-            <span class="letter">T</span>
-            <span class="word">Testable</span>
-            Clear acceptance criteria define when the story is done
-        </div>
-    </div>
+    <table style="font-size:0.68em;">
+        <thead>
+            <tr><th style="width:5%;">&nbsp;</th><th style="width:15%;">Criterion</th><th style="width:25%;">Meaning</th><th style="width:27%;">&#x2705; Good Example</th><th style="width:28%;">&#x274C; Poor Example</th></tr>
+        </thead>
+        <tbody>
+            <tr class="fragment">
+                <td style="font-size:1.6em; font-weight:800; color:var(--accent-color);">I</td>
+                <td><strong>Independent</strong></td>
+                <td>No dependency on other stories</td>
+                <td>"User can reset password via email"</td>
+                <td>"Build payment API" then "Build payment UI"</td>
+            </tr>
+            <tr class="fragment">
+                <td style="font-size:1.6em; font-weight:800; color:var(--accent-color);">N</td>
+                <td><strong>Negotiable</strong></td>
+                <td>Details open for discussion</td>
+                <td>"User can filter products"</td>
+                <td>"Implement exactly 3 dropdowns with hex #2b6cb0"</td>
+            </tr>
+            <tr class="fragment">
+                <td style="font-size:1.6em; font-weight:800; color:var(--accent-color);">V</td>
+                <td><strong>Valuable</strong></td>
+                <td>Delivers tangible user/business value</td>
+                <td>"Customer can track order status"</td>
+                <td>"Refactor database schema"</td>
+            </tr>
+            <tr class="fragment">
+                <td style="font-size:1.6em; font-weight:800; color:var(--accent-color);">E</td>
+                <td><strong>Estimable</strong></td>
+                <td>Enough info to size it</td>
+                <td>"Display top 10 products by rating"</td>
+                <td>"Integrate with partner API"</td>
+            </tr>
+            <tr class="fragment">
+                <td style="font-size:1.6em; font-weight:800; color:var(--accent-color);">S</td>
+                <td><strong>Small</strong></td>
+                <td>Completable in one sprint (1-3 days)</td>
+                <td>"Add email validation to signup form"</td>
+                <td>"Build user management system"</td>
+            </tr>
+            <tr class="fragment">
+                <td style="font-size:1.6em; font-weight:800; color:var(--accent-color);">T</td>
+                <td><strong>Testable</strong></td>
+                <td>Clear acceptance criteria</td>
+                <td>"User sees error for invalid card"</td>
+                <td>"Make the app more user-friendly"</td>
+            </tr>
+        </tbody>
+    </table>
     <aside class="notes">
-        Reveal each letter one at a time and briefly explain it. Independent means stories can be developed in any order - no forced sequencing. Negotiable means the story is a conversation starter, not a requirements specification. Valuable means every story should deliver something a user cares about. Estimable means the team understands enough to size it. Small means completable within one sprint. Testable means clear acceptance criteria exist.
-    </aside>
-</section>
-
-<!-- INVEST Examples -->
-<section>
-    <h2>&#x1F4D6; INVEST in Detail</h2>
-    <div class="two-column">
-        <div>
-            <div class="compare-good">
-                <h4 style="color:var(--success-color);">&#x2705; Good Examples</h4>
-                <ul style="font-size:0.8em;">
-                    <li class="fragment"><strong>Independent:</strong> "User can reset password via email" &mdash; no dependency on other stories</li>
-                    <li class="fragment"><strong>Negotiable:</strong> "User can filter products" &mdash; implementation details TBD in conversation</li>
-                    <li class="fragment"><strong>Valuable:</strong> "Customer can track order status" &mdash; clear user benefit</li>
-                    <li class="fragment"><strong>Estimable:</strong> "Display top 10 products by rating" &mdash; well-understood scope</li>
-                    <li class="fragment"><strong>Small:</strong> "Add email validation to signup form" &mdash; hours of work</li>
-                    <li class="fragment"><strong>Testable:</strong> "User sees error message for invalid card" &mdash; clear pass/fail</li>
-                </ul>
-            </div>
-        </div>
-        <div>
-            <div class="compare-bad">
-                <h4 style="color:var(--danger-color);">&#x274C; Poor Examples</h4>
-                <ul style="font-size:0.8em;">
-                    <li class="fragment"><strong>Dependent:</strong> "Build payment API" then "Build payment UI" &mdash; UI cannot work without API</li>
-                    <li class="fragment"><strong>Rigid:</strong> "Implement exactly 3 dropdown menus with specific hex colors" &mdash; over-specified</li>
-                    <li class="fragment"><strong>No value:</strong> "Refactor database schema" &mdash; what user benefit?</li>
-                    <li class="fragment"><strong>Unestimable:</strong> "Integrate with partner API" &mdash; which API? What data?</li>
-                    <li class="fragment"><strong>Too large:</strong> "Build user management system" &mdash; weeks of work</li>
-                    <li class="fragment"><strong>Untestable:</strong> "Make the app more user-friendly" &mdash; how do we verify?</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <aside class="notes">
-        Go through each pair side by side. For Independent: the good example can be built regardless of what else is in the sprint. The bad example creates a forced sequence. For Valuable: the bad example should be reframed in terms of user value - Improve page load time for product search to under 2 seconds explains WHY the refactoring matters. For Estimable: the bad example is too vague - what partner? What endpoints? For Testable: the bad example has no measurable criteria.
+        Bill Wake coined the INVEST acronym as a checklist for high-quality user stories. Go through each row: Independent means stories can be built in any order. Negotiable means the story is a conversation starter, not a locked specification. Valuable means every story delivers something a user cares about. Estimable means the team understands enough to size it. Small means completable in one sprint. Testable means clear acceptance criteria exist. The poor examples illustrate common violations - forced dependencies, over-specification, no user value, vagueness, excessive scope, and unmeasurable criteria.
     </aside>
 </section>
 
@@ -787,91 +677,56 @@
     </aside>
 </section>
 
-<!-- Spotting the Hidden Waterfall -->
+<!-- Hidden Waterfall: Anti-Pattern + Fix (Consolidated) -->
 <section>
-    <h2>&#x1F4A7; Spotting the Hidden Waterfall</h2>
-    <div class="highlight-box danger">
-        <strong>The Anti-Pattern:</strong> Sprints are organized by activity phase rather than by delivering working software.
-    </div>
-    <div class="architecture-box fragment" style="font-family:'Segoe UI',sans-serif; font-size:0.8em;">
-        <div style="display:flex; align-items:center; justify-content:center; gap:0.4em; flex-wrap:wrap;">
-            <span style="background:#c53030; color:#fff; padding:0.4em 0.7em; border-radius:6px; font-weight:600;">Sprint 1<br>Analysis</span>
-            <span style="font-size:1.5em; color:#a0aec0;">&#x2192;</span>
-            <span style="background:#c05621; color:#fff; padding:0.4em 0.7em; border-radius:6px; font-weight:600;">Sprint 2<br>Design</span>
-            <span style="font-size:1.5em; color:#a0aec0;">&#x2192;</span>
-            <span style="background:#2b6cb0; color:#fff; padding:0.4em 0.7em; border-radius:6px; font-weight:600;">Sprint 3<br>Coding</span>
-            <span style="font-size:1.5em; color:#a0aec0;">&#x2192;</span>
-            <span style="background:#553c9a; color:#fff; padding:0.4em 0.7em; border-radius:6px; font-weight:600;">Sprint 4<br>Testing</span>
-            <span style="font-size:1.5em; color:#a0aec0;">&#x2192;</span>
-            <span style="background:#718096; color:#fff; padding:0.4em 0.7em; border-radius:6px; font-weight:600;">Sprint 5<br>Deploy</span>
+    <h2>&#x1F4A7; Spotting &amp; Fixing the Hidden Waterfall</h2>
+    <div class="architecture-box" style="font-family:'Segoe UI',sans-serif; font-size:0.72em;">
+        <div style="display:flex; align-items:center; justify-content:center; gap:0.3em; flex-wrap:wrap;">
+            <span style="background:#c53030; color:#fff; padding:0.3em 0.5em; border-radius:6px; font-weight:600;">Sprint 1: Analysis</span>
+            <span style="font-size:1.3em; color:#a0aec0;">&#x2192;</span>
+            <span style="background:#c05621; color:#fff; padding:0.3em 0.5em; border-radius:6px; font-weight:600;">Sprint 2: Design</span>
+            <span style="font-size:1.3em; color:#a0aec0;">&#x2192;</span>
+            <span style="background:#2b6cb0; color:#fff; padding:0.3em 0.5em; border-radius:6px; font-weight:600;">Sprint 3: Code</span>
+            <span style="font-size:1.3em; color:#a0aec0;">&#x2192;</span>
+            <span style="background:#553c9a; color:#fff; padding:0.3em 0.5em; border-radius:6px; font-weight:600;">Sprint 4: Test</span>
+            <span style="font-size:1.3em; color:#a0aec0;">&#x2192;</span>
+            <span style="background:#718096; color:#fff; padding:0.3em 0.5em; border-radius:6px; font-weight:600;">Sprint 5: Deploy</span>
         </div>
-        <div style="margin-top:0.8em; color:var(--danger-color); font-weight:700; font-size:1.1em;">&#x274C; This is waterfall with sprint-length phases!</div>
+        <div style="margin-top:0.4em; color:var(--danger-color); font-weight:700;">&#x274C; Waterfall with sprint-length phases!</div>
     </div>
     <div class="two-column fragment">
         <div>
             <div class="card danger">
                 <h4>&#x1F6A9; Warning Signs</h4>
-                <ul style="font-size:0.82em;">
+                <ul style="font-size:0.78em;">
                     <li>No working software until Sprint 3+</li>
                     <li>Sprint reviews with "nothing to demo"</li>
                     <li>Specialists idle in certain sprints</li>
                     <li>Stories split by layer (API / UI / DB)</li>
-                    <li>"We are still in the design phase"</li>
                 </ul>
             </div>
         </div>
-        <div>
-            <div class="card">
-                <h4>&#x1F914; Why It Happens</h4>
-                <ul style="font-size:0.82em;">
-                    <li>Team members are specialists, not generalizing specialists</li>
-                    <li>Old waterfall habits carry over</li>
-                    <li>Stories are too large or layer-based</li>
-                    <li>Insufficient cross-functional collaboration</li>
-                    <li>Management measures phase completion</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <aside class="notes">
-        This is a very common problem, especially for organizations transitioning from waterfall. The team adopts Agile ceremonies but continues to work in sequential phases. Sprint 1 is all analysis, Sprint 2 is all design, Sprint 3 is coding, Sprint 4 is testing, and Sprint 5 is deployment. They call these sprints but they are actually waterfall phases with a two-week timebox. The result? No working software is delivered until Sprint 3 at the earliest, and often not until Sprint 5.
-    </aside>
-</section>
-
-<!-- Fixing the Hidden Waterfall -->
-<section>
-    <h2>&#x1F4A7; Strategies for Cross-Functional Iterations</h2>
-    <div class="two-column">
         <div>
             <div class="card success">
-                <h4>&#x2705; The Correct Approach</h4>
-                <p style="font-size:0.82em;">Every sprint delivers a <strong>vertical slice</strong> of working software &mdash; all activities happen within each sprint:</p>
-                <div class="architecture-box fragment" style="font-family:'Segoe UI',sans-serif; font-size:0.78em; text-align:left;">
-                    <strong>Sprint 1:</strong> Analyze + Design + Code + Test &rarr; <span style="color:var(--success-color); font-weight:700;">Feature A Done &#x2713;</span><br>
-                    <strong>Sprint 2:</strong> Analyze + Design + Code + Test &rarr; <span style="color:var(--success-color); font-weight:700;">Feature B Done &#x2713;</span><br>
-                    <strong>Sprint 3:</strong> Analyze + Design + Code + Test &rarr; <span style="color:var(--success-color); font-weight:700;">Feature C Done &#x2713;</span>
+                <h4>&#x2705; The Fix: Vertical Slices</h4>
+                <div style="font-size:0.78em; font-family:'Courier New',monospace; margin:0.3em 0;">
+                    <strong>Every sprint:</strong> Analyze + Design + Code + Test &rarr; <span style="color:var(--success-color);">Done &#x2713;</span>
                 </div>
-            </div>
-        </div>
-        <div>
-            <div class="card">
-                <h4>&#x1F527; Practical Strategies</h4>
-                <ol style="font-size:0.82em;">
-                    <li class="fragment"><strong>Write vertical stories</strong> &mdash; each story touches all layers</li>
-                    <li class="fragment"><strong>Pair specialists</strong> &mdash; pair a backend dev with a frontend dev</li>
-                    <li class="fragment"><strong>Invest in T-shaped skills</strong> &mdash; deep in one area, capable across many</li>
-                    <li class="fragment"><strong>Refine stories ahead</strong> &mdash; do just-enough analysis 1 sprint ahead</li>
-                    <li class="fragment"><strong>Measure working software</strong> &mdash; not phase completion</li>
-                    <li class="fragment"><strong>Swarm on stories</strong> &mdash; whole team finishes one story before starting another</li>
-                </ol>
+                <ul style="font-size:0.78em;">
+                    <li class="fragment"><strong>Write vertical stories</strong> touching all layers</li>
+                    <li class="fragment"><strong>Pair specialists</strong> (backend + frontend)</li>
+                    <li class="fragment"><strong>Invest in T-shaped skills</strong></li>
+                    <li class="fragment"><strong>Swarm:</strong> finish one story before starting another</li>
+                    <li class="fragment"><strong>Measure working software</strong>, not phase completion</li>
+                </ul>
             </div>
         </div>
     </div>
     <div class="highlight-box success fragment">
-        <strong>&#x1F3AF; Goal:</strong> Every sprint review should include a <strong>live demonstration</strong> of new, working functionality that a user could interact with.
+        <strong>&#x1F3AF; Goal:</strong> Every sprint review should include a <strong>live demonstration</strong> of new, working functionality.
     </div>
     <aside class="notes">
-        The key insight is that all engineering activities - analysis, design, coding, testing - should happen within EVERY sprint, not across sprints. Each sprint delivers a complete, working vertical slice of functionality. The swarm technique is particularly effective: instead of everyone working on their own story in parallel, the whole team focuses on finishing one story at a time. This reduces work-in-progress and increases flow.
+        The Hidden Waterfall is one of the most common anti-patterns. The team adopts Agile ceremonies but works in sequential phases. Sprint 1 is all analysis, Sprint 2 is design, etc. No working software is delivered until Sprint 3 at the earliest. The fix is vertical slices: all engineering activities happen within every sprint. Each sprint delivers a complete, working slice of functionality. The swarm technique is effective - the whole team focuses on finishing one story at a time, reducing WIP and increasing flow.
     </aside>
 </section>
 
@@ -934,105 +789,65 @@
     </aside>
 </section>
 
-<!-- Grooming Metrics -->
+<!-- Grooming Metrics + Backlog Iceberg (Consolidated) -->
 <section>
-    <h2>&#x1F4DA; Grooming Metrics</h2>
+    <h2>&#x1F4DA; Grooming Metrics &amp; Backlog Health</h2>
     <div class="two-column">
         <div>
-            <table>
+            <table style="font-size:0.65em;">
                 <thead><tr><th>Metric</th><th>Target</th><th>Why It Matters</th></tr></thead>
                 <tbody>
                     <tr class="fragment">
                         <td><strong>Story Readiness Rate</strong></td>
                         <td>&ge; 80%</td>
-                        <td>% of stories meeting DoR before sprint planning</td>
+                        <td>% meeting DoR before planning</td>
                     </tr>
                     <tr class="fragment">
                         <td><strong>Refinement Velocity</strong></td>
                         <td>2-3 sprints ahead</td>
-                        <td>How far ahead the backlog is refined</td>
+                        <td>How far ahead backlog is refined</td>
                     </tr>
                     <tr class="fragment">
                         <td><strong>Backlog Depth</strong></td>
-                        <td>2-4 sprints of work</td>
-                        <td>Amount of refined, estimated stories ready</td>
+                        <td>2-4 sprints</td>
+                        <td>Refined, estimated stories ready</td>
                     </tr>
                     <tr class="fragment">
                         <td><strong>Churn Rate</strong></td>
                         <td>&le; 10%</td>
-                        <td>% of stories changed or removed during a sprint</td>
+                        <td>% changed/removed mid-sprint</td>
                     </tr>
                     <tr class="fragment">
-                        <td><strong>Story Rejection Rate</strong></td>
+                        <td><strong>Rejection Rate</strong></td>
                         <td>&le; 5%</td>
-                        <td>% of stories not accepted at sprint review</td>
+                        <td>% not accepted at review</td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <div>
-            <div class="highlight-box fragment">
-                <strong>&#x1F4A1; Healthy Backlog Indicators:</strong>
-                <ul style="font-size:0.85em; margin-top:0.3em;">
-                    <li>Top items are detailed, estimated, and small</li>
-                    <li>Middle items are partially refined and roughly sized</li>
-                    <li>Bottom items are large, unrefined epics and ideas</li>
-                    <li>Total backlog is manageable (not 1000+ items)</li>
-                </ul>
-            </div>
-            <div class="highlight-box warning fragment">
-                <strong>&#x26A0;&#xFE0F; Unhealthy Signs:</strong>
-                <ul style="font-size:0.85em; margin-top:0.3em;">
-                    <li>Sprint planning takes &gt; 2 hours because stories are unclear</li>
-                    <li>Team regularly rejects stories mid-sprint</li>
-                    <li>Estimates frequently change during the sprint</li>
-                    <li>Backlog has hundreds of items no one has looked at in months</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <aside class="notes">
-        These metrics help the team and Scrum Master assess backlog health. Story Readiness Rate is the percentage of stories pulled into sprint planning that already meet the Definition of Ready - target 80% or higher. Refinement Velocity measures how far ahead the team has refined stories. Churn Rate measures how often stories are changed or removed during a sprint - high churn suggests the PO is not prioritizing effectively.
-    </aside>
-</section>
-
-<!-- Iceberg Analogy -->
-<section>
-    <h2>&#x1F4DA; The Backlog Iceberg</h2>
-    <div class="two-column">
-        <div>
-            <div style="text-align:center; margin:0.5em 0;">
+            <div style="text-align:center; margin:0.3em 0;">
+                <div style="font-weight:700; color:var(--heading-color); margin-bottom:0.3em; font-size:0.9em;">The Backlog Iceberg</div>
                 <div class="iceberg-layer" style="width:50%; background:var(--success-color);">
-                    &#x2705; Sprint-Ready<br><span style="font-size:0.8em;">Detailed, estimated, acceptance criteria</span>
+                    &#x2705; Sprint-Ready (10-15%)<br><span style="font-size:0.75em;">Detailed, estimated, acceptance criteria</span>
                 </div>
                 <div class="iceberg-layer fragment" style="width:65%; background:var(--accent-color);">
-                    &#x1F4DD; Refined<br><span style="font-size:0.8em;">Story written, roughly sized</span>
+                    &#x1F4DD; Refined (20-30%)<br><span style="font-size:0.75em;">Story written, roughly sized</span>
                 </div>
                 <div class="iceberg-layer fragment" style="width:80%; background:var(--warning-color);">
-                    &#x1F4E6; Outlined<br><span style="font-size:0.8em;">Feature-level, needs decomposition</span>
+                    &#x1F4E6; Outlined (30%)<br><span style="font-size:0.75em;">Feature-level, needs decomposition</span>
                 </div>
                 <div class="iceberg-layer fragment" style="width:95%; background:#718096;">
-                    &#x1F300; Raw Ideas<br><span style="font-size:0.8em;">Epics, visions, unvalidated ideas</span>
+                    &#x1F300; Raw Ideas (30-40%)<br><span style="font-size:0.75em;">Epics, visions &mdash; may never be built</span>
                 </div>
             </div>
-        </div>
-        <div>
-            <div class="card">
-                <h4>&#x1F3AF; The Refinement Gradient</h4>
-                <ul style="font-size:0.82em;">
-                    <li class="fragment"><strong>Top 10-15%:</strong> Fully refined, meets DoR, ready for next 1-2 sprints</li>
-                    <li class="fragment"><strong>Next 20-30%:</strong> Partially refined, needs estimation and AC finalization</li>
-                    <li class="fragment"><strong>Middle 30%:</strong> Feature-level descriptions, needs decomposition into stories</li>
-                    <li class="fragment"><strong>Bottom 30-40%:</strong> Raw ideas, epics, and visions that may never be built</li>
-                </ul>
-            </div>
-            <div class="highlight-box success fragment">
-                <strong>&#x1F4A1; Key Insight:</strong> Invest refinement effort proportionally. Spending hours refining stories that might never be built is waste. Focus refinement energy on the top of the iceberg.
+            <div class="highlight-box success fragment" style="margin-top:0.4em; font-size:0.85em;">
+                <strong>&#x1F4A1;</strong> Invest refinement effort proportionally. Focus on the top of the iceberg.
             </div>
         </div>
     </div>
     <aside class="notes">
-        The iceberg analogy is a powerful visual for backlog management. The top of the iceberg, above the waterline, represents sprint-ready stories. These are fully refined, estimated, and have clear acceptance criteria. Just below the surface are partially refined stories. Deeper down are feature-level items that need decomposition. At the very bottom are raw ideas and epics that may or may not ever be built. The key insight is to invest refinement effort proportionally. Do not spend hours writing detailed acceptance criteria for a story that is six months away.
+        These metrics help the team assess backlog health. Story Readiness Rate targets 80% or higher - the percentage meeting the Definition of Ready before sprint planning. Churn Rate measures stories changed mid-sprint; high churn suggests the PO is not prioritizing effectively. The iceberg visual shows the refinement gradient: top items are sprint-ready, middle items need work, bottom items are raw ideas. The key insight: do not spend hours refining stories that might never be built. Focus energy on the top.
     </aside>
 </section>
 
@@ -1048,14 +863,14 @@
     </aside>
 </section>
 
-<!-- Common Story Scales -->
+<!-- Common Story Scales + When to Use (Consolidated) -->
 <section>
-    <h2>&#x1F4CF; Common Story Scales</h2>
+    <h2>&#x1F4CF; Story Estimation Scales</h2>
     <div class="two-column">
         <div>
             <div class="card">
-                <h4>&#x1F522; Modified Fibonacci Sequence</h4>
-                <div class="flow-horizontal" style="margin:0.5em 0;">
+                <h4>&#x1F522; Modified Fibonacci</h4>
+                <div class="flow-horizontal" style="margin:0.4em 0;">
                     <span class="metric-badge green">1</span>
                     <span class="metric-badge green">2</span>
                     <span class="metric-badge">3</span>
@@ -1066,18 +881,18 @@
                     <span class="metric-badge red">40</span>
                     <span class="metric-badge" style="background:#553c9a;">100</span>
                 </div>
-                <ul style="font-size:0.78em;">
-                    <li class="fragment">Gaps <strong>increase with size</strong> &mdash; reflects increasing uncertainty</li>
+                <ul style="font-size:0.75em;">
+                    <li class="fragment">Gaps increase with size &mdash; <strong>reflects uncertainty</strong></li>
                     <li class="fragment">No "9" or "17" &mdash; prevents <strong>false precision</strong></li>
-                    <li class="fragment">Best for <strong>sprint-level planning</strong></li>
-                    <li class="fragment">Stories above <strong>13</strong> should be split</li>
+                    <li class="fragment">Stories above <strong>13 must be split</strong></li>
                 </ul>
+                <p class="fragment" style="font-size:0.75em; color:#718096; margin-top:0.3em;"><strong>Use for:</strong> Sprint planning, release planning</p>
             </div>
         </div>
         <div>
             <div class="card warning">
                 <h4>&#x1F455; T-Shirt Sizing</h4>
-                <div class="flow-horizontal" style="margin:0.5em 0;">
+                <div class="flow-horizontal" style="margin:0.4em 0;">
                     <span class="metric-badge green">XS</span>
                     <span class="metric-badge green">S</span>
                     <span class="metric-badge">M</span>
@@ -1085,20 +900,20 @@
                     <span class="metric-badge red">XL</span>
                     <span class="metric-badge" style="background:#553c9a;">XXL</span>
                 </div>
-                <ul style="font-size:0.78em;">
+                <ul style="font-size:0.75em;">
                     <li class="fragment">Fast, <strong>low-effort</strong> estimation</li>
-                    <li class="fragment">Great for <strong>roadmap and epic-level</strong> planning</li>
-                    <li class="fragment">Less precise, intentionally <strong>coarse-grained</strong></li>
+                    <li class="fragment">Intentionally <strong>coarse-grained</strong></li>
                     <li class="fragment">Can be mapped to point ranges later</li>
                 </ul>
+                <p class="fragment" style="font-size:0.75em; color:#718096; margin-top:0.3em;"><strong>Use for:</strong> Roadmap, epic sizing, large groups, discovery</p>
             </div>
         </div>
     </div>
-    <div class="highlight-box fragment">
-        <strong>&#x1F4A1; Why Fibonacci?</strong> The increasing gaps reflect a fundamental truth: the larger something is, the less precisely we can estimate it. The difference between a 1-point and a 2-point story is meaningful. The difference between a 20-point and a 21-point story is noise.
+    <div class="highlight-box warning fragment">
+        <strong>&#x26A0;&#xFE0F; Avoid:</strong> Linear scales (1-10) encourage false precision &bull; Hours-based estimation conflates size with duration &bull; Mixing scales within the same planning horizon
     </div>
     <aside class="notes">
-        Walk through both scales. The modified Fibonacci sequence is the most common scale for story point estimation. The key insight is that the gaps between numbers increase as the numbers get larger. This reflects the Cone of Uncertainty: small stories can be estimated with reasonable precision, but large stories have inherently higher uncertainty. T-shirt sizing is used for quicker, less formal estimation, often at the epic or feature level during roadmap planning.
+        Walk through both scales. Fibonacci is the most common for story points. The gaps increase as numbers get larger, reflecting that large stories have inherently higher uncertainty. The difference between a 1-point and 2-point story is meaningful; the difference between 20 and 21 points is noise. T-shirt sizing is faster, used for roadmap and epic-level planning. Use Fibonacci when you need precision for near-term planning, T-shirts when speed matters more. Never estimate stories in hours - hours conflate size with duration and vary by person.
     </aside>
 </section>
 
@@ -1144,41 +959,6 @@
     </aside>
 </section>
 
-<!-- When to Use Which Scale -->
-<section>
-    <h2>&#x1F4CF; When to Use Which Scale</h2>
-    <div class="two-column">
-        <div>
-            <table>
-                <thead><tr><th>Context</th><th>Recommended Scale</th></tr></thead>
-                <tbody>
-                    <tr class="fragment"><td>Sprint planning</td><td><span class="metric-badge">Fibonacci</span></td></tr>
-                    <tr class="fragment"><td>Release planning</td><td><span class="metric-badge">Fibonacci</span></td></tr>
-                    <tr class="fragment"><td>Roadmap / epic sizing</td><td><span class="metric-badge orange">T-Shirt</span></td></tr>
-                    <tr class="fragment"><td>Initial product discovery</td><td><span class="metric-badge orange">T-Shirt</span></td></tr>
-                    <tr class="fragment"><td>Large group estimation</td><td><span class="metric-badge orange">T-Shirt</span></td></tr>
-                    <tr class="fragment"><td>Cross-team alignment</td><td><span class="metric-badge orange">T-Shirt</span></td></tr>
-                </tbody>
-            </table>
-        </div>
-        <div>
-            <div class="highlight-box">
-                <strong>&#x1F4A1; Guideline:</strong> Use <strong>Fibonacci</strong> when you need precision for near-term planning. Use <strong>T-shirt sizing</strong> when speed matters more than precision for longer-term planning.
-            </div>
-            <div class="highlight-box warning fragment">
-                <strong>&#x26A0;&#xFE0F; Avoid:</strong>
-                <ul style="font-size:0.85em; margin-top:0.3em;">
-                    <li><strong>Linear scales (1-10)</strong> &mdash; encourages false precision</li>
-                    <li><strong>Hours-based estimation</strong> for stories &mdash; conflates size with duration</li>
-                    <li><strong>Mixing scales</strong> within the same planning horizon</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <aside class="notes">
-        The choice of scale should match the planning context. For sprint and release planning where you need to calculate velocity and forecast delivery dates, Fibonacci story points give you the numeric precision to do math. For roadmap planning, T-shirt sizing is faster. Avoid linear scales because they encourage false precision. Never estimate stories in hours - hours conflate size with duration and vary based on who is doing the work.
-    </aside>
-</section>
 
 <!-- ====== SECTION: SPIKES AND GET SMART ====== -->
 <section>
@@ -1241,95 +1021,54 @@
     </aside>
 </section>
 
-<!-- Get Smart Stories -->
+<!-- "Get Smart" Stories + Spike Feedback Loop (Consolidated) -->
 <section>
-    <h2>&#x1F9EA; "Get Smart" Stories</h2>
+    <h2>&#x1F9EA; "Get Smart" Stories &amp; the Spike Feedback Loop</h2>
     <div class="two-column">
         <div>
             <div class="card">
                 <h4>&#x1F9E0; What Is a "Get Smart" Story?</h4>
-                <p style="font-size:0.85em;">A specialized type of spike focused on <strong>reducing estimation uncertainty</strong> for a specific set of upcoming stories.</p>
-                <div class="architecture-box fragment" style="font-family:'Segoe UI',sans-serif; font-size:0.8em; text-align:left;">
+                <p style="font-size:0.82em;">A spike variant focused on <strong>reducing estimation uncertainty</strong> for specific upcoming stories.</p>
+                <div class="architecture-box" style="font-family:'Segoe UI',sans-serif; font-size:0.75em; text-align:left;">
                     <strong>Format:</strong><br>
                     <span style="color:var(--accent-color);">As a</span> development team,<br>
-                    <span style="color:var(--accent-color);">We want to</span> investigate [specific technical question],<br>
-                    <span style="color:var(--accent-color);">So that</span> we can confidently estimate stories [S-14, S-15, S-16].
+                    <span style="color:var(--accent-color);">We want to</span> investigate [specific question],<br>
+                    <span style="color:var(--accent-color);">So that</span> we can estimate stories [S-14, S-15, S-16].
                 </div>
             </div>
-            <div class="highlight-box success fragment" style="margin-top:0.8em;">
-                <strong>&#x1F4A1; The Get Smart Workflow:</strong>
-                <ol style="font-size:0.85em; margin-top:0.3em;">
-                    <li>Identify unestimable stories in backlog</li>
-                    <li>Write a "Get Smart" story with a specific question</li>
-                    <li>Time-box it (1-2 days)</li>
-                    <li>Present findings to team</li>
-                    <li>Re-estimate the originally blocked stories</li>
-                </ol>
-            </div>
-        </div>
-        <div>
-            <div class="card warning">
-                <h4>&#x1F4CB; Example Get Smart Stories</h4>
-                <ul style="font-size:0.82em;">
-                    <li class="fragment"><strong>"Get Smart on Payment Gateway"</strong><br>
-                        <span style="color:#718096;">Investigate Stripe vs Braintree API capabilities, latency, and integration effort. Deliver a recommendation and effort estimate for the payment stories.</span>
-                    </li>
-                    <li class="fragment"><strong>"Get Smart on Real-Time Updates"</strong><br>
-                        <span style="color:#718096;">Prototype WebSocket vs Server-Sent Events for the live dashboard feature. Measure connection limits and browser compatibility.</span>
-                    </li>
-                    <li class="fragment"><strong>"Get Smart on Data Migration"</strong><br>
-                        <span style="color:#718096;">Analyze the legacy database schema and identify transformation rules. Estimate the number of migration scripts needed.</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <aside class="notes">
-        Get Smart stories are a specific variant of spikes with a deliberate focus on enabling estimation. The name comes from the idea that the team needs to get smart about a topic before they can estimate related work. The key difference from a general spike is that Get Smart stories are explicitly tied to specific backlog items. The output is not just knowledge but specifically the ability to estimate previously unestimable stories.
-    </aside>
-</section>
-
-<!-- Spikes Feed Back Into Estimation -->
-<section>
-    <h2>&#x1F9EA; How Spikes Feed Back Into Estimation</h2>
-    <div class="architecture-box" style="font-family:'Segoe UI',sans-serif; font-size:0.82em;">
-        <div style="display:flex; align-items:center; justify-content:center; gap:0.5em; flex-wrap:wrap;">
-            <span style="background:var(--warning-color); color:#fff; padding:0.5em 0.8em; border-radius:8px; font-weight:600;">Unestimable Story<br><span style="font-size:0.8em;">&#x2753; "We don't know enough"</span></span>
-            <span style="font-size:1.5em; color:#a0aec0;">&#x2192;</span>
-            <span style="background:var(--accent-color); color:#fff; padding:0.5em 0.8em; border-radius:8px; font-weight:600;">Spike / Get Smart<br><span style="font-size:0.8em;">&#x1F50D; Time-boxed research</span></span>
-            <span style="font-size:1.5em; color:#a0aec0;">&#x2192;</span>
-            <span style="background:var(--success-color); color:#fff; padding:0.5em 0.8em; border-radius:8px; font-weight:600;">Knowledge Gained<br><span style="font-size:0.8em;">&#x1F4CB; Findings documented</span></span>
-            <span style="font-size:1.5em; color:#a0aec0;">&#x2192;</span>
-            <span style="background:var(--heading-color); color:#fff; padding:0.5em 0.8em; border-radius:8px; font-weight:600;">Estimable Stories<br><span style="font-size:0.8em;">&#x2705; Sized with confidence</span></span>
-        </div>
-    </div>
-    <div class="two-column fragment">
-        <div>
-            <div class="card">
-                <h4>&#x1F4CB; Spike Deliverables</h4>
-                <ul style="font-size:0.82em;">
-                    <li><strong>Written findings</strong> shared with the whole team</li>
-                    <li><strong>Recommendation</strong> for technical approach</li>
-                    <li><strong>Revised estimates</strong> for related stories</li>
-                    <li><strong>Identified risks</strong> and mitigation strategies</li>
-                    <li><strong>New stories</strong> discovered during research</li>
+            <div class="card warning fragment" style="margin-top:0.5em;">
+                <h4>&#x1F4CB; Examples</h4>
+                <ul style="font-size:0.78em;">
+                    <li><strong>"Get Smart on Payment Gateway"</strong><br><span style="color:#718096;">Stripe vs Braintree: capabilities, latency, effort</span></li>
+                    <li><strong>"Get Smart on Real-Time Updates"</strong><br><span style="color:#718096;">WebSocket vs SSE: prototype and measure limits</span></li>
                 </ul>
             </div>
         </div>
         <div>
-            <div class="highlight-box">
+            <div class="architecture-box fragment" style="font-family:'Segoe UI',sans-serif; font-size:0.72em;">
+                <div style="display:flex; flex-direction:column; align-items:center; gap:0.2em;">
+                    <span style="background:var(--warning-color); color:#fff; padding:0.3em 0.6em; border-radius:6px; font-weight:600;">Unestimable Story &#x2753;</span>
+                    <span style="color:#a0aec0;">&#x25BC;</span>
+                    <span style="background:var(--accent-color); color:#fff; padding:0.3em 0.6em; border-radius:6px; font-weight:600;">Spike / Get Smart &#x1F50D;</span>
+                    <span style="color:#a0aec0;">&#x25BC;</span>
+                    <span style="background:var(--success-color); color:#fff; padding:0.3em 0.6em; border-radius:6px; font-weight:600;">Knowledge Gained &#x1F4CB;</span>
+                    <span style="color:#a0aec0;">&#x25BC;</span>
+                    <span style="background:var(--heading-color); color:#fff; padding:0.3em 0.6em; border-radius:6px; font-weight:600;">Estimable Stories &#x2705;</span>
+                </div>
+            </div>
+            <div class="highlight-box fragment" style="margin-top:0.5em;">
                 <strong>&#x1F4CA; Tracking Spikes:</strong>
-                <ul style="font-size:0.85em; margin-top:0.3em;">
-                    <li>Spikes are <strong>estimated in hours</strong>, not story points (they are time-boxed)</li>
-                    <li>They do <strong>not count toward velocity</strong> (no user value delivered)</li>
-                    <li>Track spike <strong>frequency per sprint</strong> &mdash; more than 1-2 suggests backlog needs more refinement</li>
-                    <li>Measure spike <strong>effectiveness</strong>: did the team successfully estimate afterward?</li>
+                <ul style="font-size:0.8em; margin-top:0.2em;">
+                    <li>Estimated in <strong>hours</strong>, not story points</li>
+                    <li>Do <strong>not count toward velocity</strong></li>
+                    <li>&gt;2 spikes/sprint = backlog needs more refinement</li>
+                    <li>Measure: did the team estimate successfully afterward?</li>
                 </ul>
             </div>
         </div>
     </div>
     <aside class="notes">
-        This slide shows the complete feedback loop. An unestimable story triggers a spike. The spike produces knowledge. That knowledge enables confident estimation of the previously blocked stories. For tracking: spikes are time-boxed and estimated in hours, not story points, because they do not deliver user-facing value. They should not count toward velocity. If a team is doing 3+ spikes every sprint, it suggests the backlog is not being refined far enough ahead.
+        Get Smart stories are a spike variant explicitly tied to specific backlog items. The output is the ability to estimate previously unestimable stories. The feedback loop is straightforward: unestimable story triggers a spike, the spike produces knowledge, knowledge enables confident estimation. For tracking: spikes are time-boxed and estimated in hours, not story points. They do not count toward velocity. If a team does 3 or more spikes per sprint, the backlog is not being refined far enough ahead.
     </aside>
 </section>
 
