@@ -57,7 +57,7 @@
             border-radius: 8px;
             padding: 1.5rem;
             margin: 1rem 0;
-            min-height: 120px;
+            min-height: 100px;
         }
         .workspace p { color: #718096; font-style: italic; }
         .timer { display: inline-block; background: var(--warning); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 600; font-size: 0.85rem; }
@@ -87,211 +87,111 @@
     <div class="lab-header">
         <h1>🔄 Lab 5: Correction Scenarios Workshop</h1>
         <div class="meta">
-            Module 5 — Agile Project Estimation | Duration: 65 minutes (50 min work + 15 min presentations) | Style: Group Workshop
+            Module 5 — Agile Project Estimation | Duration: 45 minutes (30 min work + 15 min presentations) | Style: Group Workshop
         </div>
     </div>
 
     <div class="card objective-card">
         <h2>🎯 Lab Objectives</h2>
         <ul>
-            <li>Practice responding to estimation challenges as a team — corrections require collective ownership</li>
-            <li>Apply correction techniques collaboratively to realistic project scenarios</li>
-            <li>Calculate relative ROI through group consensus to prioritize backlog items</li>
-            <li>Build team confidence in stakeholder communication during course corrections</li>
+            <li>Apply correction techniques to realistic project scenarios</li>
+            <li>Use relative ROI to prioritize backlog items through group consensus</li>
+            <li>Practice stakeholder communication during course corrections</li>
         </ul>
     </div>
 
     <div class="card" style="border-left-color: #2b6cb0; background: #ebf8ff;">
         <h2>👥 Group Setup</h2>
-        <p>Form groups of 4-5 people. Course corrections in Agile are never a solo activity — they require the whole team to diagnose, decide, and communicate. Every exercise in this lab is done as a group. Assign roles:</p>
-        <ul>
-            <li><strong>Scrum Master:</strong> Facilitates discussion, ensures the group considers all angles</li>
-            <li><strong>Product Owner:</strong> Advocates for business impact and stakeholder communication</li>
-            <li><strong>Tech Lead:</strong> Provides the technical perspective on feasibility and trade-offs</li>
-            <li><strong>Team Members:</strong> Challenge ideas, provide diverse viewpoints</li>
-        </ul>
-        <h3>Tools &amp; Presentation</h3>
-        <p><strong>Choose your tools:</strong> Your team decides how to work through the scenarios — whiteboard, spreadsheet, digital tool, paper, or any combination. Use whatever works best for your group.</p>
-        <p><strong>Class presentation:</strong> At the end of the lab, each team presents their scenario responses and analysis to the class (3-5 minutes per team).</p>
+        <p>Form groups of 4-5 people. Assign: <strong>Scrum Master</strong> (facilitates), <strong>Product Owner</strong> (advocates business impact), <strong>Tech Lead</strong> (technical perspective), <strong>Team Members</strong> (challenge ideas).</p>
+        <p><strong>Tools:</strong> Whiteboard, spreadsheet, paper, or any combination.</p>
+        <p><strong>Presentation:</strong> Each team presents scenario responses (3-5 min per team).</p>
     </div>
 
     <div class="card">
         <h2><span class="step-number">1</span> Scenario Response Drills</h2>
-        <p><span class="timer">20 minutes</span></p>
-        <p>For each scenario, work as a group to determine the appropriate response. Each role should contribute their perspective — the Scrum Master on process, the Product Owner on business impact, and the Tech Lead on technical options. Document your team's action plan.</p>
+        <p><span class="timer">10 minutes</span></p>
+        <p>For each scenario, each role contributes their perspective. Document your team's action plan.</p>
 
         <div class="scenario-box danger">
             <h3>Scenario A: The Blow-Up Story</h3>
-            <p>Mid-sprint, your team discovers that a 5-point story ("integrate with payment gateway") is actually far more complex than expected. The payment API documentation is outdated, and the team now estimates 21 points of work remain. Sprint capacity is 24 points total, and the team has already committed to 22 points this sprint.</p>
+            <p>Mid-sprint, a 5-point story ("integrate with payment gateway") turns out to be far more complex than expected. The payment API docs are outdated — the team now estimates 21 points remain. Sprint capacity is 24 points total, and the team has already planned 22 points this sprint.</p>
         </div>
         <div class="workspace">
             <p>What actions do you take? What do you communicate and to whom?</p>
         </div>
 
-        <div class="scenario-box warning">
-            <h3>Scenario B: The Velocity Dip</h3>
-            <p>Your team has maintained a steady velocity of 30 points/sprint for 4 sprints. Sprint 5 delivered only 18 points, and Sprint 6 delivered 20 points. A major release is due in 4 sprints with 100 points remaining in the backlog.</p>
-        </div>
-        <div class="workspace">
-            <p>What is your root cause investigation plan? How do you adjust the release forecast?</p>
-        </div>
-
         <div class="scenario-box">
-            <h3>Scenario C: The Scope Bomb</h3>
-            <p>The CEO returns from a conference excited about AI chatbot capabilities and demands that a conversational AI feature be added to the product. The team estimates this at 40 story points. The release is 3 sprints away with the backlog fully committed at current velocity.</p>
+            <h3>Scenario B: The Scope Bomb</h3>
+            <p>The CEO returns from a conference excited about AI chatbot capabilities and demands it be added. The team estimates 40 story points. The backlog is fully planned at current velocity.</p>
         </div>
         <div class="workspace">
-            <p>How do you handle this request? What trade-offs do you present?</p>
-        </div>
-
-        <div class="scenario-box danger">
-            <h3>Scenario D: The Persistent Over-Committer</h3>
-            <p>For 3 sprints in a row, the team has committed to 28 points but only completed 20-22 points. Unfinished stories keep rolling over. The Product Owner is frustrated that planned features keep slipping.</p>
-        </div>
-        <div class="workspace">
-            <p>What systemic changes do you recommend? How do you reset expectations?</p>
+            <p>How do you handle this request? What trade-offs do you present? Adding scope means something else comes out.</p>
         </div>
     </div>
 
     <div class="card">
-        <h2><span class="step-number">2</span> Relative ROI Prioritization (Group Exercise)</h2>
-        <p><span class="timer">15 minutes</span></p>
-        <p>As a group, calculate the relative ROI for each backlog item and reach consensus on the optimal sequencing. The Product Owner should advocate for business value while the Tech Lead raises dependency and risk concerns. The full team decides together.</p>
-
-        <h3>Business Value Scale: 1 (Low) to 10 (High)</h3>
-        <h3>Effort: Story Points</h3>
+        <h2><span class="step-number">2</span> Relative ROI Prioritization</h2>
+        <p><span class="timer">10 minutes</span></p>
+        <p>Calculate relative ROI and reach consensus on optimal sequencing.</p>
 
         <table>
             <tr>
                 <th>Feature</th>
-                <th>Business Value (1-10)</th>
+                <th>Value (1-10)</th>
                 <th>Story Points</th>
-                <th>ROI (Value ÷ Points)</th>
-                <th>Priority Rank</th>
+                <th>ROI (Value / Points)</th>
+                <th>Rank</th>
             </tr>
-            <tr>
-                <td>User self-service password reset</td>
-                <td>8</td>
-                <td>3</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Advanced analytics dashboard</td>
-                <td>6</td>
-                <td>13</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Mobile responsive design</td>
-                <td>9</td>
-                <td>8</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Email notification system</td>
-                <td>7</td>
-                <td>5</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Third-party SSO integration</td>
-                <td>5</td>
-                <td>8</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Bulk data import tool</td>
-                <td>4</td>
-                <td>13</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Real-time search</td>
-                <td>7</td>
-                <td>5</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>PDF report generation</td>
-                <td>3</td>
-                <td>5</td>
-                <td></td>
-                <td></td>
-            </tr>
+            <tr><td>User self-service password reset</td><td>8</td><td>3</td><td></td><td></td></tr>
+            <tr><td>Advanced analytics dashboard</td><td>6</td><td>13</td><td></td><td></td></tr>
+            <tr><td>Mobile responsive design</td><td>9</td><td>8</td><td></td><td></td></tr>
+            <tr><td>Email notification system</td><td>7</td><td>5</td><td></td><td></td></tr>
+            <tr><td>Third-party SSO integration</td><td>5</td><td>8</td><td></td><td></td></tr>
+            <tr><td>Real-time search</td><td>7</td><td>5</td><td></td><td></td></tr>
         </table>
 
         <div class="workspace">
-            <p>List the features in priority order based on ROI. Note any cases where you would override the ROI ranking and explain why (dependencies, risk, strategic value):</p>
+            <p>List features in priority order. Note any cases where you would override the pure ROI ranking and explain why (dependencies, risk, strategic value):</p>
         </div>
     </div>
 
     <div class="card">
-        <h2><span class="step-number">3</span> Historical Trend Analysis (Team Investigation)</h2>
-        <p><span class="timer">15 minutes</span></p>
-        <p>As a group, analyze the following 10-sprint dataset. Divide the analysis — have different members calculate different metrics, then come together to identify trends, anomalies, and recommendations as a team.</p>
+        <h2><span class="step-number">3</span> Historical Trend Analysis</h2>
+        <p><span class="timer">10 minutes</span></p>
+        <p>Analyze this dataset as a group. Identify trends and recommend a velocity for Sprint 7.</p>
 
         <table>
             <tr>
                 <th>Sprint</th>
-                <th>Committed</th>
+                <th>Planned</th>
                 <th>Completed</th>
                 <th>Accuracy %</th>
-                <th>Stories Added Mid-Sprint</th>
-                <th>Defects Found</th>
+                <th>Mid-Sprint Adds</th>
+                <th>Defects</th>
             </tr>
             <tr><td>1</td><td>30</td><td>18</td><td></td><td>0</td><td>5</td></tr>
-            <tr><td>2</td><td>28</td><td>22</td><td></td><td>1</td><td>4</td></tr>
-            <tr><td>3</td><td>26</td><td>24</td><td></td><td>0</td><td>3</td></tr>
-            <tr><td>4</td><td>25</td><td>25</td><td></td><td>0</td><td>2</td></tr>
-            <tr><td>5</td><td>26</td><td>26</td><td></td><td>1</td><td>2</td></tr>
-            <tr><td>6</td><td>28</td><td>24</td><td></td><td>2</td><td>3</td></tr>
-            <tr><td>7</td><td>28</td><td>20</td><td></td><td>3</td><td>6</td></tr>
-            <tr><td>8</td><td>24</td><td>22</td><td></td><td>2</td><td>5</td></tr>
-            <tr><td>9</td><td>22</td><td>22</td><td></td><td>1</td><td>4</td></tr>
-            <tr><td>10</td><td>23</td><td>23</td><td></td><td>0</td><td>3</td></tr>
+            <tr><td>2</td><td>26</td><td>24</td><td></td><td>0</td><td>3</td></tr>
+            <tr><td>3</td><td>25</td><td>25</td><td></td><td>0</td><td>2</td></tr>
+            <tr><td>4</td><td>28</td><td>24</td><td></td><td>2</td><td>3</td></tr>
+            <tr><td>5</td><td>28</td><td>20</td><td></td><td>3</td><td>6</td></tr>
+            <tr><td>6</td><td>22</td><td>22</td><td></td><td>0</td><td>3</td></tr>
         </table>
 
-        <h3>Analysis Questions</h3>
         <div class="workspace">
-            <p>1. Calculate the accuracy percentage for each sprint. What pattern do you see?</p>
-        </div>
-        <div class="workspace">
-            <p>2. What happened between Sprint 5 and Sprint 7? What likely caused the disruption?</p>
-        </div>
-        <div class="workspace">
-            <p>3. Is there a correlation between mid-sprint story additions and accuracy? Between defects and velocity?</p>
-        </div>
-        <div class="workspace">
-            <p>4. What velocity would you recommend this team commit to for Sprint 11? Explain your reasoning.</p>
+            <p>1. What pattern do you see in accuracy over the 6 sprints?<br>
+            2. What happened between Sprint 3 and Sprint 5? What likely caused the disruption?<br>
+            3. What velocity would you recommend for Sprint 7? Explain your reasoning.</p>
         </div>
     </div>
 
     <div class="card" style="border-left-color: #2f855a;">
         <h2><span class="step-number">4</span> Team Presentation to Class</h2>
         <p><span class="timer">15 minutes (3-5 min per team)</span></p>
-        <p>Each team presents to the class. Cover:</p>
+        <p>Each team presents:</p>
         <ul>
-            <li>Your action plan for the most challenging scenario — what would you do and how would you communicate it?</li>
-            <li>Your ROI-prioritized backlog and any cases where you overrode the math</li>
-            <li>Your key insight from the historical trend analysis</li>
-        </ul>
-        <p>Other teams should challenge the presented approach — would they handle the scenarios differently?</p>
-    </div>
-
-    <div class="card warning-card">
-        <h2>💡 Discussion Points</h2>
-        <ul>
-            <li>In Scenario A, what would happen if the team tried to "hero" through and keep all commitments?</li>
-            <li>How does ROI-based prioritization differ from stakeholder-driven prioritization?</li>
-            <li>What is the most important leading indicator that a team's estimation is improving?</li>
-            <li>When should a team stop estimating and simply count stories (use throughput instead)?</li>
+            <li>Your action plan for the most challenging scenario</li>
+            <li>Your ROI-prioritized backlog and any overrides</li>
+            <li>Your key insight from the trend analysis</li>
         </ul>
     </div>
 </body>

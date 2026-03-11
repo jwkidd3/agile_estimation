@@ -497,10 +497,8 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- SECTION: Dealing with Inaccurate Estimates                   -->
+            <!-- SLIDE 3: Why Estimates Are Wrong                             -->
             <!-- ============================================================ -->
-
-            <!-- SLIDE 3: Why Estimates Are Wrong -->
             <section>
                 <h2>&#x1F504; Why Estimates Are Wrong (And That's OK)</h2>
                 <div class="two-column">
@@ -537,12 +535,14 @@
                 </aside>
             </section>
 
-            <!-- SLIDE 4: Re-estimation Techniques -->
+            <!-- ============================================================ -->
+            <!-- SLIDE 4: Re-estimation Techniques and Accuracy (merged)      -->
+            <!-- ============================================================ -->
             <section>
-                <h2>&#x1F504; Re-estimation Techniques Mid-Sprint</h2>
-                <div class="two-column-60-40">
+                <h2>&#x1F504; Re-estimation Techniques and Accuracy</h2>
+                <div class="two-column">
                     <div>
-                        <h3>When to Re-estimate</h3>
+                        <h3>When to Re-estimate Mid-Sprint</h3>
                         <table>
                             <thead>
                                 <tr>
@@ -569,33 +569,11 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
-                    <div>
                         <div class="architecture-box fragment">
                             <h4>&#x1F4A1; The 50% Rule</h4>
                             <p>If a story is <strong>more than 50% through the sprint</strong> and less than 50% complete, it is a candidate for immediate re-evaluation.</p>
-                            <p class="text-muted">Do not wait until the last day to acknowledge a problem.</p>
-                        </div>
-                        <div class="architecture-box fragment">
-                            <h4>&#x1F527; Swarming</h4>
-                            <p>Pull additional team members onto a struggling story to finish it within the sprint. Works best when:</p>
-                            <ul>
-                                <li>Work is parallelizable</li>
-                                <li>Team members have context</li>
-                                <li>Sprint goal depends on it</li>
-                            </ul>
                         </div>
                     </div>
-                </div>
-                <aside class="notes">
-                    This slide covers the practical decision-making process when an estimate proves wrong during a sprint. Walk through the table scenarios one by one. The 50% Rule is a useful heuristic -- if half the sprint is gone and the story is not at least halfway done, it is time to have a conversation. Swarming is a powerful technique but it requires stories that can be worked on by multiple people. Emphasize that the daily standup is the right forum to surface these issues early. Never surprise the team or stakeholders at the end of the sprint.
-                </aside>
-            </section>
-
-            <!-- SLIDE 5: Estimation Accuracy Metrics -->
-            <section>
-                <h2>&#x1F504; Estimation Accuracy Metrics</h2>
-                <div class="two-column">
                     <div>
                         <h3>Measuring Accuracy Over Time</h3>
                         <div class="concept-card fragment">
@@ -607,31 +585,10 @@
                                 <li><span class="text-danger">&gt; 1.5</span> = Systemic problem</li>
                             </ul>
                         </div>
-                        <div class="concept-card fragment">
-                            <h4>Track Per Story Size</h4>
-                            <p>Teams often estimate <strong>small stories accurately</strong> but struggle with larger ones. Track accuracy by story point category:</p>
-                            <ul>
-                                <li>1-3 points: typically accurate</li>
-                                <li>5-8 points: moderate variance</li>
-                                <li>13+ points: high variance (split these!)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div>
                         <div class="highlight-box fragment">
-                            <h4 style="color: var(--accent-color); margin-top:0;">&#x1F4CA; When to Adjust vs. Accept Variance</h4>
-                            <p><strong>Adjust</strong> when:</p>
-                            <ul>
-                                <li>The same type of story is consistently mis-estimated</li>
-                                <li>A new technology or domain was introduced</li>
-                                <li>Team composition changed significantly</li>
-                            </ul>
-                            <p><strong>Accept variance</strong> when:</p>
-                            <ul>
-                                <li>Errors are random (some over, some under)</li>
-                                <li>The overall velocity is still predictable</li>
-                                <li>Individual story variance averages out</li>
-                            </ul>
+                            <h4 style="color: var(--accent-color); margin-top:0;">&#x1F4CA; Adjust vs. Accept Variance</h4>
+                            <p><strong>Adjust</strong> when the same type of story is consistently mis-estimated, a new technology was introduced, or team composition changed.</p>
+                            <p><strong>Accept variance</strong> when errors are random and overall velocity is still predictable.</p>
                         </div>
                         <div class="highlight-box warning fragment">
                             <h4 style="color: var(--warning-color); margin-top:0;">&#x26A0;&#xFE0F; Anti-pattern</h4>
@@ -640,11 +597,13 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    This slide is about building a measurement system around estimation quality. The Estimation Accuracy Ratio is simple but powerful -- track it sprint over sprint and look for patterns. The per-story-size breakdown often reveals that the real problem is not estimation in general but estimation of large stories specifically. This naturally leads to the practice of splitting stories smaller, which both improves estimation accuracy and flow. The anti-pattern warning is critical: if you change historical estimates after the fact, you lose the learning signal.
+                    This slide covers the practical decision-making process when an estimate proves wrong during a sprint plus how to build a measurement system around estimation quality. Walk through the table scenarios one by one. The 50% Rule is a useful heuristic. On the right, the Estimation Accuracy Ratio is simple but powerful -- track it sprint over sprint and look for patterns. The anti-pattern warning is critical: if you change historical estimates after the fact, you lose the learning signal. Also discuss swarming as a technique: pulling additional team members onto a struggling story to finish it within the sprint, which works best when work is parallelizable and team members have context.
                 </aside>
             </section>
 
-            <!-- SLIDE 6: Story Splitting Strategies -->
+            <!-- ============================================================ -->
+            <!-- SLIDE 5: Story Splitting - SPIDR Framework                   -->
+            <!-- ============================================================ -->
             <section>
                 <h2>&#x1F504; Splitting Stories to Reduce Risk</h2>
                 <h3>The SPIDR Framework</h3>
@@ -689,10 +648,8 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- SECTION: Dealing with Missed Iteration Goals                 -->
+            <!-- SLIDE 6: Root Cause Analysis for Missed Goals                -->
             <!-- ============================================================ -->
-
-            <!-- SLIDE 7: Root Cause Analysis -->
             <section>
                 <h2>&#x1F4C9; Root Cause Analysis for Missed Goals</h2>
                 <div class="two-column-60-40">
@@ -736,11 +693,13 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    This is one of the most important slides in the module. When sprints are missed, the natural instinct is to blame individuals. The Five Whys technique redirects the team toward systemic causes. Walk through the example slowly and emphasize how each why peels back a layer. The root cause here is a process gap, not a performance issue. On the right side, the three categories help teams structure their retrospective discussions. Estimation issues, process issues, and team issues each require different remedies. Additional items to discuss verbally: Estimation -- ignoring technical debt overhead; Process -- dependency bottlenecks; Team -- context switching overhead. Ask the class which category they see most often in their organizations.
+                    This is one of the most important slides in the module. When sprints are missed, the natural instinct is to blame individuals. The Five Whys technique redirects the team toward systemic causes. Walk through the example slowly and emphasize how each why peels back a layer. The root cause here is a process gap, not a performance issue. On the right side, the three categories help teams structure their retrospective discussions. Estimation issues, process issues, and team issues each require different remedies. Ask the class which category they see most often in their organizations.
                 </aside>
             </section>
 
-            <!-- SLIDE 8: Adjusting Velocity and Splitting Unfinished Work -->
+            <!-- ============================================================ -->
+            <!-- SLIDE 7: Adjusting Velocity and Splitting Unfinished Work    -->
+            <!-- ============================================================ -->
             <section>
                 <h2>&#x1F4C9; Adjusting Velocity Expectations</h2>
                 <div class="two-column">
@@ -779,13 +738,15 @@ Avg (3-6): 23 pts  |  Range: 20-26 pts</div>
                     </div>
                 </div>
                 <aside class="notes">
-                    Yesterday's Weather is a simple but effective heuristic for velocity planning. Rather than aspirational commitments, use your actual track record. The velocity chart shows a realistic pattern -- it fluctuates, and that is normal. The key is to plan for the lower end of the range while allowing stretch goals. For unfinished stories, Option 2 is generally preferred because it gives credit for work done, keeps velocity data clean, and forces the team to think about what remains. Discuss with the class how their teams currently handle unfinished stories and whether they are taking credit for partial work.
+                    Yesterday's Weather is a simple but effective heuristic for velocity planning. Rather than aspirational commitments, use your actual track record. The velocity chart shows a realistic pattern -- it fluctuates, and that is normal. The key is to plan for the lower end of the range while allowing stretch goals. For unfinished stories, the Split and Carry option is generally preferred because it gives credit for work done, keeps velocity data clean, and forces the team to think about what remains.
                 </aside>
             </section>
 
-            <!-- SLIDE 9: Retrospective Discussions and Stakeholder Communication -->
+            <!-- ============================================================ -->
+            <!-- SLIDE 8: Retrospective and Recovery (merged)                 -->
+            <!-- ============================================================ -->
             <section>
-                <h2>&#x1F4C9; Sprint Retrospective: Estimation Focus</h2>
+                <h2>&#x1F4C9; Retrospectives and Recovery Strategies</h2>
                 <div class="two-column">
                     <div>
                         <h3>Structured Estimation Retro</h3>
@@ -794,93 +755,62 @@ Avg (3-6): 23 pts  |  Range: 20-26 pts</div>
                             <div class="process-step fragment" style="width: 100%; min-width: auto;">2. Identify the 2-3 biggest variances</div>
                             <div class="process-step fragment" style="width: 100%; min-width: auto;">3. Apply root cause analysis to each</div>
                             <div class="process-step fragment" style="width: 100%; min-width: auto;">4. Define one actionable improvement</div>
-                            <div class="process-step fragment" style="width: 100%; min-width: auto;">5. Track improvement in next sprint</div>
                         </div>
                         <div class="highlight-box fragment">
                             <p><strong>One improvement per sprint.</strong> Trying to fix everything at once fixes nothing.</p>
                         </div>
-                    </div>
-                    <div>
-                        <h3>Communicating Missed Goals</h3>
                         <div class="concept-card fragment">
-                            <h4>&#x2705; Effective Communication Pattern</h4>
+                            <h4>&#x2705; Communicating Missed Goals</h4>
                             <ol>
                                 <li><strong>State the fact:</strong> "We completed 28 of 40 planned points"</li>
                                 <li><strong>Explain the cause:</strong> "Integration complexity exceeded our estimates"</li>
                                 <li><strong>Share the impact:</strong> "Feature X will be delayed by one sprint"</li>
-                                <li><strong>Describe the action:</strong> "We're adding spikes for all integration stories going forward"</li>
+                                <li><strong>Describe the action:</strong> "We're adding spikes for all integration stories"</li>
                             </ol>
                         </div>
-                        <div class="highlight-box danger fragment">
-                            <h4 style="color: var(--danger-color); margin-top:0;">&#x1F6AB; Never Do This</h4>
-                            <ul>
-                                <li>Blame individual team members</li>
-                                <li>Hide the miss and inflate numbers</li>
-                                <li>Promise to "make it up" next sprint</li>
-                                <li>Present excuses instead of root causes</li>
-                            </ul>
-                        </div>
                     </div>
-                </div>
-                <aside class="notes">
-                    This slide addresses two critical skills: running an estimation-focused retrospective and communicating misses to stakeholders. For the retro, the five-step process gives structure to what can otherwise be an unfocused blame session. Emphasize step 4 -- one actionable improvement. Teams that try to fix five things end up fixing none. For stakeholder communication, the four-part pattern is simple and professional. Practice it with the class. The Never Do This section addresses common anti-patterns that destroy trust. Ask participants if they have seen any of these in their organizations and how it affected the team's relationship with stakeholders.
-                </aside>
-            </section>
-
-            <!-- SLIDE 10: Missed Goals - Recovery Strategies -->
-            <section>
-                <h2>&#x1F4C9; Recovery Strategies for Missed Goals</h2>
-                <div class="metric-row">
-                    <div class="metric-card fragment">
-                        <span class="metric-value" style="color: var(--success-color);">80%</span>
-                        <span class="metric-label">Minimum Sprint Goal Completion Rate Target</span>
-                    </div>
-                    <div class="metric-card fragment">
-                        <span class="metric-value" style="color: var(--warning-color);">2-3</span>
-                        <span class="metric-label">Max Consecutive Misses Before Intervention</span>
-                    </div>
-                    <div class="metric-card fragment">
-                        <span class="metric-value" style="color: var(--accent-color);">10%</span>
-                        <span class="metric-label">Velocity Reduction Buffer for Planning</span>
-                    </div>
-                </div>
-                <div class="two-column fragment">
                     <div>
-                        <div class="architecture-box">
+                        <h3>Recovery Strategies</h3>
+                        <div class="metric-row fragment" style="grid-template-columns: 1fr 1fr 1fr;">
+                            <div class="metric-card">
+                                <span class="metric-value" style="color: var(--success-color); font-size: 1.5em;">80%</span>
+                                <span class="metric-label">Min Sprint Goal Completion Target</span>
+                            </div>
+                            <div class="metric-card">
+                                <span class="metric-value" style="color: var(--warning-color); font-size: 1.5em;">2-3</span>
+                                <span class="metric-label">Max Consecutive Misses Before Intervention</span>
+                            </div>
+                            <div class="metric-card">
+                                <span class="metric-value" style="color: var(--accent-color); font-size: 1.5em;">10%</span>
+                                <span class="metric-label">Velocity Reduction Buffer</span>
+                            </div>
+                        </div>
+                        <div class="architecture-box fragment">
                             <h4>&#x1F4CB; Short-Term Recovery</h4>
                             <ul>
                                 <li>Reduce next sprint commitment by 15-20%</li>
                                 <li>Increase focus on highest-priority items</li>
                                 <li>Limit work-in-progress strictly</li>
-                                <li>Add capacity for unplanned work buffer</li>
                             </ul>
                         </div>
-                    </div>
-                    <div>
-                        <div class="architecture-box">
+                        <div class="architecture-box fragment">
                             <h4>&#x1F3AF; Long-Term Improvements</h4>
                             <ul>
                                 <li>Invest in backlog refinement quality</li>
                                 <li>Build spike stories into the cadence</li>
-                                <li>Train team on relative estimation techniques</li>
                                 <li>Review and tighten Definition of Ready</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <blockquote class="fragment">
-                    "A team that misses one sprint goal is learning. A team that misses three in a row has a systemic problem that needs addressing."
-                </blockquote>
                 <aside class="notes">
-                    This slide provides concrete thresholds and strategies. The 80% sprint goal completion rate is a reasonable target -- if teams are hitting 100% every sprint, they may be under-committing. The 2-3 consecutive miss threshold is when a Scrum Master should escalate and facilitate a deeper investigation. The 10% velocity reduction buffer is a practical way to build slack into planning. Walk through both the short-term and long-term strategies. Short-term fixes address the immediate pain while long-term improvements prevent recurrence. The quote at the bottom reframes the situation: one miss is learning, three in a row requires action.
+                    This slide addresses two critical skills: running an estimation-focused retrospective and recovering from missed sprint goals. For the retro, the four-step process gives structure to what can otherwise be an unfocused blame session. Emphasize step 4 -- one actionable improvement. Teams that try to fix five things end up fixing none. For stakeholder communication, the four-part pattern is simple and professional. Never blame individual team members, hide the miss and inflate numbers, or promise to make it up next sprint. The recovery strategies provide concrete thresholds: 80% completion rate is a reasonable target, 2-3 consecutive misses triggers intervention, and the 10% buffer is a practical way to build slack into planning.
                 </aside>
             </section>
 
             <!-- ============================================================ -->
-            <!-- SECTION: Dealing with New / Changed Requirements             -->
+            <!-- SLIDE 9: Change Management in Agile                          -->
             <!-- ============================================================ -->
-
-            <!-- SLIDE 11: Change Management in Agile -->
             <section>
                 <h2>&#x1F504; Change Management in Agile Context</h2>
                 <div class="highlight-box">
@@ -917,62 +847,32 @@ Avg (3-6): 23 pts  |  Range: 20-26 pts</div>
                     <p><strong>Key Principle:</strong> Changes to the backlog are welcome <em>at any time</em>. Changes to the sprint are only welcome under specific, disciplined conditions.</p>
                 </div>
                 <aside class="notes">
-                    This slide sets up the framework for how Agile handles change differently from traditional project management. The contrast between traditional change control boards and Agile's approach should resonate with participants who have experienced both. The key distinction at the bottom is critical: the backlog is always open for change, but the sprint has boundaries. This is not rigidity -- it is the discipline that makes Agile sustainable. Without sprint boundaries, teams are constantly context-switching and never finishing anything. Ask the class about their experience with change management and where they fall on this spectrum.
+                    This slide sets up the framework for how Agile handles change differently from traditional project management. The contrast between traditional change control boards and Agile's approach should resonate with participants who have experienced both. The key distinction at the bottom is critical: the backlog is always open for change, but the sprint has boundaries. This is not rigidity -- it is the discipline that makes Agile sustainable. Without sprint boundaries, teams are constantly context-switching and never finishing anything.
                 </aside>
             </section>
 
-            <!-- SLIDE 12: Scope Trading -->
+            <!-- ============================================================ -->
+            <!-- SLIDE 10: Scope Trading and Impact Analysis (merged)         -->
+            <!-- ============================================================ -->
             <section>
-                <h2>&#x1F504; Trading Scope: The Equivalence Rule</h2>
-                <div class="highlight-box success" style="text-align: center;">
-                    <h3 style="color: var(--success-color); margin-top: 0;">&#x2696;&#xFE0F; The Golden Rule of Sprint Scope Changes</h3>
-                    <p style="font-size: 1.3em;"><strong>Adding = Removing</strong></p>
-                    <p>For every story point added mid-sprint, an equal number of points must be removed.</p>
-                </div>
+                <h2>&#x1F504; Trading Scope and Impact Analysis</h2>
                 <div class="two-column">
                     <div>
-                        <h3>The "2-for-1" Rule</h3>
+                        <div class="highlight-box success" style="text-align: center;">
+                            <h3 style="color: var(--success-color); margin-top: 0;">&#x2696;&#xFE0F; The Golden Rule</h3>
+                            <p style="font-size: 1.2em;"><strong>Adding = Removing</strong></p>
+                            <p>For every story point added mid-sprint, an equal number must be removed.</p>
+                        </div>
                         <div class="concept-card fragment">
-                            <h4>Why 2-for-1?</h4>
-                            <p>When adding work mid-sprint, apply a <strong>2x cost multiplier</strong>:</p>
-                            <ul>
-                                <li>Context switching overhead</li>
-                                <li>Disruption to flow state</li>
-                                <li>Replanning and coordination cost</li>
-                                <li>Incomplete story setup (no refinement)</li>
-                            </ul>
+                            <h4>The "2-for-1" Rule</h4>
+                            <p>Apply a <strong>2x cost multiplier</strong> for mid-sprint additions due to context switching, disruption to flow, replanning cost, and incomplete story setup.</p>
                             <p class="text-muted">To add a 5-point story mid-sprint, remove 10 points of planned work.</p>
                         </div>
-                    </div>
-                    <div>
-                        <h3>Example Trade Scenario</h3>
                         <div class="architecture-box fragment">
-                            <h4>&#x1F4E5; Incoming Request</h4>
-                            <p>"Critical bug fix needed" -- estimated at <strong>3 points</strong></p>
-                        </div>
-                        <div class="architecture-box fragment">
-                            <h4>&#x1F4E4; Trade-off (2-for-1)</h4>
-                            <p>Remove <strong>6 points</strong> of lowest-priority sprint items:</p>
-                            <ul>
-                                <li>Story A: UI polish (3 pts) &#x2192; back to backlog</li>
-                                <li>Story B: Report enhancement (3 pts) &#x2192; back to backlog</li>
-                            </ul>
-                        </div>
-                        <div class="architecture-box fragment">
-                            <h4>&#x2705; Net Result</h4>
-                            <p>Sprint commitment reduced by 3 points, but the highest-value work is still prioritized.</p>
+                            <h4>&#x1F4E5; Example Trade</h4>
+                            <p>"Critical bug fix" at <strong>3 points</strong> &#x2192; Remove <strong>6 points</strong> of lowest-priority sprint items back to the backlog.</p>
                         </div>
                     </div>
-                </div>
-                <aside class="notes">
-                    The equivalence rule and the 2-for-1 rule are two different levels of discipline. At minimum, teams should follow the equivalence rule: adding equals removing. More mature teams apply the 2-for-1 rule because mid-sprint additions have hidden costs. The example makes this concrete. A 3-point bug fix does not just cost 3 points of capacity -- it costs the disruption of the team's flow, the replanning effort, and the context-switching tax. By requiring the Product Owner to remove 6 points of work, we create the right economic signal: mid-sprint changes are expensive, so only truly urgent items should be added. This is not about being inflexible -- it is about making the true cost visible.
-                </aside>
-            </section>
-
-            <!-- SLIDE 13: Impact Analysis for Mid-Sprint Changes -->
-            <section>
-                <h2>&#x1F504; Impact Analysis for Mid-Sprint Changes</h2>
-                <div class="two-column-60-40">
                     <div>
                         <h3>Decision Framework</h3>
                         <div class="quadrant-matrix fragment" style="font-size: 0.78em;">
@@ -997,35 +897,24 @@ Avg (3-6): 23 pts  |  Range: 20-26 pts</div>
                                 <p><strong>Action:</strong> Backlog, schedule when capacity allows</p>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <h3>Mid-Sprint Change Checklist</h3>
-                        <div class="concept-card fragment">
-                            <h4>Before Adding to Sprint</h4>
-                            <ol>
-                                <li>Is this truly sprint-urgent? &#x1F914;</li>
-                                <li>What is the estimated effort?</li>
-                                <li>What will be removed to compensate?</li>
-                                <li>Has the PO approved the trade-off?</li>
-                            </ol>
-                        </div>
                         <div class="highlight-box danger fragment">
                             <h4 style="color: var(--danger-color); margin-top:0;">&#x26A0;&#xFE0F; Red Flags</h4>
                             <ul>
                                 <li>More than 2 mid-sprint additions per sprint</li>
                                 <li>Additions without corresponding removals</li>
                                 <li>"Everything is urgent" mentality</li>
-                                <li>Bypassing the team in scope decisions</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <aside class="notes">
-                    The quadrant matrix gives teams a quick classification tool for incoming changes. Walk through each quadrant and emphasize that only the Emergency quadrant warrants immediate sprint disruption. Everything else either goes through the Product Owner's trade-off process or simply goes to the backlog. The checklist on the right provides a practical tool teams can use when evaluating mid-sprint changes. Additional checklist items to discuss verbally: "Does the team agree they can absorb it?" and "Does it affect the sprint goal?" The red flags section addresses organizations that treat every request as urgent -- this is a cultural problem that needs to be surfaced and addressed. If everything is urgent, nothing is urgent. Track the number of mid-sprint additions as a metric and discuss it in retrospectives.
+                    The equivalence rule and the 2-for-1 rule are two different levels of discipline. At minimum, teams should follow the equivalence rule: adding equals removing. More mature teams apply the 2-for-1 rule because mid-sprint additions have hidden costs. The quadrant matrix gives teams a quick classification tool for incoming changes. Only the Emergency quadrant warrants immediate sprint disruption. Everything else either goes through the Product Owner's trade-off process or simply goes to the backlog. If everything is urgent, nothing is urgent -- track the number of mid-sprint additions as a metric and discuss it in retrospectives.
                 </aside>
             </section>
 
-            <!-- SLIDE 14: Backlog Grooming and Change Integration -->
+            <!-- ============================================================ -->
+            <!-- SLIDE 11: Integrating Changes Through Backlog Refinement     -->
+            <!-- ============================================================ -->
             <section>
                 <h2>&#x1F504; Integrating Changes Through Backlog Refinement</h2>
                 <div class="two-column">
@@ -1082,18 +971,16 @@ Avg (3-6): 23 pts  |  Range: 20-26 pts</div>
                     </div>
                 </div>
                 <aside class="notes">
-                    This slide shifts from reactive change management to proactive change absorption. The refinement cadence ensures the team always has well-understood work ready to go, which reduces the pressure to add unrefined stories mid-sprint. The volatility table helps teams calibrate their approach based on how much change they actually experience. If a team is seeing more than 25% of their sprint scope change regularly, the problem is not the changes themselves -- it is likely a misalignment between the Product Owner and stakeholders on priorities, or an environment that is genuinely too dynamic for fixed-length sprints. In those cases, a Kanban or Kanban-Scrum hybrid may be more appropriate.
+                    This slide shifts from reactive change management to proactive change absorption. The refinement cadence ensures the team always has well-understood work ready to go, which reduces the pressure to add unrefined stories mid-sprint. The volatility table helps teams calibrate their approach based on how much change they actually experience. If a team is seeing more than 25% of their sprint scope change regularly, the problem is not the changes themselves -- it is likely a misalignment between the Product Owner and stakeholders on priorities, or an environment that is genuinely too dynamic for fixed-length sprints.
                 </aside>
             </section>
 
             <!-- ============================================================ -->
-            <!-- SECTION: Tracking Historical Trends                          -->
+            <!-- SLIDE 12: Velocity Trends and Team Composition (merged)      -->
             <!-- ============================================================ -->
-
-            <!-- SLIDE 15: Velocity Trend Charts -->
             <section>
-                <h2>&#x1F4C8; Velocity Trend Charts</h2>
-                <div class="two-column-60-40">
+                <h2>&#x1F4C8; Velocity Trends and Team Composition Effects</h2>
+                <div class="two-column">
                     <div>
                         <h3>Reading a Velocity Chart</h3>
                         <div class="chart-placeholder fragment">
@@ -1123,19 +1010,19 @@ Pts
                         </div>
                     </div>
                     <div>
-                        <h3>Trend Analysis</h3>
-                        <div class="architecture-box fragment">
-                            <h4>&#x1F4CA; Statistical Measures</h4>
-                            <ul>
-                                <li><strong>Average:</strong> Central tendency for planning</li>
-                                <li><strong>Std Dev:</strong> Measure of predictability</li>
-                                <li><strong>Range:</strong> Best/worst case bounds</li>
-                            </ul>
+                        <h3>Team Composition Impact</h3>
+                        <div class="highlight-box warning fragment">
+                            <p><strong>Typical Impact:</strong> Losing one team member causes a <strong>20-40% velocity drop</strong> that takes <strong>2-3 sprints</strong> to recover from.</p>
+                            <p class="text-muted">The impact is more than proportional because of knowledge loss, redistribution overhead, and team dynamics disruption.</p>
                         </div>
                         <div class="architecture-box fragment">
-                            <h4>&#x23F1;&#xFE0F; Minimum Sample Size</h4>
-                            <p>Need at least <strong>5-6 sprints</strong> of data before velocity trends become meaningful.</p>
-                            <p class="text-muted">With fewer sprints, use a wider range for forecasting.</p>
+                            <h4>&#x1F465; Team Stability Index</h4>
+                            <p><strong>Formula:</strong> (Members at sprint end who were there at start) / (Total members at start)</p>
+                            <ul>
+                                <li><span class="text-success">1.0</span> = No changes (ideal)</li>
+                                <li><span class="text-warning">0.8</span> = Some churn</li>
+                                <li><span class="text-danger">&lt;0.7</span> = Significant disruption</li>
+                            </ul>
                         </div>
                         <div class="concept-card fragment">
                             <h4>&#x26A0;&#xFE0F; Velocity is a Planning Tool</h4>
@@ -1144,80 +1031,44 @@ Pts
                     </div>
                 </div>
                 <aside class="notes">
-                    Velocity trend charts are one of the most misused tools in Agile. This slide teaches participants how to read them correctly. Walk through the chart and point out the pattern -- this team has a stable velocity around 31 points with some natural variation. That is healthy. The four trend patterns on the left help teams diagnose what their velocity chart is telling them. The statistical measures on the right give participants concrete tools for analysis. The minimum sample size warning is important -- many teams try to forecast from 2-3 sprints of data, which is not statistically meaningful. The final callout about velocity as a planning tool, not a performance metric, is critical. Teams that are judged by velocity will game the system by inflating estimates, which destroys the tool's usefulness.
+                    Velocity trend charts are one of the most misused tools in Agile. Walk through the chart and the four trend patterns. Need at least 5-6 sprints of data before velocity trends become meaningful. Team changes have a massive impact on velocity -- organizations that constantly shuffle team members will see consistently lower and less predictable velocities. The Team Stability Index is a simple metric teams can track. Also correlate velocity with sprint length changes, technology stack changes, release deadlines, and technical debt levels. The final callout about velocity as a planning tool, not a performance metric, is critical -- teams judged by velocity will game the system by inflating estimates.
                 </aside>
             </section>
 
-            <!-- SLIDE 16: Cycle Time and Lead Time -->
+            <!-- ============================================================ -->
+            <!-- SLIDE 13: Cycle Time, Lead Time, and Control Charts (merged) -->
+            <!-- ============================================================ -->
             <section>
-                <h2>&#x1F4C8; Cycle Time and Lead Time Trends</h2>
+                <h2>&#x1F4C8; Cycle Time, Lead Time, and Control Charts</h2>
                 <div class="two-column">
                     <div>
                         <div class="highlight-box">
                             <h4 style="color: var(--accent-color); margin-top:0;">Definitions</h4>
-                            <p><strong>Lead Time:</strong> From request creation to delivery<br>
-                            <span class="text-muted">(Measures responsiveness to stakeholders)</span></p>
-                            <p><strong>Cycle Time:</strong> From work started to delivery<br>
-                            <span class="text-muted">(Measures team efficiency)</span></p>
+                            <p><strong>Lead Time:</strong> From request creation to delivery <span class="text-muted">(stakeholder responsiveness)</span></p>
+                            <p><strong>Cycle Time:</strong> From work started to delivery <span class="text-muted">(team efficiency)</span></p>
                         </div>
                         <div class="concept-card fragment">
                             <h4>&#x1F50D; The Gap Tells a Story</h4>
                             <table>
-                                <thead>
-                                    <tr>
-                                        <th>Metric</th>
-                                        <th>Example</th>
-                                    </tr>
-                                </thead>
+                                <thead><tr><th>Metric</th><th>Example</th></tr></thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Lead Time</td>
-                                        <td>14 days</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cycle Time</td>
-                                        <td>4 days</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Wait Time</strong></td>
-                                        <td><strong>10 days (71%!)</strong></td>
-                                    </tr>
+                                    <tr><td>Lead Time</td><td>14 days</td></tr>
+                                    <tr><td>Cycle Time</td><td>4 days</td></tr>
+                                    <tr><td><strong>Wait Time</strong></td><td><strong>10 days (71%!)</strong></td></tr>
                                 </tbody>
                             </table>
                             <p class="text-muted">Items spend more time waiting than being worked on. Focus on reducing wait time.</p>
                         </div>
-                    </div>
-                    <div>
-                        <h3>Using Cycle Time for Estimation</h3>
                         <div class="architecture-box fragment" style="font-size: 0.8em;">
                             <h4>&#x1F4CA; Percentile-Based Forecasting</h4>
-                            <p>Instead of estimating story points, use historical cycle time:</p>
+                            <p>Use historical cycle time instead of story points:</p>
                             <ul>
                                 <li><strong>50th percentile:</strong> 3 days <span class="badge badge-green">Likely</span></li>
                                 <li><strong>85th percentile:</strong> 7 days <span class="badge badge-orange">Confident</span></li>
                                 <li><strong>95th percentile:</strong> 12 days <span class="badge badge-red">Almost certain</span></li>
                             </ul>
                         </div>
-                        <div class="architecture-box fragment" style="font-size: 0.8em;">
-                            <h4>&#x2705; Benefits Over Story Points</h4>
-                            <ul>
-                                <li>Based on actual data, not estimates</li>
-                                <li>No estimation meetings needed</li>
-                                <li>Naturally includes all overhead</li>
-                                <li>Easier for stakeholders to understand</li>
-                            </ul>
-                        </div>
                     </div>
-                </div>
-                <aside class="notes">
-                    Cycle time and lead time are flow-based metrics that complement or even replace story point estimation for mature teams. The gap between lead time and cycle time is particularly revealing -- in most organizations, items spend far more time waiting in queues than being actively worked on. This means the biggest improvement opportunity is usually in reducing wait time, not in making developers work faster. The percentile-based forecasting approach is powerful: instead of asking the team to estimate a story, you look at historical data and say with confidence how long similarly-sized stories have taken. This requires good data hygiene but produces very reliable forecasts. Prerequisite to mention: this approach requires consistent tracking of start/finish dates and at least 30+ data points for meaningful percentiles.
-                </aside>
-            </section>
-
-            <!-- SLIDE 17: Control Charts -->
-            <section>
-                <h2>&#x1F4C8; Using Control Charts</h2>
-                <div class="two-column-60-40">
                     <div>
                         <h3>Reading a Control Chart</h3>
                         <div class="chart-placeholder fragment">
@@ -1235,124 +1086,32 @@ Days
    +--+--+--+--+--+--+--+--+--+--+--+--+-
      Stories completed over time ----></div>
                         </div>
-                        <div class="highlight-box fragment">
-                            <p><strong>UCL</strong> = Upper Control Limit &nbsp; <strong>AVG</strong> = Average &nbsp; <strong>LCL</strong> = Lower Control Limit</p>
-                            <p class="text-muted">Points outside control limits signal special cause variation requiring investigation.</p>
-                        </div>
-                    </div>
-                    <div>
-                        <h3>What Control Charts Reveal</h3>
                         <div class="concept-card fragment">
                             <h4>&#x1F7E2; In Control</h4>
                             <p>All points within limits, random distribution. Process is <strong>stable and predictable</strong>.</p>
                         </div>
                         <div class="concept-card fragment">
                             <h4>&#x1F534; Out of Control</h4>
-                            <p>Points outside limits or non-random patterns. Investigate:</p>
-                            <ul>
-                                <li>Outlier stories (blockers, scope creep)</li>
-                                <li>Trends (improving or degrading)</li>
-                                <li>Clustering (process change effects)</li>
-                            </ul>
-                        </div>
-                        <div class="concept-card fragment">
-                            <h4>&#x1F4A1; Seasonal Patterns</h4>
-                            <ul>
-                                <li>Holiday sprints = lower velocity</li>
-                                <li>Post-release sprints = tech debt focus</li>
-                                <li>Team member onboarding = temporary dip</li>
-                            </ul>
+                            <p>Points outside limits or non-random patterns. Investigate outlier stories, trends, and clustering.</p>
                         </div>
                     </div>
                 </div>
                 <aside class="notes">
-                    Control charts come from statistical process control and are incredibly powerful for Agile teams. The chart shows individual story cycle times plotted over time with upper and lower control limits. Points within the limits represent normal variation -- no action needed. Points outside the limits represent special cause variation and need investigation. Walk through the chart and identify the outlier at 12 days -- what might have caused that? Common causes include blocked stories, scope creep, or external dependencies. The seasonal patterns section is often overlooked -- smart teams factor in known disruptions like holidays, on-call rotations, and team changes when planning sprints.
-                </aside>
-            </section>
-
-            <!-- SLIDE 18: Team Composition Effects -->
-            <section>
-                <h2>&#x1F4C8; Team Composition and Historical Trends</h2>
-                <div class="two-column">
-                    <div>
-                        <h3>Impact of Team Changes on Velocity</h3>
-                        <div class="chart-placeholder fragment">
-                            <div class="velocity-chart">
-Pts                    Team member
-40 |                    leaves (Sprint 7)
-35 |    ___   ___         |
-30 |___|   |_|   |___   __|__
-25 |               ↓  |_|   |___
-20 |              DROP           |___   ___
-15 |                                |__|   |___
-   +---+---+---+---+---+---+---+---+---+---+---
-     1   2   3   4   5   6   7   8   9  10  11
-                                         ↑
-                                 Recovery begins</div>
-                        </div>
-                        <div class="highlight-box warning fragment">
-                            <p><strong>Typical Impact:</strong> Losing one team member causes a <strong>20-40% velocity drop</strong> that takes <strong>2-3 sprints</strong> to recover from.</p>
-                            <p class="text-muted">The impact is more than proportional because of knowledge loss, redistribution overhead, and team dynamics disruption.</p>
-                        </div>
-                    </div>
-                    <div>
-                        <h3>Factors to Track</h3>
-                        <div class="architecture-box fragment">
-                            <h4>&#x1F465; Team Stability Index</h4>
-                            <p><strong>Formula:</strong> (Members at sprint end who were there at start) / (Total members at start)</p>
-                            <ul>
-                                <li><span class="text-success">1.0</span> = No changes (ideal)</li>
-                                <li><span class="text-warning">0.8</span> = Some churn</li>
-                                <li><span class="text-danger">&lt;0.7</span> = Significant disruption</li>
-                            </ul>
-                        </div>
-                        <div class="architecture-box fragment">
-                            <h4>&#x1F4C5; Other Factors to Correlate</h4>
-                            <ul>
-                                <li>Sprint length changes</li>
-                                <li>Technology stack changes</li>
-                                <li>Release deadlines and crunch periods</li>
-                                <li>Technical debt levels</li>
-                                <li>Percentage of new vs. familiar work</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <aside class="notes">
-                    This slide addresses a reality that many organizations ignore: team changes have a massive impact on velocity and estimation accuracy. The chart shows a realistic scenario where a team member departure in Sprint 7 causes an immediate velocity drop followed by a slow recovery. This is not just about losing capacity -- it is about losing context, relationships, and implicit knowledge. The Team Stability Index is a simple metric teams can track. Organizations that constantly shuffle team members will see consistently lower and less predictable velocities. The other factors to correlate help teams build a richer picture of what drives their performance trends.
+                    Cycle time and lead time are flow-based metrics that complement or even replace story point estimation for mature teams. The gap between lead time and cycle time is particularly revealing -- in most organizations, items spend far more time waiting in queues than being actively worked on. The percentile-based forecasting approach is powerful and produces very reliable forecasts with at least 30+ data points. The control chart shows individual story cycle times plotted over time with upper and lower control limits. Points within the limits represent normal variation -- no action needed. Points outside represent special cause variation and need investigation. Also account for seasonal patterns: holiday sprints have lower velocity, post-release sprints focus on tech debt, and team member onboarding causes temporary dips.
                 </aside>
             </section>
 
             <!-- ============================================================ -->
-            <!-- SECTION: Prioritizing / Sequencing Using Relative ROI        -->
+            <!-- SLIDE 14: Calculating Relative ROI and the Matrix (merged)   -->
             <!-- ============================================================ -->
-
-            <!-- SLIDE 19: Calculating Relative ROI -->
             <section>
-                <h2>&#x1F4B0; Calculating Relative ROI</h2>
-                <div class="highlight-box">
-                    <h3 style="color: var(--accent-color); margin-top: 0; text-align: center;">ROI = Business Value / Effort</h3>
-                    <p class="text-center text-muted">Both measured in relative units (not dollars or hours)</p>
-                </div>
+                <h2>&#x1F4B0; Relative ROI and the ROI Matrix</h2>
                 <div class="two-column">
                     <div>
-                        <h3>Assigning Business Value</h3>
-                        <div class="concept-card fragment">
-                            <h4>Value Factors to Consider</h4>
-                            <ul>
-                                <li><strong>Revenue impact:</strong> Direct or indirect</li>
-                                <li><strong>Cost reduction:</strong> Operational savings</li>
-                                <li><strong>Risk reduction:</strong> Compliance, security</li>
-                                <li><strong>User satisfaction:</strong> NPS or retention impact</li>
-                                <li><strong>Strategic alignment:</strong> Supports key objectives</li>
-                            </ul>
+                        <div class="highlight-box">
+                            <h3 style="color: var(--accent-color); margin-top: 0; text-align: center;">ROI = Business Value / Effort</h3>
+                            <p class="text-center text-muted">Both measured in relative units (not dollars or hours)</p>
                         </div>
-                        <div class="highlight-box warning fragment">
-                            <p><strong>Use the same scale as story points</strong> (1, 2, 3, 5, 8, 13, 21) for business value. This keeps the math simple and leverages relative sizing skills.</p>
-                        </div>
-                    </div>
-                    <div>
-                        <h3>Example Calculation</h3>
                         <table class="fragment">
                             <thead>
                                 <tr>
@@ -1396,20 +1155,11 @@ Pts                    Team member
                             </tbody>
                         </table>
                         <div class="highlight-box success fragment">
-                            <p><strong>Prioritization order:</strong> Search upgrade (2.6) > Email notifications (1.7) > API v2 (1.0) > New dashboard (0.6) > Admin panel (0.4)</p>
+                            <p><strong>Priority order:</strong> Search (2.6) > Email (1.7) > API (1.0) > Dashboard (0.6) > Admin (0.4)</p>
                         </div>
                     </div>
-                </div>
-                <aside class="notes">
-                    Relative ROI is a powerful prioritization technique because it combines two pieces of information the team already has: business value (from the Product Owner) and effort (from the development team). Walk through the formula and the example. Note how the search upgrade, despite not having the highest absolute value, has the highest ROI because it delivers a lot of value for relatively little effort. The new dashboard has high value but also high effort, resulting in a low ROI. This does not mean we never build the dashboard -- it means we should build the higher-ROI items first. Ask the class to identify which items they would schedule first and why.
-                </aside>
-            </section>
-
-            <!-- SLIDE 20: The ROI Matrix -->
-            <section>
-                <h2>&#x1F4B0; The ROI Matrix Visualization</h2>
-                <div class="two-column-60-40">
                     <div>
+                        <h3>The ROI Matrix</h3>
                         <div class="quadrant-matrix fragment" style="font-size: 0.78em;">
                             <div class="quadrant q1">
                                 <h4>&#x1F31F; Quick Wins</h4>
@@ -1432,10 +1182,6 @@ Pts                    Team member
                                 <p>Avoid or defer indefinitely</p>
                             </div>
                         </div>
-                        <p class="text-center text-muted fragment"><em>x-axis: Effort (left=low, right=high) &nbsp; | &nbsp; y-axis: Value (bottom=low, top=high)</em></p>
-                    </div>
-                    <div>
-                        <h3>Using the Matrix</h3>
                         <div class="architecture-box fragment">
                             <h4>&#x1F4CB; Recommended Sequence</h4>
                             <ol>
@@ -1448,96 +1194,35 @@ Pts                    Team member
                     </div>
                 </div>
                 <aside class="notes">
-                    The ROI matrix is a visual tool that makes prioritization discussions concrete and productive. Walk through each quadrant and emphasize the naming: Quick Wins, Major Projects, Fill-ins, and Money Pits. The names themselves communicate the strategy. The recommended sequence on the right is a general guideline -- Quick Wins first because they deliver value fast and build credibility. Major Projects next because they deliver strategic value but need careful decomposition. Fill-ins are useful as sprint padding. Money Pits should be challenged. Pro Tip: Run this exercise as a collaborative workshop with the Product Owner and stakeholders. Making ROI visible creates alignment and reduces priority debates. Also remind teams to review the matrix quarterly -- ROI changes as market conditions shift. Re-evaluate the matrix every quarter or when strategic priorities change.
+                    Relative ROI combines business value (from the Product Owner) and effort (from the development team). Note how the search upgrade, despite not having the highest absolute value, has the highest ROI because it delivers a lot of value for relatively little effort. Use the same Fibonacci scale for business value as for story points to keep the math simple. The ROI matrix makes prioritization discussions concrete and visual. Run this exercise as a collaborative workshop with the Product Owner and stakeholders -- making ROI visible creates alignment and reduces priority debates. Re-evaluate the matrix quarterly as market conditions shift.
                 </aside>
             </section>
 
-            <!-- SLIDE 21: Sequencing for Dependencies and Risk -->
+            <!-- ============================================================ -->
+            <!-- SLIDE 15: Sequencing and Strategic Balance (merged)           -->
+            <!-- ============================================================ -->
             <section>
-                <h2>&#x1F4B0; Sequencing for Dependencies and Risk</h2>
+                <h2>&#x1F4B0; Sequencing for Dependencies, Risk, and Strategy</h2>
                 <div class="two-column">
                     <div>
                         <h3>Beyond ROI: Sequencing Factors</h3>
                         <div class="concept-card fragment">
                             <h4>&#x1F517; Technical Dependencies</h4>
-                            <p>Some high-ROI items cannot start until prerequisites are complete.</p>
-                            <ul>
-                                <li>Map dependencies and identify the critical path</li>
-                                <li>Schedule enablers early even if standalone ROI is low</li>
-                            </ul>
+                            <p>Some high-ROI items cannot start until prerequisites are complete. Map dependencies and schedule enablers early even if standalone ROI is low.</p>
                         </div>
                         <div class="concept-card fragment">
                             <h4>&#x26A0;&#xFE0F; Risk-First Approach</h4>
-                            <p>Schedule <strong>highest-risk items early</strong> to fail fast and learn.</p>
-                            <ul>
-                                <li>Unknown technology? Do it in Sprint 1-2</li>
-                                <li>Complex integration? Spike it early</li>
-                            </ul>
+                            <p>Schedule <strong>highest-risk items early</strong> to fail fast and learn. Unknown technology? Do it in Sprint 1-2. Complex integration? Spike it early.</p>
+                        </div>
+                        <div class="highlight-box warning fragment">
+                            <h4 style="color: var(--warning-color); margin-top:0;">&#x26A0;&#xFE0F; The Tech Debt Trap</h4>
+                            <p>Pure ROI-based prioritization will <strong>never</strong> prioritize tech debt because it has no direct business value. But ignoring tech debt <em>reduces</em> future ROI by slowing delivery.</p>
+                            <p><strong>Solution:</strong> Reserve a fixed percentage of capacity for tech debt in every sprint.</p>
                         </div>
                     </div>
                     <div>
-                        <h3>Weighted Scoring Model</h3>
-                        <table class="fragment" style="font-size: 0.75em;">
-                            <thead>
-                                <tr>
-                                    <th>Factor</th>
-                                    <th>Weight</th>
-                                    <th>Feature A</th>
-                                    <th>Feature B</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>ROI Score</td>
-                                    <td>40%</td>
-                                    <td>8</td>
-                                    <td>6</td>
-                                </tr>
-                                <tr>
-                                    <td>Risk Reduction</td>
-                                    <td>25%</td>
-                                    <td>3</td>
-                                    <td>9</td>
-                                </tr>
-                                <tr>
-                                    <td>Dependency Unlock</td>
-                                    <td>20%</td>
-                                    <td>2</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>Strategic Alignment</td>
-                                    <td>15%</td>
-                                    <td>7</td>
-                                    <td>5</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Weighted Score</strong></td>
-                                    <td></td>
-                                    <td><strong>5.25</strong></td>
-                                    <td><strong>6.70</strong></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="highlight-box success fragment">
-                            <p><strong>Feature B wins</strong> despite lower ROI because it reduces risk and unblocks dependencies. ROI alone does not tell the whole story.</p>
-                        </div>
-                    </div>
-                </div>
-                <aside class="notes">
-                    This slide extends beyond pure ROI to address the reality that sequencing decisions involve multiple factors. Walk through the dependency and risk considerations on the left. The critical insight is that an enabler story with low standalone ROI might be the most important thing to do if it unblocks three high-ROI stories. Additional risk-first item to mention verbally: regulatory requirements should also be validated early. The weighted scoring model on the right provides a more sophisticated approach. Walk through the example: Feature A has better ROI but Feature B scores higher overall because of its risk reduction and dependency unlocking value. The weights should be agreed upon by the team and PO and adjusted based on the project phase. Early in a project, risk reduction and dependency unlocking might be weighted higher; later, ROI and strategic alignment might dominate.
-                </aside>
-            </section>
-
-            <!-- SLIDE 22: Balancing ROI with Strategic Objectives -->
-            <section>
-                <h2>&#x1F4B0; Balancing ROI with Strategic Objectives</h2>
-                <div class="two-column">
-                    <div>
-                        <h3>The Portfolio View</h3>
+                        <h3>Sprint Allocation Strategy</h3>
                         <div class="architecture-box fragment">
-                            <h4>&#x1F3AF; Sprint Allocation Strategy</h4>
-                            <p>Balance your sprint portfolio across categories:</p>
                             <div style="margin: 15px 0;">
                                 <div style="background: linear-gradient(90deg, var(--success-color) 60%, var(--accent-color) 60%, var(--accent-color) 80%, var(--warning-color) 80%, var(--warning-color) 95%, var(--danger-color) 95%); height: 35px; border-radius: 6px; margin-bottom: 8px;"></div>
                                 <div style="display: flex; justify-content: space-between; font-size: 0.7em;">
@@ -1549,60 +1234,29 @@ Pts                    Team member
                             </div>
                             <p class="text-muted">Adjust ratios based on project phase and health metrics.</p>
                         </div>
-                        <div class="highlight-box warning fragment">
-                            <h4 style="color: var(--warning-color); margin-top:0;">&#x26A0;&#xFE0F; The Tech Debt Trap</h4>
-                            <p>Pure ROI-based prioritization will <strong>never</strong> prioritize tech debt because it has no direct business value. But ignoring tech debt <em>reduces</em> future ROI by slowing delivery.</p>
-                            <p><strong>Solution:</strong> Reserve a fixed percentage of capacity for tech debt in every sprint.</p>
-                        </div>
-                    </div>
-                    <div>
-                        <h3>Strategic Alignment Check</h3>
                         <div class="concept-card fragment" style="font-size: 0.8em;">
-                            <h4>&#x1F4CB; Quarterly Review Questions</h4>
-                            <ol>
-                                <li>Are our highest-ROI items aligned with company OKRs?</li>
-                                <li>Is our tech debt allocation sustainable?</li>
-                                <li>What would we stop doing if forced to cut 20%?</li>
-                            </ol>
-                        </div>
-                        <div class="concept-card fragment" style="font-size: 0.8em;">
-                            <h4>&#x1F504; Continuous Rebalancing</h4>
+                            <h4>&#x1F504; Continuous Rebalancing Signals</h4>
                             <table>
                                 <thead>
-                                    <tr>
-                                        <th>Signal</th>
-                                        <th>Response</th>
-                                    </tr>
+                                    <tr><th>Signal</th><th>Response</th></tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Velocity declining</td>
-                                        <td>Increase tech debt allocation</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bug rate rising</td>
-                                        <td>Invest in quality practices</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Customer churn up</td>
-                                        <td>Prioritize retention features</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Competitor launching</td>
-                                        <td>Accelerate strategic features</td>
-                                    </tr>
+                                    <tr><td>Velocity declining</td><td>Increase tech debt allocation</td></tr>
+                                    <tr><td>Bug rate rising</td><td>Invest in quality practices</td></tr>
+                                    <tr><td>Customer churn up</td><td>Prioritize retention features</td></tr>
+                                    <tr><td>Competitor launching</td><td>Accelerate strategic features</td></tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
                 <aside class="notes">
-                    This slide brings everything together at the portfolio level. ROI-based prioritization is powerful but incomplete. Smart teams balance their work across categories: new features, technical debt, bug fixes, and operational work. The allocation percentages shown are guidelines -- each team should calibrate based on their situation. The tech debt trap is one of the most common strategic mistakes in Agile teams: because tech debt reduction has no direct business value, it never wins in a pure ROI comparison. But the compounding effect of ignored tech debt is devastating -- it is like ignoring maintenance on a building. The quarterly review questions and continuous rebalancing table give teams practical tools for maintaining strategic alignment while still leveraging ROI for tactical prioritization. Additional quarterly review questions to discuss verbally: "Are we investing enough in risk reduction?" and "Are we building for this quarter or next year?"
+                    This slide extends beyond pure ROI to address the reality that sequencing decisions involve multiple factors. An enabler story with low standalone ROI might be the most important thing to do if it unblocks three high-ROI stories. The risk-first approach ensures unknowns are resolved early. The tech debt trap is one of the most common strategic mistakes -- because tech debt reduction has no direct business value, it never wins in a pure ROI comparison. But the compounding effect of ignored tech debt is devastating. The sprint allocation strategy and continuous rebalancing table give teams practical tools for maintaining strategic alignment. Quarterly review questions to consider: Are our highest-ROI items aligned with OKRs? Is our tech debt allocation sustainable? What would we stop doing if forced to cut 20%?
                 </aside>
             </section>
 
             <!-- ============================================================ -->
-            <!-- LAB CALLOUT SLIDE                                            -->
+            <!-- SLIDE 16: LAB CALLOUT                                        -->
             <!-- ============================================================ -->
             <section data-background-color="#1a365d" class="lab-slide">
                 <div class="lab-badge">Hands-On Exercise</div>
@@ -1610,21 +1264,19 @@ Pts                    Team member
                 <h3>Apply estimation correction techniques to realistic scenarios</h3>
                 <div class="lab-details">
                     <ul>
-                        <li>&#x1F4CB; <strong>Scenario 1:</strong> Mid-sprint re-estimation -- a 5-point story has ballooned. Decide whether to split, swarm, or carry over.</li>
-                        <li>&#x1F4C9; <strong>Scenario 2:</strong> Your team missed its sprint goal for the second consecutive sprint. Conduct a Five Whys root cause analysis and build a recovery plan.</li>
-                        <li>&#x1F504; <strong>Scenario 3:</strong> An urgent feature request arrives mid-sprint. Apply the 2-for-1 rule and negotiate the scope trade with a "Product Owner."</li>
-                        <li>&#x1F4C8; <strong>Scenario 4:</strong> Given 8 sprints of velocity data, build a control chart and identify trends, outliers, and planning recommendations.</li>
-                        <li>&#x1F4B0; <strong>Scenario 5:</strong> Prioritize a backlog of 10 features using relative ROI, then adjust for dependencies and risk using the weighted scoring model.</li>
+                        <li>&#x1F4CB; <strong>Scenario Drills:</strong> A blow-up story and a scope bomb — decide what to cut, communicate, and trade off</li>
+                        <li>&#x1F4B0; <strong>ROI Prioritization:</strong> Rank 6 features by relative ROI, then adjust for dependencies and risk</li>
+                        <li>&#x1F4C8; <strong>Trend Analysis:</strong> Analyze 6 sprints of velocity data, identify disruptions, and recommend a planning velocity</li>
                     </ul>
                 </div>
-                <p style="margin-top: 20px; font-size: 0.9em; color: rgba(255,255,255,0.85);"><strong>Duration:</strong> 65 minutes (50 min work + 15 min presentations) &nbsp;|&nbsp; <strong>Format:</strong> Teams of 4-5</p>
+                <p style="margin-top: 20px; font-size: 0.9em; color: rgba(255,255,255,0.85);"><strong>Duration:</strong> 45 minutes (30 min work + 15 min presentations) &nbsp;|&nbsp; <strong>Format:</strong> Teams of 4-5</p>
                 <aside class="notes">
                     This lab is the heart of the module. Divide participants into teams of 4-5. Each team will rotate through all five scenarios in 15-minute rounds. Provide pre-built scenario cards with the relevant data for each exercise. For Scenario 1, give teams a sprint board with stories in various states of completion. For Scenario 2, provide a sprint history with velocity data showing the consecutive misses. For Scenario 3, assign one person as the Product Owner who must make the trade-off decision. For Scenario 4, provide actual velocity data in a spreadsheet and have teams create the control chart. For Scenario 5, provide a backlog with value and effort estimates. After all rotations, bring the group back together for a 15-minute debrief where each team shares their most surprising insight.
                 </aside>
             </section>
 
             <!-- ============================================================ -->
-            <!-- KEY TAKEAWAYS                                                -->
+            <!-- SLIDE 17: KEY TAKEAWAYS                                      -->
             <!-- ============================================================ -->
             <section>
                 <h2>&#x1F3AF; Key Takeaways</h2>
@@ -1660,7 +1312,7 @@ Pts                    Team member
             </section>
 
             <!-- ============================================================ -->
-            <!-- QUESTIONS SLIDE                                              -->
+            <!-- SLIDE 18: QUESTIONS                                          -->
             <!-- ============================================================ -->
             <section class="questions-slide">
                 <h2>&#x2753; Questions &amp; Discussion</h2>

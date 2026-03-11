@@ -57,7 +57,7 @@
             border-radius: 8px;
             padding: 1.5rem;
             margin: 1rem 0;
-            min-height: 120px;
+            min-height: 100px;
         }
         .workspace p { color: #718096; font-style: italic; }
         .timer { display: inline-block; background: var(--warning); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 600; font-size: 0.85rem; }
@@ -89,224 +89,97 @@
     <div class="lab-header">
         <h1>🏢 Lab 6: Scaling Estimation Simulation</h1>
         <div class="meta">
-            Module 6 — Agile Project Estimation | Duration: 65 minutes (50 min work + 15 min presentations) | Style: Group Workshop
+            Module 6 — Agile Project Estimation | Duration: 45 minutes (30 min work + 15 min presentations) | Style: Group Workshop
         </div>
     </div>
 
     <div class="card objective-card">
         <h2>🎯 Lab Objectives</h2>
         <ul>
-            <li>Simulate multi-team estimation and coordination challenges collaboratively</li>
-            <li>Experience cross-team dependency management firsthand as interconnected groups</li>
-            <li>Practice aggregating metrics across teams through inter-group communication</li>
-            <li>Debate backlog organization strategies as a full class — consensus across teams</li>
+            <li>Experience multi-team estimation and coordination challenges firsthand</li>
+            <li>Identify how cross-team dependencies affect sequencing and capacity</li>
+            <li>Aggregate forecasts across teams and debate backlog organization strategies</li>
         </ul>
     </div>
 
     <div class="card" style="border-left-color: #2b6cb0; background: #ebf8ff;">
         <h2>👥 Group Setup — Multi-Team Simulation</h2>
-        <p>This lab is a full-class simulation. The class splits into 3 teams to experience the coordination challenges of scaling Agile. Each team works independently on estimation but must coordinate with other teams on dependencies — just like in a real scaled Agile environment. Cross-team communication is essential.</p>
-        <h3>Tools &amp; Presentation</h3>
-        <p><strong>Choose your tools:</strong> Each team decides how to collaborate — whiteboard, sticky notes, spreadsheet, digital tool, or any combination. Cross-team coordination can use whatever medium works (in-person stand-ups, shared board, etc.).</p>
-        <p><strong>Class presentation:</strong> At the end of the lab, each team presents their estimates, dependency findings, and forecast. Then the full class discusses the backlog strategy debate together (3-5 minutes per team).</p>
-    </div>
-
-    <div class="card">
-        <h2><span class="step-number">1</span> Team Formation &amp; Setup</h2>
-        <p><span class="timer">5 minutes</span></p>
-        <p>Split the class into 3 teams. Each team represents a Scrum team working on the same product: a <strong>Healthcare Patient Portal</strong>.</p>
-
+        <p>Split into 3 teams. Each represents a Scrum team working on a <strong>Healthcare Patient Portal</strong>.</p>
         <div class="team-grid">
             <div class="team-box">
-                <h4>👥 Team Alpha — Frontend Experience</h4>
-                <p>Responsible for: Patient-facing UI, mobile responsiveness, accessibility</p>
-                <p><strong>Average velocity:</strong> 26 pts/sprint</p>
+                <h4>Team Alpha — Frontend</h4>
+                <p>Patient-facing UI, mobile, accessibility</p>
+                <p><strong>Avg velocity:</strong> 26 pts/sprint</p>
             </div>
             <div class="team-box">
-                <h4>👥 Team Beta — Backend Services</h4>
-                <p>Responsible for: APIs, data processing, integrations with hospital systems</p>
-                <p><strong>Average velocity:</strong> 30 pts/sprint</p>
+                <h4>Team Beta — Backend</h4>
+                <p>APIs, data processing, integrations</p>
+                <p><strong>Avg velocity:</strong> 30 pts/sprint</p>
             </div>
             <div class="team-box">
-                <h4>👥 Team Gamma — Platform &amp; Infrastructure</h4>
-                <p>Responsible for: Security, compliance, deployment, monitoring</p>
-                <p><strong>Average velocity:</strong> 22 pts/sprint</p>
+                <h4>Team Gamma — Platform</h4>
+                <p>Security, compliance, infrastructure</p>
+                <p><strong>Avg velocity:</strong> 22 pts/sprint</p>
             </div>
         </div>
     </div>
 
     <div class="card">
-        <h2><span class="step-number">2</span> Cross-Team Estimation Challenge</h2>
-        <p><span class="timer">20 minutes</span></p>
-        <p>Each team independently estimates the stories assigned to them. Then identify cross-team dependencies.</p>
+        <h2><span class="step-number">1</span> Cross-Team Estimation &amp; Dependency Mapping</h2>
+        <p><span class="timer">15 minutes</span></p>
+        <p>Each team estimates their assigned stories independently, then identify cross-team dependencies and sequencing.</p>
 
-        <h3>Product Backlog (Shared)</h3>
         <table>
             <tr>
                 <th>#</th>
                 <th>Feature</th>
                 <th>Primary Team</th>
                 <th>Dependencies</th>
-                <th>Team Estimate</th>
+                <th>Estimate</th>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>Patient appointment scheduling UI</td>
-                <td>Alpha</td>
-                <td>Needs Beta API</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Appointment booking API</td>
-                <td>Beta</td>
-                <td>Needs Gamma auth</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>HIPAA-compliant authentication</td>
-                <td>Gamma</td>
-                <td>None</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Medical records viewer</td>
-                <td>Alpha</td>
-                <td>Needs Beta API</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>HL7 FHIR integration for medical records</td>
-                <td>Beta</td>
-                <td>Needs Gamma infra</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>Secure data pipeline setup</td>
-                <td>Gamma</td>
-                <td>None</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>Patient messaging interface</td>
-                <td>Alpha</td>
-                <td>Needs Beta API</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>Messaging and notification service</td>
-                <td>Beta</td>
-                <td>None</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td>Audit logging and compliance reporting</td>
-                <td>Gamma</td>
-                <td>Needs Beta data</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>Prescription refill request form</td>
-                <td>Alpha</td>
-                <td>Needs Beta API, Gamma auth</td>
-                <td></td>
-            </tr>
+            <tr><td>1</td><td>Patient appointment scheduling UI</td><td>Alpha</td><td>Needs Beta API</td><td></td></tr>
+            <tr><td>2</td><td>Appointment booking API</td><td>Beta</td><td>Needs Gamma auth</td><td></td></tr>
+            <tr><td>3</td><td>HIPAA-compliant authentication</td><td>Gamma</td><td>None</td><td></td></tr>
+            <tr><td>4</td><td>Medical records viewer</td><td>Alpha</td><td>Needs Beta API</td><td></td></tr>
+            <tr><td>5</td><td>HL7 FHIR integration</td><td>Beta</td><td>Needs Gamma infra</td><td></td></tr>
+            <tr><td>6</td><td>Secure data pipeline</td><td>Gamma</td><td>None</td><td></td></tr>
+            <tr><td>7</td><td>Patient messaging interface</td><td>Alpha</td><td>Needs Beta API</td><td></td></tr>
+            <tr><td>8</td><td>Messaging &amp; notification service</td><td>Beta</td><td>None</td><td></td></tr>
         </table>
 
-        <h3>Dependency Map</h3>
         <div class="workspace">
-            <p>Draw the dependency relationships between features. Which features must be completed first? Which can run in parallel?</p>
+            <p>Draw the dependency relationships. Which must be completed first? Which can run in parallel? Where are the bottlenecks? Focus on <strong>ordering</strong> — not assigning to specific sprints.</p>
         </div>
     </div>
 
     <div class="card">
-        <h2><span class="step-number">3</span> Aggregate Forecasting</h2>
+        <h2><span class="step-number">2</span> Aggregate Forecast &amp; Backlog Strategy</h2>
         <p><span class="timer">15 minutes</span></p>
-        <p>Using the team estimates and dependencies, build a release forecast.</p>
+        <p>Determine the minimum number of sprints needed, then debate backlog organization.</p>
 
-        <h3>Sprint Planning Across Teams</h3>
-        <table>
-            <tr>
-                <th>Sprint</th>
-                <th>Team Alpha (26 pts capacity)</th>
-                <th>Team Beta (30 pts capacity)</th>
-                <th>Team Gamma (22 pts capacity)</th>
-            </tr>
-            <tr>
-                <td><strong>Sprint 1</strong></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><strong>Sprint 2</strong></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><strong>Sprint 3</strong></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><strong>Sprint 4</strong></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-
-        <h3>Key Questions</h3>
         <div class="workspace">
-            <p>1. Which team is the bottleneck? How does this affect the overall release timeline?</p>
+            <p>1. Which team is the bottleneck — determined by points or by dependencies?<br>
+            2. If you could add capacity to one team, which gives the best impact?</p>
         </div>
-        <div class="workspace">
-            <p>2. How many total sprints are needed? Is this determined by total points or by dependencies?</p>
-        </div>
-        <div class="workspace">
-            <p>3. If you could add capacity to one team, which team would give the best ROI? Why?</p>
-        </div>
-    </div>
 
-    <div class="card">
-        <h2><span class="step-number">4</span> Backlog Strategy Debate</h2>
-        <p><span class="timer">10 minutes</span></p>
-        <p>Discuss as a full group: how should the product backlog be organized?</p>
-
+        <h3>Backlog Strategy Debate (Full Class)</h3>
         <table>
             <tr>
                 <th>Strategy</th>
                 <th>Pros</th>
                 <th>Cons</th>
-                <th>Best When...</th>
             </tr>
             <tr>
-                <td><strong>Single shared backlog</strong><br>(LeSS-style)</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><strong>Single shared backlog</strong> (LeSS-style)</td>
+                <td></td><td></td>
             </tr>
             <tr>
-                <td><strong>One backlog per team</strong><br>(Independent backlogs)</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><strong>One backlog per team</strong> (Independent)</td>
+                <td></td><td></td>
             </tr>
             <tr>
-                <td><strong>Program backlog + team backlogs</strong><br>(SAFe-style)</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><strong>Program + team backlogs</strong> (SAFe-style)</td>
+                <td></td><td></td>
             </tr>
         </table>
 
@@ -316,25 +189,15 @@
     </div>
 
     <div class="card" style="border-left-color: #2f855a;">
-        <h2><span class="step-number">5</span> Team Presentations &amp; Cross-Team Debrief</h2>
+        <h2><span class="step-number">3</span> Team Presentations &amp; Cross-Team Debrief</h2>
         <p><span class="timer">15 minutes (3-5 min per team + class discussion)</span></p>
-        <p>Each team presents to the class. Cover:</p>
+        <p>Each team presents:</p>
         <ul>
-            <li>Your team's estimates and where dependencies forced sequencing changes</li>
-            <li>Which team was the bottleneck and how you would address it</li>
+            <li>Your estimates and where dependencies forced sequencing changes</li>
+            <li>Which team was the bottleneck and how you'd address it</li>
             <li>Your recommended backlog organization strategy</li>
         </ul>
-        <p>After all teams present, compare: Did the 3 teams' sprint plans actually align? Where did cross-team assumptions conflict?</p>
-    </div>
-
-    <div class="card warning-card">
-        <h2>💡 Discussion Points</h2>
-        <ul>
-            <li>How did cross-team dependencies change your sprint plans compared to single-team planning?</li>
-            <li>Can you compare story points across teams? Should Team Beta's "8" equal Team Alpha's "8"?</li>
-            <li>What coordination ceremonies would you add for this multi-team setup?</li>
-            <li>How would feature teams (cross-functional, full-stack) reduce dependency problems?</li>
-        </ul>
+        <p>After all teams present: Did the 3 teams' plans actually align? Where did cross-team assumptions conflict?</p>
     </div>
 </body>
 </html>

@@ -57,7 +57,7 @@
             border-radius: 8px;
             padding: 1.5rem;
             margin: 1rem 0;
-            min-height: 120px;
+            min-height: 100px;
         }
         .workspace p { color: #718096; font-style: italic; }
         .timer { display: inline-block; background: var(--warning); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 600; font-size: 0.85rem; }
@@ -72,16 +72,6 @@
             border-radius: 8px;
             padding: 1.25rem;
             margin: 1rem 0;
-        }
-        .burndown {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 1rem;
-            margin: 1rem 0;
-            font-family: monospace;
-            font-size: 0.85rem;
-            line-height: 1.4;
         }
         .metric-grid {
             display: grid;
@@ -110,45 +100,37 @@
     <div class="lab-header">
         <h1>🔮 Lab 7: Release Forecasting Workshop</h1>
         <div class="meta">
-            Module 7 — Agile Project Estimation | Duration: 80 minutes (60 min work + 20 min presentations) | Style: Capstone Group Workshop
+            Module 7 — Agile Project Estimation | Duration: 50 minutes (35 min work + 15 min presentations) | Style: Capstone Group Workshop
         </div>
     </div>
 
     <div class="card objective-card">
         <h2>🎯 Lab Objectives</h2>
         <ul>
-            <li>Build a release forecast collaboratively using multiple techniques</li>
-            <li>Practice both estimate-based and fact-based forecasting as a team</li>
-            <li>Reach group consensus on buffer strategies for different risk profiles</li>
-            <li>Prepare and deliver a stakeholder-ready forecast presentation as a group</li>
+            <li>Build a release forecast using multiple techniques</li>
+            <li>Understand the difference between a forecast <em>range</em> and a date commitment</li>
+            <li>Deliver a stakeholder-ready forecast that communicates uncertainty honestly</li>
         </ul>
     </div>
 
     <div class="card" style="border-left-color: #2b6cb0; background: #ebf8ff;">
-        <h2>👥 Group Setup — Capstone Team Exercise</h2>
-        <p>Form groups of 4-5 people. This is the capstone lab — your group will work together through every step, combining all the skills practiced throughout the course. Forecasting is a team responsibility that requires collective input, shared assumptions, and unified communication. Assign roles:</p>
-        <ul>
-            <li><strong>Product Owner:</strong> Advocates for scope and business priorities in buffer decisions</li>
-            <li><strong>Scrum Master:</strong> Facilitates the forecasting process, ensures data-driven decisions</li>
-            <li><strong>Analysts (remaining members):</strong> Run calculations, challenge assumptions, prepare the stakeholder presentation</li>
-        </ul>
-        <h3>Tools &amp; Presentation</h3>
-        <p><strong>Choose your tools:</strong> Your team decides how to work — whiteboard, spreadsheet, digital tool, paper, or any combination. Use whatever works best for your group.</p>
-        <p><strong>Final deliverable:</strong> Each group presents their complete forecast to the class as a simulated stakeholder meeting (5 minutes per team). The class acts as the executive audience — they will ask tough questions.</p>
+        <h2>👥 Group Setup — Capstone Exercise</h2>
+        <p>Form groups of 4-5 people. Assign: <strong>Product Owner</strong> (scope priorities), <strong>Scrum Master</strong> (facilitates), <strong>Analysts</strong> (calculations and presentation).</p>
+        <p><strong>Deliverable:</strong> Each group presents their forecast as a simulated stakeholder meeting (3-5 min per team).</p>
     </div>
 
     <div class="card">
-        <h2><span class="step-number">1</span> Scenario: Forecasting Without History</h2>
-        <p><span class="timer">15 minutes</span></p>
+        <h2><span class="step-number">1</span> Forecasting Without History</h2>
+        <p><span class="timer">10 minutes</span></p>
 
         <div class="scenario-box">
-            <h3>New Product Launch: "SmartInvoice"</h3>
-            <p>Your company is launching a new AI-powered invoicing product. A brand new team of 6 developers has been assembled. No historical velocity data exists. The Product Owner has identified 15 epics totaling an estimated 350 story points (rough estimate from a product discovery workshop).</p>
-            <p><strong>The CEO wants to know:</strong> "Can we launch at the annual conference in 6 months?"</p>
+            <h3>New Product: "SmartInvoice"</h3>
+            <p>Your company is launching an AI-powered invoicing product. A new team of 6 developers — no historical velocity data. The PO has identified 15 epics totaling an estimated 350 story points.</p>
+            <p><strong>The CEO asks:</strong> "How much can we realistically deliver in 6 months?"</p>
         </div>
 
-        <h3>Technique 1: Reference-Based Forecast</h3>
-        <p>A similar team in the organization that built "SmartPayroll" had these metrics:</p>
+        <h3>Reference-Based Forecast</h3>
+        <p>A similar team ("SmartPayroll") had these metrics:</p>
         <div class="metric-grid">
             <div class="metric-box">
                 <div class="value">24</div>
@@ -169,50 +151,22 @@
         </div>
 
         <table>
-            <tr>
-                <th>Calculation</th>
-                <th>Your Answer</th>
-            </tr>
-            <tr>
-                <td>Adjusted reference velocity for 6-person team (scale proportionally)</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Expected velocity during first 3 sprints (ramp-up = ~60% of stable)</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Total sprints in 6 months (26 weeks ÷ 2)</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Points delivered in ramp-up phase (3 sprints × ramp velocity)</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Points delivered in stable phase (remaining sprints × stable velocity)</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Total forecasted points in 6 months</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Can we launch? (350 pts needed vs. total forecasted)</td>
-                <td></td>
-            </tr>
+            <tr><th>Calculation</th><th>Your Answer</th></tr>
+            <tr><td>Adjusted reference velocity for 6-person team</td><td></td></tr>
+            <tr><td>Ramp-up velocity (first 3 sprints at ~60%)</td><td></td></tr>
+            <tr><td>Total sprints in 6 months (26 weeks / 2)</td><td></td></tr>
+            <tr><td>Total forecasted points in 6 months</td><td></td></tr>
         </table>
 
-        <h3>Technique 2: Thin-Slice Recommendation</h3>
         <div class="workspace">
-            <p>Instead of committing to a date now, write a recommendation to the CEO for a "thin-slice" approach. What would you propose for the first 2 sprints, and when would you provide a confident forecast?</p>
+            <p>Write a recommendation to the CEO: What would you propose for the first 2-3 sprints, and when would you provide a more confident forecast?</p>
         </div>
     </div>
 
     <div class="card">
-        <h2><span class="step-number">2</span> Scenario: Forecasting With Historical Data</h2>
-        <p><span class="timer">15 minutes</span></p>
-        <p>Now you have data. As a group, divide the calculations among team members, then come together to build a refined forecast. Have each analyst tackle a different metric, then the team synthesizes the results.</p>
+        <h2><span class="step-number">2</span> Forecasting With Historical Data</h2>
+        <p><span class="timer">10 minutes</span></p>
+        <p>Now you have data. Divide calculations among team members, then synthesize a forecast.</p>
 
         <h3>Sprint History</h3>
         <table>
@@ -220,213 +174,78 @@
                 <th>Sprint</th>
                 <th>Planned</th>
                 <th>Completed</th>
-                <th>Defects Found</th>
                 <th>Scope Added</th>
             </tr>
-            <tr><td>1</td><td>20</td><td>12</td><td>3</td><td>0</td></tr>
-            <tr><td>2</td><td>18</td><td>16</td><td>4</td><td>5</td></tr>
-            <tr><td>3</td><td>20</td><td>19</td><td>2</td><td>8</td></tr>
-            <tr><td>4</td><td>22</td><td>22</td><td>1</td><td>3</td></tr>
-            <tr><td>5</td><td>24</td><td>23</td><td>2</td><td>10</td></tr>
-            <tr><td>6</td><td>24</td><td>25</td><td>1</td><td>5</td></tr>
-            <tr><td>7</td><td>26</td><td>24</td><td>3</td><td>12</td></tr>
-            <tr><td>8</td><td>26</td><td>26</td><td>2</td><td>0</td></tr>
+            <tr><td>1</td><td>20</td><td>12</td><td>0</td></tr>
+            <tr><td>2</td><td>18</td><td>16</td><td>5</td></tr>
+            <tr><td>3</td><td>20</td><td>19</td><td>8</td></tr>
+            <tr><td>4</td><td>22</td><td>22</td><td>3</td></tr>
+            <tr><td>5</td><td>24</td><td>23</td><td>10</td></tr>
+            <tr><td>6</td><td>24</td><td>25</td><td>5</td></tr>
+            <tr><td>7</td><td>26</td><td>24</td><td>12</td></tr>
+            <tr><td>8</td><td>26</td><td>26</td><td>0</td></tr>
         </table>
 
-        <h3>Release Burnup Calculations</h3>
+        <h3>Forecast Calculations</h3>
         <table>
-            <tr>
-                <th>Metric</th>
-                <th>Your Calculation</th>
-            </tr>
-            <tr>
-                <td>Total points completed so far</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Original scope remaining (350 - completed)</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Total scope added over 8 sprints</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Adjusted total scope (350 + added scope)</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Adjusted remaining scope</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Average velocity (last 4 sprints)</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Average scope growth per sprint</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Net progress per sprint (velocity - scope growth)</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Sprints to completion (remaining ÷ net progress)</td>
-                <td></td>
-            </tr>
+            <tr><th>Metric</th><th>Your Calculation</th></tr>
+            <tr><td>Total points completed so far</td><td></td></tr>
+            <tr><td>Total scope added over 8 sprints</td><td></td></tr>
+            <tr><td>Average velocity (last 4 sprints)</td><td></td></tr>
+            <tr><td>Net progress per sprint (velocity - avg scope growth)</td><td></td></tr>
+            <tr><td>Sprint range to completion (optimistic / likely / conservative)</td><td></td></tr>
         </table>
 
         <div class="workspace">
-            <p>How does accounting for scope growth change the forecast compared to using raw velocity alone?</p>
+            <p>How does scope growth change the forecast vs. raw velocity? What does this say about early commitments?</p>
         </div>
     </div>
 
     <div class="card">
-        <h2><span class="step-number">3</span> Buffer Decision Exercise (Group Consensus)</h2>
-        <p><span class="timer">10 minutes</span></p>
-        <p>As a group, debate and decide on a buffer strategy. The Product Owner should advocate for scope protection while the Scrum Master raises process risks. The team must reach consensus — buffer decisions affect everyone.</p>
+        <h2><span class="step-number">3</span> Buffer Strategy &amp; Stakeholder Presentation</h2>
+        <p><span class="timer">15 minutes</span></p>
+        <p>Choose a buffer strategy and prepare your stakeholder presentation.</p>
 
+        <h3>Buffer Options</h3>
         <table>
-            <tr>
-                <th>Buffer Type</th>
-                <th>Size</th>
-                <th>Your Recommendation</th>
-                <th>Justification</th>
-            </tr>
-            <tr>
-                <td><strong>No buffer</strong></td>
-                <td>0 sprints</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><strong>Small buffer</strong> (10%)</td>
-                <td>~1 sprint</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><strong>Medium buffer</strong> (20%)</td>
-                <td>~2 sprints</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><strong>Feature buffer</strong></td>
-                <td>Cut 15% of scope</td>
-                <td></td>
-                <td></td>
-            </tr>
+            <tr><th>Buffer Type</th><th>What It Means</th><th>Your Recommendation</th></tr>
+            <tr><td><strong>No buffer</strong></td><td>Use the most-likely forecast as-is</td><td></td></tr>
+            <tr><td><strong>Time buffer (20%)</strong></td><td>Add ~2 sprints to the conservative estimate</td><td></td></tr>
+            <tr><td><strong>Feature buffer</strong></td><td>Forecast must-haves only; treat 15% as stretch goals</td><td></td></tr>
         </table>
 
         <h3>Risk Factors to Consider</h3>
         <ul>
             <li>The team lost a developer in Sprint 6 (replaced in Sprint 7)</li>
-            <li>A major integration with a 3rd-party payment processor is still unestimated</li>
-            <li>Holiday season will reduce velocity for 2 sprints</li>
-            <li>Scope growth rate has been averaging ~5 points/sprint</li>
+            <li>A major 3rd-party integration is still unestimated</li>
+            <li>Scope growth has averaged ~5 points/sprint</li>
         </ul>
 
         <div class="workspace">
-            <p>Which buffer strategy do you recommend and why? Consider both time and feature buffers.</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <h2><span class="step-number">4</span> Quality Metrics Impact (Group Analysis)</h2>
-        <p><span class="timer">10 minutes</span></p>
-        <p>As a group, analyze how quality practices affect forecast reliability. Each team member should examine one or two metrics, then share their findings with the group to build a complete picture.</p>
-
-        <table>
-            <tr>
-                <th>Quality Metric</th>
-                <th>Sprint 1-4 Avg</th>
-                <th>Sprint 5-8 Avg</th>
-                <th>Trend</th>
-                <th>Impact on Forecast</th>
-            </tr>
-            <tr>
-                <td>Defects found per sprint</td>
-                <td>2.5</td>
-                <td>2.0</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Code coverage %</td>
-                <td>45%</td>
-                <td>72%</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Stories passing acceptance on first attempt</td>
-                <td>60%</td>
-                <td>85%</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Refactoring stories per sprint</td>
-                <td>0</td>
-                <td>1-2</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Velocity trend</td>
-                <td>17.25</td>
-                <td>24.5</td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-
-        <div class="workspace">
-            <p>How did the introduction of refactoring stories and higher code coverage affect velocity? Is the team spending capacity on quality, and is it paying off?</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <h2><span class="step-number">5</span> Stakeholder Forecast Presentation (Group Deliverable)</h2>
-        <p><span class="timer">10 minutes</span></p>
-        <p>As a group, prepare a 2-minute stakeholder update. Assign a presenter (or rotate sections). The whole team contributes to the content — this simulates how an Agile team collectively owns their forecast and communicates it to leadership. Each group will present to the class.</p>
-
-        <div class="workspace">
-            <p><strong>Forecast Summary</strong> (fill in):<br><br>
-            "Based on [X sprints] of data, our team delivers approximately [Y] points per sprint. With [Z] points remaining and an average scope growth of [W] points per sprint, we forecast completion in [range] sprints. With a [buffer type] buffer, our recommended target date is [date]. The confidence level of this forecast is [high/medium/low] because [reasons]."</p>
-        </div>
-
-        <div class="workspace">
-            <p><strong>Key risks and mitigations</strong> you would highlight:</p>
-        </div>
-
-        <div class="workspace">
-            <p><strong>Alternative scenarios</strong> to present (scope cuts, date flexibility, team changes):</p>
+            <p><strong>Forecast summary:</strong> "Based on [X sprints] of data, our team delivers approximately [Y] points per sprint. With [Z] points remaining, we forecast completion in approximately [range] sprints. Our confidence level is [high/medium/low] because [reasons]."<br><br>
+            <strong>Key trade-offs:</strong> (scope flexibility, team capacity, risk factors)<br><br>
+            <strong>If asked to accelerate:</strong> (scope reduction options, NOT date promises)</p>
         </div>
     </div>
 
     <div class="card" style="border-left-color: #2f855a;">
-        <h2><span class="step-number">6</span> Team Presentations — Stakeholder Simulation</h2>
-        <p><span class="timer">20 minutes (5 min per team)</span></p>
-        <p>Each team presents their complete forecast to the class. The class acts as the executive leadership team. Cover:</p>
+        <h2><span class="step-number">4</span> Team Presentations — Stakeholder Simulation</h2>
+        <p><span class="timer">15 minutes (3-5 min per team)</span></p>
+        <p>Each team presents their forecast. The class acts as executive leadership:</p>
         <ul>
-            <li>Your forecast (with and without history) — show your work</li>
-            <li>Your recommended buffer strategy and justification</li>
-            <li>Your quality metrics analysis</li>
-            <li>Your stakeholder-ready forecast summary</li>
+            <li>Your forecast range — show your reasoning</li>
+            <li>Your buffer strategy and justification</li>
+            <li>Your stakeholder-ready summary</li>
         </ul>
-        <p>After each presentation, the "executive audience" asks questions: "Can you move the date up?" "What if we add more people?" "What's the risk if we skip the buffer?" The presenting team must respond as a unified group.</p>
+        <p>"Executives" ask tough questions: "Can we do more?" "What if we add people?" "What scope can we cut?" Respond with ranges, not promises.</p>
     </div>
 
     <div class="card warning-card">
         <h2>💡 Course Wrap-Up Discussion</h2>
         <ul>
-            <li>What was the most valuable estimation technique you learned in this course?</li>
+            <li>What was the most valuable estimation technique from this course?</li>
             <li>What is the first thing you will change when you return to your team?</li>
-            <li>How will you handle it when asked "Can you just give me a date?"</li>
-            <li>What metrics will you start tracking (or stop tracking) based on what you've learned?</li>
+            <li>How will you respond when asked "Just give me a date"?</li>
         </ul>
     </div>
 </body>

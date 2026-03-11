@@ -359,7 +359,7 @@
         <div class="slides">
 
             <!-- ============================================================ -->
-            <!-- TITLE SLIDE -->
+            <!-- SLIDE 1: TITLE SLIDE -->
             <!-- ============================================================ -->
             <section class="title-slide" data-background="linear-gradient(135deg, #2b6cb0 0%, #1a365d 100%)">
                 <h1>&#x1F52E; Forecasting</h1>
@@ -371,7 +371,7 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- MODULE OBJECTIVES -->
+            <!-- SLIDE 2: MODULE OBJECTIVES -->
             <!-- ============================================================ -->
             <section>
                 <h2>&#x1F3AF; Module Objectives</h2>
@@ -393,18 +393,8 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- SECTION: FORECASTING WITHOUT ANY HISTORY -->
+            <!-- SLIDE 3: THE COLD START CHALLENGE -->
             <!-- ============================================================ -->
-            <section>
-                <div class="section-header">
-                    <h2>&#x1F52E; Forecasting Without Any History</h2>
-                    <p>Starting from zero &mdash; new teams, new products, new domains</p>
-                </div>
-                <aside class="notes">
-                    This is one of the hardest situations in project management. A stakeholder asks "when will it be done?" and you have no velocity data, no past projects to reference, and possibly a brand new team. Let's explore practical strategies for this scenario.
-                </aside>
-            </section>
-
             <section>
                 <h2>&#x1F52E; The Cold Start Challenge</h2>
                 <div class="two-columns">
@@ -415,7 +405,7 @@
                             <li class="fragment">Unknown team dynamics and capacity</li>
                             <li class="fragment">Unfamiliar technology or domain</li>
                             <li class="fragment">Incomplete or evolving requirements</li>
-                            <li class="fragment">Pressure to commit to dates immediately</li>
+                            <li class="fragment">Stakeholder pressure for single-point date answers</li>
                         </ul>
                     </div>
                     <div class="architecture-box">
@@ -437,67 +427,45 @@
                 </aside>
             </section>
 
+            <!-- ============================================================ -->
+            <!-- SLIDE 4: COLD START STRATEGIES (merged Reference Projects + Thin-Slicing) -->
+            <!-- ============================================================ -->
             <section>
-                <h2>&#x1F52E; Reference Projects &amp; Expert Judgment</h2>
+                <h2>&#x1F52E; Cold Start Strategies: Reference Projects, Delphi &amp; Thin-Slicing</h2>
                 <div class="two-columns">
                     <div>
-                        <div class="card">
-                            <h4>&#x1F4CB; Reference Project Approach</h4>
+                        <div class="card" style="font-size: 0.85em;">
+                            <h4>&#x1F4CB; Reference Projects</h4>
                             <ol>
-                                <li class="fragment">Identify 2-3 <strong>similar past projects</strong> (size, domain, complexity)</li>
+                                <li class="fragment">Identify 2-3 <strong>similar past projects</strong></li>
                                 <li class="fragment">Gather actual duration and team size data</li>
-                                <li class="fragment">Adjust for <strong>known differences</strong> (technology, team experience)</li>
-                                <li class="fragment">Create a range: shortest reference to longest reference</li>
+                                <li class="fragment">Adjust for <strong>known differences</strong></li>
+                                <li class="fragment">Create a range: shortest to longest reference</li>
+                            </ol>
+                        </div>
+                        <div class="card fragment" style="font-size: 0.85em;">
+                            <h4>&#x1F9D1;&#x200D;&#x1F4BC; Delphi Technique</h4>
+                            <ol>
+                                <li>3-5 experts provide <strong>independent</strong> blind estimates</li>
+                                <li>Share anonymously, discuss outliers, re-estimate until <strong>convergence</strong></li>
                             </ol>
                         </div>
                     </div>
                     <div>
-                        <div class="card">
-                            <h4>&#x1F9D1;&#x200D;&#x1F4BC; Delphi Technique</h4>
-                            <ol>
-                                <li class="fragment">Assemble 3-5 experienced practitioners</li>
-                                <li class="fragment">Each provides <strong>independent</strong> estimate (blind)</li>
-                                <li class="fragment">Share results anonymously, discuss outliers</li>
-                                <li class="fragment">Re-estimate until <strong>convergence</strong> occurs</li>
-                            </ol>
+                        <div class="architecture-box">
+                            <h4>&#x1F3C3; Thin-Slicing: Run Before You Forecast</h4>
+                            <div class="process-flow">
+                                <div class="process-step fragment">Run 1-2<br/>Sprints</div>
+                                <div class="process-arrow fragment">&#x2192;</div>
+                                <div class="process-step fragment">Measure Actual<br/>Velocity</div>
+                                <div class="process-arrow fragment">&#x2192;</div>
+                                <div class="process-step fragment">Size Remaining<br/>Backlog</div>
+                                <div class="process-arrow fragment">&#x2192;</div>
+                                <div class="process-step fragment">Communicate<br/>Range</div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="highlight-box fragment">
-                    <strong>Pro Tip:</strong> The Delphi technique works because it reduces anchoring bias. The anonymity prevents the loudest voice from dominating the estimate, similar to how Planning Poker works at the story level.
-                </div>
-                <aside class="notes">
-                    Reference projects are your best friend when you have no team-specific data. Even if the projects aren't a perfect match, they provide a grounding point. The Delphi technique scales this up by leveraging multiple experts. Remind participants that Planning Poker, which they learned in the relative sizing module, is essentially Delphi applied at the story level.
-                </aside>
-            </section>
-
-            <section>
-                <h2>&#x1F52E; Thin-Slicing &amp; Monte Carlo Simulation</h2>
-                <div class="architecture-box">
-                    <h4>&#x1F3C3; Thin-Slicing: Run Before You Commit</h4>
-                    <div class="process-flow">
-                        <div class="process-step fragment">Run 1-2<br/>Sprints</div>
-                        <div class="process-arrow fragment">&#x2192;</div>
-                        <div class="process-step fragment">Measure Actual<br/>Velocity</div>
-                        <div class="process-arrow fragment">&#x2192;</div>
-                        <div class="process-step fragment">Size Remaining<br/>Backlog</div>
-                        <div class="process-arrow fragment">&#x2192;</div>
-                        <div class="process-step fragment">Build Initial<br/>Forecast</div>
-                        <div class="process-arrow fragment">&#x2192;</div>
-                        <div class="process-step fragment">Commit to<br/>Range</div>
-                    </div>
-                </div>
-                <div class="architecture-box fragment">
-                    <h4>&#x1F3B2; Monte Carlo Simulation Concepts</h4>
-                    <div class="two-columns">
-                        <div>
-                            <ul>
-                                <li>Run <strong>thousands of simulations</strong> using random sampling of historical throughput</li>
-                                <li>Each simulation produces a different completion date</li>
-                                <li>Aggregate results into a <strong>probability distribution</strong></li>
-                            </ul>
-                        </div>
-                        <div>
+                        <div class="architecture-box fragment">
+                            <h4>&#x1F3B2; Monte Carlo Simulation</h4>
                             <table>
                                 <thead><tr><th>Confidence</th><th>Completion</th></tr></thead>
                                 <tbody>
@@ -511,23 +479,13 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    Thin-slicing is the most practical approach for most teams. The idea is simple: don't commit to a delivery date until you have at least 1-2 sprints of actual data. This is a negotiation point with stakeholders — explain that the cost of running 2 sprints before committing is far less than the cost of committing to the wrong date. Monte Carlo simulations are powerful because they give probabilistic forecasts rather than single-point estimates. Even with just 3-4 sprints of data, you can run meaningful simulations.
+                    Reference projects are your best friend when you have no team-specific data. The Delphi technique reduces anchoring bias through anonymity — similar to Planning Poker at the story level. Thin-slicing is the most practical approach: don't forecast a delivery date until you have at least 1-2 sprints of actual data. Monte Carlo simulations give probabilistic forecasts — even with 3-4 sprints of data, you can run meaningful simulations. The cost of running 2 sprints before forecasting is far less than forecasting on the wrong date.
                 </aside>
             </section>
 
             <!-- ============================================================ -->
-            <!-- SECTION: FORECASTING USING HISTORICAL DATA -->
+            <!-- SLIDE 5: VELOCITY-BASED FORECASTING -->
             <!-- ============================================================ -->
-            <section>
-                <div class="section-header">
-                    <h2>&#x1F4C8; Forecasting Using Historical Data</h2>
-                    <p>Leveraging velocity trends, burndowns, and statistical confidence</p>
-                </div>
-                <aside class="notes">
-                    Now let's look at the much better scenario: when you HAVE historical data to work with. This is where forecasting becomes truly powerful. We'll explore velocity-based forecasting, burndown/burnup charts, and how to express forecasts as confidence intervals.
-                </aside>
-            </section>
-
             <section>
                 <h2>&#x1F4C8; Velocity-Based Forecasting</h2>
                 <div class="two-columns">
@@ -574,10 +532,13 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    Velocity-based forecasting is the bread and butter of Agile forecasting. The rolling average smooths out sprint-to-sprint variation. Using the best/average/worst from recent history gives a natural range. Emphasize that you should never cherry-pick your best sprint — that's a recipe for broken commitments. Also, if team composition changes significantly, your historical velocity may no longer be valid.
+                    Velocity-based forecasting is the bread and butter of Agile forecasting. The rolling average smooths out sprint-to-sprint variation. Using the best/average/worst from recent history gives a natural range. Emphasize that you should never cherry-pick your best sprint — that's a recipe for broken forecasts. Also, if team composition changes significantly, your historical velocity may no longer be valid.
                 </aside>
             </section>
 
+            <!-- ============================================================ -->
+            <!-- SLIDE 6: RELEASE BURNDOWN & BURNUP CHARTS -->
+            <!-- ============================================================ -->
             <section>
                 <h2>&#x1F4C8; Release Burndown &amp; Burnup Charts</h2>
                 <div class="two-columns">
@@ -614,6 +575,9 @@
                 </aside>
             </section>
 
+            <!-- ============================================================ -->
+            <!-- SLIDE 7: CONFIDENCE INTERVALS & RANGE-BASED COMMUNICATION -->
+            <!-- ============================================================ -->
             <section>
                 <h2>&#x1F4C8; Confidence Intervals &amp; Range-Based Communication</h2>
                 <div class="two-columns">
@@ -647,146 +611,92 @@
                     <strong>Stakeholder message template:</strong> "Based on our last 6 sprints, we forecast completion in <strong>5 to 7 sprints</strong> (10-14 weeks). We have moderate confidence in the 5-sprint target and high confidence in the 7-sprint target."
                 </div>
                 <aside class="notes">
-                    Confidence intervals are crucial for honest communication. Notice how the range widens as confidence increases — this is counterintuitive for some stakeholders. Help them understand that a narrow range means lower confidence. For contractual commitments, use the 85% or 95% interval. Also discuss when data goes stale — teams often keep using velocity data from months ago when the team and context have changed significantly. Rule of thumb: if more than 30% of the team has changed, treat it as a cold start. The stakeholder message template at the bottom gives participants a script they can use — always give a range and associate confidence levels with it.
+                    Confidence intervals are crucial for honest communication. Notice how the range widens as confidence increases — this is counterintuitive for some stakeholders. Help them understand that a narrow range means lower confidence. For contractual commitments, use the 85% or 95% interval. Also discuss when data goes stale — if more than 30% of the team has changed, treat it as a cold start. The stakeholder message template gives participants a script they can use — always give a range and associate confidence levels with it.
                 </aside>
             </section>
 
             <!-- ============================================================ -->
-            <!-- SECTION: DECIDING WHETHER TO BUFFER OR NOT TO BUFFER -->
+            <!-- SLIDE 8: BUFFER TYPES, SIZING & WHEN THEY HELP (merged) -->
             <!-- ============================================================ -->
             <section>
-                <div class="section-header">
-                    <h2>&#x1F6E1;&#xFE0F; Deciding Whether to Buffer</h2>
-                    <p>Schedule protection strategies &mdash; when they help and when they hide problems</p>
-                </div>
-                <aside class="notes">
-                    Buffers are a controversial topic in Agile. Some practitioners say they're essential for realistic planning; others say they mask dysfunction. The truth is nuanced. Let's explore when and how to use them effectively.
-                </aside>
-            </section>
-
-            <section>
-                <h2>&#x1F6E1;&#xFE0F; Buffer Types &amp; Sizing</h2>
+                <h2>&#x1F6E1;&#xFE0F; Buffer Strategies: Types, Sizing &amp; Trade-Offs</h2>
                 <div class="two-columns">
                     <div>
-                        <div class="card">
-                            <h4>&#x23F0; Time Buffers (Schedule Buffers)</h4>
+                        <div class="card" style="font-size: 0.85em;">
+                            <h4>&#x23F0; Time Buffers</h4>
                             <ul>
                                 <li class="fragment">Add extra <strong>sprints</strong> beyond the forecast</li>
-                                <li class="fragment">Absorb unexpected delays, scope additions</li>
                                 <li class="fragment">Typical: <strong>15-30%</strong> of estimated duration</li>
                                 <li class="fragment">Placed at <strong>end of release</strong>, not per sprint</li>
                             </ul>
                         </div>
-                        <div class="card warning fragment">
+                        <div class="card warning fragment" style="font-size: 0.85em;">
                             <h4>&#x1F4E6; Feature Buffers (Scope Buffers)</h4>
                             <ul>
-                                <li>Prioritize features into <strong>must-have / nice-to-have</strong></li>
-                                <li>Commit to must-haves, plan nice-to-haves as buffer</li>
-                                <li>If ahead of schedule: deliver bonus features</li>
-                                <li>If behind: cut nice-to-haves without missing the date</li>
+                                <li>Prioritize into <strong>must-have / nice-to-have</strong></li>
+                                <li>If ahead: deliver bonus features</li>
+                                <li>If behind: flex scope on nice-to-haves</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <div class="architecture-box">
-                            <h4>&#x1F4D0; Buffer Sizing Techniques</h4>
+                        <div class="card success fragment" style="font-size: 0.85em;">
+                            <h4>&#x2705; Buffers Help When...</h4>
+                            <ul>
+                                <li>Requirements are genuinely <strong>uncertain</strong></li>
+                                <li>External dependencies are <strong>outside your control</strong></li>
+                                <li>Team is new and velocity is <strong>still stabilizing</strong></li>
+                                <li>Buffer consumption is <strong>tracked and visible</strong></li>
+                            </ul>
+                        </div>
+                        <div class="card danger fragment" style="font-size: 0.85em;">
+                            <h4>&#x274C; Buffers Mask Problems When...</h4>
+                            <ul>
+                                <li>Team <strong>consistently</strong> uses 100% of buffers</li>
+                                <li>Buffers hide <strong>poor estimation discipline</strong></li>
+                                <li>Scope creep is <strong>accepted without discussion</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight-box info fragment">
+                    <strong>Critical Chain Approach:</strong> Remove individual task padding, aggregate it into a single project buffer at the end. This prevents Parkinson's Law (work expands to fill available time). Feature buffers are often the more Agile-friendly choice &mdash; they preserve the delivery date while allowing scope flexibility.
+                </div>
+                <aside class="notes">
+                    Explain the two main types of buffers. Time buffers add sprints; feature buffers add negotiable scope. Feature buffers are often more Agile-friendly because they preserve the delivery date while allowing scope flexibility. The Critical Chain approach pools all uncertainty into a single buffer, which is statistically more efficient. Buffers are a tool, not a crutch. If you always consume 100% of your buffer, you don't have a buffer — you have an estimation bias. Track buffer consumption as a separate metric.
+                </aside>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- SLIDE 9: QUALITY & TECHNICAL DEBT IMPACT ON FORECASTING (merged) -->
+            <!-- ============================================================ -->
+            <section>
+                <h2>&#x2705; Quality, Technical Debt &amp; Forecast Accuracy</h2>
+                <div class="two-columns">
+                    <div>
+                        <div class="architecture-box" style="font-size: 0.85em;">
+                            <h4>&#x1F4CA; Velocity Erosion Without Quality Investment</h4>
                             <table>
-                                <thead><tr><th>Method</th><th>Buffer Size</th></tr></thead>
+                                <thead>
+                                    <tr><th>Sprint</th><th>Velocity</th><th>New Features</th><th>Bugs+Debt</th><th>Effective %</th></tr>
+                                </thead>
                                 <tbody>
-                                    <tr class="fragment"><td><strong>Square Root of Sum of Squares</strong></td><td>&radic;(&Sigma; variance&sup2;)</td></tr>
-                                    <tr class="fragment"><td><strong>Percentage-based</strong></td><td>20-30% of duration</td></tr>
-                                    <tr class="fragment"><td><strong>Risk-adjusted</strong></td><td>Based on risk register</td></tr>
-                                    <tr class="fragment"><td><strong>Historical</strong></td><td>Based on past overruns</td></tr>
+                                    <tr class="fragment"><td>Sprint 1</td><td>28</td><td>24</td><td>4</td><td style="color: var(--success-color); font-weight: bold;">86%</td></tr>
+                                    <tr class="fragment"><td>Sprint 4</td><td>26</td><td>18</td><td>8</td><td style="color: var(--warning-color); font-weight: bold;">69%</td></tr>
+                                    <tr class="fragment"><td>Sprint 8</td><td>24</td><td>12</td><td>12</td><td style="color: var(--danger-color); font-weight: bold;">50%</td></tr>
+                                    <tr class="fragment"><td>Sprint 12</td><td>22</td><td>8</td><td>14</td><td style="color: var(--danger-color); font-weight: bold;">36%</td></tr>
                                 </tbody>
                             </table>
                         </div>
-                        <div class="highlight-box info fragment">
-                            <strong>Critical Chain Approach:</strong> Remove individual task padding, aggregate it into a single project buffer at the end. This prevents Parkinson's Law (work expands to fill available time).
-                        </div>
-                    </div>
-                </div>
-                <aside class="notes">
-                    Explain the two main types of buffers. Time buffers add sprints; feature buffers add negotiable scope. Feature buffers are often more Agile-friendly because they preserve the delivery date while allowing scope flexibility — which is what Agile is all about. The Critical Chain approach from Eliyahu Goldratt is particularly interesting: instead of each task having its own padding, you pool all the uncertainty into a single buffer at the project level, which is statistically more efficient.
-                </aside>
-            </section>
-
-            <section>
-                <h2>&#x1F6E1;&#xFE0F; When Buffers Help vs. When They Mask Problems</h2>
-                <div class="vs-container">
-                    <div class="card success">
-                        <h4>&#x2705; Buffers Help When...</h4>
-                        <ul>
-                            <li class="fragment">Requirements are genuinely <strong>uncertain</strong></li>
-                            <li class="fragment">External dependencies are <strong>outside your control</strong></li>
-                            <li class="fragment">Team is new and velocity is <strong>still stabilizing</strong></li>
-                            <li class="fragment">Buffer consumption is <strong>tracked and visible</strong></li>
-                        </ul>
-                    </div>
-                    <div class="vs-divider">vs</div>
-                    <div class="card danger">
-                        <h4>&#x274C; Buffers Mask Problems When...</h4>
-                        <ul>
-                            <li class="fragment">Team <strong>consistently</strong> uses 100% of buffers</li>
-                            <li class="fragment">Buffers hide <strong>poor estimation discipline</strong></li>
-                            <li class="fragment">Scope creep is <strong>accepted without discussion</strong></li>
-                            <li class="fragment">No one asks <strong>why</strong> buffers are consumed</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="architecture-box fragment">
-                    <h4>&#x1F4CB; Feature Buffer Example (MoSCoW)</h4>
-                    <table>
-                        <thead>
-                            <tr><th>Priority</th><th>Features</th><th>Points</th><th>Status</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td><span class="tag green">Must Have</span></td><td>User auth, dashboard, core reports</td><td>85</td><td>Committed</td></tr>
-                            <tr><td><span class="tag blue">Should Have</span></td><td>Advanced filters, export to PDF</td><td>30</td><td>Target</td></tr>
-                            <tr><td><span class="tag orange">Nice to Have</span></td><td>Custom themes, social sharing</td><td>25</td><td>Buffer scope</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <aside class="notes">
-                    This is the critical distinction. Buffers are a tool, not a crutch. If you always consume 100% of your buffer, you don't have a buffer — you have an estimation bias. Track buffer consumption as a separate metric. Feature buffers are particularly elegant because they align with Agile's core principle of prioritization. The conversation shifts from "we might be late" to "we will definitely deliver the must-haves on time, and we're targeting the should-haves as well." MoSCoW prioritization (Must/Should/Could/Won't) is a formal framework for this. If velocity is higher than expected, deliver bonus scope. If lower, cut Nice to Have and protect the date.
-                </aside>
-            </section>
-
-            <!-- ============================================================ -->
-            <!-- SECTION: ENSURING QUALITY -->
-            <!-- ============================================================ -->
-            <section>
-                <div class="section-header">
-                    <h2>&#x2705; Ensuring Quality</h2>
-                    <p>Why quality is an estimation input, not an afterthought</p>
-                </div>
-                <aside class="notes">
-                    Quality directly impacts forecasting accuracy. Teams that skip quality practices may appear faster in the short term but become slower and less predictable over time. Let's quantify this relationship.
-                </aside>
-            </section>
-
-            <section>
-                <h2>&#x2705; Quality as an Estimation Input</h2>
-                <div class="two-columns">
-                    <div>
-                        <div class="card danger">
-                            <h4>&#x1F4C9; Low Quality Impact</h4>
-                            <ul>
-                                <li class="fragment"><strong>Technical debt</strong> accumulates, slowing velocity sprint over sprint</li>
-                                <li class="fragment"><strong>Defect rates</strong> rise, consuming capacity for rework</li>
-                                <li class="fragment"><strong>Unpredictable velocity</strong> &mdash; some sprints are dominated by bug fixing</li>
-                                <li class="fragment">Estimates become <strong>unreliable</strong> because "done" keeps getting redefined</li>
-                            </ul>
-                        </div>
                     </div>
                     <div>
-                        <div class="card success">
-                            <h4>&#x1F4C8; High Quality Impact</h4>
-                            <ul>
-                                <li class="fragment"><strong>Stable velocity</strong> &mdash; consistent throughput sprint to sprint</li>
-                                <li class="fragment"><strong>Low rework</strong> &mdash; features stay "done"</li>
-                                <li class="fragment"><strong>Predictable capacity</strong> &mdash; team works on planned items, not firefighting</li>
-                                <li class="fragment">Forecasts are <strong>trustworthy</strong> because delivery is consistent</li>
-                            </ul>
+                        <div class="card danger fragment" style="font-size: 0.85em;">
+                            <h4>&#x1F4C9; Low Quality</h4>
+                            <p style="margin: 0;">Technical debt accumulates, defect rates rise, velocity becomes unpredictable, "done" keeps getting redefined</p>
+                        </div>
+                        <div class="card success fragment" style="font-size: 0.85em;">
+                            <h4>&#x1F4C8; High Quality</h4>
+                            <p style="margin: 0;">Stable velocity, low rework, predictable capacity, trustworthy forecasts</p>
                         </div>
                     </div>
                 </div>
@@ -794,300 +704,183 @@
                     <span class="label">The Quality-Velocity Relationship</span>
                     Effective Velocity = Measured Velocity &minus; (Defect Fix Rate &times; Avg Points per Defect)
                 </div>
-                <aside class="notes">
-                    This slide makes the case that quality is not separate from estimation — it's a core input. A team with 30 story points velocity but spending 8 points on defect fixes has an effective velocity of 22 for new features. If stakeholders are asking "when will feature X ship?" they care about effective velocity, not raw velocity. Track both and make the distinction visible.
-                </aside>
-            </section>
-
-            <section>
-                <h2>&#x2705; Technical Debt, Defect Rates &amp; Forecast Protection</h2>
-                <div class="two-columns">
-                    <div class="architecture-box">
-                        <h4>&#x1F4CA; Velocity Erosion Over Time</h4>
-                        <table>
-                            <thead>
-                                <tr><th>Sprint</th><th>Velocity</th><th>New Features</th><th>Bugs+Debt</th><th>Effective %</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr class="fragment"><td>Sprint 1</td><td>28</td><td>24</td><td>4</td><td style="color: var(--success-color); font-weight: bold;">86%</td></tr>
-                                <tr class="fragment"><td>Sprint 4</td><td>26</td><td>18</td><td>8</td><td style="color: var(--warning-color); font-weight: bold;">69%</td></tr>
-                                <tr class="fragment"><td>Sprint 8</td><td>24</td><td>12</td><td>12</td><td style="color: var(--danger-color); font-weight: bold;">50%</td></tr>
-                                <tr class="fragment"><td>Sprint 12</td><td>22</td><td>8</td><td>14</td><td style="color: var(--danger-color); font-weight: bold;">36%</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div style="font-size: 0.8em;">
-                        <div class="card success fragment">
-                            <h4>&#x1F6E0;&#xFE0F; Prevention</h4>
-                            <p style="margin: 0;">Strong DoD, code reviews, TDD, CI</p>
-                        </div>
-                        <div class="card fragment">
-                            <h4>&#x1F4CA; Detection</h4>
-                            <p style="margin: 0;">Defect escape rate, stories reopened</p>
-                        </div>
-                        <div class="card warning fragment">
-                            <h4>&#x1F504; Correction</h4>
-                            <p style="margin: 0;">Debt paydown capacity, forecast adjustments</p>
-                        </div>
-                    </div>
-                </div>
                 <div class="highlight-box fragment">
-                    <strong>Key Insight:</strong> The most predictable teams invest 15-20% of each sprint in quality and technical health. This investment <em>increases</em> forecast accuracy by maintaining stable velocity. By Sprint 12 without this investment, a 3x forecasting overrun is common.
+                    <strong>Key Insight:</strong> The most predictable teams invest 15-20% of each sprint in quality and technical health. This investment <em>increases</em> forecast accuracy by maintaining stable velocity. Quality practices are <strong>forecast protection</strong>, not overhead.
                 </div>
                 <aside class="notes">
-                    This table tells a powerful story. Show how the percentage of capacity going to new features steadily declines as technical debt and defects accumulate. This is why cutting corners on quality is a false economy — you pay for it with interest. Frame quality practices as forecast protection, not overhead. When stakeholders push back on time spent on code reviews or testing, reframe it: "This is what makes our forecasts reliable." The 15-20% investment figure comes from industry data — teams that invest this amount maintain more stable velocity and more accurate forecasts.
+                    This table tells a powerful story. Show how the percentage of capacity going to new features steadily declines as technical debt and defects accumulate. A team with 30 story points velocity but spending 8 points on defect fixes has an effective velocity of 22 for new features. When stakeholders push back on time for code reviews or testing, reframe it: "This is what makes our forecasts reliable." The 15-20% investment figure comes from industry data.
                 </aside>
             </section>
 
             <!-- ============================================================ -->
-            <!-- SECTION: UNDERSTANDING WHAT TO MEASURE AND WHEN -->
+            <!-- SLIDE 10: LEADING VS. LAGGING INDICATORS & MEASUREMENT CADENCE (merged) -->
             <!-- ============================================================ -->
             <section>
-                <div class="section-header">
-                    <h2>&#x1F4CA; Understanding What to Measure and When</h2>
-                    <p>Choosing the right metrics at the right cadence</p>
-                </div>
-                <aside class="notes">
-                    Measurement is critical for forecasting, but measuring the wrong things — or the right things at the wrong time — can be worse than not measuring at all. Let's build a measurement strategy that supports accurate forecasting.
-                </aside>
-            </section>
-
-            <section>
-                <h2>&#x1F4CA; Leading vs. Lagging Indicators</h2>
+                <h2>&#x1F4CA; Metrics: Leading vs. Lagging &amp; Measurement Cadence</h2>
                 <div class="two-columns">
-                    <div class="card success">
+                    <div class="card success" style="font-size: 0.85em;">
                         <h4>&#x27A1;&#xFE0F; Leading Indicators (Predictive)</h4>
-                        <p style="font-size: 0.8em; color: #718096;">Tell you what's <strong>about to happen</strong></p>
                         <ul>
-                            <li class="fragment"><strong>Sprint backlog readiness</strong> &mdash; are stories refined and estimated?</li>
-                            <li class="fragment"><strong>WIP count</strong> &mdash; too many items in progress signals problems ahead</li>
+                            <li class="fragment"><strong>Sprint backlog readiness</strong> &mdash; stories refined and estimated?</li>
+                            <li class="fragment"><strong>WIP count</strong> &mdash; too many items in progress signals problems</li>
                             <li class="fragment"><strong>Blocked item count</strong> &mdash; impediments predict velocity drops</li>
                             <li class="fragment"><strong>Team confidence vote</strong> &mdash; how the team feels about the sprint goal</li>
-                            <li class="fragment"><strong>Code review queue depth</strong> &mdash; bottlenecks forming</li>
                         </ul>
                     </div>
-                    <div class="card">
+                    <div class="card" style="font-size: 0.85em;">
                         <h4>&#x2B05;&#xFE0F; Lagging Indicators (Reflective)</h4>
-                        <p style="font-size: 0.8em; color: #718096;">Tell you what <strong>already happened</strong></p>
                         <ul>
                             <li class="fragment"><strong>Velocity</strong> &mdash; what the team actually delivered</li>
                             <li class="fragment"><strong>Sprint goal success rate</strong> &mdash; met or missed?</li>
                             <li class="fragment"><strong>Defect count</strong> &mdash; quality of delivered work</li>
                             <li class="fragment"><strong>Cycle time</strong> &mdash; how long items took to complete</li>
-                            <li class="fragment"><strong>Forecast accuracy</strong> &mdash; predicted vs. actual delivery</li>
                         </ul>
                     </div>
                 </div>
-                <div class="highlight-box fragment">
-                    <strong>Balanced Approach:</strong> Use leading indicators to <em>steer</em> during a sprint. Use lagging indicators to <em>learn</em> after a sprint. Both feed into better forecasts.
-                </div>
-                <aside class="notes">
-                    Leading indicators are like the windshield of a car — they help you see what's coming. Lagging indicators are the rearview mirror — they show where you've been. You need both for good forecasting. Many teams only track lagging indicators (velocity, defects) and are surprised by problems. If you also track leading indicators like WIP and blocked items, you can predict velocity problems before they show up in the numbers.
-                </aside>
-            </section>
-
-            <section>
-                <h2>&#x1F4CA; Vanity vs. Actionable Metrics &amp; Measurement Cadence</h2>
-                <div class="two-columns">
-                    <div class="architecture-box">
-                        <h4>Vanity vs. Actionable</h4>
-                        <table style="font-size: 0.75em;">
-                            <thead>
-                                <tr><th>Vanity</th><th>Actionable Alternative</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr class="fragment"><td>Total stories completed</td><td><strong>Points + value delivered</strong></td></tr>
-                                <tr class="fragment"><td>Lines of code written</td><td><strong>Features shipped</strong></td></tr>
-                                <tr class="fragment"><td>Team utilization %</td><td><strong>Throughput (items/wk)</strong></td></tr>
-                                <tr class="fragment"><td>Velocity always increasing</td><td><strong>Velocity stability</strong></td></tr>
-                                <tr class="fragment"><td>Bug count = 0</td><td><strong>Defect escape rate</strong></td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="architecture-box">
-                        <h4>&#x1F4C5; When to Measure What</h4>
-                        <table style="font-size: 0.75em;">
-                            <thead>
-                                <tr><th>Cadence</th><th>Metrics</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr class="fragment"><td><strong>Daily</strong></td><td>WIP, blocked items, burndown</td></tr>
-                                <tr class="fragment"><td><strong>Per Sprint</strong></td><td>Velocity, defects, cycle time</td></tr>
-                                <tr class="fragment"><td><strong>Per Release</strong></td><td>Burnup, scope change %</td></tr>
-                                <tr class="fragment"><td><strong>Quarterly</strong></td><td>Velocity trends, accuracy</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="architecture-box fragment">
+                    <h4>&#x1F4C5; When to Measure What</h4>
+                    <table style="font-size: 0.75em;">
+                        <thead>
+                            <tr><th>Cadence</th><th>Metrics</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Daily</strong></td><td>WIP, blocked items, burndown</td></tr>
+                            <tr><td><strong>Per Sprint</strong></td><td>Velocity, defects, cycle time</td></tr>
+                            <tr><td><strong>Per Release</strong></td><td>Burnup, scope change %</td></tr>
+                            <tr><td><strong>Quarterly</strong></td><td>Velocity trends, forecast accuracy</td></tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div class="highlight-box warning fragment">
-                    <strong>Goodhart's Law:</strong> "When a measure becomes a target, it ceases to be a good measure." Measure at the cadence where you can <em>act</em> on the data &mdash; otherwise you create noise and dashboard fatigue.
+                    <strong>Goodhart's Law:</strong> "When a measure becomes a target, it ceases to be a good measure." Use leading indicators to <em>steer</em> during a sprint; lagging indicators to <em>learn</em> after a sprint. Both feed into better forecasts.
                 </div>
                 <aside class="notes">
-                    Walk through the vanity vs. actionable table as a critical thinking exercise. The Goodhart's Law quote explains why velocity should never be a performance metric — the moment you reward higher velocity, you get point inflation. For the cadence table: daily metrics should be lightweight standup items, sprint metrics feed retrospectives, release metrics are for stakeholders, and quarterly is strategic. If you can't act on a metric at a given cadence, don't track it at that cadence.
+                    Leading indicators are like the windshield of a car — they help you see what's coming. Lagging indicators are the rearview mirror — they show where you've been. You need both for good forecasting. Many teams only track lagging indicators and are surprised by problems. For the cadence table: daily metrics should be lightweight standup items, sprint metrics feed retrospectives, release metrics are for stakeholders, and quarterly is strategic. If you can't act on a metric at a given cadence, don't track it at that cadence. Velocity should never be a performance metric — the moment you reward higher velocity, you get point inflation.
                 </aside>
             </section>
 
             <!-- ============================================================ -->
-            <!-- SECTION: REFACTORING FORMALIZED AND MEASURED -->
+            <!-- SLIDE 11: VANITY VS. ACTIONABLE METRICS -->
             <!-- ============================================================ -->
             <section>
-                <div class="section-header">
-                    <h2>&#x1F527; Refactoring Formalized and Measured</h2>
-                    <p>Making technical improvement visible, planned, and tracked</p>
+                <h2>&#x1F4CA; Vanity vs. Actionable Metrics</h2>
+                <div class="architecture-box">
+                    <table>
+                        <thead>
+                            <tr><th>Vanity Metric</th><th>Actionable Alternative</th><th>Why It Matters for Forecasting</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr class="fragment"><td>Total stories completed</td><td><strong>Points + value delivered</strong></td><td>Value throughput, not just count</td></tr>
+                            <tr class="fragment"><td>Lines of code written</td><td><strong>Features shipped</strong></td><td>Outcomes over output</td></tr>
+                            <tr class="fragment"><td>Team utilization %</td><td><strong>Throughput (items/wk)</strong></td><td>100% utilization kills predictability</td></tr>
+                            <tr class="fragment"><td>Velocity always increasing</td><td><strong>Velocity stability</strong></td><td>Stable velocity = reliable forecasts</td></tr>
+                            <tr class="fragment"><td>Bug count = 0</td><td><strong>Defect escape rate</strong></td><td>Trend matters more than absolute</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="highlight-box fragment">
+                    <strong>Balanced Approach:</strong> Measure at the cadence where you can <em>act</em> on the data. Otherwise you create noise and dashboard fatigue. The best metrics drive <strong>conversations</strong>, not just charts.
                 </div>
                 <aside class="notes">
-                    Refactoring is essential for sustainable velocity, but it's often invisible to stakeholders. If it's invisible, it gets cut when schedules are tight — which is exactly when you need it most. Let's formalize it.
+                    Walk through the vanity vs. actionable table as a critical thinking exercise. The key insight is that velocity stability is more important than velocity growth — a team with consistent 25-point sprints produces better forecasts than a team swinging between 15 and 40. Stable throughput equals reliable forecasts.
                 </aside>
             </section>
 
+            <!-- ============================================================ -->
+            <!-- SLIDE 12: REFACTORING CAPACITY & ROI (merged) -->
+            <!-- ============================================================ -->
             <section>
-                <h2>&#x1F527; Allocating Capacity for Refactoring</h2>
+                <h2>&#x1F527; Refactoring: Capacity Allocation &amp; ROI</h2>
                 <div class="two-columns">
                     <div>
-                        <div class="card">
+                        <div class="card" style="font-size: 0.85em;">
                             <h4>&#x1F4CA; Capacity Allocation Models</h4>
                             <ul>
-                                <li class="fragment"><strong>Fixed percentage:</strong> Reserve 15-20% of each sprint for refactoring and tech debt</li>
-                                <li class="fragment"><strong>Dedicated sprints:</strong> Every 4th sprint is a "hardening" sprint (less Agile-friendly)</li>
+                                <li class="fragment"><strong>Fixed percentage:</strong> Reserve 15-20% of each sprint</li>
                                 <li class="fragment"><strong>Boy Scout Rule:</strong> Leave code better than you found it &mdash; baked into every story</li>
-                                <li class="fragment"><strong>Tech debt backlog:</strong> Prioritize refactoring items alongside features using business value</li>
+                                <li class="fragment"><strong>Tech debt backlog:</strong> Prioritize refactoring items alongside features</li>
                             </ul>
                         </div>
-                    </div>
-                    <div>
-                        <div class="highlight-box success fragment">
-                            <h4>&#x2705; Recommended Approach</h4>
-                            <p>Combine <strong>Boy Scout Rule</strong> (ongoing) with a <strong>15% capacity reserve</strong> (planned). This ensures continuous small improvements plus capacity for larger refactoring initiatives.</p>
-                        </div>
-                        <div class="highlight-box warning fragment">
+                        <div class="highlight-box warning fragment" style="font-size: 0.85em;">
                             <h4>&#x26A0;&#xFE0F; Anti-Pattern</h4>
                             <p>"We'll refactor after the release." This almost never happens. Technical debt must be addressed <strong>continuously</strong>, not deferred indefinitely.</p>
                         </div>
                     </div>
-                </div>
-                <aside class="notes">
-                    Walk through each allocation model. The fixed percentage approach is the most sustainable. Dedicated sprints feel good but often get cancelled under schedule pressure. The Boy Scout Rule is great for small improvements but doesn't address large-scale refactoring needs. The recommended combination gives you both. Emphasize the anti-pattern — "we'll refactor later" is the most common lie in software development.
-                </aside>
-            </section>
-
-            <section>
-                <h2>&#x1F527; Tracking Refactoring Impact &amp; ROI</h2>
-                <div class="two-columns">
-                    <div class="architecture-box">
-                        <h4>&#x1F4C8; Code Quality Metrics to Track</h4>
-                        <table>
-                            <thead><tr><th>Metric</th><th>What It Tells You</th></tr></thead>
-                            <tbody>
-                                <tr class="fragment"><td><strong>Cyclomatic Complexity</strong></td><td>Maintainability risk</td></tr>
-                                <tr class="fragment"><td><strong>Code Coverage</strong></td><td>Test safety net breadth</td></tr>
-                                <tr class="fragment"><td><strong>Code Duplication %</strong></td><td>DRY adherence</td></tr>
-                                <tr class="fragment"><td><strong>Build Time</strong></td><td>Feedback loop speed</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="architecture-box" style="font-size: 0.78em;">
-                        <h4>&#x1F4B0; ROI: 12-Sprint Comparison</h4>
-                        <ul style="margin: 8px 0;">
-                            <li><span style="color: var(--danger-color); font-weight: bold;">Without Refactoring:</span> Velocity 26 &rarr; 22 &rarr; 18 = <strong>264 pts</strong></li>
-                            <li><span style="color: var(--success-color); font-weight: bold;">With 15% Refactoring:</span> Velocity 22 &rarr; 23 &rarr; 24 = <strong>276 pts</strong></li>
-                        </ul>
+                    <div>
+                        <div class="architecture-box fragment" style="font-size: 0.85em;">
+                            <h4>&#x1F4B0; ROI: 12-Sprint Comparison</h4>
+                            <ul style="margin: 8px 0;">
+                                <li><span style="color: var(--danger-color); font-weight: bold;">Without Refactoring:</span> Velocity 26 &rarr; 22 &rarr; 18 = <strong>264 pts</strong></li>
+                                <li><span style="color: var(--success-color); font-weight: bold;">With 15% Refactoring:</span> Velocity 22 &rarr; 23 &rarr; 24 = <strong>276 pts</strong></li>
+                            </ul>
+                        </div>
+                        <div class="highlight-box success fragment" style="font-size: 0.85em;">
+                            <h4>&#x2705; Recommended Approach</h4>
+                            <p>Combine <strong>Boy Scout Rule</strong> (ongoing) with a <strong>15% capacity reserve</strong> (planned). The refactoring team delivers <em>more</em> total value over a release cycle with more predictable forecasts.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="highlight-box fragment">
-                    <strong>The Crossover Point:</strong> Refactoring produces <strong>lower initial velocity</strong> but <strong>higher sustained velocity</strong>. Over a release cycle, the refactoring team delivers <em>more</em> total value with more predictable forecasts. Make refactoring visible by creating backlog stories with clear acceptance criteria.
+                    <strong>The Crossover Point:</strong> Refactoring produces <strong>lower initial velocity</strong> but <strong>higher sustained velocity</strong>. Make refactoring visible by creating backlog stories with clear acceptance criteria.
                 </div>
                 <aside class="notes">
-                    This is the slide that wins stakeholders over. Each code quality metric connects to forecasting — high cyclomatic complexity means stories take longer, low coverage means higher defect risk. The ROI comparison shows the numbers side by side: the team that invests 15% in refactoring maintains stable velocity and actually delivers more points over 12 sprints. When refactoring is invisible, stakeholders think the team is slow. When it's visible in the backlog, they understand where the investment goes and why.
+                    Walk through each allocation model. The fixed percentage approach is the most sustainable. The Boy Scout Rule is great for small improvements but doesn't address large-scale refactoring needs. The recommended combination gives you both. The ROI comparison shows the numbers side by side: the team that invests 15% in refactoring maintains stable velocity and actually delivers more points over 12 sprints. When refactoring is invisible, stakeholders think the team is slow. When it's visible in the backlog, they understand where the investment goes and why.
                 </aside>
             </section>
 
             <!-- ============================================================ -->
-            <!-- SECTION: MEASURING TDD AND ATTD -->
+            <!-- SLIDE 13: TDD & ATTD METRICS AND IMPACT (merged) -->
             <!-- ============================================================ -->
             <section>
-                <div class="section-header">
-                    <h2>&#x1F9EA; Measuring TDD and ATTD</h2>
-                    <p>How testing practices improve estimation accuracy and predictability</p>
-                </div>
-                <aside class="notes">
-                    Test-Driven Development and Acceptance Test-Driven Development are powerful quality practices that have a direct, measurable impact on forecasting accuracy. Let's look at the metrics that prove this and how to track them.
-                </aside>
-            </section>
-
-            <section>
-                <h2>&#x1F9EA; TDD Metrics That Matter</h2>
+                <h2>&#x1F9EA; TDD &amp; ATTD: Metrics and Forecasting Impact</h2>
                 <div class="two-columns">
                     <div>
-                        <div class="architecture-box">
-                            <h4>&#x1F527; Test-Driven Development (TDD)</h4>
+                        <div class="architecture-box" style="font-size: 0.85em;">
+                            <h4>&#x1F527; TDD Metrics</h4>
                             <p style="font-size: 0.8em; color: #718096;">Write test first &rarr; Write code &rarr; Refactor</p>
                             <ul>
-                                <li class="fragment"><strong>Code coverage trend</strong> &mdash; should be stable at 70-90%</li>
-                                <li class="fragment"><strong>Test-to-code ratio</strong> &mdash; lines of test code vs. production code</li>
-                                <li class="fragment"><strong>Test execution time</strong> &mdash; fast feedback enables fast iteration</li>
-                                <li class="fragment"><strong>Defects in TDD'd code vs. non-TDD'd code</strong> &mdash; the comparison that proves the value</li>
+                                <li class="fragment"><strong>Code coverage trend</strong> &mdash; stable at 70-90%</li>
+                                <li class="fragment"><strong>Test execution time</strong> &mdash; fast feedback loop</li>
+                                <li class="fragment"><strong>Defects in TDD'd vs. non-TDD'd code</strong></li>
+                            </ul>
+                        </div>
+                        <div class="architecture-box fragment" style="font-size: 0.85em;">
+                            <h4>&#x2705; ATTD Metrics</h4>
+                            <ul>
+                                <li><strong>Acceptance test pass rate</strong> at sprint end</li>
+                                <li><strong>Stories reopened rate</strong> &mdash; should decrease with ATTD</li>
+                                <li><strong>Stakeholder acceptance rate</strong> in first review</li>
                             </ul>
                         </div>
                     </div>
                     <div>
                         <div class="architecture-box">
-                            <h4>&#x2705; Acceptance Test-Driven Development (ATTD)</h4>
-                            <p style="font-size: 0.8em; color: #718096;">Define acceptance criteria as executable tests before coding</p>
-                            <ul>
-                                <li class="fragment"><strong>Acceptance test pass rate</strong> &mdash; % passing at sprint end</li>
-                                <li class="fragment"><strong>Stories reopened rate</strong> &mdash; should decrease with ATTD</li>
-                                <li class="fragment"><strong>Acceptance criteria clarity</strong> &mdash; measured by refinement rework</li>
-                                <li class="fragment"><strong>Stakeholder acceptance rate</strong> &mdash; % accepted in first review</li>
-                            </ul>
+                            <h4>&#x1F4CA; Measured Impact (6+ months)</h4>
+                            <table style="font-size: 0.75em;">
+                                <thead>
+                                    <tr><th>Metric</th><th>Without</th><th>With TDD/ATTD</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="fragment"><td>Defect Escapes</td><td>15-25/rel</td><td style="color: var(--success-color); font-weight: bold;">3-8/rel</td></tr>
+                                    <tr class="fragment"><td>Stories Reopened</td><td>20-30%</td><td style="color: var(--success-color); font-weight: bold;">5-10%</td></tr>
+                                    <tr class="fragment"><td>Velocity Variance</td><td>&plusmn;35-50%</td><td style="color: var(--success-color); font-weight: bold;">&plusmn;10-20%</td></tr>
+                                    <tr class="fragment"><td>Avg. Cycle Time</td><td>5-8 days</td><td style="color: var(--success-color); font-weight: bold;">2-4 days</td></tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-                <div class="formula-box fragment">
-                    <span class="label">TDD Discipline Indicator</span>
-                    TDD Adherence = (Commits with Tests First) &divide; (Total Commits) &times; 100%
+                <div class="highlight-box success fragment">
+                    <strong>The Virtuous Cycle:</strong> Better tests &rarr; fewer defects &rarr; less rework &rarr; stable velocity &rarr; accurate forecasts &rarr; <strong>stakeholder trust</strong>. Velocity variance drops 2-3x with mature TDD/ATTD, enabling dramatically narrower forecast intervals.
                 </div>
                 <aside class="notes">
-                    Walk through each metric category. For TDD, code coverage is the most commonly tracked, but coverage alone doesn't tell you much — you need to look at the trend and combine it with defect data. The test-to-code ratio gives insight into testing discipline. For ATTD, the stories-reopened rate is a killer metric: if stories keep coming back because they didn't actually meet acceptance criteria, ATTD can dramatically reduce that. The TDD adherence formula helps measure whether the team is actually doing TDD or just writing tests after the fact.
+                    Walk through each metric category. For TDD, coverage alone doesn't tell you much — you need to look at the trend and combine it with defect data. For ATTD, the stories-reopened rate is a killer metric. The velocity variance row in the table is the most important for forecasting: reducing variance from plus/minus 50% to plus/minus 20% means your "most likely" forecast is dramatically more reliable. Don't mandate coverage targets — that leads to gaming behavior. Instead, track trends and the correlation with defect data.
                 </aside>
             </section>
 
-            <section>
-                <h2>&#x1F9EA; TDD/ATTD Impact on Forecasting</h2>
-                <div class="architecture-box">
-                    <h4>&#x1F4CA; Measured Impact Over Time</h4>
-                    <table style="font-size: 0.75em;">
-                        <thead>
-                            <tr><th>Metric</th><th>Without</th><th>With (6+ mo)</th><th>Forecast Effect</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr class="fragment"><td>Defect Escapes</td><td>15-25/rel</td><td style="color: var(--success-color); font-weight: bold;">3-8/rel</td><td>Less rework</td></tr>
-                            <tr class="fragment"><td>Stories Reopened</td><td>20-30%</td><td style="color: var(--success-color); font-weight: bold;">5-10%</td><td>Stable throughput</td></tr>
-                            <tr class="fragment"><td>Velocity Variance</td><td>&plusmn;35-50%</td><td style="color: var(--success-color); font-weight: bold;">&plusmn;10-20%</td><td>Narrower ranges</td></tr>
-                            <tr class="fragment"><td>Avg. Cycle Time</td><td>5-8 days</td><td style="color: var(--success-color); font-weight: bold;">2-4 days</td><td>Faster delivery</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="two-columns fragment">
-                    <div class="highlight-box">
-                        <h4>&#x1F3AF; Practical Recommendations</h4>
-                        <ul style="font-size: 0.85em;">
-                            <li>Track coverage <strong>trends</strong>, not absolute targets</li>
-                            <li>Measure defect escape rate <strong>per sprint</strong></li>
-                            <li>Compare velocity variance <strong>before and after</strong> TDD adoption</li>
-                            <li>Include test quality in <strong>Definition of Done</strong></li>
-                        </ul>
-                    </div>
-                    <div class="highlight-box success">
-                        <h4>&#x1F504; The Virtuous Cycle</h4>
-                        <p style="font-size: 0.85em;">Better tests &rarr; fewer defects &rarr; less rework &rarr; stable velocity &rarr; accurate forecasts &rarr; <strong>stakeholder trust</strong></p>
-                        <p style="font-size: 0.8em; margin-top: 10px;"><em>Velocity variance drops 2-3x with mature TDD/ATTD, enabling dramatically narrower forecast intervals.</em></p>
-                    </div>
-                </div>
-                <aside class="notes">
-                    This table is the evidence-based argument for TDD and ATTD. The velocity variance row is the most important for forecasting: reducing variance from plus/minus 50% to plus/minus 20% means your "most likely" forecast is dramatically more reliable. The virtuous cycle shows how testing practices cascade into forecasting accuracy. Don't mandate coverage targets — that leads to gaming behavior. Instead, track trends and the correlation with defect data. These numbers are based on industry studies — teams that adopt TDD/ATTD see these improvements after 6+ months of disciplined practice.
-                </aside>
-            </section>
-
+            <!-- ============================================================ -->
+            <!-- SLIDE 14: BUILDING RELEASE FORECASTS -->
+            <!-- ============================================================ -->
             <section>
                 <h2>&#x1F4CB; Building Release Forecasts</h2>
                 <div class="architecture-box">
@@ -1129,6 +922,9 @@
                 </aside>
             </section>
 
+            <!-- ============================================================ -->
+            <!-- SLIDE 15: CAPACITY PLANNING & COMMUNICATING FORECASTS -->
+            <!-- ============================================================ -->
             <section>
                 <h2>&#x1F4CB; Capacity Planning &amp; Communicating Forecasts</h2>
                 <div class="two-columns">
@@ -1159,7 +955,7 @@
                                 <li class="fragment">"We forecast completion between April 1-30, with highest confidence in the April 15-22 range."</li>
                                 <li class="fragment">"Based on current velocity, we need 5-7 sprints."</li>
                                 <li class="fragment">"Budget range: $220K-$280K based on scope."</li>
-                                <li class="fragment">"We commit to the top 30 stories and target all 40."</li>
+                                <li class="fragment">"We forecast the top 30 stories with high confidence, and target all 40 as a stretch."</li>
                             </ul>
                         </div>
                     </div>
@@ -1172,96 +968,56 @@
                 </aside>
             </section>
 
+            <!-- ============================================================ -->
+            <!-- SLIDE 16: EVIDENCE-BASED SCHEDULING & WHEN TO STOP ESTIMATING (merged) -->
+            <!-- ============================================================ -->
             <section>
-                <h2>&#x1F50D; Evidence-Based Scheduling: Replacing Estimates with Actuals</h2>
-                <div class="architecture-box">
-                    <h4>&#x1F4C8; The Estimation Maturity Journey</h4>
-                    <div class="process-flow">
-                        <div class="process-step fragment" style="background: var(--warning-color);">Pure<br/>Estimation</div>
-                        <div class="process-arrow fragment">&#x2192;</div>
-                        <div class="process-step fragment">Estimates +<br/>Velocity Data</div>
-                        <div class="process-arrow fragment">&#x2192;</div>
-                        <div class="process-step fragment">Evidence-Based<br/>Scheduling</div>
-                        <div class="process-arrow fragment">&#x2192;</div>
-                        <div class="process-step fragment" style="background: var(--success-color);">Throughput-Based<br/>Forecasting</div>
-                    </div>
-                </div>
-                <div class="two-columns fragment">
-                    <div class="architecture-box">
-                        <h4>&#x1F4CA; Estimate Accuracy by Story Size</h4>
-                        <table style="font-size: 0.85em;">
-                            <thead><tr><th>Story Size</th><th>Avg Actual</th><th>Accuracy</th></tr></thead>
-                            <tbody>
-                                <tr><td>1 point</td><td>1.1 pts</td><td style="color: var(--success-color);">90%</td></tr>
-                                <tr><td>2 points</td><td>2.3 pts</td><td style="color: var(--success-color);">85%</td></tr>
-                                <tr><td>5 points</td><td>6.5 pts</td><td style="color: var(--warning-color);">70%</td></tr>
-                                <tr><td>8 points</td><td>11.2 pts</td><td style="color: var(--danger-color);">60%</td></tr>
-                                <tr><td>13 points</td><td>19.5 pts</td><td style="color: var(--danger-color);">50%</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                        <div class="highlight-box">
-                            <h4>&#x1F504; Continuous Refinement</h4>
-                            <ul style="font-size: 0.85em;">
-                                <li>After each sprint, replace estimates with <strong>actuals</strong></li>
-                                <li>Track <strong>estimate vs. actual</strong> ratios &mdash; apply correction factors</li>
-                                <li>Forecast ranges <strong>narrow</strong> as data replaces assumptions</li>
-                                <li>Separate estimation from commitment</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="highlight-box warning fragment">
-                    <strong>Pattern:</strong> Larger stories are consistently underestimated. Splitting stories to 5 points or smaller improves both estimation accuracy and forecast reliability.
-                </div>
-                <aside class="notes">
-                    Walk through the maturity journey from pure estimation to throughput-based forecasting. The accuracy tracking table reveals a universal pattern: larger stories are much harder to estimate accurately. A 13-point story is typically underestimated by 50%. This is a powerful argument for story splitting. Also discuss correction factors: if your team consistently underestimates 5-point stories by 30%, apply a 1.3x correction factor. Forecasts naturally narrow as you accumulate actual data — this is expected and healthy.
-                </aside>
-            </section>
-
-            <section>
-                <h2>&#x1F50D; When to Stop Estimating</h2>
+                <h2>&#x1F50D; Evidence-Based Scheduling &amp; Throughput Forecasting</h2>
                 <div class="two-columns">
-                    <div class="card">
-                        <h4>&#x1F4CA; Throughput-Based Forecasting</h4>
-                        <p style="font-size: 0.85em;">Instead of estimating story points, simply <strong>count stories completed per sprint</strong>.</p>
-                        <ul style="font-size: 0.85em;">
-                            <li class="fragment"><strong>Throughput:</strong> 8-12 stories per sprint</li>
-                            <li class="fragment"><strong>Remaining:</strong> 45 stories in backlog</li>
-                            <li class="fragment"><strong>Forecast:</strong> 4-6 sprints</li>
-                        </ul>
-                        <div class="highlight-box success fragment">
-                            <strong>Works when:</strong>
-                            <ul style="font-size: 0.85em;">
-                                <li>Stories are consistently similar in size</li>
-                                <li>Team has stable throughput</li>
-                                <li>Estimation provides diminishing returns</li>
+                    <div>
+                        <div class="architecture-box">
+                            <h4>&#x1F4C8; The Estimation Maturity Journey</h4>
+                            <div class="process-flow" style="flex-direction: column; align-items: stretch;">
+                                <div class="process-step fragment" style="background: var(--warning-color);">Pure Estimation</div>
+                                <div class="process-step fragment">Estimates + Velocity Data</div>
+                                <div class="process-step fragment">Evidence-Based Scheduling</div>
+                                <div class="process-step fragment" style="background: var(--success-color);">Throughput-Based Forecasting</div>
+                            </div>
+                        </div>
+                        <div class="highlight-box fragment" style="font-size: 0.85em;">
+                            <h4>&#x1F504; Continuous Refinement</h4>
+                            <ul>
+                                <li>After each sprint, replace estimates with <strong>actuals</strong></li>
+                                <li>Track <strong>estimate vs. actual</strong> &mdash; apply correction factors</li>
+                                <li>Forecast ranges <strong>narrow</strong> as data replaces assumptions</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <div class="card warning fragment">
-                            <h4>&#x26A0;&#xFE0F; Keep Estimating When...</h4>
-                            <ul style="font-size: 0.85em;">
-                                <li>Story sizes vary dramatically (1 pt to 13 pts)</li>
-                                <li>Team is new and needs the estimation conversation for shared understanding</li>
-                                <li>Stakeholders require estimate-based forecasts</li>
-                                <li>Portfolio-level planning needs point-based capacity allocation</li>
+                        <div class="card fragment" style="font-size: 0.85em;">
+                            <h4>&#x1F4CA; Throughput-Based Forecasting</h4>
+                            <p>Instead of estimating story points, <strong>count stories completed per sprint</strong>.</p>
+                            <ul>
+                                <li><strong>Throughput:</strong> 8-12 stories/sprint</li>
+                                <li><strong>Remaining:</strong> 45 stories</li>
+                                <li><strong>Forecast:</strong> 4-6 sprints</li>
                             </ul>
+                            <div class="highlight-box success" style="margin-top: 10px;">
+                                <strong>Works when:</strong> stories are consistently similar in size, team has stable throughput, and estimation provides diminishing returns.
+                            </div>
                         </div>
-                        <div class="highlight-box fragment">
-                            <strong>The #NoEstimates Insight:</strong> Estimation has a cost. When throughput-based forecasting is equally accurate, the estimation overhead can be eliminated. But this only works for <strong>mature teams</strong> with <strong>consistent story sizing</strong>.
+                        <div class="highlight-box warning fragment" style="font-size: 0.85em;">
+                            <strong>Keep estimating when:</strong> story sizes vary dramatically, team is new, stakeholders require estimate-based forecasts, or portfolio planning needs point-based allocation.
                         </div>
                     </div>
                 </div>
                 <aside class="notes">
-                    This is a nuanced topic. The #NoEstimates movement argues that estimation is waste and throughput counting is sufficient. They have a point — for mature teams with well-refined backlogs of similarly-sized stories, counting items is simpler and equally accurate. But it doesn't work for every team. New teams benefit enormously from the estimation conversation — it builds shared understanding and surfaces assumptions. The answer is: use the right approach for your context. Most teams start with estimates and some eventually evolve to throughput-based forecasting.
+                    Walk through the maturity journey from pure estimation to throughput-based forecasting. Larger stories are consistently underestimated — a 13-point story is typically underestimated by 50%, which is a powerful argument for story splitting. The #NoEstimates movement argues that for mature teams with well-refined backlogs, counting items is simpler and equally accurate. But new teams benefit enormously from the estimation conversation. The answer is: use the right approach for your context. Most teams start with estimates and some evolve to throughput-based forecasting.
                 </aside>
             </section>
 
             <!-- ============================================================ -->
-            <!-- LAB CALLOUT SLIDE -->
+            <!-- SLIDE 17: LAB CALLOUT SLIDE -->
             <!-- ============================================================ -->
             <section class="lab-slide" data-background-color="#1a365d">
                 <h2>&#x1F9EA; Lab 7: Release Forecasting Workshop</h2>
@@ -1269,14 +1025,12 @@
                 <div class="lab-details">
                     <p><strong>In this lab, you will:</strong></p>
                     <ul>
-                        <li>Build a release forecast from a product backlog with story point estimates</li>
-                        <li>Create best-case, most-likely, and worst-case forecasts using historical velocity data</li>
-                        <li>Apply buffering strategies (time buffers and feature buffers) to protect your commitment</li>
-                        <li>Simulate scope changes mid-release and update your forecast accordingly</li>
-                        <li>Practice communicating your forecast with confidence intervals to a mock stakeholder audience</li>
-                        <li>Compare velocity-based forecasting with throughput-based forecasting on the same data set</li>
+                        <li>Build a forecast range — without history and with history</li>
+                        <li>Account for scope growth and its impact on net progress</li>
+                        <li>Debate buffer strategies (time buffers vs. feature buffers)</li>
+                        <li>Deliver a stakeholder-ready forecast — ranges and trade-offs, not date promises</li>
                     </ul>
-                    <p style="margin-top: 20px; font-size: 0.9em; color: rgba(255,255,255,0.85);"><strong>Duration:</strong> 80 minutes (60 min work + 20 min presentations) &nbsp;|&nbsp; <strong>Format:</strong> Teams of 4-5</p>
+                    <p style="margin-top: 20px; font-size: 0.9em; color: rgba(255,255,255,0.85);"><strong>Duration:</strong> 50 minutes (35 min work + 15 min presentations) &nbsp;|&nbsp; <strong>Format:</strong> Teams of 4-5</p>
                 </div>
                 <aside class="notes">
                     This is the capstone lab for the course. Teams will receive a realistic product backlog with velocity data and need to produce a release forecast. Halfway through, you'll introduce scope changes and ask them to re-forecast. The final deliverable is a stakeholder-ready forecast presentation. This lab synthesizes everything from the entire course — estimation, relative sizing, velocity, and forecasting. Give teams 30 minutes for the exercise and 15 minutes for presentations and discussion.
@@ -1284,62 +1038,34 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- COURSE SUMMARY & WRAP-UP -->
+            <!-- SLIDE 18: COURSE JOURNEY RECAP & TOP TAKEAWAYS (merged) -->
             <!-- ============================================================ -->
             <section>
-                <div class="section-header">
-                    <h2>&#x1F3C6; Course Summary &amp; Key Takeaways</h2>
-                    <p>Agile Project Estimation &mdash; Full Course Wrap-Up</p>
-                </div>
-                <aside class="notes">
-                    This is our final wrap-up for the entire 2-day course. Let's revisit what we've covered across all seven modules and distill the key takeaways that participants should carry forward into their daily work.
-                </aside>
-            </section>
-
-            <section>
-                <h2>&#x1F3C6; Course Journey Recap</h2>
+                <h2>&#x1F3C6; Course Journey Recap &amp; Top Takeaways</h2>
                 <div class="two-columns">
                     <div>
                         <div class="module-recap">
-                            <strong>Module 1: Agile Estimation</strong><br/>
-                            Agile means discipline. People over formulas. The Agile Microscope for examining work at multiple levels.
+                            <strong>Module 1: Agile Estimation</strong> &mdash; People over formulas. The Agile Microscope.
                         </div>
                         <div class="module-recap">
-                            <strong>Module 2: Why Plans Fail</strong><br/>
-                            Top reasons software planning fails. What makes a plan an Agile plan &mdash; embracing change rather than fighting it.
+                            <strong>Module 2: Why Plans Fail</strong> &mdash; Embracing change rather than fighting it.
                         </div>
                         <div class="module-recap">
-                            <strong>Module 3: Managing Requirements</strong><br/>
-                            Decomposing scope with epics, themes, and stories. INVEST criteria. Backlog grooming metrics. Spikes and "Get Smart" stories.
+                            <strong>Module 3: Managing Requirements</strong> &mdash; Epics, themes, stories. INVEST criteria. Spikes.
                         </div>
                         <div class="module-recap">
-                            <strong>Module 4: Relative Sizing Metrics</strong><br/>
-                            Story points, ideal days, Planning Poker. Calculating velocity. Business value metrics. Consequences of absolute estimation.
-                        </div>
-                    </div>
-                    <div>
-                        <div class="module-recap">
-                            <strong>Module 5: Using Scrum</strong><br/>
-                            Prioritization with relative ROI. Making corrections. Dealing with inaccurate estimates, missed goals, and changing requirements.
+                            <strong>Module 4: Relative Sizing</strong> &mdash; Story points, Planning Poker, velocity, business value.
                         </div>
                         <div class="module-recap">
-                            <strong>Module 6: Doing Scrum at Scale</strong><br/>
-                            Team metrics across multiple teams. Managing multiple product backlogs. Tracking historical trends.
+                            <strong>Module 5: Using Scrum</strong> &mdash; Prioritization with relative ROI. Making corrections.
+                        </div>
+                        <div class="module-recap">
+                            <strong>Module 6: Scrum at Scale</strong> &mdash; Multi-team metrics and multiple backlogs.
                         </div>
                         <div class="module-recap" style="border-left-color: var(--success-color);">
-                            <strong>Module 7: Forecasting</strong><br/>
-                            Cold start forecasting. Historical data. Buffers. Quality metrics. TDD/ATTD measurement. Evidence-based scheduling. Forecast refinement.
+                            <strong>Module 7: Forecasting</strong> &mdash; Cold start, historical data, buffers, quality, evidence-based scheduling.
                         </div>
                     </div>
-                </div>
-                <aside class="notes">
-                    Walk through each module briefly, reminding participants of the key theme from each. This reinforces the learning arc: we started with estimation fundamentals, moved through requirements and sizing, applied it within Scrum, scaled it up, and finished with forecasting. Each module built on the previous ones.
-                </aside>
-            </section>
-
-            <section>
-                <h2>&#x1F3C6; Top 7 Takeaways &amp; Your Toolkit</h2>
-                <div class="two-columns">
                     <div>
                         <div class="highlight-box" style="padding: 8px 14px; margin: 4px 0; font-size: 0.85em;">
                             <strong>1.</strong> Estimation is about <strong>shared understanding</strong>, not perfect prediction
@@ -1363,36 +1089,42 @@
                             <strong>7.</strong> Measure to <strong>improve</strong>, not judge &mdash; Goodhart's Law
                         </div>
                     </div>
-                    <div>
-                        <div class="architecture-box">
-                            <h4>&#x1F9F0; Your Estimation Toolkit</h4>
-                            <table style="font-size: 0.8em;">
-                                <thead><tr><th>Technique</th><th>Best For</th></tr></thead>
-                                <tbody>
-                                    <tr><td><strong>Planning Poker</strong></td><td>Story-level team consensus</td></tr>
-                                    <tr><td><strong>T-Shirt Sizing</strong></td><td>Quick epic/theme estimation</td></tr>
-                                    <tr><td><strong>Velocity Tracking</strong></td><td>Sprint capacity measurement</td></tr>
-                                    <tr><td><strong>Burnup Charts</strong></td><td>Release progress + scope visibility</td></tr>
-                                    <tr><td><strong>Monte Carlo</strong></td><td>Probabilistic forecasting</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
                 </div>
                 <aside class="notes">
-                    These seven takeaways distill the entire course into actionable principles. Read through each one and invite participants to share which resonated most with them. Ask: "Which of these will change how you work next week?" The toolkit table on the right maps techniques to use cases across the entire course — suggest participants save this as a quick reference guide. No single technique works for everything; the skill is knowing which tool to use in each context.
-
-                    Additional takeaways to mention verbally:
-                    - Smaller stories lead to more accurate estimates
-                    - Replace estimates with actuals as data becomes available
-                    - Forecasting accuracy improves with every sprint
-
-                    Additional toolkit items to mention:
-                    - Feature Buffers: Date protection with scope flex
-                    - Throughput: Best for mature teams with consistent sizing
+                    Walk through each module briefly, reminding participants of the key theme from each. The seven takeaways distill the entire course into actionable principles. Ask: "Which of these will change how you work next week?" Additional takeaways to mention verbally: smaller stories lead to more accurate estimates; replace estimates with actuals as data becomes available; forecasting accuracy improves with every sprint.
                 </aside>
             </section>
 
+            <!-- ============================================================ -->
+            <!-- SLIDE 19: YOUR ESTIMATION TOOLKIT -->
+            <!-- ============================================================ -->
+            <section>
+                <h2>&#x1F9F0; Your Estimation Toolkit</h2>
+                <div class="architecture-box">
+                    <table>
+                        <thead><tr><th>Technique</th><th>Best For</th><th>Key Benefit</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Planning Poker</strong></td><td>Story-level team consensus</td><td>Surfaces assumptions, reduces anchoring</td></tr>
+                            <tr><td><strong>T-Shirt Sizing</strong></td><td>Quick epic/theme estimation</td><td>Fast, low-overhead relative sizing</td></tr>
+                            <tr><td><strong>Velocity Tracking</strong></td><td>Sprint capacity measurement</td><td>Data-driven forecast foundation</td></tr>
+                            <tr><td><strong>Burnup Charts</strong></td><td>Release progress + scope visibility</td><td>Transparent scope change tracking</td></tr>
+                            <tr><td><strong>Monte Carlo</strong></td><td>Probabilistic forecasting</td><td>Confidence-based date ranges</td></tr>
+                            <tr><td><strong>Feature Buffers</strong></td><td>Date protection with scope flex</td><td>Preserves date, adapts scope</td></tr>
+                            <tr><td><strong>Throughput Counting</strong></td><td>Mature teams, consistent sizing</td><td>Eliminates estimation overhead</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="highlight-box fragment">
+                    <strong>No single technique works for everything.</strong> The skill is knowing which tool to use in each context. Start with the techniques that match your team's maturity level and evolve from there.
+                </div>
+                <aside class="notes">
+                    This toolkit table maps techniques to use cases across the entire course — suggest participants save this as a quick reference guide. Emphasize that context matters: new teams benefit from Planning Poker for the conversation it creates; mature teams may evolve past estimation entirely. The best practitioners have a full toolkit and select the right approach for each situation.
+                </aside>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- SLIDE 20: WHAT TO DO MONDAY MORNING -->
+            <!-- ============================================================ -->
             <section>
                 <h2>&#x1F3C6; What to Do Monday Morning</h2>
                 <div class="three-columns">
@@ -1433,7 +1165,7 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- QUESTIONS SLIDE -->
+            <!-- SLIDE 21: QUESTIONS -->
             <!-- ============================================================ -->
             <section data-background="linear-gradient(135deg, #2b6cb0 0%, #1a365d 100%)">
                 <div style="text-align: center; color: white;">

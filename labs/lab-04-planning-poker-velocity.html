@@ -57,7 +57,7 @@
             border-radius: 8px;
             padding: 1.5rem;
             margin: 1rem 0;
-            min-height: 120px;
+            min-height: 100px;
         }
         .workspace p { color: #718096; font-style: italic; }
         .timer { display: inline-block; background: var(--warning); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 600; font-size: 0.85rem; }
@@ -119,45 +119,31 @@
 </head>
 <body>
     <div class="lab-header">
-        <h1>🃏 Lab 4: Planning Poker &amp; Velocity Calculation Workshop</h1>
+        <h1>🃏 Lab 4: Planning Poker &amp; Velocity Workshop</h1>
         <div class="meta">
-            Module 4 — Agile Project Estimation | Duration: 75 minutes (60 min work + 15 min presentations) | Style: Group Workshop
+            Module 4 — Agile Project Estimation | Duration: 45 minutes (30 min work + 15 min presentations) | Style: Group Workshop
         </div>
     </div>
 
     <div class="card objective-card">
         <h2>🎯 Lab Objectives</h2>
         <ul>
-            <li>Practice a full Planning Poker estimation session as a Scrum team</li>
-            <li>Experience relative sizing firsthand — estimation is a team sport</li>
-            <li>Collaboratively calculate team velocity from historical sprint data</li>
-            <li>Work together to build and communicate release forecasts</li>
+            <li>Practice a Planning Poker estimation session as a Scrum team</li>
+            <li>Calculate team velocity and understand how it creates a forecast <em>range</em></li>
+            <li>Communicate uncertainty to stakeholders using ranges, not single dates</li>
         </ul>
     </div>
 
     <div class="card" style="border-left-color: #2b6cb0; background: #ebf8ff;">
         <h2>👥 Group Setup</h2>
-        <p>Form groups of 4-6 people — this is your Scrum team for the entire lab. Planning Poker only works as a group activity; the value comes from diverse perspectives revealing hidden complexity. Assign roles:</p>
-        <ul>
-            <li><strong>Product Owner:</strong> Reads stories aloud, answers clarifying questions about business intent</li>
-            <li><strong>Scrum Master:</strong> Facilitates the poker session, ensures fair process, tracks votes</li>
-            <li><strong>Developers (remaining members):</strong> Estimate, discuss, and challenge assumptions</li>
-        </ul>
-        <h3>Tools &amp; Presentation</h3>
-        <p><strong>Choose your tools:</strong> Your team decides how to run Planning Poker — physical cards, fingers, a digital tool, sticky notes, or anything else. For velocity calculations, use whatever works: whiteboard, spreadsheet, pen and paper. The method is your choice.</p>
-        <p><strong>Class presentation:</strong> At the end of the lab, each team presents their estimates, velocity calculations, and forecast to the class (3-5 minutes per team).</p>
-    </div>
+        <p>Form groups of 4-6 people. Assign: <strong>Product Owner</strong> (reads stories), <strong>Scrum Master</strong> (facilitates), <strong>Developers</strong> (estimate).</p>
+        <p><strong>Tools:</strong> Physical cards, fingers, digital tool, or sticky notes — your choice.</p>
+        <p><strong>Presentation:</strong> Each team presents estimates and forecast range (3-5 min per team).</p>
 
-    <div class="card">
-        <h2><span class="step-number">1</span> Reference Story Calibration</h2>
-        <p><span class="timer">10 minutes</span></p>
-        <p>Before playing Planning Poker, your team must agree on a <strong>reference story</strong>. Discuss this story together until everyone has a shared understanding — this calibration step is critical for consistent team estimation.</p>
-
-        <h3>Your Reference Story (Assign = 3 Story Points)</h3>
+        <h3>Reference Story (= 3 Story Points)</h3>
         <p><em>"As a new hire, I want to fill out and submit a personal information form so that HR has my contact details on file."</em></p>
-        <p>This is a well-understood, medium-small story. It involves: a form UI, form validation, database storage, and a confirmation message.</p>
+        <p>Involves: form UI, validation, database storage, confirmation message.</p>
 
-        <h3>Fibonacci Scale Reference</h3>
         <div class="poker-cards">
             <div class="poker-card">1</div>
             <div class="poker-card">2</div>
@@ -168,85 +154,45 @@
             <div class="poker-card">21</div>
             <div class="poker-card" style="border-color: var(--warning); color: var(--warning);">?</div>
         </div>
-        <p><strong>Rule of thumb:</strong> If a story is estimated at 13 or above, consider splitting it.</p>
     </div>
 
     <div class="card">
-        <h2><span class="step-number">2</span> Planning Poker Session</h2>
-        <p><span class="timer">25 minutes</span></p>
-        <p>Estimate the following backlog items using Planning Poker. Follow the process:</p>
-        <ol>
-            <li>Product Owner reads the story aloud</li>
-            <li>Team asks clarifying questions</li>
-            <li>Everyone simultaneously reveals their estimate</li>
-            <li>High and low estimators explain their reasoning</li>
-            <li>Re-vote if needed, then record the consensus</li>
-        </ol>
+        <h2><span class="step-number">1</span> Planning Poker Session</h2>
+        <p><span class="timer">15 minutes</span></p>
+        <p>Estimate stories: PO reads aloud, team asks questions, everyone reveals simultaneously, discuss high/low, re-vote if needed.</p>
 
-        <h3>Stories to Estimate</h3>
         <table>
             <tr>
                 <th>#</th>
                 <th>User Story</th>
-                <th>Round 1 Votes</th>
+                <th>Round 1</th>
                 <th>Discussion Notes</th>
-                <th>Final Estimate</th>
+                <th>Final</th>
             </tr>
             <tr>
                 <td>1</td>
-                <td>"As a new hire, I want to view my onboarding checklist so that I know what tasks I need to complete"</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>"As a new hire, I want to view my onboarding checklist so I know what tasks to complete"</td>
+                <td></td><td></td><td></td>
             </tr>
             <tr>
                 <td>2</td>
-                <td>"As a new hire, I want to electronically sign required compliance documents so that I don't need to print anything"</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>"As a new hire, I want to electronically sign compliance documents so I don't need to print anything"</td>
+                <td></td><td></td><td></td>
             </tr>
             <tr>
                 <td>3</td>
-                <td>"As a manager, I want to see a dashboard showing onboarding progress for all my new hires so that I can identify anyone who is falling behind"</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>"As a manager, I want a dashboard showing onboarding progress for my new hires"</td>
+                <td></td><td></td><td></td>
             </tr>
             <tr>
                 <td>4</td>
-                <td>"As an IT admin, I want the system to automatically create user accounts in Active Directory when a new hire is approved so that access is ready on day one"</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>"As an IT admin, I want the system to auto-create Active Directory accounts when a new hire is approved"</td>
+                <td></td><td></td><td></td>
             </tr>
             <tr>
                 <td>5</td>
-                <td>"As a new hire, I want to watch required training videos and track my completion so that HR knows I've finished mandatory training"</td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>"As an HR admin, I want to generate a report of all onboarding activities completed in the past month with export to CSV"</td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>"As a new hire, I want to set up direct deposit by entering my bank details securely so that I get paid on time"</td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>"As a system admin, I want email notifications sent automatically at key onboarding milestones so that everyone stays informed"</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>"As a system admin, I want email notifications sent at key onboarding milestones"</td>
+                <td></td><td></td><td></td>
             </tr>
         </table>
 
@@ -254,9 +200,8 @@
     </div>
 
     <div class="card">
-        <h2><span class="step-number">3</span> Velocity Calculation &amp; Forecasting</h2>
+        <h2><span class="step-number">2</span> Velocity &amp; Forecast Range</h2>
         <p><span class="timer">15 minutes</span></p>
-        <p>As a group, work through the following historical sprint data together. Divide the calculations among team members, then come together to build a shared forecast. Forecasting is a team responsibility — not a PM-only task.</p>
 
         <h3>Historical Sprint Data</h3>
         <div class="velocity-chart">
@@ -288,99 +233,33 @@
 
         <h3>Calculate</h3>
         <table>
-            <tr>
-                <th>Metric</th>
-                <th>Your Calculation</th>
-            </tr>
-            <tr>
-                <td>Average velocity (all 6 sprints)</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Average velocity (last 3 sprints)</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Best sprint velocity</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Worst sprint velocity</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Velocity range (worst to best)</td>
-                <td></td>
-            </tr>
+            <tr><th>Metric</th><th>Your Calculation</th></tr>
+            <tr><td>Average velocity (last 3 sprints — "yesterday's weather")</td><td></td></tr>
+            <tr><td>Velocity range (worst sprint to best sprint)</td><td></td></tr>
         </table>
 
-        <h3>Forecasting Exercise</h3>
-        <p>The remaining backlog has <strong>120 story points</strong>. Sprints are 2 weeks long. Calculate:</p>
+        <h3>Forecast Range</h3>
+        <p>Remaining backlog: <strong>120 story points</strong>. How many sprints could it take?</p>
         <table>
-            <tr>
-                <th>Forecast Scenario</th>
-                <th>Velocity Used</th>
-                <th>Sprints Needed</th>
-                <th>Calendar Weeks</th>
-            </tr>
-            <tr>
-                <td>Optimistic (best velocity)</td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Most Likely (avg last 3)</td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Pessimistic (worst velocity)</td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+            <tr><th>Scenario</th><th>Velocity Used</th><th>Sprints Needed</th></tr>
+            <tr><td>Optimistic (best velocity)</td><td></td><td></td></tr>
+            <tr><td>Most likely (recent average)</td><td></td><td></td></tr>
+            <tr><td>Conservative (worst velocity)</td><td></td><td></td></tr>
         </table>
 
         <div class="workspace">
-            <p>If a stakeholder asks "When will it be done?", how would you communicate this forecast range?</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <h2><span class="step-number">4</span> Group Reflection</h2>
-        <p><span class="timer">10 minutes</span></p>
-        <p>Discuss these questions as a team — the retrospective is where estimation improvement actually happens.</p>
-
-        <div class="workspace">
-            <p>What did your group observe during the Planning Poker session? Where did the biggest disagreements occur, and what did the discussion reveal about hidden assumptions?</p>
-        </div>
-
-        <div class="workspace">
-            <p>As a group, discuss: Why is "yesterday's weather" (using recent velocity) often more reliable than a 6-sprint average? How would your team communicate the forecast range to a stakeholder?</p>
+            <p>A stakeholder asks "When will it be done?" How does your team communicate this as a <strong>range with uncertainty</strong> rather than a single date commitment?</p>
         </div>
     </div>
 
     <div class="card" style="border-left-color: #2f855a;">
-        <h2><span class="step-number">5</span> Team Presentation to Class</h2>
+        <h2><span class="step-number">3</span> Team Presentation to Class</h2>
         <p><span class="timer">15 minutes (3-5 min per team)</span></p>
-        <p>Each team presents to the class. Cover:</p>
+        <p>Each team presents:</p>
         <ul>
-            <li>Your story point estimates — where did your team have the biggest debates?</li>
-            <li>Your velocity calculations and release forecast range</li>
-            <li>How you would communicate the forecast to a stakeholder</li>
-        </ul>
-        <p>Compare estimates across teams — did different groups arrive at similar numbers for the same stories? What drove the differences?</p>
-    </div>
-
-    <div class="card warning-card">
-        <h2>💡 Discussion Points</h2>
-        <ul>
-            <li>What happens when a team member consistently estimates much higher or lower than the group?</li>
-            <li>Should velocity be used as a performance metric? Why or why not?</li>
-            <li>How would you handle a story that the team cannot agree on (e.g., votes of 3, 5, and 21)?</li>
-            <li>What is the danger of committing to the "optimistic" forecast?</li>
+            <li>Your story point estimates — where did the biggest debates occur?</li>
+            <li>Your velocity range and forecast — present it as a range, not a date</li>
+            <li>How you would communicate uncertainty and trade-offs to stakeholders</li>
         </ul>
     </div>
 </body>

@@ -434,90 +434,67 @@
                 </aside>
             </section>
 
-            <!-- SLIDE 4: Cross-Team Velocity -->
+            <!-- SLIDE 4: Cross-Team Velocity & Aggregation (merged from original slides 4+5) -->
             <section>
                 <h2>&#x1F4CA; What Are the Team Metrics?</h2>
-                <h3>Cross-Team Velocity: Why You Cannot Compare</h3>
-                <div class="diagram-box">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Metric</th>
-                                <th>Team Alpha</th>
-                                <th>Team Beta</th>
-                                <th>Interpretation</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="fragment">
-                                <td><strong>Velocity</strong></td>
-                                <td>45 pts/sprint</td>
-                                <td>28 pts/sprint</td>
-                                <td>Incomparable &mdash; different calibration</td>
-                            </tr>
-                            <tr class="fragment">
-                                <td><strong>Team Size</strong></td>
-                                <td>8 people</td>
-                                <td>5 people</td>
-                                <td>Larger teams naturally produce more points</td>
-                            </tr>
-                            <tr class="fragment">
-                                <td><strong>Point Scale</strong></td>
-                                <td>1, 2, 3, 5, 8, 13</td>
-                                <td>1, 2, 3, 5, 8</td>
-                                <td>Different scales yield different totals</td>
-                            </tr>
-                            <tr class="fragment">
-                                <td><strong>Domain</strong></td>
-                                <td>Frontend UI</td>
-                                <td>Backend infrastructure</td>
-                                <td>Different complexity baselines</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="highlight-box danger fragment">
-                    <p><strong>The Cardinal Rule:</strong> Story points are a team-internal measure. Each team calibrates points to their own context, skill set, and reference stories. Comparing Team Alpha's 45 to Team Beta's 28 is like comparing kilometers to miles &mdash; the units look similar but measure differently.</p>
+                <h3>Cross-Team Velocity &amp; Aggregation</h3>
+                <div class="two-column">
+                    <div>
+                        <div class="diagram-box" style="max-width: 100%;">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Metric</th>
+                                        <th>Team Alpha</th>
+                                        <th>Team Beta</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="fragment">
+                                        <td><strong>Velocity</strong></td>
+                                        <td>45 pts/sprint</td>
+                                        <td>28 pts/sprint</td>
+                                    </tr>
+                                    <tr class="fragment">
+                                        <td><strong>Team Size</strong></td>
+                                        <td>8 people</td>
+                                        <td>5 people</td>
+                                    </tr>
+                                    <tr class="fragment">
+                                        <td><strong>Domain</strong></td>
+                                        <td>Frontend UI</td>
+                                        <td>Backend infra</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="highlight-box danger fragment">
+                            <p><strong>The Cardinal Rule:</strong> Story points are a team-internal measure. Comparing Team Alpha's 45 to Team Beta's 28 is like comparing kilometers to miles &mdash; the units look similar but measure differently.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="architecture-box fragment" style="border-left: 4px solid var(--danger-color);">
+                            <h4 style="color: var(--danger-color);">&#x26A0;&#xFE0F; Normalized Story Points</h4>
+                            <ul style="font-size: 0.75em;">
+                                <li>Attempt to create a "universal" point scale across teams</li>
+                                <li><strong>Dangers:</strong> False precision, encourages comparison, teams lose estimation ownership</li>
+                            </ul>
+                        </div>
+                        <div class="architecture-box fragment" style="border-left: 4px solid var(--success-color);">
+                            <h4 style="color: var(--success-color);">&#x2705; Better Alternatives</h4>
+                            <ul style="font-size: 0.75em;">
+                                <li><strong>Aggregate velocity:</strong> Sum of all team velocities for rough program-level forecasting &mdash; use as a trend, not an absolute</li>
+                                <li><strong>Story count:</strong> Less susceptible to calibration differences across teams</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <aside class="notes">
-                    This is one of the most important messages in the entire module. Walk through the table row by row. Team Alpha has 45 velocity and Team Beta has 28 - does that mean Alpha is more productive? Absolutely not. They have different team sizes, different point scales, and work in entirely different domains. A 5-point story for a frontend team might represent a completely different level of effort than a 5-point story for an infrastructure team. Each team's point scale is internally consistent but externally meaningless. When managers try to compare velocities across teams, it creates perverse incentives and destroys trust. Ask the class: has anyone experienced velocity being used as a performance comparison tool? What happened?
+                    This slide combines two critical concepts. First, cross-team velocity comparison: Team Alpha has 45 velocity and Team Beta has 28, but that does not mean Alpha is more productive. Different team sizes, different domains, different calibrations. When managers compare velocities across teams, it creates perverse incentives and destroys trust. Second, how to aggregate for program-level planning. Normalized story points are tempting but fragile, requiring constant recalibration and removing team autonomy. Better alternatives include aggregate velocity used as a trend line, and counting stories rather than points, which sidesteps the calibration problem entirely as long as teams split stories to roughly similar sizes.
                 </aside>
             </section>
 
-            <!-- SLIDE 5: Normalized Points & Aggregate Metrics -->
-            <section>
-                <h2>&#x1F4CA; What Are the Team Metrics?</h2>
-                <h3>Normalized Story Points &amp; Aggregate Metrics</h3>
-                <div class="vs-container">
-                    <div class="vs-box" style="border-left: 4px solid var(--danger-color);">
-                        <h4 style="color: var(--danger-color); margin-top: 0;">&#x26A0;&#xFE0F; Normalized Story Points</h4>
-                        <ul>
-                            <li class="fragment">Attempt to create a "universal" point scale across teams</li>
-                            <li class="fragment">Requires calibration sessions with reference stories</li>
-                            <li class="fragment"><strong>Dangers:</strong> Creates false precision, encourages comparison, adds overhead</li>
-                            <li class="fragment">Teams lose ownership of their estimation process</li>
-                        </ul>
-                    </div>
-                    <div class="vs-divider">vs</div>
-                    <div class="vs-box" style="border-left: 4px solid var(--success-color);">
-                        <h4 style="color: var(--success-color); margin-top: 0;">&#x2705; Aggregate Velocity</h4>
-                        <ul>
-                            <li class="fragment">Sum of all team velocities for rough program-level forecasting</li>
-                            <li class="fragment">Useful when teams have <em>similar</em> calibration (e.g., after SAFe PI Planning)</li>
-                            <li class="fragment"><strong>Benefits:</strong> Simple, directional, low overhead</li>
-                            <li class="fragment">Works best as a trend, not an absolute number</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="highlight-box fragment">
-                    <p><strong>Practical approach:</strong> If you must aggregate, use <em>story count</em> (number of stories completed) rather than story points. Story count is less susceptible to calibration differences, as long as teams follow similar story-splitting practices.</p>
-                </div>
-                <aside class="notes">
-                    Normalized story points are a tempting idea that rarely works well in practice. The concept is to have all teams agree on what a "5" means so you can add up points across teams. The problem is that this agreement is fragile. It requires constant recalibration, it removes teams' autonomy over their own estimation process, and it creates a false sense of precision. If Team Alpha says something is a 5 and Team Beta also says 5, management assumes those represent equal effort, but they rarely do. The better approach for program-level forecasting is aggregate velocity used as a trend line. If the sum of all team velocities has been around 200 for the last few PIs, you can plan around that range. Another option is to count stories rather than points, which sidesteps the calibration problem entirely as long as teams are splitting stories to roughly similar sizes.
-                </aside>
-            </section>
-
-            <!-- SLIDE 6: Team Health Metrics & Scrum of Scrums -->
+            <!-- SLIDE 5: Team Health Metrics & Scrum of Scrums -->
             <section>
                 <h2>&#x1F4CA; What Are the Team Metrics?</h2>
                 <h3>Team Health Metrics &amp; the Scrum of Scrums</h3>
@@ -557,7 +534,7 @@
                     <p><strong>The Scrum of Scrums:</strong> A coordination ceremony where one representative from each team shares: (1) What did we accomplish? (2) What are we doing next? (3) What impediments affect other teams? This is where <strong>dependency health</strong> metrics become visible at the program level.</p>
                 </div>
                 <aside class="notes">
-                    Beyond velocity, healthy teams track a constellation of metrics that paint a fuller picture. Predictability tells you how well the team estimates and plans. Team happiness is a leading indicator of future productivity problems. Quality measured through escaped defects reveals whether teams are cutting corners to maintain velocity. Cycle time is arguably more actionable than velocity because it shows where work gets stuck. Sprint stability measures mid-sprint scope changes, and at scale, dependency health becomes critical because blocked teams cascade delays. The Scrum of Scrums ceremony is where these metrics surface at the program level. Emphasize that the Scrum of Scrums is not a status meeting. It is a coordination and impediment-removal session focused on cross-team dependencies. In large organizations, this ceremony is the first line of defense against integration surprises.
+                    Beyond velocity, healthy teams track a constellation of metrics that paint a fuller picture. Predictability tells you how well the team estimates and plans. Team happiness is a leading indicator of future productivity problems. Quality measured through escaped defects reveals whether teams are cutting corners to maintain velocity. Cycle time is arguably more actionable than velocity because it shows where work gets stuck. Sprint stability measures mid-sprint scope changes, and at scale, dependency health becomes critical because blocked teams cascade delays. The Scrum of Scrums ceremony is where these metrics surface at the program level. Emphasize that the Scrum of Scrums is not a status meeting. It is a coordination and impediment-removal session focused on cross-team dependencies.
                 </aside>
             </section>
 
@@ -565,7 +542,7 @@
             <!-- SECTION: HOW MANY TEAMS?                                     -->
             <!-- ============================================================ -->
 
-            <!-- SLIDE 7: Scaling Frameworks Overview -->
+            <!-- SLIDE 6: Scaling Frameworks Overview -->
             <section>
                 <h2 class="section-divider">&#x1F3E2; How Many Teams?</h2>
                 <h3>Scaling Frameworks Overview</h3>
@@ -604,11 +581,11 @@
                     <p><strong>Key insight:</strong> The framework you choose directly impacts how estimation works at scale. SAFe normalizes estimation across teams; LeSS keeps team-level estimation intact; Nexus focuses on integration risk.</p>
                 </div>
                 <aside class="notes">
-                    Give a high-level overview of each framework without going too deep, since this is an estimation course, not a scaling frameworks course. The key point is that each framework makes different trade-offs that affect estimation. SAFe provides the most structure and explicitly addresses estimation through PI Planning, where teams collectively estimate and commit. SAFe is best for large enterprises needing structure. LeSS takes a minimalist approach, keeping Scrum mostly unchanged and letting teams self-organize around a shared backlog. LeSS is best for organizations valuing simplicity. Nexus is somewhere in between, with a dedicated integration team that helps coordinate. Nexus is best for mid-size multi-team products. Ask the class which frameworks they have encountered. Many organizations implement a hybrid or customized version. The important thing is understanding how each approach handles cross-team estimation and planning.
+                    Give a high-level overview of each framework without going too deep, since this is an estimation course, not a scaling frameworks course. The key point is that each framework makes different trade-offs that affect estimation. SAFe provides the most structure and explicitly addresses estimation through PI Planning, where teams collectively estimate and align on PI objectives. LeSS takes a minimalist approach, keeping Scrum mostly unchanged and letting teams self-organize around a shared backlog. Nexus is somewhere in between, with a dedicated integration team that helps coordinate. Ask the class which frameworks they have encountered. Many organizations implement a hybrid or customized version.
                 </aside>
             </section>
 
-            <!-- SLIDE 8: Feature Teams vs Component Teams & Communication Overhead -->
+            <!-- SLIDE 7: Feature Teams vs Component Teams -->
             <section>
                 <h2>&#x1F3E2; How Many Teams?</h2>
                 <h3>Feature Teams vs. Component Teams</h3>
@@ -637,91 +614,56 @@
                     <p><strong>Impact on estimation:</strong> Component teams turn every feature into a multi-team coordination problem. A story that one feature team can estimate as "8 points" becomes three separate stories across three component teams, each needing coordination. The total effort is almost always greater than the sum of parts due to integration and communication overhead.</p>
                 </div>
                 <aside class="notes">
-                    This is a critical architectural decision that directly impacts estimation complexity. Feature teams are generally preferred in modern Agile practice because they reduce dependencies. When a feature team estimates a user story, they are estimating the whole thing. They have all the skills needed to deliver it. With component teams, a single user story might require work from the frontend team, the API team, and the database team. Each team estimates their portion, but nobody estimates the integration work. The coordination cost is often invisible in the estimates but very real in execution. Ask the class: if you have three component teams and each estimates their portion of a feature at 5 points, is the total effort 15 points? Almost never. The actual effort is typically 20-25 points once you account for handoffs, integration testing, and communication overhead.
+                    This is a critical architectural decision that directly impacts estimation complexity. Feature teams are generally preferred in modern Agile practice because they reduce dependencies. When a feature team estimates a user story, they are estimating the whole thing. With component teams, a single user story might require work from the frontend team, the API team, and the database team. Each team estimates their portion, but nobody estimates the integration work. The coordination cost is often invisible in the estimates but very real in execution. Ask the class: if you have three component teams and each estimates their portion of a feature at 5 points, is the total effort 15 points? Almost never. The actual effort is typically 20-25 points once you account for handoffs, integration testing, and communication overhead.
                 </aside>
             </section>
 
-            <!-- SLIDE 9: Brooks' Law & Optimal Team Size -->
+            <!-- SLIDE 8: Brooks' Law, Team Size & When to Split (merged from original slides 9+10) -->
             <section>
                 <h2>&#x1F3E2; How Many Teams?</h2>
-                <h3>Brooks' Law &amp; Optimal Team Size</h3>
+                <h3>Brooks' Law, Team Size &amp; When to Split</h3>
                 <div class="two-column">
                     <div>
                         <div class="architecture-box">
                             <h4>&#x1F4D0; Brooks' Law</h4>
-                            <p style="font-size: 0.8em; font-style: italic; color: var(--heading-color);">"Adding manpower to a late software project makes it later."</p>
+                            <p style="font-size: 0.78em; font-style: italic; color: var(--heading-color);">"Adding manpower to a late software project makes it later."</p>
                             <div class="fragment">
-                                <p style="font-size: 0.75em;">The number of communication channels in a team:</p>
-                                <div class="formula">C = n(n - 1) / 2</div>
+                                <p style="font-size: 0.72em;">Communication channels: <span class="formula" style="font-size: 0.85em; padding: 8px 16px;">C = n(n - 1) / 2</span></p>
                             </div>
-                            <div class="fragment" style="font-size: 0.7em; margin-top: 10px;">
-                                <table>
-                                    <tr><td><strong>5 people</strong></td><td>10 channels</td></tr>
-                                    <tr><td><strong>7 people</strong></td><td>21 channels</td></tr>
-                                    <tr><td><strong>9 people</strong></td><td>36 channels</td></tr>
-                                    <tr><td><strong>12 people</strong></td><td>66 channels</td></tr>
-                                    <tr><td><strong>15 people</strong></td><td>105 channels</td></tr>
-                                </table>
+                            <div class="fragment" style="font-size: 0.68em; margin-top: 8px;">
+                                <strong>5 people</strong> = 10 channels &bull; <strong>7</strong> = 21 &bull; <strong>9</strong> = 36 &bull; <strong>12</strong> = 66 &bull; <strong>15</strong> = 105
                             </div>
                         </div>
-                    </div>
-                    <div>
                         <div class="highlight-box success fragment">
                             <p><strong>&#x1F465; Optimal Team Size: 5-9 people</strong></p>
-                            <p>The Scrum Guide recommends 10 or fewer. Research consistently shows 5-9 as the sweet spot where communication overhead stays manageable and skills are sufficient for cross-functional delivery.</p>
-                        </div>
-                        <div class="architecture-box fragment">
-                            <h4>&#x1F9E0; Dunbar's Number &amp; Scaling</h4>
-                            <ul style="font-size: 0.75em;">
-                                <li><strong>5:</strong> Close collaborators (one team)</li>
-                                <li><strong>15:</strong> Trusted group (2-3 teams)</li>
-                                <li><strong>50:</strong> Extended group (one tribe/ART)</li>
-                                <li><strong>150:</strong> Dunbar's limit (max for meaningful relationships)</li>
-                            </ul>
-                            <p style="font-size: 0.72em; margin-top: 8px;">These cognitive limits are why scaling frameworks cap program sizes at roughly 125 people.</p>
+                            <p style="font-size: 0.9em;">The Scrum Guide recommends 10 or fewer. Research shows 5-9 as the sweet spot. Dunbar's number research aligns: ~5 close collaborators, ~15 trusted group, ~50 per tribe/ART, ~150 max meaningful relationships.</p>
                         </div>
                     </div>
-                </div>
-                <aside class="notes">
-                    Brooks' Law is from Fred Brooks' 1975 book The Mythical Man-Month. The communication formula is powerful because it shows exponential growth. Going from 5 to 9 people nearly quadruples the communication channels. This is why estimation accuracy tends to decrease in larger teams - there is more miscommunication, more assumptions, and more coordination overhead that is hard to estimate. Dunbar's number, from anthropological research, suggests humans can maintain about 150 meaningful social relationships. This maps remarkably well to scaling framework limits. SAFe ARTs cap at about 125 people. Beyond that, you need another layer of structure. When planning team count and size, these are the fundamental constraints you are working within. It is not about being rigid with numbers; it is about recognizing the cognitive and communication limits that affect team performance and estimation accuracy.
-                </aside>
-            </section>
-
-            <!-- SLIDE 10: When to Split vs When to Grow -->
-            <section>
-                <h2>&#x1F3E2; How Many Teams?</h2>
-                <h3>When to Split vs. When to Grow Teams</h3>
-                <div class="two-column">
                     <div>
-                        <div class="architecture-box" style="border-left: 4px solid var(--success-color);">
+                        <div class="architecture-box fragment" style="border-left: 4px solid var(--success-color);">
                             <h4 style="color: var(--success-color);">&#x2702;&#xFE0F; Signals to Split a Team</h4>
-                            <ul style="font-size: 0.75em;">
-                                <li class="fragment">Team exceeds 9 members</li>
-                                <li class="fragment">Sprint planning takes too long due to scope breadth</li>
-                                <li class="fragment">Velocity is stable but backlog growth outpaces delivery</li>
-                                <li class="fragment">Distinct sub-domains emerging within the team's work</li>
-                                <li class="fragment">Standup meetings feel like status reports rather than coordination</li>
+                            <ul style="font-size: 0.72em;">
+                                <li>Team exceeds 9 members</li>
+                                <li>Sprint planning takes too long due to scope breadth</li>
+                                <li>Velocity stable but backlog growth outpaces delivery</li>
+                                <li>Distinct sub-domains emerging within the team's work</li>
                             </ul>
                         </div>
-                    </div>
-                    <div>
-                        <div class="architecture-box" style="border-left: 4px solid var(--accent-color);">
+                        <div class="architecture-box fragment" style="border-left: 4px solid var(--accent-color);">
                             <h4 style="color: var(--accent-color);">&#x1F4C8; Signals to Grow (Not Split)</h4>
-                            <ul style="font-size: 0.75em;">
-                                <li class="fragment">Team lacks a critical skill (e.g., no QA, no UX)</li>
-                                <li class="fragment">Team is under 5 members and struggling with absences</li>
-                                <li class="fragment">Work is tightly coupled and splitting would create excessive dependencies</li>
-                                <li class="fragment">Splitting would produce two teams too small to be self-sufficient</li>
-                                <li class="fragment">Onboarding time for new domain context is very high</li>
+                            <ul style="font-size: 0.72em;">
+                                <li>Team lacks a critical skill (e.g., no QA, no UX)</li>
+                                <li>Team is under 5 members and struggling with absences</li>
+                                <li>Work is tightly coupled; splitting would create excessive dependencies</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="highlight-box warning fragment">
-                    <p><strong>Estimation impact of splitting:</strong> When you split a team, expect velocity to <em>decrease</em> for 3-5 sprints as teams re-form, re-calibrate their estimation baselines, and establish new norms. The total velocity of two new teams will initially be <strong>less</strong> than the original team. Plan for this dip.</p>
+                    <p><strong>Estimation impact of splitting:</strong> When you split a team, expect velocity to <em>decrease</em> for 3-5 sprints as teams re-form, re-calibrate estimation baselines, and establish new norms. Plan for this dip.</p>
                 </div>
                 <aside class="notes">
-                    This is a very practical slide for participants. The decision to split or grow a team has real estimation consequences. When you split, you reset the team's estimation history. Each new team needs to recalibrate, and for several sprints, total output will actually decrease. This is Tuckman's model in action: forming, storming, norming, performing. Budget for it. A common mistake is splitting a team right before a critical release because you think more teams means more throughput. In the short term, it means less. The growth path has its own challenges. Adding people to an existing team temporarily slows it down as the new members get up to speed, and the communication channels increase. The key question is always: where does the constraint lie? Is it skill gaps (grow) or scope breadth (split)?
+                    Brooks' Law is from Fred Brooks' 1975 book The Mythical Man-Month. The communication formula shows exponential growth. Going from 5 to 9 people nearly quadruples the communication channels, which is why estimation accuracy tends to decrease in larger teams. Dunbar's number from anthropological research maps well to scaling framework limits. SAFe ARTs cap at about 125 people. The decision to split or grow a team has real estimation consequences. When you split, you reset the team's estimation history. Each new team needs to recalibrate, and for several sprints, total output will actually decrease. This is Tuckman's model in action. Adding people to an existing team also temporarily slows it down. The key question: is the constraint skill gaps (grow) or scope breadth (split)?
                 </aside>
             </section>
 
@@ -729,189 +671,112 @@
             <!-- SECTION: HOW MANY PRODUCT BACKLOGS?                          -->
             <!-- ============================================================ -->
 
-            <!-- SLIDE 11: One Backlog per Product -->
+            <!-- SLIDE 9: Backlog Architecture (merged from original slides 11+12) -->
             <section>
                 <h2 class="section-divider">&#x1F4CB; How Many Product Backlogs?</h2>
-                <h3>One Backlog per Product &mdash; The LeSS Approach</h3>
-                <div class="two-column wide-narrow">
+                <h3>Backlog Architecture: Single vs. Multi-Level</h3>
+                <div class="two-column">
                     <div>
-                        <div class="architecture-box">
-                            <h4>&#x1F4D6; Single Backlog Model</h4>
-                            <div style="font-size: 0.78em;">
-                                <p class="fragment"><strong>Principle:</strong> One product = one backlog = one Product Owner who sets priorities for all teams.</p>
-                                <p class="fragment"><strong>How it works:</strong> Teams pull from the same prioritized backlog during sprint planning. Each team selects the highest-priority items they can deliver.</p>
-                                <p class="fragment"><strong>Estimation approach:</strong> Teams estimate only the items they will work on, using their own scales. The Product Owner sees the full backlog ordered by value, not by team assignment.</p>
-                            </div>
-                        </div>
-                        <div class="highlight-box success fragment">
-                            <p><strong>Advantage:</strong> Maximum flexibility in prioritization. The highest-value work always gets done first, regardless of which team picks it up. No "my backlog, your backlog" silos.</p>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="diagram-box fragment" style="text-align: center;">
-                            <p style="font-size: 0.75em; margin: 0 0 10px 0; font-weight: 600; color: var(--heading-color);">Single Backlog Architecture</p>
-                            <div style="background: var(--accent-color); color: white; padding: 10px; border-radius: 8px; margin-bottom: 8px; font-size: 0.75em;">
-                                &#x1F4CB; Product Backlog<br>(One Source of Truth)
-                            </div>
-                            <div style="font-size: 1.2em; color: var(--accent-color);">&#x2B07;&#xFE0F;</div>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-top: 6px;">
-                                <div style="background: #ebf8ff; padding: 8px; border-radius: 6px; font-size: 0.65em; border: 1px solid var(--accent-color);">
-                                    &#x1F465; Team A<br>pulls items
-                                </div>
-                                <div style="background: #ebf8ff; padding: 8px; border-radius: 6px; font-size: 0.65em; border: 1px solid var(--accent-color);">
-                                    &#x1F465; Team B<br>pulls items
-                                </div>
-                                <div style="background: #ebf8ff; padding: 8px; border-radius: 6px; font-size: 0.65em; border: 1px solid var(--accent-color);">
-                                    &#x1F465; Team C<br>pulls items
-                                </div>
-                            </div>
-                        </div>
-                        <div class="highlight-box warning fragment" style="font-size: 0.75em;">
-                            <p><strong>Challenge:</strong> The PO becomes a bottleneck beyond ~4 teams. Requires mature, self-organizing teams that can negotiate work among themselves.</p>
-                        </div>
-                    </div>
-                </div>
-                <aside class="notes">
-                    The single backlog model is the simplest conceptually, and it is what LeSS advocates. One Product Owner maintains one ordered backlog. During sprint planning, all teams gather and select work from the top of the backlog. This maximizes value delivery because the highest-priority items are always worked on first. From an estimation perspective, this is clean: each team estimates the items they select using their own calibration. There is no need for normalized points because you are not comparing teams. The main challenges are scale-related. The Product Owner needs to understand all the work across all teams, which becomes impossible beyond 4-6 teams. Also, teams need to be true feature teams capable of working on any part of the product. If teams are specialized, they cannot pull freely from the backlog. LeSS Huge addresses this by introducing Area Product Owners, each managing a portion of the backlog for their area.
-                </aside>
-            </section>
-
-            <!-- SLIDE 12: Multiple Backlogs with Integration (SAFe) -->
-            <section>
-                <h2>&#x1F4CB; How Many Product Backlogs?</h2>
-                <h3>Multiple Backlogs with Integration &mdash; The SAFe Approach</h3>
-                <div class="diagram-box fragment" style="text-align: center; max-width: 95%;">
-                    <p style="font-size: 0.8em; font-weight: 600; color: var(--heading-color); margin-bottom: 12px;">SAFe Backlog Hierarchy</p>
-                    <div class="process-flow">
-                        <div class="process-step" style="background: var(--heading-color);">&#x1F3AF; Portfolio Backlog<br><span style="font-weight: 400; font-size: 0.85em;">Epics &amp; strategic themes</span></div>
-                        <div class="process-arrow">&#x27A1;&#xFE0F;</div>
-                        <div class="process-step" style="background: var(--accent-color);">&#x1F4CB; Program Backlog<br><span style="font-weight: 400; font-size: 0.85em;">Features for the ART</span></div>
-                        <div class="process-arrow">&#x27A1;&#xFE0F;</div>
-                        <div class="process-step" style="background: var(--success-color);">&#x1F4DD; Team Backlogs<br><span style="font-weight: 400; font-size: 0.85em;">Stories per team</span></div>
-                    </div>
-                </div>
-                <div class="two-column fragment">
-                    <div>
-                        <div class="architecture-box">
-                            <h4>Program-Level Estimation</h4>
-                            <ul style="font-size: 0.75em;">
-                                <li><strong>Features</strong> are estimated in <em>normalized story points</em> or T-shirt sizes at the program level</li>
-                                <li><strong>PI Planning:</strong> Teams decompose features into stories and estimate capacity</li>
-                                <li>Program Predictability Measure = planned vs. actual business value per PI</li>
+                        <div class="architecture-box fragment" style="border-left: 4px solid var(--success-color);">
+                            <h4 style="color: var(--success-color);">&#x1F4D6; Single Backlog (LeSS)</h4>
+                            <ul style="font-size: 0.72em;">
+                                <li>One product = one backlog = one Product Owner</li>
+                                <li>Teams pull from the same prioritized backlog during sprint planning</li>
+                                <li>Each team estimates only items they select, using their own scales</li>
+                                <li><strong>Advantage:</strong> Maximum flexibility &mdash; highest-value work always gets done first</li>
+                                <li><strong>Challenge:</strong> PO becomes a bottleneck beyond ~4 teams</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <div class="architecture-box">
-                            <h4>Team-Level Estimation</h4>
-                            <ul style="font-size: 0.75em;">
-                                <li>Each team maintains its own backlog of <strong>stories</strong> decomposed from features</li>
-                                <li>Teams estimate using their own velocity and point scale</li>
+                        <div class="architecture-box fragment" style="border-left: 4px solid var(--accent-color);">
+                            <h4 style="color: var(--accent-color);">&#x1F3AF; Multi-Level Backlogs (SAFe)</h4>
+                            <div class="process-flow" style="margin: 8px 0;">
+                                <div class="process-step" style="background: var(--heading-color); padding: 6px 12px; font-size: 0.62em;">Portfolio<br>Epics</div>
+                                <div class="process-arrow">&#x27A1;&#xFE0F;</div>
+                                <div class="process-step" style="background: var(--accent-color); padding: 6px 12px; font-size: 0.62em;">Program<br>Features</div>
+                                <div class="process-arrow">&#x27A1;&#xFE0F;</div>
+                                <div class="process-step" style="background: var(--success-color); padding: 6px 12px; font-size: 0.62em;">Team<br>Stories</div>
+                            </div>
+                            <ul style="font-size: 0.72em;">
+                                <li>Features estimated in normalized points or T-shirt sizes at program level</li>
+                                <li>PI Planning: teams decompose features into stories and estimate capacity</li>
                                 <li>Team velocity feeds into program-level capacity planning</li>
+                                <li><strong>Trade-off:</strong> More ceremony, but portfolio-level visibility across dozens of teams</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="highlight-box fragment">
-                    <p><strong>Trade-off:</strong> The multi-level backlog structure adds ceremony and overhead, but it enables portfolio-level visibility and alignment across dozens of teams. The estimation happens at multiple levels: T-shirt sizes for epics, normalized points for features, and team-specific points for stories.</p>
+                    <p><strong>Choosing your model:</strong> Single backlog maximizes flexibility and suits mature, self-organizing feature teams. Multi-level backlogs provide strategic alignment and suit large enterprises needing portfolio visibility. Estimation happens at multiple levels in SAFe: T-shirt sizes for epics, normalized points for features, and team-specific points for stories.</p>
                 </div>
                 <aside class="notes">
-                    SAFe takes the opposite approach from LeSS by introducing multiple backlog levels. This creates a hierarchy where strategic work flows down from the portfolio to the program to individual teams. Each level has its own estimation approach. At the portfolio level, epics are estimated with rough cost-of-delay and WSJF prioritization. At the program level, features are estimated using normalized story points so that the Release Train Engineer and Product Management can plan capacity across teams. At the team level, each team uses its own velocity and story points. PI Planning is the keystone ceremony where all of this comes together. Teams break features into stories, estimate them, identify dependencies, and commit to PI objectives. It is a two-day event that provides alignment and commitment across all teams. The overhead is real but, for large organizations, the alignment it provides can be worth it. Ask participants about their experience with PI Planning if any have done SAFe.
+                    The single backlog model is what LeSS advocates. One Product Owner maintains one ordered backlog. During sprint planning, all teams gather and select work from the top. This maximizes value delivery. From an estimation perspective it is clean: each team estimates the items they select using their own calibration. The main challenge is the PO bottleneck beyond 4-6 teams. SAFe takes the opposite approach with a backlog hierarchy. Each level has its own estimation approach. PI Planning is the keystone ceremony where all of this comes together. Teams break features into stories, estimate them, identify dependencies, and align on PI objectives. The overhead is real but for large organizations the alignment can be worth it. Ask participants about their experience with either model.
                 </aside>
             </section>
 
-            <!-- SLIDE 13: Dependency Management & Shared Services -->
+            <!-- SLIDE 10: Dependencies & Integration Ceremonies (merged from original slides 13+14) -->
             <section>
                 <h2>&#x1F4CB; How Many Product Backlogs?</h2>
-                <h3>Dependency Management &amp; Shared Services</h3>
+                <h3>Dependencies &amp; Integration Ceremonies</h3>
                 <div class="two-column">
                     <div>
                         <div class="architecture-box">
                             <h4>&#x1F517; Dependency Types</h4>
-                            <ul style="font-size: 0.75em;">
+                            <ul style="font-size: 0.72em;">
                                 <li class="fragment"><strong>Knowledge:</strong> "We need Team B's expertise to estimate this"</li>
                                 <li class="fragment"><strong>Task:</strong> "We cannot start until Team B finishes their API"</li>
                                 <li class="fragment"><strong>Resource:</strong> "We share a DBA with two other teams"</li>
                             </ul>
                         </div>
                         <div class="highlight-box danger fragment">
-                            <p><strong>The dependency tax:</strong> Every cross-team dependency adds an estimated <strong>15-30%</strong> overhead to the combined effort. Account for this in program-level estimation.</p>
+                            <p><strong>The dependency tax:</strong> Every cross-team dependency adds an estimated <strong>15-30%</strong> overhead. Use a <strong>dependency board</strong> to visualize cross-team blockers and assign <strong>buffer stories</strong> in case dependent work is delayed.</p>
                         </div>
                     </div>
                     <div>
-                        <div class="architecture-box fragment">
-                            <h4>&#x1F3D7;&#xFE0F; Platform &amp; Shared Services Teams</h4>
-                            <ul style="font-size: 0.75em;">
-                                <li><strong>Platform teams</strong> provide infrastructure, APIs, and tools for other teams</li>
-                                <li>Backlog driven by <em>internal customers</em> (other teams)</li>
-                                <li>Reserve capacity (e.g., 20%) for platform requests each sprint</li>
-                            </ul>
-                        </div>
-                        <div class="architecture-box fragment">
-                            <h4>&#x1F4C5; Managing Across Backlogs</h4>
-                            <ul style="font-size: 0.75em;">
-                                <li>Use a <strong>dependency board</strong> to visualize cross-team blockers</li>
-                                <li>Assign <strong>buffer stories</strong> in case dependent work is delayed</li>
-                            </ul>
-                        </div>
+                        <table style="font-size: 0.68em;" class="fragment">
+                            <thead>
+                                <tr>
+                                    <th>Ceremony</th>
+                                    <th>Frequency</th>
+                                    <th>Estimation Impact</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>PI Planning</strong></td>
+                                    <td>Every 8-12 wks</td>
+                                    <td>Teams estimate features, align on PI objectives</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Scrum of Scrums</strong></td>
+                                    <td>2-3x per week</td>
+                                    <td>Early warning on at-risk dependencies</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Cross-Team Refinement</strong></td>
+                                    <td>Weekly</td>
+                                    <td>Reduces estimation variance across teams</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>System Demo</strong></td>
+                                    <td>End of sprint</td>
+                                    <td>Reveals gaps missed in team estimates</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Overall Retro</strong></td>
+                                    <td>End of PI</td>
+                                    <td>Calibrate accuracy, refine buffers</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <aside class="notes">
-                    Dependencies are the silent killer of estimation accuracy at scale. When teams estimate in isolation, they rarely account for the overhead of coordinating with other teams. A story that seems like a 5-pointer when estimated by one team becomes an 8 once you factor in waiting for another team's API, attending cross-team design sessions, and integration testing. The 15-30% overhead figure is a common rule of thumb from scaling practitioners. Additional dependency type not shown on slide: Requirement dependencies, where stories share acceptance criteria with another team's stories. Platform teams present a unique challenge. Their work does not directly deliver features, so it is hard to value-rank against feature work. The estimation challenge is that platform work enables but does not directly deliver business features. The solution is usually to reserve a percentage of their capacity for supporting feature teams. The dependency board is a critical artifact at scale. SAFe uses a program board during PI Planning to visualize dependencies. LeSS achieves this through multi-team sprint planning. Also important: flag dependencies during sprint planning and refinement. Whatever approach you use, making dependencies visible is the first step to managing them. Invisible dependencies are the ones that blow up your estimates.
-                </aside>
-            </section>
-
-            <!-- SLIDE 14: Integration Ceremonies -->
-            <section>
-                <h2>&#x1F4CB; How Many Product Backlogs?</h2>
-                <h3>Integration Ceremonies: Keeping It All Together</h3>
-                <table style="font-size: 0.78em;">
-                    <thead>
-                        <tr>
-                            <th>Ceremony</th>
-                            <th>Frequency</th>
-                            <th>Purpose</th>
-                            <th>Estimation Impact</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="fragment">
-                            <td><strong>&#x1F4CB; PI Planning</strong></td>
-                            <td>Every 8-12 weeks</td>
-                            <td>Align teams on objectives &amp; capacity</td>
-                            <td>Teams estimate features and commit to PI goals</td>
-                        </tr>
-                        <tr class="fragment">
-                            <td><strong>&#x1F91D; Scrum of Scrums</strong></td>
-                            <td>2-3x per week</td>
-                            <td>Surface cross-team impediments</td>
-                            <td>Early warning on at-risk dependencies</td>
-                        </tr>
-                        <tr class="fragment">
-                            <td><strong>&#x1F50D; Overall Retro</strong></td>
-                            <td>End of PI/release</td>
-                            <td>System-level improvement</td>
-                            <td>Calibrate accuracy, refine buffers</td>
-                        </tr>
-                        <tr class="fragment">
-                            <td><strong>&#x1F527; Cross-Team Refinement</strong></td>
-                            <td>Weekly or as needed</td>
-                            <td>Joint refinement of shared stories</td>
-                            <td>Reduces estimation variance across teams</td>
-                        </tr>
-                        <tr class="fragment">
-                            <td><strong>&#x1F3AF; System Demo</strong></td>
-                            <td>End of each sprint</td>
-                            <td>Demo integrated increment</td>
-                            <td>Reveals gaps missed in team estimates</td>
-                        </tr>
-                    </tbody>
-                </table>
                 <div class="highlight-box fragment">
-                    <p><strong>Rule of thumb:</strong> The number of integration ceremonies scales with the number of dependencies between teams, not the number of teams. Two tightly coupled teams may need more coordination than five loosely coupled teams.</p>
+                    <p><strong>Rule of thumb:</strong> The number of integration ceremonies scales with the number of <em>dependencies</em> between teams, not the number of teams. Two tightly coupled teams may need more coordination than five loosely coupled teams.</p>
                 </div>
                 <aside class="notes">
-                    Walk through each ceremony and its role in maintaining estimation accuracy at scale. PI Planning is the big one in SAFe. It is where all teams in an ART come together for two days to plan the next Program Increment. Teams estimate features, identify dependencies on a program board, and negotiate commitments. The output is a set of PI Objectives with business value assigned by the Product Owner. Scrum of Scrums is the ongoing coordination mechanism. Cross-team refinement is often overlooked but critical. When a feature spans multiple teams, having them refine together ensures they share the same understanding and their estimates are compatible. The System Demo at the end of each sprint is where you discover whether the integrated increment actually works. This is where hidden integration costs become visible. The overall retrospective at the PI level is where teams collectively improve their estimation practices and adjust buffers based on actual results.
+                    Dependencies are the silent killer of estimation accuracy at scale. When teams estimate in isolation, they rarely account for the overhead of coordinating with other teams. A story that seems like a 5-pointer when estimated by one team becomes an 8 once you factor in waiting for another team's API, attending cross-team design sessions, and integration testing. Platform teams present a unique challenge since their work enables but does not directly deliver business features; reserve a percentage of their capacity for supporting feature teams. For ceremonies: PI Planning is where all teams in an ART come together to plan the next Program Increment. Cross-team refinement is often overlooked but critical for ensuring compatible estimates. The System Demo at the end of each sprint is where hidden integration costs become visible. Making dependencies visible is the first step to managing them.
                 </aside>
             </section>
 
@@ -923,19 +788,13 @@
                 <h2>Lab 6: Scaling Estimation Simulation</h2>
                 <p style="font-size: 0.95em; color: rgba(255,255,255,0.9);">Apply multi-team estimation in a realistic scaling scenario</p>
                 <ul style="font-size: 0.85em; max-width: 800px; margin: 20px auto;">
-                    <li class="fragment">Form 3-4 Scrum teams of 3-5 participants each</li>
-                    <li class="fragment">Each team receives a shared product backlog with 15-20 features</li>
-                    <li class="fragment">Conduct a simulated <strong>PI Planning</strong> session:
-                        <ul style="font-size: 0.9em; margin-top: 6px;">
-                            <li>Estimate features using your team's own story points</li>
-                            <li>Identify and map cross-team dependencies</li>
-                            <li>Create a program board showing delivery timeline</li>
-                        </ul>
-                    </li>
-                    <li class="fragment">Calculate <strong>aggregate velocity</strong> and forecast a release date</li>
-                    <li class="fragment">Discuss: Where did your estimates account for dependency overhead? Where did they miss?</li>
+                    <li class="fragment">Split into 3 teams representing Frontend, Backend, and Platform</li>
+                    <li class="fragment">Estimate a shared 8-feature product backlog independently</li>
+                    <li class="fragment">Map cross-team dependencies and determine sequencing — focus on <strong>ordering</strong>, not sprint-by-sprint assignment</li>
+                    <li class="fragment">Identify bottleneck teams and discuss capacity trade-offs</li>
+                    <li class="fragment">Debate backlog organization strategy (shared vs. per-team vs. program-level)</li>
                 </ul>
-                <p style="margin-top: 20px; font-size: 0.9em; color: rgba(255,255,255,0.85);"><strong>Duration:</strong> 65 minutes (50 min work + 15 min presentations) &nbsp;|&nbsp; <strong>Format:</strong> 3 teams (full class simulation)</p>
+                <p style="margin-top: 20px; font-size: 0.9em; color: rgba(255,255,255,0.85);"><strong>Duration:</strong> 45 minutes (30 min work + 15 min presentations) &nbsp;|&nbsp; <strong>Format:</strong> 3 teams (full class simulation)</p>
                 <aside class="notes">
                     This lab is the centerpiece of the module. Break participants into 3-4 teams. Give each team a set of feature cards from a shared product backlog. The features should have built-in dependencies between them. Have teams estimate independently first, then come together for a mini PI Planning session. They need to map dependencies on a shared program board using string or tape to connect dependent features. Then they calculate aggregate velocity and try to forecast when the full set of features will be delivered. The debrief is the most important part. Ask: Did any team discover a dependency during planning that changed their estimate? Did any feature take longer to estimate because it spanned teams? How confident are you in the aggregate forecast versus your individual team forecasts? This lab makes the abstract concepts of scaling estimation very concrete.
                 </aside>
