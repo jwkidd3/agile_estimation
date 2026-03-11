@@ -73,6 +73,10 @@
             padding: 1.25rem;
             margin: 1rem 0;
         }
+        .scenario-box.danger {
+            background: #fff5f5;
+            border-color: #fed7d7;
+        }
         .metric-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -202,53 +206,65 @@
     </div>
 
     <div class="card">
-        <h2><span class="step-number">3</span> Buffer Strategy &amp; Stakeholder Presentation</h2>
+        <h2><span class="step-number">3</span> Date-Driven Forecast &amp; Stakeholder Presentation</h2>
         <p><span class="timer">15 minutes</span></p>
-        <p>Choose a buffer strategy and prepare your stakeholder presentation.</p>
 
-        <h3>Buffer Options</h3>
+        <div class="scenario-box danger">
+            <h3>The Date Is Set</h3>
+            <p>Your CEO has returned from a board meeting: <strong>The board has committed to a live product launch at a major industry conference in 20 weeks (10 sprints). This date is tied to a contractual obligation with your largest client and cannot move.</strong></p>
+            <p>Using your calculations from Step 2, work <em>backward</em> from the fixed date.</p>
+        </div>
+
+        <h3>Backward Calculation</h3>
         <table>
-            <tr><th>Buffer Type</th><th>What It Means</th><th>Your Recommendation</th></tr>
-            <tr><td><strong>No buffer</strong></td><td>Use the most-likely forecast as-is</td><td></td></tr>
-            <tr><td><strong>Time buffer (20%)</strong></td><td>Add ~2 sprints to the conservative estimate</td><td></td></tr>
-            <tr><td><strong>Feature buffer</strong></td><td>Forecast must-haves only; treat 15% as stretch goals</td><td></td></tr>
+            <tr><th>Calculation</th><th>Your Answer</th></tr>
+            <tr><td>Available sprints before the deadline</td><td style="color: #718096;">10</td></tr>
+            <tr><td>Max deliverable points (available sprints &times; avg velocity from Step 2)</td><td></td></tr>
+            <tr><td>Expected scope growth over 10 sprints (at your calculated avg rate)</td><td></td></tr>
+            <tr><td>Net deliverable points (max deliverable &minus; expected scope growth)</td><td></td></tr>
+            <tr><td>Remaining backlog points (from Step 2)</td><td></td></tr>
+            <tr><td>The gap: remaining backlog &minus; net deliverable points</td><td></td></tr>
         </table>
 
-        <h3>Risk Factors to Consider</h3>
+        <h3>Scope Decision: What Makes the Cut?</h3>
+        <p>If the gap is positive, you must cut scope to hit the date. Categorize the remaining backlog:</p>
+        <table>
+            <tr><th>Category</th><th>Points</th><th>Features Included</th></tr>
+            <tr><td><strong>Must-have for launch</strong> (demo-critical)</td><td></td><td></td></tr>
+            <tr><td><strong>Should-have</strong> (include if velocity allows)</td><td></td><td></td></tr>
+            <tr><td><strong>Defer to post-launch release</strong></td><td></td><td></td></tr>
+        </table>
+
+        <h3>Risk Factors</h3>
         <ul>
             <li>The team lost a developer in Sprint 6 (replaced in Sprint 7)</li>
             <li>A major 3rd-party integration is still unestimated</li>
-            <li>Scope growth has averaged ~5 points/sprint</li>
+            <li>Scope growth has averaged ~5 points/sprint &mdash; will the PO freeze scope for the final push?</li>
         </ul>
 
+        <h3>Stakeholder-Ready Output</h3>
         <div class="workspace">
-            <p><strong>Forecast summary:</strong> "Based on [X sprints] of data, our team delivers approximately [Y] points per sprint. With [Z] points remaining, we forecast completion in approximately [range] sprints. Our confidence level is [high/medium/low] because [reasons]."<br><br>
-            <strong>Key trade-offs:</strong> (scope flexibility, team capacity, risk factors)<br><br>
-            <strong>If asked to accelerate:</strong> (scope reduction, capacity changes, quality trade-offs — present options with their date implications)</p>
-        </div>
-
-        <h3>PMO-Ready Output</h3>
-        <div class="workspace">
-            <p>Translate your forecast into the format your organization uses:<br><br>
-            <strong>Target delivery date (50% confidence):</strong> ___________<br>
-            <strong>Target delivery date (85% confidence):</strong> ___________<br>
-            <strong>Must-have scope included:</strong> ___________<br>
-            <strong>At-risk scope (may slip to next release):</strong> ___________<br>
+            <p><strong>Conference launch date:</strong> [fixed &mdash; 20 weeks out]<br><br>
+            <strong>Scope we can deliver with high confidence (85%):</strong> ___________ points<br>
+            <strong>Scope we can deliver if things go well (50%):</strong> ___________ points<br>
+            <strong>Must-have features confirmed for launch:</strong> ___________<br>
+            <strong>Features deferred to post-launch:</strong> ___________<br>
             <strong>Key assumptions:</strong> ___________<br>
-            <strong>Escalation triggers:</strong> (What would cause us to re-forecast?) ___________</p>
+            <strong>What would cause us to re-forecast:</strong> ___________<br><br>
+            <strong>If the CEO asks "Can we deliver it all by the conference?":</strong> Present your data &mdash; max deliverable points vs. remaining backlog. Show the gap. Offer three options with their scope implications: (1) freeze scope growth, (2) reduce launch scope to must-haves only, (3) add capacity. For each option, state what the launch will and will not include.</p>
         </div>
     </div>
 
     <div class="card" style="border-left-color: #2f855a;">
         <h2><span class="step-number">4</span> Team Presentations — Stakeholder Simulation</h2>
         <p><span class="timer">15 minutes (3-5 min per team)</span></p>
-        <p>Each team presents their forecast. The class acts as executive leadership:</p>
+        <p>Each team presents their forecast to the class (acting as executive leadership):</p>
         <ul>
-            <li>Your forecast range — show your reasoning</li>
-            <li>Your buffer strategy and justification</li>
-            <li>Your stakeholder-ready summary</li>
+            <li>Your backward calculation — max deliverable points vs. remaining backlog</li>
+            <li>Your scope decision — what makes the launch and what gets deferred</li>
+            <li>Your stakeholder-ready output — confidence levels and assumptions</li>
         </ul>
-        <p>"Executives" ask tough questions: "Can we do more?" "What if we add people?" "What scope can we cut?" Respond with data-backed options and trade-offs. If pressed for a single date, state the confidence level explicitly.</p>
+        <p>"Executives" ask tough questions: "Can we do it all?" "What if we add people?" "What happens if scope keeps growing?" Respond with data — show the gap and present options with their scope implications.</p>
     </div>
 
     <div class="card warning-card">

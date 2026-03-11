@@ -369,7 +369,7 @@
             <!-- SLIDE 1: TITLE SLIDE                                         -->
             <!-- ============================================================ -->
             <section data-background="linear-gradient(135deg, #2b6cb0 0%, #1a365d 100%)" class="title-slide">
-                <div class="module-badge">Module 6 &bull; Day 2</div>
+                <div class="module-badge">Module 6 of 7 &bull; Day 2</div>
                 <h1>Doing Scrum In A Big Way</h1>
                 <h2>Scaling Estimation Across Multiple Teams</h2>
                 <h3>Agile Project Estimation &bull; 2-Day Workshop</h3>
@@ -478,6 +478,7 @@
                             <ul style="font-size: 0.75em;">
                                 <li>Attempt to create a "universal" point scale across teams</li>
                                 <li><strong>Dangers:</strong> False precision, encourages comparison, teams lose estimation ownership</li>
+                                <li><strong>SAFe note:</strong> SAFe recommends normalized story points for portfolio-level planning. If your organization uses SAFe, follow the framework's guidance &mdash; but be aware of the trade-offs.</li>
                             </ul>
                         </div>
                         <div class="architecture-box fragment" style="border-left: 4px solid var(--success-color);">
@@ -613,15 +614,18 @@
                 <div class="highlight-box warning fragment">
                     <p><strong>Impact on estimation:</strong> Component teams turn every feature into a multi-team coordination problem. A story that one feature team can estimate as "8 points" becomes three separate stories across three component teams, each needing coordination. The total effort is almost always greater than the sum of parts due to integration and communication overhead.</p>
                 </div>
+                <div class="highlight-box fragment">
+                    <p><strong>A note on the lab:</strong> Component teams are sometimes the right choice &mdash; especially when deep specialization is required or when the architecture genuinely demands it. The lab assigns component teams deliberately &mdash; you will experience the dependency overhead this creates.</p>
+                </div>
                 <aside class="notes">
-                    This is a critical architectural decision that directly impacts estimation complexity. Feature teams are generally preferred in modern Agile practice because they reduce dependencies. When a feature team estimates a user story, they are estimating the whole thing. With component teams, a single user story might require work from the frontend team, the API team, and the database team. Each team estimates their portion, but nobody estimates the integration work. The coordination cost is often invisible in the estimates but very real in execution. Ask the class: if you have three component teams and each estimates their portion of a feature at 5 points, is the total effort 15 points? Almost never. The actual effort is typically 20-25 points once you account for handoffs, integration testing, and communication overhead.
+                    This is a critical architectural decision that directly impacts estimation complexity. Feature teams are generally preferred in modern Agile practice because they reduce dependencies. When a feature team estimates a user story, they are estimating the whole thing. With component teams, a single user story might require work from the frontend team, the API team, and the database team. Each team estimates their portion, but nobody estimates the integration work. The coordination cost is often invisible in the estimates but very real in execution. Ask the class: if you have three component teams and each estimates their portion of a feature at 5 points, is the total effort 15 points? Almost never. The actual effort is typically 20-25 points once you account for handoffs, integration testing, and communication overhead. Acknowledge that component teams are sometimes the right choice, but the lab intentionally uses them so students experience the coordination overhead firsthand.
                 </aside>
             </section>
 
-            <!-- SLIDE 8: Brooks' Law, Team Size & When to Split (merged from original slides 9+10) -->
+            <!-- SLIDE 8a: Brooks' Law and Team Size -->
             <section>
                 <h2>&#x1F3E2; How Many Teams?</h2>
-                <h3>Brooks' Law, Team Size &amp; When to Split</h3>
+                <h3>Brooks' Law and Team Size</h3>
                 <div class="two-column">
                     <div>
                         <div class="architecture-box">
@@ -634,11 +638,33 @@
                                 <strong>5 people</strong> = 10 channels &bull; <strong>7</strong> = 21 &bull; <strong>9</strong> = 36 &bull; <strong>12</strong> = 66 &bull; <strong>15</strong> = 105
                             </div>
                         </div>
+                    </div>
+                    <div>
                         <div class="highlight-box success fragment">
                             <p><strong>&#x1F465; Optimal Team Size: 5-9 people</strong></p>
-                            <p style="font-size: 0.9em;">The Scrum Guide recommends 10 or fewer. Research shows 5-9 as the sweet spot. Dunbar's number research aligns: ~5 close collaborators, ~15 trusted group, ~50 per tribe/ART, ~150 max meaningful relationships.</p>
+                            <p style="font-size: 0.9em;">The Scrum Guide recommends 10 or fewer. Research shows 5-9 as the sweet spot.</p>
+                        </div>
+                        <div class="architecture-box fragment">
+                            <h4>Dunbar's Numbers</h4>
+                            <ul style="font-size: 0.72em;">
+                                <li><strong>~5</strong> &mdash; Close collaborators (one Scrum team core)</li>
+                                <li><strong>~15</strong> &mdash; Trusted group (extended team + stakeholders)</li>
+                                <li><strong>~50</strong> &mdash; Tribe / ART scale</li>
+                                <li><strong>~150</strong> &mdash; Maximum meaningful relationships</li>
+                            </ul>
                         </div>
                     </div>
+                </div>
+                <aside class="notes">
+                    Brooks' Law is from Fred Brooks' 1975 book The Mythical Man-Month. The communication formula shows exponential growth. Going from 5 to 9 people nearly quadruples the communication channels, which is why estimation accuracy tends to decrease in larger teams. Dunbar's number from anthropological research maps well to scaling framework limits. SAFe ARTs cap at about 125 people. The Scrum Guide explicitly recommends teams of 10 or fewer, and most practitioners find the 5-9 range to be the sweet spot for balancing throughput with communication overhead.
+                </aside>
+            </section>
+
+            <!-- SLIDE 8b: When to Split or Grow Teams -->
+            <section>
+                <h2>&#x1F3E2; How Many Teams?</h2>
+                <h3>When to Split or Grow Teams</h3>
+                <div class="two-column">
                     <div>
                         <div class="architecture-box fragment" style="border-left: 4px solid var(--success-color);">
                             <h4 style="color: var(--success-color);">&#x2702;&#xFE0F; Signals to Split a Team</h4>
@@ -649,6 +675,8 @@
                                 <li>Distinct sub-domains emerging within the team's work</li>
                             </ul>
                         </div>
+                    </div>
+                    <div>
                         <div class="architecture-box fragment" style="border-left: 4px solid var(--accent-color);">
                             <h4 style="color: var(--accent-color);">&#x1F4C8; Signals to Grow (Not Split)</h4>
                             <ul style="font-size: 0.72em;">
@@ -663,7 +691,7 @@
                     <p><strong>Estimation impact of splitting:</strong> When you split a team, expect velocity to <em>decrease</em> for 3-5 sprints as teams re-form, re-calibrate estimation baselines, and establish new norms. Plan for this dip.</p>
                 </div>
                 <aside class="notes">
-                    Brooks' Law is from Fred Brooks' 1975 book The Mythical Man-Month. The communication formula shows exponential growth. Going from 5 to 9 people nearly quadruples the communication channels, which is why estimation accuracy tends to decrease in larger teams. Dunbar's number from anthropological research maps well to scaling framework limits. SAFe ARTs cap at about 125 people. The decision to split or grow a team has real estimation consequences. When you split, you reset the team's estimation history. Each new team needs to recalibrate, and for several sprints, total output will actually decrease. This is Tuckman's model in action. Adding people to an existing team also temporarily slows it down. The key question: is the constraint skill gaps (grow) or scope breadth (split)?
+                    The decision to split or grow a team has real estimation consequences. When you split, you reset the team's estimation history. Each new team needs to recalibrate, and for several sprints, total output will actually decrease. This is Tuckman's model in action. Adding people to an existing team also temporarily slows it down. The key question: is the constraint skill gaps (grow) or scope breadth (split)?
                 </aside>
             </section>
 
@@ -730,7 +758,7 @@
                             </ul>
                         </div>
                         <div class="highlight-box danger fragment">
-                            <p><strong>The dependency tax:</strong> Every cross-team dependency adds an estimated <strong>15-30%</strong> overhead. Use a <strong>dependency board</strong> to visualize cross-team blockers and assign <strong>buffer stories</strong> in case dependent work is delayed.</p>
+                            <p><strong>The dependency tax:</strong> Cross-team dependencies typically add significant overhead &mdash; teams commonly report <strong>15-30%</strong> in coordination costs. Use a <strong>dependency board</strong> to visualize cross-team blockers and assign <strong>buffer stories</strong> in case dependent work is delayed.</p>
                         </div>
                     </div>
                     <div>
@@ -780,6 +808,37 @@
                 </aside>
             </section>
 
+            <!-- SLIDE: Aggregating Multi-Team Forecasts -->
+            <section>
+                <h2>&#x1F4CB; How Many Product Backlogs?</h2>
+                <h3>Aggregating Multi-Team Forecasts</h3>
+                <div class="highlight-box warning">
+                    <p><strong>Worked Example:</strong> 3 teams with velocities 26, 30, 22. Total backlog ~200 points. But dependency chains mean work must be sequenced: Gamma builds the data foundations first, Beta builds the APIs next, Alpha integrates last.</p>
+                </div>
+                <div class="two-column">
+                    <div>
+                        <div class="architecture-box fragment" style="border-left: 4px solid var(--danger-color);">
+                            <h4 style="color: var(--danger-color);">&#x26A0;&#xFE0F; Raw Aggregate (Misleading)</h4>
+                            <p style="font-size: 0.75em;">78 pts/sprint &times; 8 sprints = 624 pts capacity</p>
+                            <p style="font-size: 0.72em; color: var(--danger-color);">This assumes all teams work in parallel with no dependencies. In reality, dependency chains force sequential work &mdash; teams are often <em>waiting</em>, not working.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="architecture-box fragment" style="border-left: 4px solid var(--success-color);">
+                            <h4 style="color: var(--success-color);">&#x2705; Critical Path Approach</h4>
+                            <p style="font-size: 0.72em;">The longest dependency chain determines the minimum timeline, <strong>not</strong> total capacity.</p>
+                            <p style="font-size: 0.72em;">If the critical path has 90 points and the constrained team's velocity is 26 pts/sprint, the minimum is ~3.5 sprints for that chain alone &mdash; regardless of what other teams can do in parallel.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight-box success fragment">
+                    <p><strong>Process:</strong> Identify critical path &#x2192; Sum points on critical path &#x2192; Divide by the constrained team's velocity &#x2192; Add dependency buffer (15-30%) &#x2192; Compare against deadline</p>
+                </div>
+                <aside class="notes">
+                    This is exactly the calculation students will do in the lab against a 16-week conference deadline. Walk through the example carefully. The raw aggregate of 78 points per sprint times 8 sprints equals 624 points of theoretical capacity. But if Gamma must finish the data layer before Beta can build APIs, and Beta must finish APIs before Alpha can integrate, then the critical path determines the timeline, not the aggregate capacity. The critical path calculation is: identify the longest chain of dependent work, sum the points on that chain, divide by the velocity of the team that is the bottleneck on that chain, and add a dependency buffer. This is a fundamentally different way of thinking about multi-team forecasting than simply adding up velocities.
+                </aside>
+            </section>
+
             <!-- ============================================================ -->
             <!-- LAB CALLOUT SLIDE                                             -->
             <!-- ============================================================ -->
@@ -794,10 +853,11 @@
                     <li class="fragment">Identify bottleneck teams and discuss capacity trade-offs</li>
                     <li class="fragment">Debate backlog organization strategy (shared vs. per-team vs. program-level)</li>
                     <li class="fragment">Calculate a delivery date range for all features using aggregate velocity and dependency overhead</li>
+                    <li class="fragment">Work against a fixed <strong>16-week conference deadline</strong> &mdash; determine what scope fits</li>
                 </ul>
                 <p style="margin-top: 20px; font-size: 0.9em; color: rgba(255,255,255,0.85);"><strong>Duration:</strong> 45 minutes (30 min work + 15 min presentations) &nbsp;|&nbsp; <strong>Format:</strong> 3 teams (full class simulation)</p>
                 <aside class="notes">
-                    This lab is the centerpiece of the module. Break participants into 3-4 teams. Give each team a set of feature cards from a shared product backlog. The features should have built-in dependencies between them. Have teams estimate independently first, then come together for a mini PI Planning session. They need to map dependencies on a shared program board using string or tape to connect dependent features. Then they calculate aggregate velocity and try to forecast when the full set of features will be delivered. The debrief is the most important part. Ask: Did any team discover a dependency during planning that changed their estimate? Did any feature take longer to estimate because it spanned teams? How confident are you in the aggregate forecast versus your individual team forecasts? This lab makes the abstract concepts of scaling estimation very concrete.
+                    This lab is the centerpiece of the module. Break participants into 3 teams. Give each team a set of feature cards from a shared product backlog. The features should have built-in dependencies between them. Set up the scenario: The VP has committed to a healthcare conference demo in 16 weeks. This is a hard external deadline. Let participants feel the pressure of a real constraint. Have teams estimate independently first, then come together for a mini PI Planning session. They need to map dependencies on a shared program board using string or tape to connect dependent features. Then they calculate aggregate velocity and try to forecast when the full set of features will be delivered. The debrief is the most important part. Ask: Did any team discover a dependency during planning that changed their estimate? Did any feature take longer to estimate because it spanned teams? How confident are you in the aggregate forecast versus your individual team forecasts? This lab makes the abstract concepts of scaling estimation very concrete.
                 </aside>
             </section>
 
@@ -809,7 +869,7 @@
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
                     <div class="takeaway-box fragment">
                         <p><strong>&#x1F4CA; Velocity is team-specific</strong></p>
-                        <p>Never compare velocities across teams. Each team's story points are calibrated to their own context. Use velocity for planning within a team, not for performance evaluation.</p>
+                        <p>Comparing raw velocity numbers across teams is misleading &mdash; each team calibrates differently. Compare trends, not absolute numbers. Use velocity for planning within a team, not for performance evaluation.</p>
                     </div>
                     <div class="takeaway-box fragment">
                         <p><strong>&#x1F465; Team health drives estimation quality</strong></p>
@@ -821,7 +881,7 @@
                     </div>
                     <div class="takeaway-box fragment">
                         <p><strong>&#x1F517; Dependencies are the hidden cost</strong></p>
-                        <p>Every cross-team dependency adds 15-30% overhead. Make dependencies visible. Choose feature teams over component teams when possible.</p>
+                        <p>Cross-team dependencies typically add significant overhead &mdash; teams commonly report 15-30% in coordination costs. Make dependencies visible. Choose feature teams over component teams when possible.</p>
                     </div>
                     <div class="takeaway-box fragment">
                         <p><strong>&#x1F4CB; Backlog architecture shapes estimation</strong></p>

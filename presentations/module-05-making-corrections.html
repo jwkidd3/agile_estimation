@@ -536,60 +536,45 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 4: Re-estimation Techniques and Accuracy (merged)      -->
+            <!-- SLIDE 4a: Re-estimation Techniques                          -->
             <!-- ============================================================ -->
             <section>
-                <h2>&#x1F504; Re-estimation Techniques and Accuracy</h2>
-                <div class="two-column">
+                <h2>&#x1F504; Re-estimation Techniques</h2>
+                <h3>When to Re-estimate Mid-Sprint</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Scenario</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="fragment">
+                            <td>Story is larger than expected but completable</td>
+                            <td><span class="badge badge-green">Accept variance</span></td>
+                        </tr>
+                        <tr class="fragment">
+                            <td>Story has ballooned in scope</td>
+                            <td><span class="badge badge-orange">Split the story</span></td>
+                        </tr>
+                        <tr class="fragment">
+                            <td>Technical discovery changes complexity</td>
+                            <td><span class="badge badge-blue">Re-estimate remaining</span></td>
+                        </tr>
+                        <tr class="fragment">
+                            <td>Blocked by external dependency</td>
+                            <td><span class="badge badge-red">Escalate &amp; swap</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="two-column" style="margin-top: 20px;">
                     <div>
-                        <h3>When to Re-estimate Mid-Sprint</h3>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Scenario</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="fragment">
-                                    <td>Story is larger than expected but completable</td>
-                                    <td><span class="badge badge-green">Accept variance</span></td>
-                                </tr>
-                                <tr class="fragment">
-                                    <td>Story has ballooned in scope</td>
-                                    <td><span class="badge badge-orange">Split the story</span></td>
-                                </tr>
-                                <tr class="fragment">
-                                    <td>Technical discovery changes complexity</td>
-                                    <td><span class="badge badge-blue">Re-estimate remaining</span></td>
-                                </tr>
-                                <tr class="fragment">
-                                    <td>Blocked by external dependency</td>
-                                    <td><span class="badge badge-red">Escalate &amp; swap</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
                         <div class="architecture-box fragment">
-                            <h4>&#x1F4A1; The 50% Rule</h4>
+                            <h4>&#x1F4A1; The Mid-Sprint Check</h4>
                             <p>If a story is <strong>more than 50% through the sprint</strong> and less than 50% complete, it is a candidate for immediate re-evaluation.</p>
                         </div>
                     </div>
                     <div>
-                        <h3>Measuring Accuracy Over Time</h3>
-                        <div class="concept-card fragment">
-                            <h4>Estimation Accuracy Ratio</h4>
-                            <p><strong>Actual Effort / Estimated Effort</strong></p>
-                            <ul>
-                                <li><span class="text-success">0.8 - 1.2</span> = Healthy range</li>
-                                <li><span class="text-warning">1.2 - 1.5</span> = Consistent underestimation</li>
-                                <li><span class="text-danger">&gt; 1.5</span> = Systemic problem</li>
-                            </ul>
-                        </div>
-                        <div class="highlight-box fragment">
-                            <h4 style="color: var(--accent-color); margin-top:0;">&#x1F4CA; Adjust vs. Accept Variance</h4>
-                            <p><strong>Adjust</strong> when the same type of story is consistently mis-estimated, a new technology was introduced, or team composition changed.</p>
-                            <p><strong>Accept variance</strong> when errors are random and overall velocity is still predictable.</p>
-                        </div>
                         <div class="highlight-box warning fragment">
                             <h4 style="color: var(--warning-color); margin-top:0;">&#x26A0;&#xFE0F; Anti-pattern</h4>
                             <p>Do <strong>not</strong> re-estimate completed stories retroactively to "fix" your numbers. This destroys the data you need to improve.</p>
@@ -597,7 +582,48 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    This slide covers the practical decision-making process when an estimate proves wrong during a sprint plus how to build a measurement system around estimation quality. Walk through the table scenarios one by one. The 50% Rule is a useful heuristic. On the right, the Estimation Accuracy Ratio is simple but powerful -- track it sprint over sprint and look for patterns. The anti-pattern warning is critical: if you change historical estimates after the fact, you lose the learning signal. Also discuss swarming as a technique: pulling additional team members onto a struggling story to finish it within the sprint, which works best when work is parallelizable and team members have context.
+                    This slide covers the practical decision-making process when an estimate proves wrong during a sprint. Walk through the table scenarios one by one. The mid-sprint check is a useful heuristic -- if you are past the halfway point of the sprint and a story is less than half done, that is a signal to act immediately rather than hoping things will work out. The anti-pattern warning is critical: if you change historical estimates after the fact, you lose the learning signal. Also discuss swarming as a technique: pulling additional team members onto a struggling story to finish it within the sprint, which works best when work is parallelizable and team members have context.
+                </aside>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- SLIDE 4b: Measuring Estimation Accuracy                      -->
+            <!-- ============================================================ -->
+            <section>
+                <h2>&#x1F4CA; Measuring Estimation Accuracy</h2>
+                <div class="two-column">
+                    <div>
+                        <div class="concept-card">
+                            <h4>Estimation Accuracy Ratio</h4>
+                            <p><strong>Actual Effort / Estimated Effort</strong></p>
+                            <ul>
+                                <li class="fragment"><span class="text-success">0.8 - 1.2</span> = Healthy range</li>
+                                <li class="fragment"><span class="text-warning">1.2 - 1.5</span> = Consistent underestimation</li>
+                                <li class="fragment"><span class="text-danger">&gt; 1.5</span> = Systemic problem</li>
+                            </ul>
+                        </div>
+                        <div class="highlight-box success fragment">
+                            <p><strong>Track this ratio sprint over sprint.</strong> A single sprint's ratio is noise. The trend across 4-6 sprints reveals whether your estimation process is improving, stable, or degrading.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="highlight-box fragment">
+                            <h4 style="color: var(--accent-color); margin-top:0;">&#x1F4CA; Adjust vs. Accept Variance</h4>
+                            <p><strong>Adjust</strong> when the same type of story is consistently mis-estimated, a new technology was introduced, or team composition changed.</p>
+                            <p><strong>Accept variance</strong> when errors are random and overall velocity is still predictable.</p>
+                        </div>
+                        <div class="concept-card fragment">
+                            <h4>&#x1F3AF; When to Recalibrate</h4>
+                            <ul>
+                                <li>Ratio consistently above 1.3 for 3+ sprints</li>
+                                <li>New domain, technology, or team members</li>
+                                <li>Story-type patterns emerge (e.g., all API stories underestimated)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    This slide focuses on building a measurement system around estimation quality. The Estimation Accuracy Ratio is simple but powerful -- track it sprint over sprint and look for patterns. On the right, the Adjust vs. Accept framework helps teams decide when to change their calibration versus when to simply acknowledge natural variance. The key insight is that random errors in both directions are fine -- your velocity average already accounts for them. Systematic errors in one direction mean something about your process needs to change. Ask participants: do you currently measure estimation accuracy? Most teams do not, and that is why their estimates do not improve over time.
                 </aside>
             </section>
 
@@ -743,13 +769,13 @@ Avg (3-6): 23 pts  |  Range: 20-26 pts</div>
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 8: Retrospective and Recovery (merged)                 -->
+            <!-- SLIDE 8a: Structured Estimation Retrospective                -->
             <!-- ============================================================ -->
             <section>
-                <h2>&#x1F4C9; Retrospectives and Recovery Strategies</h2>
+                <h2>&#x1F4C9; Structured Estimation Retrospective</h2>
                 <div class="two-column">
                     <div>
-                        <h3>Structured Estimation Retro</h3>
+                        <h3>4-Step Estimation Retro</h3>
                         <div class="process-flow" style="flex-direction: column; align-items: stretch;">
                             <div class="process-step fragment" style="width: 100%; min-width: auto;">1. Review estimated vs. actual for each story</div>
                             <div class="process-step fragment" style="width: 100%; min-width: auto;">2. Identify the 2-3 biggest variances</div>
@@ -759,8 +785,11 @@ Avg (3-6): 23 pts  |  Range: 20-26 pts</div>
                         <div class="highlight-box fragment">
                             <p><strong>One improvement per sprint.</strong> Trying to fix everything at once fixes nothing.</p>
                         </div>
+                    </div>
+                    <div>
+                        <h3>Communicating Missed Goals</h3>
                         <div class="concept-card fragment">
-                            <h4>&#x2705; Communicating Missed Goals</h4>
+                            <h4>&#x2705; The 4-Part Stakeholder Message</h4>
                             <ol>
                                 <li><strong>State the fact:</strong> "We completed 70% of the planned work this iteration"</li>
                                 <li><strong>Explain the cause:</strong> "Integration complexity exceeded our estimates"</li>
@@ -768,23 +797,38 @@ Avg (3-6): 23 pts  |  Range: 20-26 pts</div>
                                 <li><strong>Describe the action:</strong> "We're adding spikes for all integration stories"</li>
                             </ol>
                         </div>
-                    </div>
-                    <div>
-                        <h3>Recovery Strategies</h3>
-                        <div class="metric-row fragment" style="grid-template-columns: 1fr 1fr 1fr;">
-                            <div class="metric-card">
-                                <span class="metric-value" style="color: var(--success-color); font-size: 1.5em;">80%</span>
-                                <span class="metric-label">Min Sprint Goal Completion Target</span>
-                            </div>
-                            <div class="metric-card">
-                                <span class="metric-value" style="color: var(--warning-color); font-size: 1.5em;">2-3</span>
-                                <span class="metric-label">Max Consecutive Misses Before Intervention</span>
-                            </div>
-                            <div class="metric-card">
-                                <span class="metric-value" style="color: var(--accent-color); font-size: 1.5em;">10%</span>
-                                <span class="metric-label">Velocity Reduction Buffer</span>
-                            </div>
+                        <div class="highlight-box warning fragment">
+                            <h4 style="color: var(--warning-color); margin-top:0;">&#x26A0;&#xFE0F; Always Translate to Calendar Dates</h4>
+                            <p>"Delayed by one sprint" means nothing to a VP. <strong>"The release moves from March 1 to March 15"</strong> means everything.</p>
                         </div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    This slide focuses on running an estimation-focused retrospective. The four-step process gives structure to what can otherwise be an unfocused blame session. Emphasize step 4 -- one actionable improvement. Teams that try to fix five things end up fixing none. For stakeholder communication, the four-part pattern is simple and professional. Never blame individual team members, hide the miss and inflate numbers, or promise to make it up next sprint. Coach participants to always translate impact into calendar dates when communicating upward. 'Delayed by one sprint' means nothing to a VP. 'The release moves from March 1 to March 15' means everything.
+                </aside>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- SLIDE 8b: Recovery Strategies                                -->
+            <!-- ============================================================ -->
+            <section>
+                <h2>&#x1F4C9; Recovery Strategies</h2>
+                <div class="metric-row fragment" style="grid-template-columns: 1fr 1fr 1fr;">
+                    <div class="metric-card">
+                        <span class="metric-value" style="color: var(--success-color); font-size: 1.5em;">80%</span>
+                        <span class="metric-label">Min Sprint Goal Completion Target</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value" style="color: var(--warning-color); font-size: 1.5em;">2-3</span>
+                        <span class="metric-label">Max Consecutive Misses Before Intervention</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value" style="color: var(--accent-color); font-size: 1.5em;">10%</span>
+                        <span class="metric-label">Velocity Reduction Buffer</span>
+                    </div>
+                </div>
+                <div class="two-column">
+                    <div>
                         <div class="architecture-box fragment">
                             <h4>&#x1F4CB; Short-Term Recovery</h4>
                             <ul>
@@ -793,6 +837,8 @@ Avg (3-6): 23 pts  |  Range: 20-26 pts</div>
                                 <li>Limit work-in-progress strictly</li>
                             </ul>
                         </div>
+                    </div>
+                    <div>
                         <div class="architecture-box fragment">
                             <h4>&#x1F3AF; Long-Term Improvements</h4>
                             <ul>
@@ -803,8 +849,11 @@ Avg (3-6): 23 pts  |  Range: 20-26 pts</div>
                         </div>
                     </div>
                 </div>
+                <div class="highlight-box success fragment" style="margin-top: 20px;">
+                    <p><strong>Recovery is not about working harder.</strong> It is about working smarter: reduce scope, increase focus, improve the inputs to your estimates, and build slack into the plan until confidence is restored.</p>
+                </div>
                 <aside class="notes">
-                    This slide addresses two critical skills: running an estimation-focused retrospective and recovering from missed sprint goals. For the retro, the four-step process gives structure to what can otherwise be an unfocused blame session. Emphasize step 4 -- one actionable improvement. Teams that try to fix five things end up fixing none. For stakeholder communication, the four-part pattern is simple and professional. Never blame individual team members, hide the miss and inflate numbers, or promise to make it up next sprint. The recovery strategies provide concrete thresholds: 80% completion rate is a reasonable target, 2-3 consecutive misses triggers intervention, and the 10% buffer is a practical way to build slack into planning. Coach participants to always translate impact into calendar dates when communicating upward. 'Delayed by one sprint' means nothing to a VP. 'The release moves from March 1 to March 15' means everything.
+                    The recovery strategies provide concrete thresholds: 80% completion rate is a reasonable target, 2-3 consecutive misses triggers intervention, and the 10% buffer is a practical way to build slack into planning. Short-term recovery is about creating breathing room -- committing to less so the team can regain confidence and predictability. Long-term improvements address the systemic causes. Note that reducing commitment is not giving up -- it is recalibrating to reality. A team that plans for 30 points and delivers 30 is in a much healthier position than a team that plans for 40 and delivers 30, even though the output is the same. The difference is trust and predictability.
                 </aside>
             </section>
 
@@ -1264,14 +1313,24 @@ Days
                 <h3>Apply estimation correction techniques to realistic scenarios</h3>
                 <div class="lab-details">
                     <ul>
-                        <li>&#x1F4CB; <strong>Scenario Drills:</strong> A blow-up story and a scope bomb — decide what to cut, and draft the stakeholder communication including updated date impact</li>
-                        <li>&#x1F4B0; <strong>ROI Prioritization:</strong> Rank 6 features by relative ROI, then adjust for dependencies and risk</li>
-                        <li>&#x1F4C8; <strong>Trend Analysis:</strong> Analyze 6 sprints of velocity data, identify disruptions, and recommend a planning velocity</li>
+                        <li>&#x1F4CB; <strong>Scenario Drills (10 min):</strong> Two scenarios under date pressure &mdash; Scenario A: a blow-up story with a March 31 client commitment; Scenario B: a CEO demanding a chatbot feature AND keeping the Q2 release date. Decide what to cut, draft the stakeholder communication, and state the updated date impact.</li>
+                        <li>&#x1F4B0; <strong>ROI Prioritization (10 min):</strong> Rank 6 features by Value/Points ratio, then discuss where dependencies, risk, or strategic factors override the pure ROI ranking</li>
+                        <li>&#x1F4C8; <strong>Trend Analysis (10 min):</strong> Analyze 6 sprints of velocity data, calculate estimation accuracy %, identify disruption patterns, recommend a Sprint 7 planning velocity, and calculate a revised delivery date for the remaining backlog</li>
                     </ul>
                 </div>
                 <p style="margin-top: 20px; font-size: 0.9em; color: rgba(255,255,255,0.85);"><strong>Duration:</strong> 45 minutes (30 min work + 15 min presentations) &nbsp;|&nbsp; <strong>Format:</strong> Teams of 4-5</p>
                 <aside class="notes">
-                    This lab is the heart of the module. Divide participants into teams of 4-5. Each team will rotate through all five scenarios in 15-minute rounds. Provide pre-built scenario cards with the relevant data for each exercise. For Scenario 1, give teams a sprint board with stories in various states of completion. For Scenario 2, provide a sprint history with velocity data showing the consecutive misses. For Scenario 3, assign one person as the Product Owner who must make the trade-off decision. For Scenario 4, provide actual velocity data in a spreadsheet and have teams create the control chart. For Scenario 5, provide a backlog with value and effort estimates. After all rotations, bring the group back together for a 15-minute debrief where each team shares their most surprising insight.
+                    This lab is the heart of the module. Divide participants into teams of 4-5. The lab has three exercises, each timeboxed to 10 minutes, followed by 15 minutes of team presentations.
+
+Exercise 1 -- Scenario Drills (10 min): Two scenario cards. Scenario A presents a story that has blown up mid-sprint with a hard March 31 client commitment on the line -- teams must decide what to cut, what to carry over, and draft a stakeholder message with a revised date. Scenario B is a CEO scope bomb: the CEO wants a chatbot feature added AND insists on keeping the Q2 release date. Teams must apply the scope-trading framework (adding = removing, 2-for-1 rule) and articulate what gives. Instructor tip: enforce the 10-minute timebox strictly. Teams will want to debate endlessly on the scope bomb. Tell them: 'You have 10 minutes. The CEO is waiting. Decide.' This mirrors real-world pressure.
+
+Exercise 2 -- ROI Prioritization (10 min): Provide a table of 6 features with business value and story point estimates. Teams calculate the Value/Points ratio, rank by ROI, then discuss which items they would override the pure ranking for (e.g., a low-ROI enabler that unblocks two high-ROI items, or a compliance item that is non-negotiable). The discussion of overrides is where the real learning happens.
+
+Exercise 3 -- Historical Trend Analysis (10 min): Provide 6 sprints of velocity data with some obvious disruptions baked in (e.g., a team member departure in Sprint 3, a holiday sprint). Teams calculate the estimation accuracy percentage for each sprint, identify the disruption patterns, recommend a realistic Sprint 7 planning velocity, and use that velocity to calculate a revised delivery date for the remaining backlog. This is the practical payoff of the whole module -- turning historical data into an actionable forecast.
+
+Presentations (15 min): Each team presents three things: their scenario response and what they chose to cut, their ROI ranking and any overrides they made, and their revised delivery forecast with the reasoning behind their Sprint 7 velocity recommendation. Encourage the class to challenge each other's assumptions during presentations.
+
+Instructor tip: circulate during the exercises. The most common mistake in Exercise 1 is teams trying to keep everything and 'just work harder.' Push back on that. In Exercise 3, watch for teams that average all 6 sprints without accounting for disruptions -- coach them to exclude or weight the anomalous sprints.
                 </aside>
             </section>
 

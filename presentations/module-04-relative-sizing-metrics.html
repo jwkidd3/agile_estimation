@@ -493,12 +493,12 @@
             <!-- SLIDE 1: TITLE SLIDE -->
             <!-- ============================================================ -->
             <section class="title-slide" data-background="linear-gradient(135deg, #2b6cb0 0%, #1a365d 100%)">
-                <div class="module-badge">Module 4 of 8</div>
+                <div class="module-badge">Module 4 of 7</div>
                 <h1>Relative Sizing Metrics</h1>
                 <h2>Agile Project Estimation</h2>
-                <h3>From Absolute Estimates to Relative Intelligence</h3>
+                <h3>From Absolute Estimates to Relative Sizing</h3>
                 <aside class="notes">
-                    Welcome to Module 4 on Relative Sizing Metrics. This is one of the most transformative topics in the course. We are moving away from the traditional approach of estimating in hours and days, and instead adopting relative comparison techniques that leverage how our brains actually work. By the end of this module, participants will understand story points, Planning Poker, velocity tracking, and key business metrics that drive Agile delivery. This module directly builds on the story decomposition work from Module 3.
+                    Welcome to Module 4 on Relative Sizing Metrics. This module transitions from the story decomposition work in Module 3 to the practical mechanics of sizing and forecasting. We move away from the traditional approach of estimating in hours and days, and instead adopt relative comparison techniques that leverage how our brains actually work. By the end of this module, participants will understand story points, Planning Poker, velocity tracking, and key business metrics that drive Agile delivery. Use Module 3's decomposed stories as a bridge: "Now that we know how to break work down, how do we size it?"
                 </aside>
             </section>
 
@@ -542,7 +542,7 @@
             <section>
                 <h2>&#x1F4CF; Absolute vs. Relative Estimation</h2>
                 <div class="vs-layout">
-                    <div class="card danger">
+                    <div class="card warning">
                         <h4>Absolute Estimation</h4>
                         <ul>
                             <li>"This will take <strong>16 hours</strong>"</li>
@@ -625,7 +625,7 @@
             <!-- ============================================================ -->
             <section>
                 <h2>&#x1F4CF; Why Relative Estimation Works</h2>
-                <h3>Cognitive Science and Research Evidence</h3>
+                <h3>Cognitive Science and Observed Patterns in Practice</h3>
                 <div class="two-column">
                     <div>
                         <div class="highlight-box">
@@ -639,7 +639,7 @@
                     </div>
                     <div>
                         <div class="architecture-box">
-                            <h4>What the Research Shows</h4>
+                            <h4>Typical Ranges Observed Across Teams</h4>
                             <table>
                                 <thead>
                                     <tr>
@@ -918,7 +918,7 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 11: CONSTRAINTS & POINT INFLATION (MERGED) -->
+            <!-- SLIDE 11a: CONSTRAINTS ON RELATIVE SIZING -->
             <!-- ============================================================ -->
             <section>
                 <h2>&#x26A0;&#xFE0F; Constraints on Relative Sizing</h2>
@@ -934,15 +934,32 @@
                                 <strong>Anti-Pattern:</strong> "Team Alpha delivers 60 points per sprint but Team Beta only does 35" -- this comparison is invalid and damages morale.
                             </div>
                         </div>
+                    </div>
+                    <div>
                         <div class="card warning fragment">
                             <h4>Story Points Are NOT Hours</h4>
                             <ul>
-                                <li>Never convert points to hours</li>
-                                <li>Never use points for individual performance tracking</li>
-                                <li>Points --> velocity --> sprints --> calendar. <strong>Never skip steps.</strong></li>
+                                <li>Converting points to hours undermines their value -- it reintroduces all the estimation problems relative sizing was designed to solve</li>
+                                <li>Using points for individual performance tracking incentivizes gaming rather than accuracy</li>
+                                <li>Points &#x2192; velocity &#x2192; sprints &#x2192; calendar. Skipping steps introduces the false precision we're trying to avoid</li>
                             </ul>
                         </div>
                     </div>
+                </div>
+                <div class="highlight-box fragment">
+                    <strong>Remember:</strong> Story points are a team-internal measure, calibrated to that specific team's skills, experience, and working context. When used as intended, they enable honest forecasting.
+                </div>
+                <aside class="notes">
+                    Story points are a team-internal measure -- they are calibrated to that specific team's skills, experience, and working context. When management compares velocity across teams, they incentivize point inflation and destroy the honesty that makes estimation valuable. The three statements in the "Story Points Are NOT Hours" card are pragmatic guidelines, not absolute rules. Walk through the reasoning behind each one so the team understands why these practices erode the value of relative sizing rather than just being told not to do them.
+                </aside>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- SLIDE 11b: DETECTING AND PREVENTING POINT INFLATION -->
+            <!-- ============================================================ -->
+            <section>
+                <h2>&#x26A0;&#xFE0F; Detecting and Preventing Point Inflation</h2>
+                <div class="two-column">
                     <div>
                         <div class="card fragment">
                             <h4>Point Inflation: The Silent Killer</h4>
@@ -956,6 +973,8 @@
                                 </ul>
                             </div>
                         </div>
+                    </div>
+                    <div>
                         <div class="card success fragment">
                             <h4>Prevention Strategies</h4>
                             <ul>
@@ -964,10 +983,13 @@
                                 <li><strong>Periodic recalibration:</strong> Every quarter, re-estimate a few old stories</li>
                             </ul>
                         </div>
+                        <div class="highlight-box danger fragment">
+                            <strong>Goodhart's Law:</strong> "When a measure becomes a target, it ceases to be a good measure." Velocity is a planning tool for the team, not a performance metric for management.
+                        </div>
                     </div>
                 </div>
                 <aside class="notes">
-                    Story points are a team-internal measure -- they are calibrated to that specific team's skills, experience, and working context. When management compares velocity across teams, they incentivize point inflation and destroy the honesty that makes estimation valuable. Point inflation usually happens when velocity becomes a target rather than a diagnostic. Goodhart's Law applies: "When a measure becomes a target, it ceases to be a good measure." The prevention strategies center on one principle: velocity is a planning tool for the team, not a performance metric for management.
+                    Point inflation usually happens when velocity becomes a target rather than a diagnostic. Goodhart's Law is the key principle here. The prevention strategies center on one idea: velocity is a planning tool for the team, not a performance metric for management. Reference stories act as an anchor -- if a story that looks similar to your baseline "3" is now being rated a "5," that is a signal to recalibrate. Quarterly recalibration sessions are a lightweight way to keep the team honest without adding overhead.
                 </aside>
             </section>
 
@@ -1142,7 +1164,7 @@
                             <ul>
                                 <li class="fragment">Developers add 30-50% "buffer" to protect themselves</li>
                                 <li class="fragment">Managers then cut 20% because "they always pad"</li>
-                                <li class="fragment">Result: a negotiation ritual that produces fiction</li>
+                                <li class="fragment">Result: estimates that reflect negotiation pressure rather than technical reality</li>
                                 <li class="fragment">Neither party trusts the numbers</li>
                             </ul>
                         </div>
@@ -1442,7 +1464,7 @@
                 </div>
                 <p style="margin-top: 20px; font-size: 0.9em; color: rgba(255,255,255,0.85);"><strong>Duration:</strong> 45 minutes (30 min work + 15 min presentations) &nbsp;|&nbsp; <strong>Format:</strong> Teams of 4-6</p>
                 <aside class="notes">
-                    This lab is the heart of the module -- it is where concepts become skills. Split the class into teams of 4-6. Each team will designate a Product Owner who presents the stories and a facilitator who manages the Planning Poker process. Part 1 is experiential: teams will feel the difference between sequential and simultaneous estimation. Part 2 is analytical: teams work with provided velocity data to make forecasts. The key learning moment is when they see how different velocity assumptions produce meaningfully different forecast ranges. Allow 5-10 minutes at the end for teams to share their forecasts and discuss differences.
+                    This lab is the heart of the module -- it is where concepts become skills. Split the class into teams of 4-6. Each team will designate a Product Owner who presents the stories and a facilitator who manages the Planning Poker process. Part 1 is experiential: teams will practice simultaneous estimation through Planning Poker. Part 2 is analytical: teams work with provided velocity data to make forecasts. The key learning moment is when they see how different velocity assumptions produce meaningfully different forecast ranges. Part 2 also includes drafting a PMO status report sentence that translates the forecast range into stakeholder-friendly language. Allow 5-10 minutes at the end for teams to share their forecasts and discuss differences.
                 </aside>
             </section>
 

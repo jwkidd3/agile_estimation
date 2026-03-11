@@ -420,10 +420,10 @@
                     </div>
                 </div>
                 <div class="highlight-box warning fragment">
-                    <strong>Key Principle:</strong> The less data you have, the <em>wider</em> your confidence interval should be. If pressed for a single date, anchor on the pessimistic end and explicitly state the assumptions.
+                    <strong>Key Principle:</strong> The less data you have, the <em>wider</em> your confidence interval should be. When providing a date, anchor on the pessimistic end and explicitly state the assumptions.
                 </div>
                 <aside class="notes">
-                    Walk through both columns. The left side validates that this IS genuinely difficult. The pressure for a single date is real — acknowledge it. The goal isn't to refuse the request, it's to give a more useful answer. A range with confidence levels gives decision-makers more to work with than a single date that's probably wrong. Frame it as: 'I can give you a date — let me also give you the confidence level that goes with it.' The right side gives practical approaches we'll explore in detail. Emphasize that the honest answer early on is a range, not a date.
+                    Walk through both columns. The left side validates that this IS genuinely difficult. The pressure for a single date is real — acknowledge it. The goal isn't to refuse the request, it's to give a more useful answer. A range with confidence levels gives decision-makers more to work with than a single date that's probably wrong. Frame it as: 'I can give you a date — let me also give you the confidence level that goes with it.' The right side gives practical approaches we'll explore in detail. Emphasize that the most useful early answer is a date paired with a confidence level and stated assumptions.
                 </aside>
             </section>
 
@@ -442,6 +442,9 @@
                                 <li class="fragment">Adjust for <strong>known differences</strong></li>
                                 <li class="fragment">Create a range: shortest to longest reference</li>
                             </ol>
+                            <div class="highlight-box fragment" style="font-size: 0.85em; margin-top: 10px; padding: 12px 16px;">
+                                <strong>Worked Example:</strong> Reference team of 7 averaged 24 pts/sprint &rarr; for your team of 6: (24&divide;7)&times;6 &asymp; <strong>21 pts/sprint</strong>. First 3 sprints at ~60% while the team gels &asymp; <strong>13 pts/sprint</strong>.
+                            </div>
                         </div>
                         <div class="card fragment" style="font-size: 0.85em;">
                             <h4>&#x1F9D1;&#x200D;&#x1F4BC; Delphi Technique</h4>
@@ -479,7 +482,7 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    Reference projects are your best friend when you have no team-specific data. The Delphi technique reduces anchoring bias through anonymity — similar to Planning Poker at the story level. Thin-slicing is the most practical approach: if you can negotiate a 2-sprint ramp-up before locking a forecast, do it. If you can't wait, use reference projects and Delphi to give an honest initial range, label it as preliminary, and lock in a re-forecast date after 2 sprints. Monte Carlo simulations give probabilistic forecasts — even with 3-4 sprints of data, you can run meaningful simulations. The cost of running 2 sprints before forecasting is far less than forecasting on the wrong date.
+                    Reference projects are your best friend when you have no team-specific data. Walk through the worked example on the slide: if a reference team of 7 averaged 24 points/sprint, scale proportionally to your team of 6 — that's (24/7)×6 ≈ 21 points/sprint. Then apply a ramp-up discount: new teams typically run at about 60% of steady-state velocity for the first 3 sprints while they gel, so plan for roughly 13 pts/sprint initially. Students will use exactly this technique in Lab 7 Step 1. The Delphi technique reduces anchoring bias through anonymity — similar to Planning Poker at the story level. Thin-slicing is the most practical approach: if you can negotiate a 2-sprint ramp-up before locking a forecast, do it. If you can't wait, use reference projects and Delphi to give an honest initial range, label it as preliminary, and lock in a re-forecast date after 2 sprints. Monte Carlo simulations give probabilistic forecasts — even with 3-4 sprints of data, you can run meaningful simulations. The cost of running 2 sprints before forecasting is far less than forecasting on the wrong date.
                 </aside>
             </section>
 
@@ -494,7 +497,7 @@
                             <h4>&#x1F4CA; Using Velocity for Forecasts</h4>
                             <ul>
                                 <li class="fragment">Use <strong>rolling average</strong> of last 3-5 sprints</li>
-                                <li class="fragment">Track <strong>best, average, and worst</strong> velocity</li>
+                                <li class="fragment">Track <strong>best, average, and worst rolling average</strong></li>
                                 <li class="fragment">Calculate range: optimistic &rarr; pessimistic</li>
                                 <li class="fragment">Account for <strong>known disruptions</strong> (holidays, onboarding)</li>
                             </ul>
@@ -525,14 +528,14 @@
                         </table>
                         <div class="formula-box fragment">
                             <span class="label">With 80 points remaining</span>
-                            Optimistic: 80 &divide; 28 = <strong>3 sprints</strong><br/>
+                            Optimistic: 80 &divide; 26.7 = <strong>~3 sprints</strong><br/>
                             Likely: 80 &divide; 25.7 = <strong>~3.1 sprints</strong><br/>
                             Pessimistic: 80 &divide; 22 = <strong>~3.6 sprints</strong>
                         </div>
                     </div>
                 </div>
                 <aside class="notes">
-                    Velocity-based forecasting is the bread and butter of Agile forecasting. The rolling average smooths out sprint-to-sprint variation. Using the best/average/worst from recent history gives a natural range. Emphasize that you should never cherry-pick your best sprint — that's a recipe for broken forecasts. Also, if team composition changes significantly, your historical velocity may no longer be valid.
+                    Velocity-based forecasting is the bread and butter of Agile forecasting. The rolling average smooths out sprint-to-sprint variation. Using the best/average/worst rolling averages from recent history gives a natural range. Emphasize that you should never cherry-pick your best sprint — that's a recipe for broken forecasts. Also, if team composition changes significantly, your historical velocity may no longer be valid.
                 </aside>
             </section>
 
@@ -633,9 +636,9 @@
                         <div class="card warning fragment" style="font-size: 0.85em;">
                             <h4>&#x1F4E6; Feature Buffers (Scope Buffers)</h4>
                             <ul>
-                                <li>Prioritize into <strong>must-have / nice-to-have</strong></li>
-                                <li>If ahead: deliver bonus features</li>
-                                <li>If behind: flex scope on nice-to-haves</li>
+                                <li>Prioritize into <strong>must-have / should-have / defer to next release</strong></li>
+                                <li>If ahead: pull in should-have and deferred features</li>
+                                <li>If behind: flex scope on should-haves first, then defer</li>
                             </ul>
                         </div>
                     </div>
@@ -921,7 +924,15 @@
                     <strong>When both are fixed:</strong> If the date AND scope are non-negotiable, the only levers are resources and quality. Use the formulas above to show the gap: <em>"We can deliver X of Y points by the date. To close the gap, we need [more capacity / reduced scope / adjusted quality bar]."</em> Make the constraint triangle visible.
                 </div>
                 <aside class="notes">
-                    These are the two fundamental forecasting modes. In practice, most organizations work with a combination — there's both a date and a scope, and the negotiation is about finding the right balance. Walk through the formulas. For date-driven: if we have 6 sprints and velocity of 25, we can deliver about 150 points. For scope-driven: if we need 200 points and velocity is 25, we need 8 sprints. Always present these as ranges, not exact numbers.
+                    These are the two fundamental forecasting modes. In practice, most organizations work date-driven — someone upstream has set a date and your job is to figure out what scope fits. Spend more time on the left card.
+
+                    WORKED EXAMPLE for date-driven (this mirrors what students will do in Lab 7): "The launch date is 20 weeks out. That gives us 10 two-week sprints. Our last 4 sprints averaged about 24 points. So our max delivery capacity is roughly 240 points. But we've been getting about 5 points of scope added per sprint — that's 50 points of scope growth over 10 sprints. So net delivery is closer to 190 points. Our remaining backlog is 183 points. On paper it fits — but only if scope growth holds steady and velocity doesn't dip. That's a 50% confidence forecast at best. For 85% confidence, plan for the must-have features only and treat the rest as stretch goals."
+
+                    The key insight: when the date is fixed, the conversation shifts from "when will we be done?" to "what can we deliver by this date?" — that's a much more productive conversation because it gives stakeholders a clear scope trade-off instead of a vague date range.
+
+                    Emphasize the "When both are fixed" box. This is the reality many teams face. The formulas make the gap visible and turn an emotional negotiation into a data-backed conversation. In the lab, students will practice exactly this: given a fixed conference date, work backward to determine what fits and what gets cut.
+
+                    When walking students through the backward calculation, demonstrate the scope triage: categorize remaining features into must-have (demo-critical), should-have (include if velocity allows), and defer (post-launch). This is the exercise they'll practice in Lab 7 Step 3.
                 </aside>
             </section>
 
@@ -1030,13 +1041,14 @@
                     <ul>
                         <li>Build a forecast range — without history and with history</li>
                         <li>Account for scope growth and its impact on net progress</li>
-                        <li>Debate buffer strategies (time buffers vs. feature buffers)</li>
-                        <li>Deliver a stakeholder-ready forecast — including a recommended date range, confidence levels, and scope trade-offs</li>
+                        <li>Work backward from a fixed launch date to determine deliverable scope</li>
+                        <li>Deliver a stakeholder-ready forecast — with confidence levels, scope trade-offs, and a "what makes the cut" recommendation</li>
+                        <li>Present your forecast in a stakeholder simulation — the class plays the executive team and asks tough questions</li>
                     </ul>
                     <p style="margin-top: 20px; font-size: 0.9em; color: rgba(255,255,255,0.85);"><strong>Duration:</strong> 50 minutes (35 min work + 15 min presentations) &nbsp;|&nbsp; <strong>Format:</strong> Teams of 4-5</p>
                 </div>
                 <aside class="notes">
-                    This is the capstone lab for the course. Teams will receive a realistic product backlog with velocity data and need to produce a release forecast. Halfway through, you'll introduce scope changes and ask them to re-forecast. The final deliverable is a stakeholder-ready forecast presentation. This lab synthesizes everything from the entire course — estimation, relative sizing, velocity, and forecasting. Give teams 30 minutes for the exercise and 15 minutes for presentations and discussion.
+                    This is the capstone lab for the course. Teams will receive a realistic product backlog with velocity data and need to produce a release forecast. Halfway through, you'll introduce scope changes and ask them to re-forecast. The final deliverable is a stakeholder-ready forecast presentation. This lab synthesizes everything from the entire course — estimation, relative sizing, velocity, and forecasting. Give teams 35 minutes for the exercise and 15 minutes for presentations and discussion.
                 </aside>
             </section>
 
