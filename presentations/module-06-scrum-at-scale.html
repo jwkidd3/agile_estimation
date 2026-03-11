@@ -374,7 +374,7 @@
                 <h2>Scaling Estimation Across Multiple Teams</h2>
                 <h3>Agile Project Estimation &bull; 2-Day Workshop</h3>
                 <aside class="notes">
-                    Welcome to Module 6, where we tackle one of the most challenging aspects of Agile estimation: scaling. Up to this point, we have been discussing estimation concepts within a single team. But what happens when you have 5 teams? 10? 50? The math changes, the communication patterns change, and the entire estimation approach needs to adapt. This module examines team metrics at scale, how to determine the right number of teams, and the critical question of backlog architecture. These decisions fundamentally shape how estimation works across your organization.
+                    Up to this point, we've discussed estimation within a single team. But most of you deal with multiple teams, and your stakeholders still want a single delivery date. Adding teams makes forecasts less certain, not more, until coordination is right. This module covers how to get that coordination right. We will examine team metrics at scale, how to determine the right number of teams, and the critical question of backlog architecture. These decisions fundamentally shape how estimation works across your organization.
                 </aside>
             </section>
 
@@ -469,7 +469,7 @@
                             </table>
                         </div>
                         <div class="highlight-box danger fragment">
-                            <p><strong>The Cardinal Rule:</strong> Story points are a team-internal measure. Comparing Team Alpha's 45 to Team Beta's 28 is like comparing kilometers to miles &mdash; the units look similar but measure differently.</p>
+                            <p><strong>Why Cross-Team Comparison Misleads:</strong> Story points are a team-internal measure. Comparing Team Alpha's 45 to Team Beta's 28 is like comparing kilometers to miles &mdash; the units look similar but measure differently. If your organization already compares team velocities, suggest story count or throughput (stories completed per sprint) as a more apples-to-apples alternative.</p>
                         </div>
                     </div>
                     <div>
@@ -522,7 +522,7 @@
                     <div class="metric-card fragment">
                         <div class="metric-icon">&#x1F504;</div>
                         <h4>Sprint Stability</h4>
-                        <p>Scope changes during sprint. High churn signals planning issues.</p>
+                        <p>Scope changes during sprint. Track the delivery cost of mid-sprint scope changes.</p>
                     </div>
                     <div class="metric-card fragment">
                         <div class="metric-icon">&#x1F91D;</div>
@@ -534,7 +534,7 @@
                     <p><strong>The Scrum of Scrums:</strong> A coordination ceremony where one representative from each team shares: (1) What did we accomplish? (2) What are we doing next? (3) What impediments affect other teams? This is where <strong>dependency health</strong> metrics become visible at the program level.</p>
                 </div>
                 <aside class="notes">
-                    Beyond velocity, healthy teams track a constellation of metrics that paint a fuller picture. Predictability tells you how well the team estimates and plans. Team happiness is a leading indicator of future productivity problems. Quality measured through escaped defects reveals whether teams are cutting corners to maintain velocity. Cycle time is arguably more actionable than velocity because it shows where work gets stuck. Sprint stability measures mid-sprint scope changes, and at scale, dependency health becomes critical because blocked teams cascade delays. The Scrum of Scrums ceremony is where these metrics surface at the program level. Emphasize that the Scrum of Scrums is not a status meeting. It is a coordination and impediment-removal session focused on cross-team dependencies.
+                    Beyond velocity, healthy teams track a constellation of metrics that paint a fuller picture. Predictability tells you how well the team estimates and plans. Team happiness is a leading indicator of future productivity problems. Quality measured through escaped defects reveals whether teams are cutting corners to maintain velocity. Cycle time is arguably more actionable than velocity because it shows where work gets stuck. Sprint stability measures mid-sprint scope changes, and at scale, dependency health becomes critical because blocked teams cascade delays. The Scrum of Scrums ceremony is where these metrics surface at the program level. Emphasize that the Scrum of Scrums is not a status meeting. It is a coordination and impediment-removal session focused on cross-team dependencies. In many organizations, mid-sprint changes come from above, not from poor planning. The value of tracking is giving teams data to show stakeholders the cost: 'Every mid-sprint scope change costs us roughly 2-3 story points of capacity, which pushes the delivery date out by X days.'
                 </aside>
             </section>
 
@@ -708,7 +708,7 @@
                     </div>
                 </div>
                 <div class="highlight-box fragment">
-                    <p><strong>Choosing your model:</strong> Single backlog maximizes flexibility and suits mature, self-organizing feature teams. Multi-level backlogs provide strategic alignment and suit large enterprises needing portfolio visibility. Estimation happens at multiple levels in SAFe: T-shirt sizes for epics, normalized points for features, and team-specific points for stories.</p>
+                    <p><strong>Choosing your model:</strong> Single backlog maximizes flexibility and suits teams with broad skill sets and low inter-team dependencies. Multi-level backlogs provide strategic alignment and suit organizations that need to coordinate across many teams and report progress at multiple levels. Estimation happens at multiple levels in SAFe: T-shirt sizes for epics, normalized points for features, and team-specific points for stories.</p>
                 </div>
                 <aside class="notes">
                     The single backlog model is what LeSS advocates. One Product Owner maintains one ordered backlog. During sprint planning, all teams gather and select work from the top. This maximizes value delivery. From an estimation perspective it is clean: each team estimates the items they select using their own calibration. The main challenge is the PO bottleneck beyond 4-6 teams. SAFe takes the opposite approach with a backlog hierarchy. Each level has its own estimation approach. PI Planning is the keystone ceremony where all of this comes together. Teams break features into stories, estimate them, identify dependencies, and align on PI objectives. The overhead is real but for large organizations the alignment can be worth it. Ask participants about their experience with either model.
@@ -793,6 +793,7 @@
                     <li class="fragment">Map cross-team dependencies and determine sequencing — focus on <strong>ordering</strong>, not sprint-by-sprint assignment</li>
                     <li class="fragment">Identify bottleneck teams and discuss capacity trade-offs</li>
                     <li class="fragment">Debate backlog organization strategy (shared vs. per-team vs. program-level)</li>
+                    <li class="fragment">Calculate a delivery date range for all features using aggregate velocity and dependency overhead</li>
                 </ul>
                 <p style="margin-top: 20px; font-size: 0.9em; color: rgba(255,255,255,0.85);"><strong>Duration:</strong> 45 minutes (30 min work + 15 min presentations) &nbsp;|&nbsp; <strong>Format:</strong> 3 teams (full class simulation)</p>
                 <aside class="notes">
@@ -827,8 +828,8 @@
                         <p>One backlog (LeSS) maximizes flexibility. Multiple backlogs (SAFe) enable portfolio visibility. Choose based on organizational needs and team maturity.</p>
                     </div>
                     <div class="takeaway-box fragment">
-                        <p><strong>&#x1F4C5; Integration ceremonies are non-negotiable</strong></p>
-                        <p>PI Planning, Scrum of Scrums, and cross-team refinement are how scaled estimation stays aligned. Without them, teams estimate in silos and integration surprises follow.</p>
+                        <p><strong>&#x1F4C5; Integration ceremonies prevent surprise delays</strong></p>
+                        <p>PI Planning, Scrum of Scrums, and cross-team refinement keep multi-team estimates aligned with reality. Even lightweight versions — a weekly 15-minute dependency check across team leads — dramatically reduce the integration surprises that blow up timelines.</p>
                     </div>
                 </div>
                 <aside class="notes">

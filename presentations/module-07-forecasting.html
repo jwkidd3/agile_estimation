@@ -420,10 +420,10 @@
                     </div>
                 </div>
                 <div class="highlight-box warning fragment">
-                    <strong>Key Principle:</strong> The less data you have, the <em>wider</em> your confidence interval must be. Never give a single-point estimate when you have no history.
+                    <strong>Key Principle:</strong> The less data you have, the <em>wider</em> your confidence interval should be. If pressed for a single date, anchor on the pessimistic end and explicitly state the assumptions.
                 </div>
                 <aside class="notes">
-                    Walk through both columns. The left side validates that this IS genuinely difficult — don't let anyone pressure you into false precision. The right side gives practical approaches we'll explore in detail. Emphasize that the honest answer early on is a range, not a date.
+                    Walk through both columns. The left side validates that this IS genuinely difficult. The pressure for a single date is real — acknowledge it. The goal isn't to refuse the request, it's to give a more useful answer. A range with confidence levels gives decision-makers more to work with than a single date that's probably wrong. Frame it as: 'I can give you a date — let me also give you the confidence level that goes with it.' The right side gives practical approaches we'll explore in detail. Emphasize that the honest answer early on is a range, not a date.
                 </aside>
             </section>
 
@@ -479,7 +479,7 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    Reference projects are your best friend when you have no team-specific data. The Delphi technique reduces anchoring bias through anonymity — similar to Planning Poker at the story level. Thin-slicing is the most practical approach: don't forecast a delivery date until you have at least 1-2 sprints of actual data. Monte Carlo simulations give probabilistic forecasts — even with 3-4 sprints of data, you can run meaningful simulations. The cost of running 2 sprints before forecasting is far less than forecasting on the wrong date.
+                    Reference projects are your best friend when you have no team-specific data. The Delphi technique reduces anchoring bias through anonymity — similar to Planning Poker at the story level. Thin-slicing is the most practical approach: if you can negotiate a 2-sprint ramp-up before locking a forecast, do it. If you can't wait, use reference projects and Delphi to give an honest initial range, label it as preliminary, and lock in a re-forecast date after 2 sprints. Monte Carlo simulations give probabilistic forecasts — even with 3-4 sprints of data, you can run meaningful simulations. The cost of running 2 sprints before forecasting is far less than forecasting on the wrong date.
                 </aside>
             </section>
 
@@ -917,6 +917,9 @@
                         <p style="font-size: 0.8em;" class="fragment">Use when scope is non-negotiable (MVP, compliance requirements)</p>
                     </div>
                 </div>
+                <div class="highlight-box warning fragment">
+                    <strong>When both are fixed:</strong> If the date AND scope are non-negotiable, the only levers are resources and quality. Use the formulas above to show the gap: <em>"We can deliver X of Y points by the date. To close the gap, we need [more capacity / reduced scope / adjusted quality bar]."</em> Make the constraint triangle visible.
+                </div>
                 <aside class="notes">
                     These are the two fundamental forecasting modes. In practice, most organizations work with a combination — there's both a date and a scope, and the negotiation is about finding the right balance. Walk through the formulas. For date-driven: if we have 6 sprints and velocity of 25, we can deliver about 150 points. For scope-driven: if we need 200 points and velocity is 25, we need 8 sprints. Always present these as ranges, not exact numbers.
                 </aside>
@@ -940,11 +943,11 @@
                             </ul>
                         </div>
                         <div class="card danger fragment">
-                            <h4>&#x274C; Don't Say</h4>
+                            <h4>&#x274C; Avoid (Erodes Trust Over Time)</h4>
                             <ul style="font-size: 0.8em;">
-                                <li>"It will be done by April 15."</li>
-                                <li>"We need exactly 6 sprints."</li>
-                                <li>"We promise to deliver all 40 stories."</li>
+                                <li>"It will be done by April 15." <em>(single point, no confidence level)</em></li>
+                                <li>"We need exactly 6 sprints." <em>(false precision)</em></li>
+                                <li>"We promise to deliver all 40 stories." <em>(scope + date both locked)</em></li>
                             </ul>
                         </div>
                     </div>
@@ -1028,7 +1031,7 @@
                         <li>Build a forecast range — without history and with history</li>
                         <li>Account for scope growth and its impact on net progress</li>
                         <li>Debate buffer strategies (time buffers vs. feature buffers)</li>
-                        <li>Deliver a stakeholder-ready forecast — ranges and trade-offs, not date promises</li>
+                        <li>Deliver a stakeholder-ready forecast — including a recommended date range, confidence levels, and scope trade-offs</li>
                     </ul>
                     <p style="margin-top: 20px; font-size: 0.9em; color: rgba(255,255,255,0.85);"><strong>Duration:</strong> 50 minutes (35 min work + 15 min presentations) &nbsp;|&nbsp; <strong>Format:</strong> Teams of 4-5</p>
                 </div>
@@ -1083,7 +1086,7 @@
                             <strong>5.</strong> Quality practices are <strong>forecast protection</strong>, not overhead
                         </div>
                         <div class="highlight-box success" style="padding: 8px 14px; margin: 4px 0; font-size: 0.85em;">
-                            <strong>6.</strong> Feature buffers &gt; time buffers
+                            <strong>6.</strong> Feature buffers preserve dates; time buffers preserve scope &mdash; choose based on which constraint matters most to your stakeholders
                         </div>
                         <div class="highlight-box success" style="padding: 8px 14px; margin: 4px 0; font-size: 0.85em;">
                             <strong>7.</strong> Measure to <strong>improve</strong>, not judge &mdash; Goodhart's Law
@@ -1132,7 +1135,7 @@
                         <h4>&#x1F7E2; This Week</h4>
                         <ul style="font-size: 0.8em;">
                             <li>Start tracking velocity if you aren't already</li>
-                            <li>Add a "forecast update" step to your sprint review</li>
+                            <li>Add a "forecast update" step to your sprint review (or regular team checkpoint)</li>
                             <li>Review your Definition of Done with the team</li>
                             <li>Identify your top 3 unestimated backlog items and size them</li>
                         </ul>
