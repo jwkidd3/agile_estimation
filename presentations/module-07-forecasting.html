@@ -540,46 +540,7 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 6: RELEASE BURNDOWN & BURNUP CHARTS -->
-            <!-- ============================================================ -->
-            <section>
-                <h2>&#x1F4C8; Release Burndown &amp; Burnup Charts</h2>
-                <div class="two-columns">
-                    <div class="architecture-box">
-                        <h4>&#x1F4C9; Burndown Chart</h4>
-                        <ul>
-                            <li>Shows <strong>remaining work</strong> over time</li>
-                            <li>Ideal line from total scope to zero</li>
-                            <li>Actual line reveals velocity trends</li>
-                            <li class="fragment"><span class="tag orange">Limitation</span> Hides scope changes</li>
-                        </ul>
-                        <p class="fragment" style="font-size: 0.8em; margin-top: 10px;">
-                            <strong>Useful when:</strong> Scope is fixed and well-understood
-                        </p>
-                    </div>
-                    <div class="architecture-box">
-                        <h4>&#x1F4C8; Burnup Chart</h4>
-                        <ul>
-                            <li>Shows <strong>work completed</strong> AND <strong>total scope</strong></li>
-                            <li>Two lines: completed work + scope line</li>
-                            <li>Reveals scope creep visually</li>
-                            <li class="fragment"><span class="tag green">Advantage</span> Transparent scope changes</li>
-                        </ul>
-                        <p class="fragment" style="font-size: 0.8em; margin-top: 10px;">
-                            <strong>Useful when:</strong> Scope may evolve &mdash; most real projects
-                        </p>
-                    </div>
-                </div>
-                <div class="highlight-box success fragment">
-                    <strong>Best Practice:</strong> Use burnup charts for stakeholder communication. The gap between the two lines makes the conversation about scope vs. timeline visible and honest.
-                </div>
-                <aside class="notes">
-                    Compare burndown and burnup charts. Burndowns are simpler but hide scope changes — if you add 20 story points of new scope, the burndown line jumps UP, which can be confusing. Burnup charts make this transparent: the completed work line keeps rising, and the scope line also rises when new work is added. The visual gap between them is what's left to do. Most experienced Agile coaches prefer burnup charts for release-level tracking.
-                </aside>
-            </section>
-
-            <!-- ============================================================ -->
-            <!-- SLIDE 7: CONFIDENCE INTERVALS & RANGE-BASED COMMUNICATION -->
+            <!-- SLIDE 6: CONFIDENCE INTERVALS & RANGE-BASED COMMUNICATION (was 7) -->
             <!-- ============================================================ -->
             <section>
                 <h2>&#x1F4C8; Confidence Intervals &amp; Range-Based Communication</h2>
@@ -619,7 +580,7 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 8: BUFFER TYPES, SIZING & WHEN THEY HELP (merged) -->
+            <!-- SLIDE 7: BUFFER TYPES, SIZING & WHEN THEY HELP -->
             <!-- ============================================================ -->
             <section style="font-size: 0.95em">
                 <h2>&#x1F6E1;&#xFE0F; Buffer Strategies: Types, Sizing &amp; Trade-Offs</h2>
@@ -671,7 +632,7 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 9: QUALITY & TECHNICAL DEBT IMPACT ON FORECASTING (merged) -->
+            <!-- SLIDE 8: QUALITY & TECHNICAL DEBT IMPACT ON FORECASTING -->
             <!-- ============================================================ -->
             <section>
                 <h2>&#x2705; Quality, Technical Debt &amp; Forecast Accuracy</h2>
@@ -711,178 +672,55 @@
                     <strong>Key Insight:</strong> The most predictable teams invest 15-20% of each sprint in quality and technical health. This investment <em>increases</em> forecast accuracy by maintaining stable velocity. Quality practices are <strong>forecast protection</strong>, not overhead.
                 </div>
                 <aside class="notes">
-                    This table tells a powerful story. Show how the percentage of capacity going to new features steadily declines as technical debt and defects accumulate. A team with 30 story points velocity but spending 8 points on defect fixes has an effective velocity of 22 for new features. When stakeholders push back on time for code reviews or testing, reframe it: "This is what makes our forecasts reliable." The 15-20% investment figure comes from industry data.
+                    This table tells a powerful story. Show how the percentage of capacity going to new features steadily declines as technical debt and defects accumulate. A team with 30 story points velocity but spending 8 points on defect fixes has an effective velocity of 22 for new features. When stakeholders push back on time for code reviews or testing, reframe it: "This is what makes our forecasts reliable." The 15-20% investment figure comes from industry data. Teams that invest 15-20% of sprint capacity in refactoring maintain stable velocity and deliver more total points over a release cycle.
                 </aside>
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 10: LEADING VS. LAGGING INDICATORS & MEASUREMENT CADENCE (merged) -->
+            <!-- SLIDE 9: METRICS THAT MATTER: LEADING, LAGGING & ACTIONABLE -->
             <!-- ============================================================ -->
-            <section style="font-size: 0.78em">
-                <h2>&#x1F4CA; Metrics: Leading vs. Lagging &amp; Measurement Cadence</h2>
-                <div class="two-columns">
-                    <div class="card success" style="font-size: 0.85em;">
-                        <h4>&#x27A1;&#xFE0F; Leading Indicators (Predictive)</h4>
-                        <ul>
-                            <li class="fragment"><strong>Sprint backlog readiness</strong> &mdash; stories refined and estimated?</li>
-                            <li class="fragment"><strong>WIP count</strong> &mdash; too many items in progress signals problems</li>
-                            <li class="fragment"><strong>Blocked item count</strong> &mdash; impediments predict velocity drops</li>
-                            <li class="fragment"><strong>Team confidence vote</strong> &mdash; how the team feels about the sprint goal</li>
-                        </ul>
-                    </div>
-                    <div class="card" style="font-size: 0.85em;">
-                        <h4>&#x2B05;&#xFE0F; Lagging Indicators (Reflective)</h4>
-                        <ul>
-                            <li class="fragment"><strong>Velocity</strong> &mdash; what the team actually delivered</li>
-                            <li class="fragment"><strong>Sprint goal success rate</strong> &mdash; met or missed?</li>
-                            <li class="fragment"><strong>Defect count</strong> &mdash; quality of delivered work</li>
-                            <li class="fragment"><strong>Cycle time</strong> &mdash; how long items took to complete</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="architecture-box fragment">
-                    <h4>&#x1F4C5; When to Measure What</h4>
-                    <table style="font-size: 0.75em;">
-                        <thead>
-                            <tr><th>Cadence</th><th>Metrics</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td><strong>Daily</strong></td><td>WIP, blocked items, burndown</td></tr>
-                            <tr><td><strong>Per Sprint</strong></td><td>Velocity, defects, cycle time</td></tr>
-                            <tr><td><strong>Per Release</strong></td><td>Burnup, scope change %</td></tr>
-                            <tr><td><strong>Quarterly</strong></td><td>Velocity trends, forecast accuracy</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="highlight-box warning fragment">
-                    <strong>Goodhart's Law:</strong> "When a measure becomes a target, it ceases to be a good measure." Use leading indicators to <em>steer</em> during a sprint; lagging indicators to <em>learn</em> after a sprint. Both feed into better forecasts.
-                </div>
-                <aside class="notes">
-                    Leading indicators are like the windshield of a car — they help you see what's coming. Lagging indicators are the rearview mirror — they show where you've been. You need both for good forecasting. Many teams only track lagging indicators and are surprised by problems. For the cadence table: daily metrics should be lightweight standup items, sprint metrics feed retrospectives, release metrics are for stakeholders, and quarterly is strategic. If you can't act on a metric at a given cadence, don't track it at that cadence. Velocity should never be a performance metric — the moment you reward higher velocity, you get point inflation.
-                </aside>
-            </section>
-
-            <!-- ============================================================ -->
-            <!-- SLIDE 11: VANITY VS. ACTIONABLE METRICS -->
-            <!-- ============================================================ -->
-            <section>
-                <h2>&#x1F4CA; Vanity vs. Actionable Metrics</h2>
-                <div class="architecture-box">
-                    <table>
-                        <thead>
-                            <tr><th>Vanity Metric</th><th>Actionable Alternative</th><th>Why It Matters for Forecasting</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr class="fragment"><td>Total stories completed</td><td><strong>Points + value delivered</strong></td><td>Value throughput, not just count</td></tr>
-                            <tr class="fragment"><td>Lines of code written</td><td><strong>Features shipped</strong></td><td>Outcomes over output</td></tr>
-                            <tr class="fragment"><td>Team utilization %</td><td><strong>Throughput (items/wk)</strong></td><td>100% utilization kills predictability</td></tr>
-                            <tr class="fragment"><td>Velocity always increasing</td><td><strong>Velocity stability</strong></td><td>Stable velocity = reliable forecasts</td></tr>
-                            <tr class="fragment"><td>Bug count = 0</td><td><strong>Defect escape rate</strong></td><td>Trend matters more than absolute</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="highlight-box fragment">
-                    <strong>Balanced Approach:</strong> Measure at the cadence where you can <em>act</em> on the data. Otherwise you create noise and dashboard fatigue. The best metrics drive <strong>conversations</strong>, not just charts.
-                </div>
-                <aside class="notes">
-                    Walk through the vanity vs. actionable table as a critical thinking exercise. The key insight is that velocity stability is more important than velocity growth — a team with consistent 25-point sprints produces better forecasts than a team swinging between 15 and 40. Stable throughput equals reliable forecasts.
-                </aside>
-            </section>
-
-            <!-- ============================================================ -->
-            <!-- SLIDE 12: REFACTORING CAPACITY & ROI (merged) -->
-            <!-- ============================================================ -->
-            <section>
-                <h2>&#x1F527; Refactoring: Capacity Allocation &amp; ROI</h2>
+            <section style="font-size: 0.80em">
+                <h2>&#x1F4CA; Metrics That Matter: Leading, Lagging &amp; Actionable</h2>
                 <div class="two-columns">
                     <div>
-                        <div class="card" style="font-size: 0.85em;">
-                            <h4>&#x1F4CA; Capacity Allocation Models</h4>
+                        <div class="card success" style="font-size: 0.88em;">
+                            <h4>&#x27A1;&#xFE0F; Leading Indicators (Predictive)</h4>
                             <ul>
-                                <li class="fragment"><strong>Fixed percentage:</strong> Reserve 15-20% of each sprint</li>
-                                <li class="fragment"><strong>Boy Scout Rule:</strong> Leave code better than you found it &mdash; baked into every story</li>
-                                <li class="fragment"><strong>Tech debt backlog:</strong> Prioritize refactoring items alongside features</li>
-                            </ul>
-                        </div>
-                        <div class="highlight-box warning fragment" style="font-size: 0.85em;">
-                            <h4>&#x26A0;&#xFE0F; Anti-Pattern</h4>
-                            <p>"We'll refactor after the release." This almost never happens. Technical debt must be addressed <strong>continuously</strong>, not deferred indefinitely.</p>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="architecture-box fragment" style="font-size: 0.85em;">
-                            <h4>&#x1F4B0; ROI: 12-Sprint Comparison</h4>
-                            <ul style="margin: 8px 0;">
-                                <li><span style="color: var(--danger-color); font-weight: bold;">Without Refactoring:</span> Velocity 26 &rarr; 22 &rarr; 18 = <strong>264 pts</strong></li>
-                                <li><span style="color: var(--success-color); font-weight: bold;">With 15% Refactoring:</span> Velocity 22 &rarr; 23 &rarr; 24 = <strong>276 pts</strong></li>
-                            </ul>
-                        </div>
-                        <div class="highlight-box success fragment" style="font-size: 0.85em;">
-                            <h4>&#x2705; Recommended Approach</h4>
-                            <p>Combine <strong>Boy Scout Rule</strong> (ongoing) with a <strong>15% capacity reserve</strong> (planned). The refactoring team delivers <em>more</em> total value over a release cycle with more predictable forecasts.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="highlight-box fragment">
-                    <strong>The Crossover Point:</strong> Refactoring produces <strong>lower initial velocity</strong> but <strong>higher sustained velocity</strong>. Make refactoring visible by creating backlog stories with clear acceptance criteria.
-                </div>
-                <aside class="notes">
-                    Walk through each allocation model. The fixed percentage approach is the most sustainable. The Boy Scout Rule is great for small improvements but doesn't address large-scale refactoring needs. The recommended combination gives you both. The ROI comparison shows the numbers side by side: the team that invests 15% in refactoring maintains stable velocity and actually delivers more points over 12 sprints. When refactoring is invisible, stakeholders think the team is slow. When it's visible in the backlog, they understand where the investment goes and why.
-                </aside>
-            </section>
-
-            <!-- ============================================================ -->
-            <!-- SLIDE 13: TDD & ATTD METRICS AND IMPACT (merged) -->
-            <!-- ============================================================ -->
-            <section>
-                <h2>&#x1F9EA; TDD &amp; ATTD: Metrics and Forecasting Impact</h2>
-                <div class="two-columns">
-                    <div>
-                        <div class="architecture-box" style="font-size: 0.85em;">
-                            <h4>&#x1F527; TDD Metrics</h4>
-                            <p style="font-size: 0.8em; color: #718096;">Write test first &rarr; Write code &rarr; Refactor</p>
-                            <ul>
-                                <li class="fragment"><strong>Code coverage trend</strong> &mdash; stable at 70-90%</li>
-                                <li class="fragment"><strong>Test execution time</strong> &mdash; fast feedback loop</li>
-                                <li class="fragment"><strong>Defects in TDD'd vs. non-TDD'd code</strong></li>
-                            </ul>
-                        </div>
-                        <div class="architecture-box fragment" style="font-size: 0.85em;">
-                            <h4>&#x2705; ATTD Metrics</h4>
-                            <ul>
-                                <li><strong>Acceptance test pass rate</strong> at sprint end</li>
-                                <li><strong>Stories reopened rate</strong> &mdash; should decrease with ATTD</li>
-                                <li><strong>Stakeholder acceptance rate</strong> in first review</li>
+                                <li class="fragment"><strong>Sprint backlog readiness</strong> &mdash; stories refined and estimated?</li>
+                                <li class="fragment"><strong>WIP count</strong> &mdash; too many items in progress signals problems</li>
+                                <li class="fragment"><strong>Blocked item count</strong> &mdash; impediments predict velocity drops</li>
+                                <li class="fragment"><strong>Team confidence vote</strong> &mdash; how the team feels about the sprint goal</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <div class="architecture-box">
-                            <h4>&#x1F4CA; Measured Impact (6+ months)</h4>
-                            <table style="font-size: 0.75em;">
+                        <div class="architecture-box" style="font-size: 0.88em;">
+                            <h4>Vanity vs. Actionable</h4>
+                            <table style="font-size: 0.85em;">
                                 <thead>
-                                    <tr><th>Metric</th><th>Without</th><th>With TDD/ATTD</th></tr>
+                                    <tr><th>Vanity Metric</th><th>Actionable Alternative</th></tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="fragment"><td>Defect Escapes</td><td>15-25/rel</td><td style="color: var(--success-color); font-weight: bold;">3-8/rel</td></tr>
-                                    <tr class="fragment"><td>Stories Reopened</td><td>20-30%</td><td style="color: var(--success-color); font-weight: bold;">5-10%</td></tr>
-                                    <tr class="fragment"><td>Velocity Variance</td><td>&plusmn;35-50%</td><td style="color: var(--success-color); font-weight: bold;">&plusmn;10-20%</td></tr>
-                                    <tr class="fragment"><td>Avg. Cycle Time</td><td>5-8 days</td><td style="color: var(--success-color); font-weight: bold;">2-4 days</td></tr>
+                                    <tr class="fragment"><td>Total stories completed</td><td><strong>Points + value delivered</strong></td></tr>
+                                    <tr class="fragment"><td>Lines of code written</td><td><strong>Features shipped</strong></td></tr>
+                                    <tr class="fragment"><td>Team utilization %</td><td><strong>Throughput (items/wk)</strong></td></tr>
+                                    <tr class="fragment"><td>Velocity always increasing</td><td><strong>Velocity stability</strong></td></tr>
+                                    <tr class="fragment"><td>Bug count = 0</td><td><strong>Defect escape rate</strong></td></tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-                <div class="highlight-box success fragment">
-                    <strong>The Virtuous Cycle:</strong> Better tests &rarr; fewer defects &rarr; less rework &rarr; stable velocity &rarr; accurate forecasts &rarr; <strong>stakeholder trust</strong>. Velocity variance drops 2-3x with mature TDD/ATTD, enabling dramatically narrower forecast intervals.
+                <div class="highlight-box warning fragment">
+                    <strong>Goodhart's Law:</strong> "When a measure becomes a target, it ceases to be a good measure." Use leading indicators to <em>steer</em> during a sprint. Measure at the cadence where you can <em>act</em> on the data &mdash; the best metrics drive <strong>conversations</strong>, not just charts.
                 </div>
                 <aside class="notes">
-                    Walk through each metric category. For TDD, coverage alone doesn't tell you much — you need to look at the trend and combine it with defect data. For ATTD, the stories-reopened rate is a killer metric. The velocity variance row in the table is the most important for forecasting: reducing variance from plus/minus 50% to plus/minus 20% means your "most likely" forecast is dramatically more reliable. Don't mandate coverage targets — that leads to gaming behavior. Instead, track trends and the correlation with defect data.
+                    Leading indicators are like the windshield of a car — they help you see what's coming. Lagging indicators (velocity, sprint goal success rate, defect count, cycle time) are the rearview mirror — they show where you've been. You need both for good forecasting. Many teams only track lagging indicators and are surprised by problems. The vanity vs. actionable table is a critical thinking exercise: velocity stability is more important than velocity growth — a team with consistent 25-point sprints produces better forecasts than a team swinging between 15 and 40. Measurement cadence: daily metrics (WIP, blocked items, burndown) should be lightweight standup items; per-sprint metrics (velocity, defects, cycle time) feed retrospectives; per-release metrics (burnup, scope change %) are for stakeholders; quarterly metrics (velocity trends, forecast accuracy) are strategic. Velocity should never be a performance metric — the moment you reward higher velocity, you get point inflation.
                 </aside>
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 14: BUILDING RELEASE FORECASTS -->
+            <!-- SLIDE 10: BUILDING RELEASE FORECASTS -->
             <!-- ============================================================ -->
             <section>
                 <h2>&#x1F4CB; Building Release Forecasts</h2>
@@ -937,7 +775,7 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 15: CAPACITY PLANNING & COMMUNICATING FORECASTS -->
+            <!-- SLIDE 11: CAPACITY PLANNING & COMMUNICATING FORECASTS -->
             <!-- ============================================================ -->
             <section style="font-size: 0.95em">
                 <h2>&#x1F4CB; Capacity Planning &amp; Communicating Forecasts</h2>
@@ -983,7 +821,7 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 16: EVIDENCE-BASED SCHEDULING & WHEN TO STOP ESTIMATING (merged) -->
+            <!-- SLIDE 12: EVIDENCE-BASED SCHEDULING & THROUGHPUT FORECASTING -->
             <!-- ============================================================ -->
             <section>
                 <h2>&#x1F50D; Evidence-Based Scheduling &amp; Throughput Forecasting</h2>
@@ -1031,7 +869,7 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 17: LAB CALLOUT SLIDE -->
+            <!-- SLIDE 13: LAB CALLOUT -->
             <!-- ============================================================ -->
             <section class="lab-slide" data-background-color="#1a365d">
                 <h2>&#x1F9EA; Lab 7: Release Forecasting Workshop</h2>
@@ -1053,7 +891,7 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 18: COURSE JOURNEY RECAP & TOP TAKEAWAYS (merged) -->
+            <!-- SLIDE 14: COURSE JOURNEY RECAP & TOP TAKEAWAYS -->
             <!-- ============================================================ -->
             <section>
                 <h2>&#x1F3C6; Course Journey Recap &amp; Top Takeaways</h2>
@@ -1111,7 +949,7 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 19: YOUR ESTIMATION TOOLKIT -->
+            <!-- SLIDE 15: YOUR ESTIMATION TOOLKIT -->
             <!-- ============================================================ -->
             <section>
                 <h2>&#x1F9F0; Your Estimation Toolkit</h2>
@@ -1138,7 +976,7 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 20: WHAT TO DO MONDAY MORNING -->
+            <!-- SLIDE 16: WHAT TO DO MONDAY MORNING -->
             <!-- ============================================================ -->
             <section>
                 <h2>&#x1F3C6; What to Do Monday Morning</h2>
@@ -1180,7 +1018,7 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 21: QUESTIONS -->
+            <!-- SLIDE 17: QUESTIONS -->
             <!-- ============================================================ -->
             <section data-background="linear-gradient(135deg, #2b6cb0 0%, #1a365d 100%)">
                 <div style="text-align: center; color: white;">

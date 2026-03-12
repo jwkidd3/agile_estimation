@@ -575,7 +575,7 @@
             <!-- ============================================================ -->
             <!-- SLIDE 4: THE DOG SIZING ANALOGY -->
             <!-- ============================================================ -->
-            <section>
+            <section style="font-size: 0.85em">
                 <h2>&#x1F4CF; The Dog Sizing Analogy</h2>
                 <h3>Why Comparison Works Better Than Measurement</h3>
                 <div class="architecture-box">
@@ -616,74 +616,12 @@
                     <strong>Result:</strong> People reach consensus much faster on relative size, and the ordering is almost always correct -- even when absolute guesses are wildly off.
                 </div>
                 <aside class="notes">
-                    This is a classic analogy from Mike Cohn. Walk through it conversationally. Ask participants to quickly guess the weight of a Labrador in kilograms, then compare answers -- they will vary enormously. Now ask them to rank the five dogs from smallest to largest -- nearly everyone will agree. The point is that our brains are wired for comparison, not absolute measurement. We can tell that a Labrador is bigger than a Beagle with high confidence, but estimating its exact weight requires specialized knowledge we do not have. Software stories work the same way.
+                    This is a classic analogy from Mike Cohn. Walk through it conversationally. Ask participants to quickly guess the weight of a Labrador in kilograms, then compare answers -- they will vary enormously. Now ask them to rank the five dogs from smallest to largest -- nearly everyone will agree. The point is that our brains are wired for comparison, not absolute measurement. We can tell that a Labrador is bigger than a Beagle with high confidence, but estimating its exact weight requires specialized knowledge we do not have. Software stories work the same way. This follows the Weber-Fechner Law -- our perception is logarithmic, which is why Fibonacci scales feel natural.
                 </aside>
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 5: WHY RELATIVE WORKS (MERGED: Science + Research Data) -->
-            <!-- ============================================================ -->
-            <section>
-                <h2>&#x1F4CF; Why Relative Estimation Works</h2>
-                <h3>Cognitive Science and Observed Patterns in Practice</h3>
-                <div class="two-column">
-                    <div>
-                        <div class="highlight-box">
-                            <h4>Cognitive Science Backing</h4>
-                            <ul>
-                                <li class="fragment"><strong>Weber-Fechner Law:</strong> Our perception of stimuli is logarithmic, not linear -- we naturally think in ratios</li>
-                                <li class="fragment"><strong>Miller's Law:</strong> We can hold 7 +/- 2 items in working memory -- a small set of relative sizes fits perfectly</li>
-                                <li class="fragment"><strong>Anchoring Effect:</strong> A known reference story provides a stable anchor for comparison</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="architecture-box">
-                            <h4>Typical Ranges Observed Across Teams</h4>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Metric</th>
-                                        <th>Hours</th>
-                                        <th>Story Points</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="fragment">
-                                        <td>Estimation time per story</td>
-                                        <td>15-30 min</td>
-                                        <td>2-5 min</td>
-                                    </tr>
-                                    <tr class="fragment">
-                                        <td>Team agreement rate</td>
-                                        <td>30-50%</td>
-                                        <td>70-90%</td>
-                                    </tr>
-                                    <tr class="fragment">
-                                        <td>Forecast accuracy (5 sprints)</td>
-                                        <td>+/- 50%</td>
-                                        <td>+/- 15%</td>
-                                    </tr>
-                                    <tr class="fragment">
-                                        <td>Impact of team changes</td>
-                                        <td>Invalidates estimates</td>
-                                        <td>Velocity self-adjusts</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="highlight-box warning fragment">
-                    <strong>Important:</strong> Relative sizing is not less rigorous than absolute estimation -- it is <em>differently</em> rigorous. It trades false precision for honest accuracy.
-                </div>
-                <aside class="notes">
-                    This slide provides both the scientific grounding and empirical evidence for why relative estimation works. The Weber-Fechner Law explains why Fibonacci numbers feel natural -- they roughly follow a logarithmic progression. Miller's Law tells us that having 7 values in our scale (1, 2, 3, 5, 8, 13, 21) is ideal for human cognition. Walk through the table row by row. The estimation time difference is dramatic -- instead of debating whether something takes 12 or 16 hours, teams quickly agree it is "about an 8." Forecast accuracy improves because velocity absorbs all the variables that make hour-based estimates unreliable. The self-adjusting nature of velocity is perhaps the most powerful advantage: when team composition changes, velocity naturally shifts to reflect the new team's capacity without re-estimating the entire backlog.
-                </aside>
-            </section>
-
-            <!-- ============================================================ -->
-            <!-- SLIDE 6: DEVELOPING STORY POINTS -->
+            <!-- SLIDE 5: DEVELOPING STORY POINTS (was 6) -->
             <!-- ============================================================ -->
             <section>
                 <h2>&#x1F522; Developing Story Points</h2>
@@ -718,9 +656,9 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 7: THE MODIFIED FIBONACCI SCALE -->
+            <!-- SLIDE 6: THE MODIFIED FIBONACCI SCALE -->
             <!-- ============================================================ -->
-            <section>
+            <section style="font-size: 0.92em">
                 <h2>&#x1F522; The Modified Fibonacci Scale</h2>
                 <div class="fibonacci-scale">
                     <div class="fib-item fragment">
@@ -760,12 +698,12 @@
                     <p>Some teams use <strong>T-shirt sizes</strong> (XS, S, M, L, XL) for early roadmap sizing, or <strong>powers of 2</strong> (1, 2, 4, 8, 16). The Fibonacci sequence remains the most widely adopted scale in practice.</p>
                 </div>
                 <aside class="notes">
-                    The modified Fibonacci sequence is 1, 2, 3, 5, 8, 13, 21 -- sometimes extended to 34 and beyond, though anything above 21 should be split. Walk participants through why each gap matters. The scale reflects the Weber-Fechner Law from the previous slide -- our perception of size differences is logarithmic. A common question is "why not just use 1-10?" The answer is that linear scales encourage false precision: teams will debate whether something is a 6 or a 7, which is a meaningless distinction. Fibonacci forces a meaningful choice: is it a 5 or an 8? That is a real difference.
+                    The modified Fibonacci sequence is 1, 2, 3, 5, 8, 13, 21 -- sometimes extended to 34 and beyond, though anything above 21 should be split. Walk participants through why each gap matters. The scale reflects the Weber-Fechner Law -- our perception of size differences is logarithmic. A common question is "why not just use 1-10?" The answer is that linear scales encourage false precision: teams will debate whether something is a 6 or a 7, which is a meaningless distinction. Fibonacci forces a meaningful choice: is it a 5 or an 8? That is a real difference.
                 </aside>
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 8: CREATING A REFERENCE STORY BASELINE -->
+            <!-- SLIDE 7: CREATING A REFERENCE STORY BASELINE -->
             <!-- ============================================================ -->
             <section>
                 <h2>&#x1F522; Creating a Reference Story Baseline</h2>
@@ -816,7 +754,7 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 9: PLANNING POKER STEP BY STEP -->
+            <!-- SLIDE 8: PLANNING POKER STEP BY STEP (merged with former Slide 10) -->
             <!-- ============================================================ -->
             <section>
                 <h2>&#x1F0CF; Planning Poker Step by Step</h2>
@@ -855,70 +793,41 @@
                     <div class="poker-card">8</div>
                     <div class="poker-card">5</div>
                 </div>
-                <p class="small-text fragment" style="text-align: center;">Example reveal: most team members converge on 5, one outlier at 8 explains their concern about an edge case.</p>
-                <aside class="notes">
-                    Planning Poker was popularized by James Grenning and later by Mike Cohn. Walk through each step deliberately. Step 1: The Product Owner reads the story aloud and provides context. Keep this brief -- 1-2 minutes. Step 2: The team asks clarifying questions, but this is NOT design time. Step 3: Each person privately selects their card. This is critical -- private selection prevents anchoring. Step 4: On the count of three, everyone reveals simultaneously. Step 5: If there is significant divergence (more than 2 Fibonacci numbers apart), the high and low estimators explain their reasoning. Most stories converge in 1-2 rounds. Time-box discussion to 2-3 minutes per story.
-                </aside>
-            </section>
-
-            <!-- ============================================================ -->
-            <!-- SLIDE 10: SIMULTANEOUS REVEAL & HANDLING OUTLIERS (MERGED) -->
-            <!-- ============================================================ -->
-            <section>
-                <h2>&#x1F0CF; Simultaneous Reveal &amp; Handling Outliers</h2>
-                <div class="two-column">
-                    <div>
-                        <div class="card danger" style="font-size: 0.82em;">
-                            <h4>Why Simultaneous Reveal Matters</h4>
-                            <p>Sequential estimation causes <strong>anchoring bias</strong> -- everyone drifts toward the first number heard. The <strong>HiPPO effect</strong> (Highest Paid Person's Opinion) amplifies this when a senior voice speaks first.</p>
-                            <div class="highlight-box success" style="margin-top: 10px;">
-                                <strong>Simultaneous reveal ensures:</strong>
-                                <ul>
-                                    <li>Every perspective is captured independently</li>
-                                    <li>Equal voice for all team members</li>
-                                    <li>Hidden knowledge surfaces through divergence</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="architecture-box">
-                            <h4>When Estimates Diverge</h4>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Spread</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1 step apart (e.g., 5 & 8)</td>
-                                        <td>Quick discussion, average or take higher</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2 steps apart (e.g., 3 & 8)</td>
-                                        <td>High and low explain; re-vote once</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3+ steps apart (e.g., 2 & 13)</td>
-                                        <td>Deep discussion -- different assumptions exist</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="highlight-box fragment">
-                            <strong>The 2-Minute Rule:</strong> Limit outlier discussion to 2 minutes. If the team cannot converge after two rounds, take the higher estimate and move on.
-                        </div>
-                    </div>
+                <div class="architecture-box fragment" style="font-size: 0.78em; margin-top: 10px;">
+                    <h4>When Estimates Diverge</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Spread</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1 step apart (e.g., 5 &amp; 8)</td>
+                                <td>Quick discussion, average or take higher</td>
+                            </tr>
+                            <tr>
+                                <td>2 steps apart (e.g., 3 &amp; 8)</td>
+                                <td>High and low explain; re-vote once</td>
+                            </tr>
+                            <tr>
+                                <td>3+ steps apart (e.g., 2 &amp; 13)</td>
+                                <td>Deep discussion -- different assumptions exist</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="highlight-box fragment" style="font-size: 0.85em;">
+                    <strong>The 2-Minute Rule:</strong> Limit outlier discussion to 2 minutes. If the team cannot converge after two rounds, take the higher estimate and move on.
                 </div>
                 <aside class="notes">
-                    The simultaneous reveal is psychologically essential. Daniel Kahneman's research on anchoring shows that even random numbers can influence subsequent estimates. When a senior developer says "this is a 3" first, junior developers will unconsciously pull their estimate toward 3, even if they initially thought 8. The divergence table helps facilitators manage the discussion. When you see a spread of 3 steps or more, the team members have genuinely different understandings of the story. This is gold -- it means Planning Poker is surfacing hidden assumptions before they become problems during development. Use special cards: "?" for unknowns, infinity for "must split."
+                    Planning Poker was popularized by James Grenning and later by Mike Cohn. Walk through each step deliberately. Step 1: The Product Owner reads the story aloud and provides context. Keep this brief -- 1-2 minutes. Step 2: The team asks clarifying questions, but this is NOT design time. Step 3: Each person privately selects their card. This is critical -- private selection prevents anchoring. Step 4: On the count of three, everyone reveals simultaneously. Step 5: If there is significant divergence (more than 2 Fibonacci numbers apart), the high and low estimators explain their reasoning. Most stories converge in 1-2 rounds. Time-box discussion to 2-3 minutes per story. The simultaneous reveal prevents anchoring bias and the HiPPO effect (Highest Paid Person's Opinion). Use special cards: "?" for unknowns, infinity for "must split."
                 </aside>
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 11a: CONSTRAINTS ON RELATIVE SIZING -->
+            <!-- SLIDE 9: CONSTRAINTS ON RELATIVE SIZING (was 11a) -->
             <!-- ============================================================ -->
             <section>
                 <h2>&#x26A0;&#xFE0F; Constraints on Relative Sizing</h2>
@@ -955,7 +864,7 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 11b: DETECTING AND PREVENTING POINT INFLATION -->
+            <!-- SLIDE 10: DETECTING AND PREVENTING POINT INFLATION -->
             <!-- ============================================================ -->
             <section>
                 <h2>&#x26A0;&#xFE0F; Detecting and Preventing Point Inflation</h2>
@@ -994,9 +903,9 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 12: CALCULATING TEAM VELOCITY -->
+            <!-- SLIDE 11: CALCULATING TEAM VELOCITY -->
             <!-- ============================================================ -->
-            <section>
+            <section style="font-size: 0.88em">
                 <h2>&#x1F4C8; Calculating Team Velocity</h2>
                 <h3>Definition and Fundamentals</h3>
                 <div class="highlight-box">
@@ -1072,7 +981,7 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 13: USING VELOCITY FOR FORECASTING -->
+            <!-- SLIDE 12: USING VELOCITY FOR FORECASTING -->
             <!-- ============================================================ -->
             <section style="font-size: 0.9em">
                 <h2>&#x1F4C8; Using Velocity for Forecasting</h2>
@@ -1138,94 +1047,9 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 14: CONSEQUENCES OF NOT USING RELATIVE MEASUREMENT -->
+            <!-- SLIDE 13: BURN-DOWN AND BURN-UP CHARTS -->
             <!-- ============================================================ -->
-            <section style="font-size: 0.85em">
-                <h2>&#x274C; Consequences of Not Using Relative Measurement</h2>
-                <h3>Hour-Based Estimation Pitfalls</h3>
-                <div class="two-column">
-                    <div>
-                        <div class="card danger">
-                            <h4>The Precision Trap</h4>
-                            <ul>
-                                <li class="fragment"><strong>False confidence:</strong> "32 hours" sounds precise but is no more accurate than "about a week"</li>
-                                <li class="fragment"><strong>Individual variance:</strong> A senior developer's 8 hours is a junior's 24 hours</li>
-                                <li class="fragment"><strong>Missing factors:</strong> Hours ignore complexity, uncertainty, meetings, context-switching</li>
-                                <li class="fragment"><strong>Estimation overhead:</strong> Detailed hour breakdowns consume significant planning time</li>
-                            </ul>
-                        </div>
-                        <div class="highlight-box danger fragment">
-                            <strong>The Parkinson Problem:</strong> Work expands to fill the time allotted. When you estimate 16 hours, the work takes exactly 16 hours -- regardless of actual complexity.
-                        </div>
-                    </div>
-                    <div>
-                        <div class="card warning">
-                            <h4>Sandbagging and Padding</h4>
-                            <ul>
-                                <li class="fragment">Developers add 30-50% "buffer" to protect themselves</li>
-                                <li class="fragment">Managers then cut 20% because "they always pad"</li>
-                                <li class="fragment">Result: estimates that reflect negotiation pressure rather than technical reality</li>
-                                <li class="fragment">Neither party trusts the numbers</li>
-                            </ul>
-                        </div>
-                        <div class="card danger fragment">
-                            <h4>Commitment vs. Forecast</h4>
-                            <ul>
-                                <li><strong>Commitment:</strong> "We guarantee delivery by March 15" (high risk without velocity data)</li>
-                                <li><strong>Forecast:</strong> "Based on velocity, we expect delivery between March 10-25" (honest and useful)</li>
-                                <li>Velocity-based forecasts come with built-in ranges — use those ranges to negotiate realistic commitments backed by data</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <aside class="notes">
-                    This section builds the case for relative estimation by examining what goes wrong without it. The precision trap is insidious: a spreadsheet full of hour estimates looks professional and thorough, but the precision is illusory. The individual variance problem is particularly important -- with story points, both Alice and Bob would agree on the relative size. Sandbagging is a rational response to being held accountable for estimates. The commitment vs. forecast distinction is crucial for organizational culture. Velocity-based forecasts naturally come with ranges, which sets the right expectation with stakeholders.
-                </aside>
-            </section>
-
-            <!-- ============================================================ -->
-            <!-- SLIDE 15: CASE STUDY: TWO TEAMS -->
-            <!-- ============================================================ -->
-            <section>
-                <h2>&#x274C; Case Study: Two Teams, Two Approaches</h2>
-                <div class="two-column">
-                    <div>
-                        <div class="card danger">
-                            <h4>Team Alpha</h4>
-                            <p><span class="badge red">Hour-Based Estimation</span></p>
-                            <ul>
-                                <li class="fragment">Spent <strong>3 days</strong> creating detailed hour estimates (4,200 hours planned)</li>
-                                <li class="fragment">At month 3, critical integration <strong>underestimated by 400%</strong></li>
-                                <li class="fragment">Delivered <strong>8 weeks late</strong> despite "precise" planning</li>
-                                <li class="fragment">Team morale: <strong>Low</strong> -- felt set up to fail</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="card success">
-                            <h4>Team Beta</h4>
-                            <p><span class="badge green">Relative Estimation + Velocity</span></p>
-                            <ul>
-                                <li class="fragment">Spent <strong>2 hours</strong> in Planning Poker to size 340-point backlog</li>
-                                <li class="fragment">Velocity stabilized at <strong>34 points/sprint</strong> after 3 sprints</li>
-                                <li class="fragment">Delivered in <strong>11 sprints</strong> -- within the forecasted 10 +/- 2 range</li>
-                                <li class="fragment">Team morale: <strong>High</strong> -- forecasts were honest and achievable</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="highlight-box success fragment">
-                    <strong>Key Difference:</strong> Team Beta did not estimate more accurately -- they estimated more <em>honestly</em>. Their range-based forecast set appropriate expectations, and velocity self-corrected as they learned more about the work.
-                </div>
-                <aside class="notes">
-                    Walk through both scenarios side by side. Team Alpha followed the traditional approach: decompose everything into tasks, estimate hours, build a Gantt chart. When reality diverged from the plan, the entire plan was invalidated. Team Beta invested minimal time in estimation upfront, let velocity emerge from actual delivery, and provided a range-based forecast that proved accurate. The key insight is not that Agile teams are better at estimating -- it is that they structure their estimation approach to account for uncertainty rather than pretending it does not exist. The morale difference is significant: teams that consistently miss "commitments" lose motivation, while teams that regularly meet range-based forecasts build confidence and trust.
-                </aside>
-            </section>
-
-            <!-- ============================================================ -->
-            <!-- SLIDE 16: BURN-DOWN AND BURN-UP CHARTS -->
-            <!-- ============================================================ -->
-            <section>
+            <section style="font-size: 0.90em">
                 <h2>&#x1F4CA; Burn-Down and Burn-Up Charts</h2>
                 <div class="two-column">
                     <div>
@@ -1288,7 +1112,7 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 17: CFD & PROGRESS TRACKING (MERGED) -->
+            <!-- SLIDE 14: CFD & PROGRESS TRACKING -->
             <!-- ============================================================ -->
             <section>
                 <h2>&#x1F4CA; Flow Metrics &amp; Progress Tracking</h2>
@@ -1363,7 +1187,7 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- SLIDE 18: BUSINESS VALUE METRICS -->
+            <!-- SLIDE 15: BUSINESS VALUE METRICS -->
             <!-- ============================================================ -->
             <section>
                 <h2>&#x1F4B0; Business Value Metrics &amp; Prioritization</h2>
@@ -1438,7 +1262,7 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- LAB CALLOUT SLIDE -->
+            <!-- SLIDE 16: LAB CALLOUT -->
             <!-- ============================================================ -->
             <section class="lab-slide" data-background-color="#1a365d">
                 <div class="lab-badge">Hands-On Workshop</div>
@@ -1469,7 +1293,7 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- KEY TAKEAWAYS -->
+            <!-- SLIDE 17: KEY TAKEAWAYS -->
             <!-- ============================================================ -->
             <section>
                 <h2>Key Takeaways</h2>
@@ -1494,8 +1318,8 @@
                             <p>Story points are team-specific, not hours, and vulnerable to inflation. Track velocity as a range for forecasting -- avoid using it as a performance metric or cross-team comparison.</p>
                         </div>
                         <div class="takeaway-box fragment">
-                            <h4>&#x274C; Without Relative Sizing</h4>
-                            <p>Hour-based estimation leads to false precision, sandbagging, and commitment-vs-forecast confusion. Relative sizing is not easier -- it is more honest.</p>
+                            <h4>&#x1F4C8; Forecasting with Velocity</h4>
+                            <p>Velocity is a range, not a point. Use "Yesterday's Weather" with optimistic, likely, and pessimistic scenarios for honest stakeholder communication.</p>
                         </div>
                         <div class="takeaway-box fragment">
                             <h4>&#x1F4CA; Business Metrics &amp; Value</h4>
@@ -1509,7 +1333,7 @@
             </section>
 
             <!-- ============================================================ -->
-            <!-- QUESTIONS SLIDE -->
+            <!-- SLIDE 18: QUESTIONS -->
             <!-- ============================================================ -->
             <section class="questions-slide" data-background="linear-gradient(135deg, #2b6cb0 0%, #1a365d 100%)">
                 <h2 style="color: #ffffff !important; font-size: 2.4em !important;">Questions?</h2>
